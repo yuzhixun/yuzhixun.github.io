@@ -54,7 +54,7 @@
 <meta property="og:image" content="http://example.com/web%20-%20%E5%89%AF%E6%9C%AC/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-22%20101233.png">
 <meta property="og:image" content="http://example.com/web%20-%20%E5%89%AF%E6%9C%AC/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-22%20101355.png">
 <meta property="article:published_time" content="2023-05-21T04:57:55.000Z">
-<meta property="article:modified_time" content="2023-07-11T13:07:22.692Z">
+<meta property="article:modified_time" content="2023-07-13T11:41:16.231Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://example.com/web%20-%20%E5%89%AF%E6%9C%AC/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-05-23%20214357.png">
@@ -507,6 +507,53 @@
 <h2 id="知识点课堂"><a href="#知识点课堂" class="headerlink" title="知识点课堂"></a><strong>知识点课堂</strong></h2><p>当一个图片无法占满整个盒子，我们可以对div下的image进行css处理，<code>width=100%,height=100%</code></p>
 <h2 id="透明属性标签"><a href="#透明属性标签" class="headerlink" title="透明属性标签"></a>透明属性标签</h2><p><strong>opacity</strong><br>透明属性标签，0到1为颜色的调整范围</p>
 <h2 id="层级的大小"><a href="#层级的大小" class="headerlink" title="层级的大小"></a>层级的大小</h2><p>层级的标签：z-index<br>属性值：z-index：（<strong>数字</strong>），数字越大层级越大，优先级越大</p>
+<h2 id="锚点知识"><a href="#锚点知识" class="headerlink" title="锚点知识"></a>锚点知识</h2><p>同一页面的跳转<br>当我们点击某一个标签时，页面会跳转至这个标签所对应的位置在前端开发中，锚点（Anchor）是一种常用的技术，用于在页面内部进行导航定位或创建内部链接。下面是一些锚点的应用场景和实现方法：</p>
+<ol>
+<li><p>页面内部导航：通过点击链接或按钮，在页面内部进行平滑滚动到指定位置。</p>
+<ul>
+<li><p>创建锚点链接：</p>
+  <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">htmlCopy Code<span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;#section1&quot;</span>&gt;</span>跳转到第一部分<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>创建目标位置的锚点：</p>
+  <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">htmlCopy Code<span class="tag">&lt;<span class="name">h2</span> <span class="attr">id</span>=<span class="string">&quot;section1&quot;</span>&gt;</span>第一部分<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ol>
+<h2 id="box-sizing-border-box的用法"><a href="#box-sizing-border-box的用法" class="headerlink" title="box-sizing: border-box的用法"></a>box-sizing: border-box的用法</h2><p>使用了这个css后，指定的宽度（<code>width</code>）和高度（<code>height</code>）会包括元素的内边距和边框的尺寸，而不会增加元素的总宽度和总高度。<strong>也就是说宽度就是总宽度</strong>，包括了边框和内边距。</p>
+<h2 id="transform的用法"><a href="#transform的用法" class="headerlink" title="transform的用法"></a>transform的用法</h2><p>在 CSS 中，<code>transform</code> 是一个属性，用于对元素进行变换（transformation）操作。它可以实现旋转、缩放、平移和倾斜等效果，为元素提供了强大的视觉变换能力。</p>
+<p><code>transform</code> 属性可以与不同的函数一起使用，以达到所需的变换效果。以下是常用的 <code>transform</code> 函数：</p>
+<ol>
+<li><code>translate()</code>：平移元素，接受参数为长度值或百分比。<ul>
+<li><code>translateX()</code>：水平平移。</li>
+<li><code>translateY()</code>：垂直平移。</li>
+<li><code>translateZ()</code>：三维环境下的平移。</li>
+</ul>
+</li>
+<li><code>scale()</code>：缩放元素，接受参数为数字。<ul>
+<li><code>scaleX()</code>：水平缩放。</li>
+<li><code>scaleY()</code>：垂直缩放。</li>
+<li><code>scaleZ()</code>：三维环境下的缩放。</li>
+</ul>
+</li>
+<li><code>rotate()</code>：旋转元素，接受参数为角度值。<ul>
+<li><code>rotateX()</code>：绕 X 轴旋转。</li>
+<li><code>rotateY()</code>：绕 Y 轴旋转。</li>
+<li><code>rotateZ()</code>：绕 Z 轴旋转。</li>
+</ul>
+</li>
+<li><code>skew()</code>：倾斜元素，接受参数为角度值。<ul>
+<li><code>skewX()</code>：在 X 轴方向上倾斜。</li>
+<li><code>skewY()</code>：在 Y 轴方向上倾斜。</li>
+</ul>
+</li>
+<li><code>matrix()</code>：通过定义矩阵变换来实现更复杂的变换。</li>
+</ol>
+<p>以下是一个示例，展示了如何使用 <code>transform</code> 属性对元素进行旋转和平移：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">cssCopy Code.box &#123;</span><br><span class="line">  width: 100px;</span><br><span class="line">  height: 100px;</span><br><span class="line">  background-color: red;</span><br><span class="line">  transform: rotate(45deg) translateX(50px);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在上述示例中，<code>.box</code> 类的元素被设置为 100px x 100px 的尺寸，并应用了 <code>transform</code> 属性。通过 <code>rotate(45deg)</code>，元素将以顺时针方向旋转 45 度。然后，使用 <code>translateX(50px)</code>，元素沿 X 轴平移 50 像素。最终，元素将以旋转和平移的效果显示在页面上。</p>
+<p>请注意，<code>transform</code> 属性只影响元素的视觉呈现，不会改变其在文档流中的位置和布局。</p>
+<h2 id="表单的进阶用法"><a href="#表单的进阶用法" class="headerlink" title="表单的进阶用法"></a>表单的进阶用法</h2><h3 id="单选框"><a href="#单选框" class="headerlink" title="单选框"></a>单选框</h3><p>如何出现有选择的条件按钮呢<br>我们需要使用<strong>type &#x3D; “radio”</strong></p>
 <h1 id="css函数"><a href="#css函数" class="headerlink" title="css函数"></a>css函数</h1><ol>
 <li><h2 id="创建线性渐变背景"><a href="#创建线性渐变背景" class="headerlink" title="创建线性渐变背景"></a>创建线性渐变背景</h2></li>
 </ol>
@@ -525,7 +572,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2023/05/21/web%20-%20%E5%89%AF%E6%9C%AC/" data-id="cljydhly200031wmj9s2268aa" data-title="前端开发" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2023/05/21/web%20-%20%E5%89%AF%E6%9C%AC/" data-id="clk19cv2w0004nwmjch8yar2r" data-title="前端开发" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -535,19 +582,19 @@
     
 <nav id="article-nav">
   
-    <a href="/2023/05/29/python/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2023/05/21/web/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
-          (no title)
+          前端开发
         
       </div>
     </a>
   
   
-    <a href="/2023/05/21/web/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2023/05/18/Excel%E7%9A%84%E4%B8%93%E9%A2%98%E8%AE%B2%E8%A7%A3/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">前端开发</div>
+      <div class="article-nav-title"></div>
     </a>
   
 </nav>
@@ -593,11 +640,11 @@
           </li>
         
           <li>
-            <a href="/2023/05/21/web%20-%20%E5%89%AF%E6%9C%AC/">前端开发</a>
+            <a href="/2023/05/21/web/">前端开发</a>
           </li>
         
           <li>
-            <a href="/2023/05/21/web/">前端开发</a>
+            <a href="/2023/05/21/web%20-%20%E5%89%AF%E6%9C%AC/">前端开发</a>
           </li>
         
           <li>
