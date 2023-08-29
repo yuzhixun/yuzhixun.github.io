@@ -90,7 +90,19 @@
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span></span><br><span class="line">&#123;	</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p><strong>以上框架是打代码前必须要打的，是固定的</strong></p>
-<h1 id="需要注意的事项"><a href="#需要注意的事项" class="headerlink" title="需要注意的事项"></a>需要注意的事项</h1><p><strong>“ ”里面的内容叫做“字符串”</strong>，不能用单引号代替</p>
+<h1 id="需要注意的事项-单引号和双引号的区别"><a href="#需要注意的事项-单引号和双引号的区别" class="headerlink" title="需要注意的事项(单引号和双引号的区别)"></a>需要注意的事项(单引号和双引号的区别)</h1><p><strong>在C语言中，双引号（””）用于表示字符串字面值（string literals），而单引号（’’）则用于表示字符字面值（character literals）。</strong></p>
+<p>双引号括起来的内容被视为字符串，它是由多个字符组成的字符数组。例如，”Hello, World!” 是一个字符串字面值，包含了12个字符。</p>
+<p>单引号括起来的内容被视为字符，它代表一个独立的字符。例如，’H’ 是一个字符字面值，表示字母’H’。</p>
+<p>区别：</p>
+<ol>
+<li><strong>表示含义：双引号表示字符串，单引号表示字符。</strong></li>
+<li><strong>类型：双引号括起来的字符串是<code>char</code>类型的字符数组，而单引号括起来的字符是<code>char</code>类型的变量。</strong></li>
+<li><strong>内存存储：字符串是以空字符（’\0’）作为结尾的字符数组，占据连续的内存空间。字符则是单个字符，占据一个字节的内存空间。</strong></li>
+<li><strong>表示方式：字符串使用双引号括起来，例如 “Hello, World!”；字符使用单引号括起来，例如 ‘H’。</strong></li>
+<li><strong>转义字符：双引号内可以直接输入大部分字符，需要转义的特殊字符会以转义序列的形式表示，比如换行符<code>\n</code>、制表符<code>\t</code>等。而单引号内只能直接输入单个字符，某些特殊字符可以使用转义序列，如<code>\n</code>表示换行符。</strong></li>
+</ol>
+<p>需要注意的是，在C语言中，字符是以整数形式存储的，对应特定的字符编码值（如ASCII编码）。而字符串是由多个字符组成的字符数组，以空字符<code>\0</code>作为结尾。</p>
+<p>希望这个解释能够帮助你理解双引号和单引号在C语言中的区别。如果还有其他问题，请随时提问！</p>
 <p>需要严格机记住，每一行结束都需要店家添加<strong>“；”</strong></p>
 <p><strong><code>不要使用中文输入</code></strong></p>
 <h1 id="做计算"><a href="#做计算" class="headerlink" title="做计算"></a>做计算</h1><p>printf(“%d”,<strong>)<br>记住%d，</strong>也必须是引号内的**，需要用逗号后的内容来填补，然后就以十进制的形式去输出</p>
@@ -495,11 +507,15 @@
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;string.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">reverseString</span><span class="params">(<span class="type">char</span> *str)</span>;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="type">char</span> str[<span class="number">101</span>];</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%[^\n]%*c&quot;</span>, str);</span><br><span class="line">    </span><br><span class="line">    reverseString(str);</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">reverseString</span><span class="params">(<span class="type">char</span> *str)</span> &#123;</span><br><span class="line">    <span class="type">int</span> length = <span class="built_in">strlen</span>(str);</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = length - <span class="number">1</span>; i &gt;= <span class="number">0</span>; i--) &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%c&quot;</span>, str[i]);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>在这段代码中，我们使用<code>scanf</code>函数来读取一行字符串，并存储到<code>str</code>数组中。<code>%[^\n]</code>表示读取除换行符以外的任意字符，<code>%*c</code>表示读取并丢弃换行符。</p>
+<h2 id="判断字符类型"><a href="#判断字符类型" class="headerlink" title="判断字符类型"></a>判断字符类型</h2><p>该函数使用了C语言标准库中的<code>isalpha</code>、<code>isdigit</code> 和 <code>isspace</code> 函数来判断字符的类型。通过循环遍历字符串中的每个字符，根据字符类型将计数器递增。<br><strong>一般与if语句一同使用</strong><br><strong>这个位置我要声明一点，做字符的判断时，我们不要将其与判断数字混为一谈，在做字符的比较时，我们要带上‘ ’</strong></p>
+<h2 id="ASCALL码"><a href="#ASCALL码" class="headerlink" title="ASCALL码"></a>ASCALL码</h2><p>在C语言中，字符类型实际上是用整数值来表示的。每个字符都对应一个唯一的整数值，称为字符编码（character encoding）。在常见的字符编码中，比如ASCII编码和Unicode编码，字母按顺序排列，相邻字母之间的整数值是连续的。</p>
+<p>在这个示例中，我们假设使用的是ASCII编码或者类似的编码，其中字母’a’的整数值是97，字母’z’的整数值是122。根据ASCII编码中字母顺序的连续性，我们可以通过<code>ch + 1</code>来获取下一个字符的整数值，因为在ASCII编码中，下一个字符的整数值刚好是当前字符的整数值加1。</p>
+<p><strong>其实字符对应一个整数，我们可以直接在字符这里加上一，我们就可以得到下一位</strong></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2023/08/03/c%E8%AF%AD%E8%A8%80/" data-id="clluscss7000324mjgemi9o7l" data-title="" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2023/08/03/c%E8%AF%AD%E8%A8%80/" data-id="cllwh6v92000104mj9c3a7jce" data-title="" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -550,7 +566,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2023/06/29/hello-world/" data-id="clluscss5000124mje3eqhemn" data-title="Hello World" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2023/06/29/hello-world/" data-id="cllwh6v94000204mjaezza0hv" data-title="Hello World" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -617,7 +633,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2023/05/29/python/" data-id="clluscss6000224mj8tds2y97" data-title="" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2023/05/29/python/" data-id="cllwh6v96000304mjd1bx1sbd" data-title="" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -1164,7 +1180,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2023/05/21/web/" data-id="clluscss9000524mjck5ce6s6" data-title="前端开发" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2023/05/21/web/" data-id="cllwh6v97000404mj5d3x1mkz" data-title="前端开发" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -1288,7 +1304,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2023/05/18/Excel%E7%9A%84%E4%B8%93%E9%A2%98%E8%AE%B2%E8%A7%A3/" data-id="clluscsry000024mjap6x14lj" data-title="" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2023/05/18/Excel%E7%9A%84%E4%B8%93%E9%A2%98%E8%AE%B2%E8%A7%A3/" data-id="cllwh6v8u000004mjczdtbbw9" data-title="" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -1336,7 +1352,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2023/05/18/%E5%BF%83%E5%BE%97%E4%BD%93%E4%BC%9A/" data-id="clluscss8000424mj1jb53ol7" data-title="" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2023/05/18/%E5%BF%83%E5%BE%97%E4%BD%93%E4%BC%9A/" data-id="cllwh6v98000504mjdn9sajlm" data-title="" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
