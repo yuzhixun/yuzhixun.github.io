@@ -1,0 +1,1853 @@
+
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+        <meta charset="utf-8" />
+        <title>学号C，你就是C位！ | Argvchs の小窝</title>
+        <meta name="author" content="Argvchs" />
+        <meta name="description" content="" />
+        <meta name="keywords" content="" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+        <link rel="icon" href="/images/avatar1.jpg" />
+        <script src="https://cdn.staticfile.org/vue/3.3.4/vue.global.prod.min.js"></script>
+<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/6.4.0/css/all.min.css" />
+<link rel="stylesheet" href="/css/fonts.min.css" />
+<script> const mixins = {}; </script>
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+
+
+<script src="https://cdn.staticfile.org/highlight.js/11.8.0/highlight.min.js"></script>
+<script src="https://cdn.staticfile.org/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+<link
+    rel="stylesheet"
+    href="https://cdn.staticfile.org/highlight.js/11.8.0/styles/github.min.css"
+/>
+<script src="/js/lib/highlight.js"></script>
+
+
+
+<script src="/js/lib/preview.js"></script>
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/main.css" />
+
+    <meta name="generator" content="Hexo 6.3.0"></head>
+    <body>
+        <div id="layout">
+            <transition name="fade">
+                <div id="loading" v-show="loading">
+                    <div id="loading-circle">
+                        <h2>LOADING</h2>
+                        <p>加载过慢请开启缓存 浏览器默认开启</p>
+                        <img src="/images/loading.gif" />
+                    </div>
+                </div>
+            </transition>
+            <div id="menu" :class="{ hidden: hiddenMenu, 'menu-color': menuColor}">
+    <nav id="desktop-menu">
+        <a class="title" href="/">
+            <span>ARGVCHS の小窝</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;Home</span>
+        </a>
+        
+        <a href="/about">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;About</span>
+        </a>
+        
+        <a href="/archives">
+            <i class="fa-solid fa-box-archive fa-fw"></i>
+            <span>&ensp;Archives</span>
+        </a>
+        
+        <a href="/categories">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;Categories</span>
+        </a>
+        
+        <a href="/tags">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;Tags</span>
+        </a>
+        
+    </nav>
+    <nav id="mobile-menu">
+        <div class="title" @click="showMenuItems = !showMenuItems">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;ARGVCHS の小窝</span>
+        </div>
+        <transition name="slide">
+            <div class="items" v-show="showMenuItems">
+                
+                <a href="/">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-house fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Home</div>
+                    </div>
+                </a>
+                
+                <a href="/about">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-id-card fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">About</div>
+                    </div>
+                </a>
+                
+                <a href="/archives">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-box-archive fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Archives</div>
+                    </div>
+                </a>
+                
+                <a href="/categories">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-bookmark fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Categories</div>
+                    </div>
+                </a>
+                
+                <a href="/tags">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-tags fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Tags</div>
+                    </div>
+                </a>
+                
+            </div>
+        </transition>
+    </nav>
+</div>
+<transition name="fade">
+    <div id="menu-curtain" @click="showMenuItems = !showMenuItems" v-show="showMenuItems"></div>
+</transition>
+
+            <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
+                <div class="article">
+    <div>
+        <h1>学号C，你就是C位！</h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2023/8/5
+        </span>
+        
+        <span class="category">
+            <a href="/categories/%E6%8A%80%E6%9C%AF/">
+                <span class="icon">
+                    <i class="fa-solid fa-bookmark fa-fw"></i>
+                </span>
+                技术
+            </a>
+        </span>
+        
+        
+        <span class="tags">
+            <span class="icon">
+                <i class="fa-solid fa-tags fa-fw"></i>
+            </span>
+            
+            
+            <span class="tag">
+                
+                <a href="/tags/Typora/" style="color: #ff7d73">Typora</a>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/Markdown/" style="color: #ffa2c4">Markdown</a>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/vscode/" style="color: #00bcd4">vscode</a>
+            </span>
+            
+        </span>
+        
+    </div>
+    
+    <div class="content" v-pre>
+        <p>程序框架</p>
+<pre><code class="c">#include &lt;stdio.h&gt;
+
+int main()
+&#123;	
+    return 0;
+&#125;
+</code></pre>
+<p><strong>以上框架是打代码前必须要打的，是固定的</strong></p>
+<h1 id="需要注意的事项-单引号和双引号的区别"><a href="#需要注意的事项-单引号和双引号的区别" class="headerlink" title="需要注意的事项(单引号和双引号的区别)"></a>需要注意的事项(单引号和双引号的区别)</h1><p><strong>在C语言中，双引号（””）用于表示字符串字面值（string literals），而单引号（’’）则用于表示字符字面值（character literals）。</strong></p>
+<p>双引号括起来的内容被视为字符串，它是由多个字符组成的字符数组。例如，”Hello, World!” 是一个字符串字面值，包含了12个字符。</p>
+<p>单引号括起来的内容被视为字符，它代表一个独立的字符。例如，’H’ 是一个字符字面值，表示字母’H’。</p>
+<p>区别：</p>
+<ol>
+<li><strong>表示含义：双引号表示字符串，单引号表示字符。</strong></li>
+<li><strong>类型：双引号括起来的字符串是<code>char</code>类型的字符数组，而单引号括起来的字符是<code>char</code>类型的变量。</strong></li>
+<li><strong>内存存储：字符串是以空字符（’\0’）作为结尾的字符数组，占据连续的内存空间。字符则是单个字符，占据一个字节的内存空间。</strong></li>
+<li><strong>表示方式：字符串使用双引号括起来，例如 “Hello, World!”；字符使用单引号括起来，例如 ‘H’。</strong></li>
+<li><strong>转义字符：双引号内可以直接输入大部分字符，需要转义的特殊字符会以转义序列的形式表示，比如换行符<code>\n</code>、制表符<code>\t</code>等。而单引号内只能直接输入单个字符，某些特殊字符可以使用转义序列，如<code>\n</code>表示换行符。</strong></li>
+</ol>
+<p>需要注意的是，在C语言中，字符是以整数形式存储的，对应特定的字符编码值（如ASCII编码）。而字符串是由多个字符组成的字符数组，以空字符<code>\0</code>作为结尾。</p>
+<p>希望这个解释能够帮助你理解双引号和单引号在C语言中的区别。如果还有其他问题，请随时提问！</p>
+<p>需要严格机记住，每一行结束都需要店家添加<strong>“；”</strong></p>
+<p><strong><code>不要使用中文输入</code></strong></p>
+<h1 id="做计算"><a href="#做计算" class="headerlink" title="做计算"></a>做计算</h1><p>printf(“%d”,<strong>)<br>记住%d，</strong>也必须是引号内的**，需要用逗号后的内容来填补，然后就以十进制的形式去输出</p>
+<pre><code class="c">int main()
+&#123;
+    printf(&quot;33+44=%d&quot;,33+44);
+    
+    return 0;
+&#125;
+</code></pre>
+<p>如上所示，“%d”最后由“33+44”的结果来替代，也就是逗号后的内容</p>
+<h1 id="如何输入变量"><a href="#如何输入变量" class="headerlink" title="如何输入变量"></a>如何输入变量</h1><p>scanf(“%d”,&amp;price);<br>将一个变量输入进去：<strong>要求scanf这个函数读入下一个整数，读到的结果赋值给变量price</strong><br><strong>要小心price前面的&amp;</strong><br><strong>需要注意，我们必须要输入一个整数</strong></p>
+<pre><code class="c">#include &lt;stdio.h&gt;
+
+int main()
+&#123;
+    int price = 0;
+    
+    printf(&quot;请输入金额（元）：&quot;);
+    scanf(&quot;%d&quot;,&amp;price);
+    
+    int change = 100 - price;
+    printf(&quot;找您%d元。\n&quot;,change);
+&#125;
+</code></pre>
+<p>第五行定义变量<br>七到八读入整数输入给电脑<br>第十行，常量</p>
+<p>在使用某个常量时，我们最好定义一个常量，我们就使用<strong>const</strong>，但是我们就不能更改const是固定了某一个常量</p>
+<h2 id="常量"><a href="#常量" class="headerlink" title="常量"></a>常量</h2><pre><code class="c">#include &lt;stdio.h&gt;
+
+int main()
+&#123;	
+    int a;
+    int b;
+    printf(&quot;请输入两个整数：&quot;);
+    scanf(&quot;%d %d&quot;,&amp;a,&amp;b);
+    
+    printf(&quot;%d + %d = %d\n&quot;,a,b,a+b);
+    return 0;
+&#125;
+</code></pre>
+<h2 id="浮点数"><a href="#浮点数" class="headerlink" title="浮点数"></a>浮点数</h2><p><strong>我们要记住两个整数运算，结果只能是整数</strong><br><strong>所以我们要得到精确的大答案，我们要学会转换为浮点数</strong></p>
+<p>在整数中，我们使用%d<br>在浮点数中，我们使用%f</p>
+<pre><code class="c">#include &lt;stdio.h&gt;
+
+int main()
+&#123;	
+    int foot;
+    int inch;
+    
+    printf(&quot;请输入你的身高（几英尺几英寸）：&quot;);
+    scanf(&quot;%d %d&quot;,&amp;foot,&amp;inch);
+    printf(&quot;您的身高为：%f\n&quot;,((foot + 		 inch/12.0)*0.3048));
+    return 0;
+&#125;
+</code></pre>
+<p><strong>一种是让12.0这个浮点数去转变整个式子</strong><br>最后的结果是浮点数，所以用“%f”</p>
+<pre><code class="c">#include &lt;stdio.h&gt;
+
+int main()
+&#123;	
+    double foot;
+    double inch;
+    
+    printf(&quot;请输入你的身高（几英尺几英寸）：&quot;);
+    scanf(&quot;%lf %lf&quot;,&amp;foot,&amp;inch);
+    printf(&quot;您的身高为：%lf\n&quot;,((foot + inch/12)*0.3048));
+    return 0;
+&#125;
+</code></pre>
+<p><strong>一种是直接从一开始就定义变量的类型</strong></p>
+<h2 id="实操1"><a href="#实操1" class="headerlink" title="实操1"></a>实操1</h2><p><strong>计算时间的差值</strong></p>
+<pre><code class="c">#include &lt;stdio.h&gt;
+
+int main()
+&#123;	
+    int hour1,minute1;
+    int hour2,minute2;
+    
+    printf(&quot;请输入时间几小时几分钟：&quot;);
+    scanf(&quot;%d %d&quot;,&amp;hour1,&amp;minute1);
+    
+    printf(&quot;请输入后来的时间几小时几分钟：&quot;);
+    scanf(&quot;%d %d&quot;,&amp;hour2,&amp;minute2);
+    
+    int t1,t2,t3;
+    t1 = 60 * hour1 + minute1;
+    t2 = 60 * hour2 + minute2;
+    t3 = t2 - t1;
+    
+    printf(&quot;时间的差值为：%dmin&quot;,t3);
+     
+    return 0;
+&#125;
+</code></pre>
+<h2 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h2><p>“&#x3D;”是运算符里等级最低的<br>a &#x3D; b &#x3D; 6,实质即使<strong>a &#x3D; （b&#x3D;6）</strong><br><strong>且 &#x3D; 的运算顺序是从左向右的</strong></p>
+<h2 id="如何实现两个变量的互换"><a href="#如何实现两个变量的互换" class="headerlink" title="如何实现两个变量的互换"></a>如何实现两个变量的互换</h2><p>如果a&#x3D;5，b&#x3D;6,我们该如何让a,b的值进行呼唤呢，<strong>需要两个变量，还是三个变量</strong></p>
+<pre><code class="c">#include &lt;stdio.h&gt;
+
+int main()
+&#123;	
+    int a = 5;
+    int b = 6;
+    int c;
+    
+    c = a;
+    a = b;
+    b = c;
+    
+    printf(&quot;交换后a和b的值分别为：%d %d&quot;, a,b); 
+     
+    return 0;
+&#125;
+</code></pre>
+<p>很明显，我们需要三个变量，因为当我们，将b的值赋给a的时候，a最原始的值会发生改变，<strong>到最后并不能得到交换，而是相等。</strong></p>
+<h2 id="a-与-a的区别"><a href="#a-与-a的区别" class="headerlink" title="a++与++a的区别"></a>a++与++a的区别</h2><p>a++的值是原来a的值，不过运行完以后a的值要加一<br>++a的值是<strong>原来a加一以后</strong>的值</p>
+<pre><code class="c">#include &lt;stdio.h&gt;
+
+int main()
+&#123;	
+    int a;
+    a = 5;
+    
+    printf(&quot;a++ = %d\n&quot;,a++);
+    printf(&quot;++a = %d\n&quot;,++a);
+    
+    return 0;
+&#125;
+</code></pre>
+<h1 id="初识if语句"><a href="#初识if语句" class="headerlink" title="初识if语句"></a>初识if语句</h1><p><strong>if（判定条件）</strong></p>
+<p>初次使用判断语句</p>
+<pre><code class="c">#include &lt;stdio.h&gt;
+
+int main()
+&#123;	
+    int hour1,minute1;
+    int hour2,minute2;
+    
+    printf(&quot;请输入首次的时间：&quot;); 
+    scanf(&quot;%d %d&quot;,&amp;hour1,&amp;minute1);
+    
+    printf(&quot;请输入第二次的时间：&quot;); 
+    scanf(&quot;%d %d&quot;,&amp;hour2,&amp;minute2);
+    
+    int ih = hour2 - hour1;
+    int im = minute2 - minute1;
+    
+    
+    if(im &lt; 0)
+    &#123;
+        im = im + 60;
+        ih = ih - 1;
+    &#125;
+    
+    printf(&quot;时间差是%d小时%d分钟&quot;, ih,im);
+    
+    return 0;
+&#125;
+</code></pre>
+<h2 id="比较运算的结果"><a href="#比较运算的结果" class="headerlink" title="比较运算的结果"></a>比较运算的结果</h2><p>比较运算的结果只有1和0，不会有其他的数字</p>
+<pre><code class="c">#include &lt;stdio.h&gt;
+
+int main()
+&#123;	
+    printf(&quot;%d\n&quot;, 5 == 3);
+    printf(&quot;%d\n&quot;, 5 &gt; 3);
+    printf(&quot;%d\n&quot;, 5 &lt; 3);
+    
+    return 0;
+&#125;
+</code></pre>
+<p><strong>当判断是对的，系统就会输出1，反之，就是0</strong></p>
+<p><em><strong>我们须知，比较运算符的优先级小于算数运算符</strong></em></p>
+<p>并且“&#x3D;&#x3D;”和“！&#x3D;”的优先级小于其他比较运算符。</p>
+<h2 id="注释的使用"><a href="#注释的使用" class="headerlink" title="注释的使用"></a>注释的使用</h2><p><strong>“&#x2F;&#x2F;”是单行注释</strong><br><strong>“&#x2F;*   *&#x2F;”是多行注释</strong></p>
+<h2 id="if语句的否则形式"><a href="#if语句的否则形式" class="headerlink" title="if语句的否则形式"></a>if语句的否则形式</h2><p><strong>实例</strong>(运用了注释和否则形式)</p>
+<pre><code class="c">#include &lt;stdio.h&gt;
+
+int main()
+&#123;	
+    //   初始化
+    int price;
+    int bill;
+    
+    //   输入金额和票面
+    printf(&quot;请输入您的金额：&quot;);
+    scanf(&quot;%d&quot;,&amp;price);
+    
+    printf(&quot;请输入您的票面：&quot;);
+    scanf(&quot;%d&quot;,&amp;bill);
+    
+    //   找零计算
+    if(price &lt;= bill)&#123;
+        printf(&quot;应该找您：%d元\n&quot;, bill - price);
+    &#125;
+    else&#123;
+        printf(&quot;您付的金额不够，还差：%d元\n&quot;, price - bill);
+    &#125;
+    
+    return 0;
+&#125;
+</code></pre>
+<p><strong>实例(运用了浮点数，注释，否则形式)</strong></p>
+<pre><code class="c">#include &lt;stdio.h&gt;
+
+int main()
+&#123;	
+    // 额外工作时长每小时按1.5倍计算
+     
+    const double hour = 8.25;    //规定一小时可以赚取多少钱
+    const int hours = 40;              //规定一周的总共工作时长
+    double pay = 0.0;					   //总薪水 
+    int extr; 						   //额外工作时长
+    
+    //    输入工作的时长 
+    printf(&quot;请输入您这周工作的总时长：&quot;);
+    scanf(&quot;%d&quot;,&amp;extr) ; 
+    
+    //    计算总薪水 
+    if(extr &gt; hours) &#123;
+        pay = hours * hour + (extr - hours) * (8.25 * 1.5);
+        printf(&quot;您这周的薪水为：%f\n&quot;,pay);
+    &#125;else&#123;
+        pay = hours * hour;
+        printf(&quot;您这周的薪水为：%f\n&quot;,pay);
+    &#125;
+    
+    printf(&quot;继续努力&quot;); 
+    
+    return 0;
+&#125;
+</code></pre>
+<h2 id="if的嵌套"><a href="#if的嵌套" class="headerlink" title="if的嵌套"></a><strong>if的嵌套</strong></h2><p>比较三个数的大小</p>
+<pre><code class="c">#include &lt;stdio.h&gt;
+
+int main()
+&#123;	
+        int a,b,c;
+        int max = 0;
+        
+        scanf(&quot;%d %d %d&quot;,&amp;a,&amp;b,&amp;c);
+        
+        if(a &gt; b)&#123;
+            if(a &gt; c)&#123;
+                max = a;
+            &#125;else&#123;
+                max = c;
+            &#125;
+        &#125;else&#123;
+            if(b &gt; c)&#123;
+                max = b;			
+            &#125;else&#123;
+                max = c;
+            &#125;
+        &#125;
+        
+        printf(&quot;三个数中最大的是：%d&quot;,max);
+    return 0;
+&#125;
+</code></pre>
+<p>分析上面的代码可知，首先需要任取两个数进行比较，然后再用第三个数与较大哪一个比较</p>
+<h2 id="if-else-if-的语法"><a href="#if-else-if-的语法" class="headerlink" title="if else-if 的语法"></a>if else-if 的语法</h2><p><strong>例子-分段函数</strong></p>
+<pre><code class="c">#include &lt;stdio.h&gt;
+
+int main()
+&#123;	
+    int x;
+    int f;
+    
+    scanf(&quot;%d&quot;,&amp;x);
+    
+    if(x &lt; 0)&#123;
+        f = -1;
+    &#125;else if(x == 0)&#123;
+            f = 0;
+    &#125;else if(x &gt; 0)&#123;
+            f = 2 * x;
+    &#125; 
+    
+    
+    
+    printf(&quot;f的值为：%d&quot;,f);
+
+    return 0;
+&#125;
+</code></pre>
+<h2 id="if的易错的方面"><a href="#if的易错的方面" class="headerlink" title="if的易错的方面"></a>if的易错的方面</h2><ol>
+<li>不加大括号</li>
+<li>if后面加分号</li>
+<li>区分“&#x3D;&#x3D;”和“&#x3D;”，前者在于赋值（将右边的式子赋值给左边），而后者在于数值相等</li>
+<li>在C语言中，不支持使用 <code>80 &lt;= x &lt; 90</code> 或 <code>70 &lt;= x &lt; 80</code> 这样的写法来表示范围判断,如果你想判断 <code>x</code> 的值是否在某个范围内，需要使用逻辑运算符 <code>&amp;&amp;</code> 来连接条件表达式</li>
+</ol>
+<h2 id="switch-case语句"><a href="#switch-case语句" class="headerlink" title="switch-case语句"></a><strong>switch-case语句</strong></h2><p><strong>多分支语句</strong><br>优点，干净利落，不需要一个个去进行判断</p>
+<p><strong>要注意，表达式，也就是case一定是int类型的</strong></p>
+<pre><code class="c">#include&lt;stdio.h&gt;
+int main()
+&#123;
+    int type;
+    
+    scanf(&quot;%d&quot;,&amp;type);
+    
+    switch(type)
+    &#123;
+        case 1:
+            printf(&quot;早上好！\n&quot;);
+            break;
+        case 2:
+            printf(&quot;中午好！\n&quot;);
+            break;
+        case 3:
+            printf(&quot;晚上好！\n&quot;);
+            break;
+        case 4:
+            printf(&quot;再见！\n&quot;);
+            break;
+        default:
+            printf(&quot;你怕是个邵！\n&quot;);
+            break;
+    &#125;
+&#125;
+</code></pre>
+<p><strong>我们可以用switch-case来代替else-if语句</strong></p>
+<pre><code class="c">#include&lt;stdio.h&gt;
+int main()
+&#123;
+    int x;      //x取值0到100
+    
+    scanf(&quot;%d&quot;,&amp;x);
+    
+    if(x &gt;= 90)
+    &#123;
+        printf(&quot;A&quot;);
+    &#125;
+    else if(80 &lt;= x &amp;&amp; x &lt;90)
+    &#123;
+        printf(&quot;B&quot;);
+    &#125;
+    else if(70 &lt;= x &amp;&amp; x &lt; 80)
+    &#123;
+        printf(&quot;C&quot;);
+    &#125;
+    else if(60 &lt;= x &amp;&amp; x &lt; 70)
+    &#123;
+        printf(&quot;D&quot;);
+    &#125;
+    else
+    &#123;
+        printf(&quot;E&quot;);
+    &#125;
+    return 0;
+&#125;
+</code></pre>
+<h1 id="初识循环语句"><a href="#初识循环语句" class="headerlink" title="初识循环语句"></a>初识循环语句</h1><h2 id="如何用循环去求高数的位数"><a href="#如何用循环去求高数的位数" class="headerlink" title="如何用循环去求高数的位数"></a>如何用循环去求高数的位数</h2><p>实例一</p>
+<pre><code class="c">#include&lt;stdio.h&gt;
+int main()
+&#123;
+    int x;      
+    int n = 0;
+    
+    
+    scanf(&quot;%d&quot;,&amp;x);
+    
+    n++;
+    x = x/10;
+    
+    while( x &gt; 0 )&#123;
+        n++;
+        x = x/10;
+    &#125;
+    
+    printf(&quot;%d&quot;,n);
+    return 0;
+&#125;
+</code></pre>
+<p><strong>利用了int的性质</strong><br><strong>我们在循环外面加了一个程序，目的是让特殊的“0”能够显示出一位数</strong></p>
+<h2 id="do-while循环"><a href="#do-while循环" class="headerlink" title="do-while循环"></a>do-while循环</h2><p>while循环先判断条件，在执行循环<br>do-while循环先循环再判断条件</p>
+<pre><code class="c">#include&lt;stdio.h&gt;
+int main()
+&#123;
+    int x;      
+    int n = 0;
+    
+    
+    scanf(&quot;%d&quot;,&amp;x);
+        
+    do&#123;
+        n++;
+        x = x/10;
+    &#125; while( x &gt; 0 );
+    
+    printf(&quot;%d&quot;,n);
+    return 0;
+&#125;
+</code></pre>
+<p>这是用do-while去写上一节课的代码，结果是一样的。<br><strong>我们需要注意到的是，在while结尾时我们需要加上;</strong></p>
+<h2 id="循环计算"><a href="#循环计算" class="headerlink" title="循环计算"></a>循环计算</h2><pre><code class="c">#include&lt;stdio.h&gt;
+int main()
+&#123;
+    int x;   
+    int ret = 0;   
+       
+       scanf(&quot;%d&quot;,&amp;x);
+       
+       int t = x;
+       
+       do&#123;
+           x = x/2;
+           ret++;
+    &#125;while( x&gt;1 );
+    
+    printf(&quot;log2 of %d = %d&quot;,t,ret);
+       
+    return 0;
+&#125;
+</code></pre>
+<p><strong>用一个简单的代码求出二的几次幂</strong></p>
+<pre><code class="c">#include&lt;stdio.h&gt;
+int main()
+&#123;
+    int x;
+    scanf(&quot;%d&quot;,&amp;x);
+    
+    do&#123;
+        printf(&quot;%d\n&quot;,x);
+        x--;
+    &#125;while(x&gt;=0);
+    
+    printf(&quot;火箭发射！\n&quot;); 
+    return 0;
+&#125;
+</code></pre>
+<p><strong>火箭发射倒计时的代码</strong></p>
+<h2 id="猜数游戏"><a href="#猜数游戏" class="headerlink" title="猜数游戏"></a>猜数游戏</h2><ol>
+<li><p><strong>戏前小知识：rand()是个c语言的函数库中的一个函数，是让系统随机产生一个数</strong></p>
+</li>
+<li><p><strong>当我们想让一个系统生成的数字一定存在于0到100之间的话，我们可以让这个未知数对100求余。</strong></p>
+</li>
+</ol>
+<pre><code class="c">#include&lt;stdio.h&gt;
+#include&lt;stdlib.h&gt;
+#include&lt;time.h&gt;
+int main()
+&#123;
+    srand(time(0));
+    int number = rand()%100 + 1;
+    int count = 0;
+    int a = 0;
+    
+    printf(&quot;我已经想好了1到100以内的数！&quot;);
+    do&#123;
+        printf(&quot;请输入1到100以内的一个数字：&quot;);
+        scanf(&quot;%d&quot;,&amp;a);
+        count++;
+        if(a &gt; number)&#123;
+            printf(&quot;大了啊！小伙子。&quot;);
+        &#125;else if(a &lt; number)&#123;
+            printf(&quot;小了啊！小伙子。&quot;);
+        &#125;
+    &#125; while(a != number);
+    
+    if(count &lt;= 5)&#123;
+        printf(&quot;你真是高手！&quot;);
+    &#125;else if(count &gt; 5 &amp;&amp; count &lt;= 10)&#123;
+        printf(&quot;一般般吧！&quot;); 
+    &#125;else&#123;
+        printf(&quot;你真TM蠢！&quot;); 
+    &#125;
+    
+    return 0;
+&#125;
+</code></pre>
+<p><strong>来挑战自己吧！！！！！小菜曾子豪</strong></p>
+<h2 id="算平均数"><a href="#算平均数" class="headerlink" title="算平均数"></a>算平均数</h2><pre><code class="c">#include&lt;stdio.h&gt;
+int main()
+&#123;
+       int sum = 0;
+       int n = 0;
+       int number;
+       
+       scanf(&quot;%d&quot;,&amp;number);
+       while(number != -1)&#123;
+           sum = sum + number;
+        n++;
+        scanf(&quot;%d&quot;,&amp;number);
+       &#125;
+          
+    printf(&quot;%f\n&quot;,1.0*sum/n);
+    
+    return 0;
+&#125;
+</code></pre>
+<p>-1是我们控制代码继续和暂停的一个手段</p>
+<h2 id="整数逆序"><a href="#整数逆序" class="headerlink" title="整数逆序"></a>整数逆序</h2><pre><code class="c">#include&lt;stdio.h&gt;
+int main()
+&#123;
+       int x;
+       scanf(&quot;%d&quot;,&amp;x);
+       int digit;
+   
+
+       while(x &gt; 0)&#123;
+           digit = x % 10;
+           printf(&quot;%d&quot;,digit);
+           x = (x - digit)/10;
+       &#125; 
+    return 0;
+&#125;
+</code></pre>
+<p><strong>将输入的一个整数以反过来的形式输出</strong></p>
+<h1 id="初识for循环"><a href="#初识for循环" class="headerlink" title="初识for循环"></a>初识for循环</h1><p><strong>for(初始化的值；判断条件；以一定的步进来调整这个变量){</strong></p>
+<p><strong>}</strong></p>
+<h2 id="求某个数的阶乘"><a href="#求某个数的阶乘" class="headerlink" title="求某个数的阶乘"></a>求某个数的阶乘</h2><pre><code class="c">#include&lt;stdio.h&gt;
+int main()
+&#123;
+       int x;
+       int count = 1;
+    int i = 1;
+       scanf(&quot;%d&quot;,&amp;x);
+       
+      for( i=1;i &lt;= x;i++ )&#123;
+          count = count * i;
+      &#125;
+
+       printf(&quot;%d!=%d&quot;,x,count);
+    return 0;
+&#125;
+</code></pre>
+<p><strong>要记住 ，就算我们已经对变量在for()中初始化了，但是我们还是要在循环外进行初始化处理，因为dev c++，功能有点tm滞后..</strong></p>
+<p><strong>我们也可以反着求一个阶乘</strong></p>
+<pre><code class="c">#include&lt;stdio.h&gt;
+int main()
+&#123;
+       int x;
+       int count = 1;
+       int i = x;
+       scanf(&quot;%d&quot;,&amp;x);
+       
+      for(i=x;i &gt; 1;i-- )&#123;
+          count = count * i;
+      &#125;
+
+       printf(&quot;%d!=%d&quot;,x,count);
+    return 0;
+&#125;
+</code></pre>
+<h2 id="三种循环我们应该怎么选"><a href="#三种循环我们应该怎么选" class="headerlink" title="三种循环我们应该怎么选"></a>三种循环我们应该怎么选</h2><ul>
+<li>如果有固定次数我们选for循环</li>
+<li>如果必须执行一次,我们用do_while</li>
+<li>其他情况用while</li>
+</ul>
+<h2 id="循环控制"><a href="#循环控制" class="headerlink" title="循环控制"></a>循环控制</h2><p><strong>通过循环和判断语句求是否为素数(只能整除1和自己)</strong></p>
+<pre><code class="c">#include&lt;stdio.h&gt;
+int main()
+&#123;
+       int x;
+       int i = 2;
+       int digit = 2;
+       
+       scanf(&quot;%d&quot;,&amp;x);
+       
+       for(i=2;i &lt; x;i++)&#123;
+           if(x % i == 0)&#123;
+               digit = digit + 1;
+            break;
+           &#125;
+       &#125;
+    
+    if(digit == 2)&#123;
+        printf(&quot;这是个素数！\n&quot;); 
+    &#125;else&#123;
+        printf(&quot;这是个屁的素数！\n&quot;); 
+    &#125;
+    return 0;
+&#125;
+</code></pre>
+<p>在这之中我们需要了解,俩个退出循环的语法<strong>break和continue</strong></p>
+<ol>
+<li><strong>break跳出循环,是所有的循环</strong></li>
+<li><strong>continue跳过循环这一轮剩下的语句进入下一轮</strong></li>
+</ol>
+<pre><code class="c">for(i=2;i &lt; x;i++)&#123;
+           if(x % i == 0)&#123;
+               digit = digit + 1;
+               continue;
+           &#125;
+        printf(&quot;%d\n&quot;,i);
+       &#125;
+</code></pre>
+<p>举个简单的例子,如上代码,当执行了continue,那么接下来的printf(“%d\n”,i)他就不会执行</p>
+<p>如果我们改为break</p>
+<pre><code class="c">for(i=2;i &lt; x;i++)&#123;
+           if(x % i == 0)&#123;
+               digit = digit + 1;
+               break;
+           &#125;
+        printf(&quot;%d\n&quot;,i);
+       &#125;
+</code></pre>
+<p>如果执行了break那么整个for循环我们是完全跳出的不会执行</p>
+<h1 id="嵌套的循环"><a href="#嵌套的循环" class="headerlink" title="嵌套的循环"></a>嵌套的循环</h1><p>求出100以内所有的素数</p>
+<ol>
+<li>如何让x这个数进行循环加一的操作，直到它达到100</li>
+<li>如何判断他为素数</li>
+<li>如何输出</li>
+</ol>
+<pre><code class="c">#include&lt;stdio.h&gt;
+int main()
+&#123;   	int x = 2;
+       
+       while(x&lt;101)&#123;
+           int digit = 0;
+           int i = 1;
+           
+           for(i=1;i &lt;= x;i++)&#123;
+               if(x % i == 0)&#123;
+                   digit = digit + 1;
+           	&#125; 		
+        &#125;
+        
+        if(digit == 2)&#123;
+            printf(&quot;%d是素数！\n&quot;,x); 
+        &#125;   	
+    
+       	
+       	x = x + 1;
+    &#125;
+    return 0;
+&#125;
+</code></pre>
+<p><strong>有点伤脑筋，不过没那么难</strong></p>
+<h2 id="离开多重循环"><a href="#离开多重循环" class="headerlink" title="离开多重循环"></a>离开多重循环</h2><p><strong>break和continue只能对它所在的那层循环执行跳出，不能跳出多个循环</strong></p>
+<p>举个例子<br><strong>用多少一角和两角和五角能够凑够几元钱</strong></p>
+<pre><code class="c">#include&lt;stdio.h&gt;
+int main()
+&#123;    	
+    int x;
+    int one, two, five;
+    
+    scanf(&quot;%d&quot;,&amp;x);
+    
+    for( one = 1; one &lt; x * 10; one++ ) &#123;
+        for( two= 1; two &lt; x * 5; two++) &#123;
+            for( five = 1 ; five &lt; x*2; five++)&#123;
+                if ( one + two * 2 + five * 5 == x*10)&#123;
+                    printf(&quot;可以使用%d个一角%d个两角%d个五角来购买%d元钱的商品。\n&quot;,one,two,five,x);
+    
+                &#125;
+            &#125;
+        &#125;
+    &#125;
+    
+    
+    
+    return 0;
+&#125;
+</code></pre>
+<p><strong>容易犯的错误，if（）中是“&#x3D;&#x3D;”不是“&#x3D;”</strong></p>
+<p><strong>现在如果我们只想要一种结果，也就是出现第一种结果我们就跳出循环</strong></p>
+<p>因为我们前面所讲过，break只能<strong>结束</strong>他所在的哪一个循环，所以我们介绍两种做法</p>
+<ol>
+<li><strong>定义一个变量digit，初始值设置为零，当找到一个方式后变为数字1，然后每一阶级的循环设置if语句，如果digit为1了，那么也跳出循环（接力break）</strong></li>
+</ol>
+<pre><code class="c">#include&lt;stdio.h&gt;
+int main()
+&#123;    	
+    int x;
+    int one, two, five;
+    int digit = 0;
+    
+    scanf(&quot;%d&quot;,&amp;x);
+    
+    for( one = 1; one &lt; x * 10; one++ ) &#123;
+        for( two= 1; two &lt; x * 5; two++) &#123;
+            for( five = 1 ; five &lt; x*2; five++)&#123;
+                if ( one + two * 2 + five * 5 == x*10)&#123;
+                    printf(&quot;可以使用%d个一角%d个两角%d个五角来购买%d元钱的商品。\n&quot;,one,two,five,x);
+                    digit = 1;
+                    break;
+                &#125;
+            &#125;
+            if(digit == 1)break;
+        &#125;
+        if(digit == 1)break;
+    &#125;	
+    
+    
+    
+    
+    return 0;
+&#125;
+</code></pre>
+<ol start="2">
+<li>我们可以使用goto（跳到某一个步骤），当我们找到了第一个方式后，我们可以使用goto（温馨提示，我们最好不要使用goto）</li>
+</ol>
+<pre><code class="c">#include&lt;stdio.h&gt;
+int main()
+&#123;    	
+    int x;
+    int one, two, five;
+    int digit = 0;
+    
+    scanf(&quot;%d&quot;,&amp;x);
+    
+    for( one = 1; one &lt; x * 10; one++ ) &#123;
+        for( two= 1; two &lt; x * 5; two++) &#123;
+            for( five = 1 ; five &lt; x*2; five++)&#123;
+                if ( one + two * 2 + five * 5 == x*10)&#123;
+                    printf(&quot;可以使用%d个一角%d个两角%d个五角来购买%d元钱的商品。\n&quot;,one,two,five,x);
+                    digit = 1;
+                    goto out;
+                &#125;
+            &#125;
+        &#125;
+    &#125;	
+    
+    
+    
+out:
+    return 0;
+&#125;
+</code></pre>
+<p>我们使用goto跳到了out这一步，直接结束了代码的运行。</p>
+<h2 id="求和运算"><a href="#求和运算" class="headerlink" title="求和运算"></a>求和运算</h2><p><strong>计算1+1&#x2F;2+1&#x2F;3+1&#x2F;4+…….+1&#x2F;n&#x3D;?</strong></p>
+<pre><code class="c">#include&lt;stdio.h&gt;
+int main()
+&#123;    	
+    int n;
+    double digit = 0.0;
+    int i = 1;
+    
+    scanf(&quot;%d&quot;,&amp;n);
+    
+    for(i=1;i &lt;= n;i++)&#123;
+        digit = digit  + 1.0*1/i;
+    &#125;
+    
+    printf(&quot;digit = %f&quot;,digit);
+    
+    return 0;
+&#125;
+</code></pre>
+<p><strong>easy,easy,小菜</strong></p>
+<p><strong>计算1-1&#x2F;2+1&#x2F;3-1&#x2F;4+…….+1&#x2F;n&#x3D;?</strong></p>
+<p>我们可以设置一个变量sign，每每执行以后，我们就让其变为-sign</p>
+<pre><code class="c">#include&lt;stdio.h&gt;
+int main()
+&#123;    	
+    int n;
+    double digit = 0.0;
+    int i = 1;
+    double sign = 1.0;
+    
+    scanf(&quot;%d&quot;,&amp;n);
+    
+    for(i=1;i &lt;= n;i++)&#123;
+        digit = digit  + sign/i;
+        sign = -sign;
+    &#125;
+    
+    printf(&quot;digit = %f&quot;,digit);
+    
+    return 0;
+&#125;
+</code></pre>
+<h2 id="整数的分解"><a href="#整数的分解" class="headerlink" title="整数的分解"></a>整数的分解</h2><p>输入的整数，并分析它是几位数，并将其每一位逐个分开，以及倒置</p>
+<pre><code class="c">#include&lt;stdio.h&gt;
+int main()
+&#123;    
+    int i = 0;
+    int num = 0;
+    int digit = 0;	
+    int number;
+    int x;
+    scanf(&quot;%d&quot;,&amp;x);
+    
+    
+    do&#123;
+        digit = x%10;
+        num = num*10 + digit;
+        x = x/10;
+        i++;
+    &#125;while(x&gt;0);
+    
+    int copy = num;
+    
+    printf(&quot;%d\n&quot;,i);
+    
+    do&#123;
+        number = num%10;
+        num = (num - number)/10;
+        printf(&quot;%d&quot;,number);
+        if(num &gt; 0)&#123;
+            printf(&quot; &quot;);
+        &#125;
+    &#125;while(num &gt; 0);
+    printf(&quot;\n&quot;);
+    
+    printf(&quot;%d\n&quot;,copy);
+    
+
+    
+    
+    return 0;
+&#125;
+</code></pre>
+<p><strong>有点费脑子，但是做出来了，很有成就感</strong></p>
+<p>我们不难发现，如果结尾是零的数字（100，1000，5120等），我们会发现他只输出一个数字.</p>
+<p><strong>提供一个幂函数的求法，pow（num1，num2 ）</strong></p>
+<p><strong>这样的话，我们可以顺着求，而不是反着求</strong></p>
+<pre><code class="c">#include&lt;stdio.h&gt;
+int main()
+&#123;    
+    int x;
+    scanf(&quot;%d&quot;,&amp;x);
+    int digit = 1;
+    int mask = 1;
+    int num = 0;
+    int t = x;
+    
+    while(t &gt; 9)&#123;
+        t = t/10;
+        digit = digit + 1;
+        mask = mask  * 10;
+    &#125;
+    printf(&quot;%d\n&quot;,digit);
+    
+    do&#123;
+        num = x/mask;
+        printf(&quot;%d&quot;,num);
+        if(mask != 1)&#123;
+            printf(&quot; &quot;);
+        &#125;
+        x = x%mask;
+        mask = mask/10;
+    &#125;while(mask&gt;0); 
+    
+    
+    return 0;
+</code></pre>
+<p><strong>如何用函数求解呢</strong></p>
+<pre><code class="c">#include&lt;stdio.h&gt;
+char sum(num);
+
+int main(void)
+&#123;
+    int n;
+    scanf(&quot;%d&quot;,&amp;n);
+    
+    sum(n);
+    
+    return 0;
+&#125;
+
+
+char sum(num)&#123;
+    int x,i;
+    int y = 1000;
+    int index = 0;
+    
+    for(i=0;i&lt;4;i++)&#123;
+        x = num / y;
+        num = num - x*y;
+        index = index + 1;
+        y = y/10;
+        if(index!=4)&#123;
+            printf(&quot;%d &quot;,x);
+        &#125;else&#123;
+            printf(&quot;%d&quot;,x);
+        &#125;
+        
+    &#125;
+    
+&#125;
+</code></pre>
+<h2 id="求最大公约数"><a href="#求最大公约数" class="headerlink" title="求最大公约数"></a>求最大公约数</h2><ol>
+<li>枚举法（这个方法比较冗杂，而且很难求出最大公约数）</li>
+</ol>
+<pre><code class="c">#include&lt;stdio.h&gt;
+int main()
+&#123;    
+    int a = 12,b = 18;
+    int min;
+    int i=1;
+    int max;
+    
+    if(a &gt; b)&#123;
+        min = b;
+    &#125;else&#123;
+        min = a;
+    &#125;
+    
+    for(i=1;i &lt;= min;i++)&#123;
+        if(a % i == 0)&#123;
+            if(b % i == 0)&#123;
+                max = i;		
+            &#125;
+        &#125;
+    &#125;
+    
+    printf(&quot;%d和%d的最大公约数是%d&quot;,a,b,max);	
+    
+    
+    return 0;
+&#125;
+</code></pre>
+<p><strong>通过不断的将公倍数赋值给变量max，一直到最后，我们就可以得到最大公约数</strong></p>
+<p>2.辗转相除法</p>
+<p><strong>其基本思想是通过连续地用较小数除以较大数取余，然后将除数变为被除数，余数变为除数，不断进行这个过程，直到余数为0时，被除数即为最大公约数。</strong></p>
+<p>1.用较小的对较大的取余 a&#x3D;12,b&#x3D;18  –&gt; 12<br>2.把被除数的值给除数，余数的值给被除数,然后再进行求余 a&#x3D;18,b&#x3D;12 –&gt;6<br>3.操作不变 a&#x3D;12 b&#x3D;6 –&gt; 0<br>4.继续 a&#x3D;6 b&#x3D;0 –&gt;结束，此时被除数为零了，此时的a就是他们的最大公倍数 </p>
+<pre><code class="c">#include&lt;stdio.h&gt;
+int main()
+&#123;    
+    int a=17;
+    int b=18;
+    int t,min,max;
+    
+    if(a&gt;b)&#123;
+        max = a;
+        min = b;
+    &#125;else&#123;
+        max = b;
+        min = a;
+    &#125;
+    
+    while(max&gt;0)&#123;
+        t = min%max;
+        min = max;
+        max = t;		
+    &#125;
+    
+    printf(&quot;%d和%d的最大公约数为：%d&quot;,a,b,min);
+    
+    
+    
+    return 0;
+&#125;
+</code></pre>
+<p><strong>好高级啊，学到了学到了</strong></p>
+<h2 id="循环整数集"><a href="#循环整数集" class="headerlink" title="循环整数集"></a>循环整数集</h2><pre><code class="c">#include&lt;stdio.h&gt;
+int main()
+&#123;    
+    int a;
+    scanf(&quot;%d&quot;,&amp;a);
+    int index = 0;
+    int i,j,k;
+    
+    i = a;
+    for(i=a;i &lt;= a+3;i++)&#123;
+        for(j=a;j &lt;= a+3;j++)&#123;
+            for(k=a;k &lt;= a+3;k++)&#123;
+                if(i != j)&#123;
+                    if(i != k)&#123;
+                        if(j != k)&#123;
+                            index = index + 1;
+                            printf(&quot;%d%d%d&quot;,i,j,k);
+                            if(index%6 == 0  )&#123;
+                                printf(&quot;\n&quot;);
+                            &#125;else&#123;
+                                printf(&quot; &quot;);
+                            &#125;
+                        &#125;
+                    &#125;
+                &#125;
+            &#125;
+        &#125;
+    &#125;
+    return 0;
+&#125;
+</code></pre>
+<h2 id="水仙花数字的遍历求法"><a href="#水仙花数字的遍历求法" class="headerlink" title="水仙花数字的遍历求法"></a>水仙花数字的遍历求法</h2><pre><code class="c">#include&lt;stdio.h&gt;
+#include &lt;math.h&gt;
+int main()
+&#123;    
+    int a;       // 3&lt;= a &lt;= 7
+    scanf(&quot;%d&quot;,&amp;a);
+    int num;
+    num = pow(10,a-1);
+    
+    
+    
+    while(num &lt; num * 10)&#123;
+        int index = num;
+        do&#123;
+            int x;
+            int sum = 0;
+            while(index&gt;0)&#123;
+                x = index%10;
+                index /= 10;
+                sum = sum + pow(x,a);
+                &#125;
+            if(sum == num)&#123;
+                printf(&quot;%d\n&quot;,num);	
+            &#125;
+        &#125;while(index &gt; 0);
+        
+        
+        num++;
+    &#125;
+    return 0;
+&#125;
+</code></pre>
+<h2 id="九九乘法表的实例"><a href="#九九乘法表的实例" class="headerlink" title="九九乘法表的实例"></a>九九乘法表的实例</h2><pre><code class="c">#include&lt;stdio.h&gt;
+int main()
+&#123;    
+    int i = 1;
+    int j = 1;
+    
+    for(i=1;i&lt;=9;i++)&#123;
+        for(j=1;j&lt;i+1;j++)&#123;
+            printf(&quot;%d * %d = %d&quot;,j,i,i*j);
+            if(i != j)&#123;
+                printf(&quot;   &quot;);
+            &#125;else&#123;
+                printf(&quot;\n&quot;);
+            &#125;
+        &#125;
+        
+    &#125;
+    return 0;
+&#125;
+</code></pre>
+<h1 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h1><h2 id="定义函数中有无void的作用"><a href="#定义函数中有无void的作用" class="headerlink" title="定义函数中有无void的作用"></a>定义函数中有无void的作用</h2><ol>
+<li><strong>有void时，我们可以让函数内部直接printf()</strong></li>
+<li><strong>没有void时，比如说是int，那就是让函数返回一个整数。</strong></li>
+</ol>
+<h2 id="函数要赋值给某一个数，不能直接来当作一个运算过程来得到结果，而是需要将这个结果赋值给一个变量"><a href="#函数要赋值给某一个数，不能直接来当作一个运算过程来得到结果，而是需要将这个结果赋值给一个变量" class="headerlink" title="函数要赋值给某一个数，不能直接来当作一个运算过程来得到结果，而是需要将这个结果赋值给一个变量"></a>函数要赋值给某一个数，不能直接来当作一个运算过程来得到结果，而是需要将这个结果赋值给一个变量</h2><h2 id="函数求和"><a href="#函数求和" class="headerlink" title="函数求和"></a>函数求和</h2><pre><code class="c">#include &lt;stdio.h&gt;
+
+void sum(int begin,int end)&#123;
+    int i;
+    int sum=0;	
+    for(i=begin;i&lt;=end;i++)&#123;
+        sum += i;
+    &#125;
+    printf(&quot;%d到%d的和为%d&quot;,begin,end,sum);
+&#125;
+
+
+int main() &#123;
+    sum(1,3);
+
+    return 0;
+&#125;
+</code></pre>
+<p><strong>void 是定义的意思，sum()就是函数的主体</strong></p>
+<p><strong>void不需要返回值，也就是return。</strong></p>
+<h2 id="函数传值"><a href="#函数传值" class="headerlink" title="函数传值"></a><strong>函数传值</strong></h2><p>当我们定义了一个函数sweg()函数，这个函数用来交换a和b的值，但是我们在main函数设置的变量a和b传输给函数sweg()时，在函数中的所变化的一切都不能传输到main中，也就是说不行</p>
+<h2 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h2><pre><code class="c">void f()&#123;
+    int a[10];
+    a[10] = 0;
+&#125;
+</code></pre>
+<p>这个位置的会报错，为什么呢？<br><strong>在我们定义了a[10]就代表这有九个数字，所以我们再给其赋值时，我们不能超过a[9]</strong></p>
+<h2 id="在一个数组当中，我们如何进行数组的大小筛选以及，大小的换位"><a href="#在一个数组当中，我们如何进行数组的大小筛选以及，大小的换位" class="headerlink" title="在一个数组当中，我们如何进行数组的大小筛选以及，大小的换位"></a>在一个数组当中，我们如何进行数组的大小筛选以及，大小的换位</h2><pre><code class="c">#include&lt;stdio.h&gt;
+
+int sum(int a[]);
+int main(void)
+&#123;
+    int a[3];
+    int i = 0;
+    for(i=0;i&lt;3;i++)&#123;
+        scanf(&quot;%d&quot;,&amp;a[i]);
+    &#125;
+    
+    sum(a);
+    
+    for(i = 0;i &lt; 3;i++)&#123;
+        printf(&quot;%d &quot;,a[i]);
+    &#125;
+    
+    return 0;
+&#125;
+
+int sum(int a[])&#123;
+    int i,j,min,temp;
+    for(i=0;i &lt; 2;i++)&#123;
+        min = i;
+        for(j = 1;j &lt; 3;j++)&#123;
+            if(a[j] &lt; a[min])&#123;
+                min = j;
+            &#125;
+        &#125;
+    temp = a[i];
+    a[i] = a[min];
+    a[min] = temp;
+    &#125;
+&#125;
+</code></pre>
+<h2 id="如何用数组计算平均数，以及打出大于平均数的数"><a href="#如何用数组计算平均数，以及打出大于平均数的数" class="headerlink" title="如何用数组计算平均数，以及打出大于平均数的数"></a>如何用数组计算平均数，以及打出大于平均数的数</h2><pre><code class="c">#include &lt;stdio.h&gt;
+
+int main()
+&#123;
+    int x;
+    double sum = 0;
+    int index[100];
+    int i = 0;	
+    int num = 0;
+    scanf(&quot;%d&quot;,&amp;x);
+    
+    while(x!=-1)&#123;
+        sum+=x;
+        index[i] = x;
+        i++;
+        scanf(&quot;%d&quot;,&amp;x);
+    &#125;
+    //平均数
+    printf(&quot;%f\n&quot;,sum/i); 
+    for(num = 0;num &lt;i;num++)&#123;
+        if(index[num]&gt;sum/i)&#123;
+            printf(&quot;%d\n&quot;,index[num]);
+        &#125;
+    &#125;
+    
+    return 0;
+&#125;
+</code></pre>
+<h2 id="数组统计个数"><a href="#数组统计个数" class="headerlink" title="数组统计个数"></a>数组统计个数</h2><pre><code class="c">#include &lt;stdio.h&gt;
+
+int main()
+&#123;
+    int x;
+    int i = 0;
+    int count[10];
+    scanf(&quot;%d&quot;,&amp;x);
+    
+    for(i=0;i&lt;=9;i++)&#123;
+        count[i] = 0;
+    &#125;
+    while( x!= -1)&#123;
+        if(x&gt;=0 &amp;&amp; x&lt;=9)&#123;
+            count[x] ++;
+        &#125;
+        scanf(&quot;%d&quot;,&amp;x);
+    &#125; 
+    
+    for(i=0;i&lt;=9;i++)&#123;
+        printf(&quot;%d出现了%d次\n&quot;,i,count[i]);
+    &#125;
+    
+    return 0;
+&#125;
+</code></pre>
+<p><strong>我们可以不需要将数字放进数组，我们可以直接让这个数组等效替代这个数来，并进行初始化为零，然后没出现先一次，就加一</strong></p>
+<h2 id="如何判断，数字是否存在数组当中，并找出在那一个数"><a href="#如何判断，数字是否存在数组当中，并找出在那一个数" class="headerlink" title="如何判断，数字是否存在数组当中，并找出在那一个数"></a>如何判断，数字是否存在数组当中，并找出在那一个数</h2><pre><code class="c">#include &lt;stdio.h&gt;
+
+int search(int key,int a[],int length);
+
+int main(void)
+&#123;
+    int a[] = &#123;1,2,4,6,7,9,12,14,16,18,19,25,48,98,152,321&#125;;
+    int x;
+    int num;
+    
+    printf(&quot;请输入你要查询的x:&quot;);
+    scanf(&quot;%d&quot;,&amp;x);
+    
+    num = search(x,a,sizeof(a) / sizeof(a[0]));
+                                                
+    if(num == -1)&#123;
+        printf(&quot;不存在这个数！&quot;);
+    &#125;else&#123;
+        printf(&quot;%d在第%d个数&quot;,x,num);
+    &#125;
+    return 0;
+&#125;
+
+int search(int key,int a[],int length)&#123;
+    int i = 0;
+    int num = -1;
+    for(i=0;i&lt;length;i++)&#123;
+            if(key == a[i])&#123;
+                num = i;		
+                break;
+            &#125;
+        &#125;
+    return num;
+&#125;
+</code></pre>
+<h2 id="二维数组"><a href="#二维数组" class="headerlink" title="二维数组"></a>二维数组</h2><p><strong>初始化时，我们可以不写行，但是一定要写列</strong></p>
+<h3 id="二维数组的行列式的转换"><a href="#二维数组的行列式的转换" class="headerlink" title="二维数组的行列式的转换"></a>二维数组的行列式的转换</h3><pre><code class="c">#include &lt;stdio.h&gt;
+
+void transpose(int a[][3]);
+
+int main(void)
+&#123;
+    int a[3][3];
+
+    int i, j;
+    for (i = 0; i &lt; 3; i++) &#123;
+        for (j = 0; j &lt; 3; j++) &#123;
+            scanf(&quot;%d&quot;, &amp;a[i][j]);
+        &#125;
+    &#125;
+
+    transpose(a);
+
+    for (i = 0; i &lt; 3; i++) &#123;
+        for (j = 0; j &lt; 3; j++) &#123;
+            if (j != 2) &#123;
+                printf(&quot;%d &quot;, a[i][j]);
+            &#125;
+            else &#123;
+                printf(&quot;%d\n&quot;, a[i][j]);
+            &#125;
+        &#125;
+    &#125;
+
+    return 0;
+&#125;
+
+void transpose(int a[][3]) &#123;
+    int i, j, temp;
+    for (i = 0; i &lt; 3; i++) &#123;
+        for (j = i + 1; j &lt; 3; j++) &#123;
+            temp = a[i][j];
+            a[i][j] = a[j][i];
+            a[j][i] = temp;
+        &#125;
+    &#125;
+&#125;
+</code></pre>
+<p>在其中，我们会遇到一些问题，比如</p>
+<ol>
+<li><strong>如何让其输入三个然后换行</strong></li>
+<li><strong>在定义函数时，我们必须要写函数的列</strong></li>
+<li><strong>数组的转换其实和数字的转换是一样的</strong></li>
+<li><strong>行列式的转换，我们只需要进行一个三角即可，如若全部进行，相当于没有变化</strong></li>
+</ol>
+<h2 id="运算符-1"><a href="#运算符-1" class="headerlink" title="运算符"></a><strong>运算符</strong></h2><p>scanf(“%d”,&amp;i)里的&amp;用来获取变量的地址他的操作数</p>
+<h2 id="如何用函数求出最大公约数和最小公倍数"><a href="#如何用函数求出最大公约数和最小公倍数" class="headerlink" title="如何用函数求出最大公约数和最小公倍数"></a>如何用函数求出最大公约数和最小公倍数</h2><pre><code class="c">#include&lt;stdio.h&gt;
+
+int gcd(int a,int b);
+int lcm(int a,int b);
+
+int main(void)
+&#123;    																												
+    int a,b;
+    scanf(&quot;%d %d&quot;,&amp;a,&amp;b);
+    
+    int gcd_max = gcd(a,b);
+    int lcm_min = lcm(a,b);
+    
+    printf(&quot;%d %d&quot;,gcd_max,lcm_min);
+
+       return 0;
+&#125;
+
+int gcd(int a,int b)&#123;
+    int c;
+    while(b != 0)&#123;
+        c =a%b;
+        a = b;
+        b = c;
+    &#125;
+    return a;
+&#125;
+
+int lcm(int a,int b)&#123;
+    int t = gcd(a,b);
+    
+
+    int min = (a*b)/t;
+    
+    return min;
+&#125;
+</code></pre>
+<h2 id="如何用自定义函数判断是否为素数"><a href="#如何用自定义函数判断是否为素数" class="headerlink" title="如何用自定义函数判断是否为素数"></a>如何用自定义函数判断是否为素数</h2><pre><code class="c">#include&lt;stdio.h&gt;
+
+
+char word(int num);
+
+int main(void)
+&#123;
+    int x;
+    scanf(&quot;%d&quot;,&amp;x);
+    
+    word(x);
+    
+    return 0;
+&#125;
+
+char word(int num)&#123;
+    int i = 2;
+    int digit = 0; 
+    for(i = 2;i &lt; num;i++)&#123;
+        if(num%i == 0)&#123;
+            digit += 1;
+            break;
+        &#125;
+    &#125;
+    if(digit == 0)&#123;
+        printf(&quot;prime&quot;);
+    &#125;else&#123;
+        printf(&quot;not prime&quot;)
+    &#125;
+&#125;
+</code></pre>
+<h2 id="用函数求解一元二次方程组"><a href="#用函数求解一元二次方程组" class="headerlink" title="用函数求解一元二次方程组"></a>用函数求解一元二次方程组</h2><pre><code class="c">#include&lt;stdio.h&gt;
+#include&lt;math.h&gt;
+
+void sum(double a,double b,double c);
+
+
+int main(void)
+&#123;
+    double a,b,c;
+    scanf(&quot;%lf %lf %lf&quot;,&amp;a,&amp;b,&amp;c);
+    
+
+    sum(a,b,c);
+    
+    return 0;
+&#125;
+
+void sum(double a,double b,double c)&#123;
+    double date = b*b-4*a*c;
+    double x1,x2;
+    
+    if(date &gt; 0)&#123;
+        x1 = (-b  + sqrt(date))/2*a;
+        x2 = (-b  - sqrt(date))/2*a;
+        printf(&quot;x1=%.3lf x2=%.3lf&quot;,x1,x2);
+    &#125;else if(date == 0)&#123;
+        x1 = (-b)/2*a;
+        x2 = (-b)/2*a;
+        printf(&quot;x1=%.3f x2=%.3f&quot;,x1,x2);
+    &#125;else&#123;
+        double forword = (-b)/(2*a);
+        double back = sqrt(-date)/(2*a);
+    
+        printf(&quot;x1=%.3lf+%.3lfi x2=%.3lf-%.3lfi&quot;,forword,back,forword,back);
+    &#125;
+&#125;
+</code></pre>
+<h1 id="指针"><a href="#指针" class="headerlink" title="指针"></a>指针</h1><h2 id="指针的表示"><a href="#指针的表示" class="headerlink" title="指针的表示"></a>指针的表示</h2><p>如何表示指针：<br>int* p &#x3D; &amp;i;</p>
+<p>我们不能使用int* p，q来表示指针p 和 q，而是要用<em><strong>int* p，*q</strong></em>;来表示</p>
+<p>当我们要是用指针时，我们不能直接输入函数f(int*p),而是f(&amp;i)</p>
+<h2 id="走进指针"><a href="#走进指针" class="headerlink" title="走进指针"></a>走进指针</h2><p>*的意思是取得地址所对应的变量，所以 *p 指的就是有一个变量<br>*<strong>p 就是等于 i;</strong><br><strong>p 就是等于 &amp;i;</strong></p>
+<h2 id="指针的应用"><a href="#指针的应用" class="headerlink" title="指针的应用"></a>指针的应用</h2><ol>
+<li><strong>变量的互换</strong><br> 我们不能通过函数进行变量的替换，但是我们可以用指针进行替换，也就是地址的替换</li>
+</ol>
+<pre><code class="c">#include &lt;stdio.h&gt;
+
+void swap(int *pa,int *pb);
+
+
+int main(void)
+&#123;
+    int a = 5;
+    int b = 6;
+    
+    swap(&amp;a,&amp;b);
+    
+    printf(&quot;a = %d,b = %d\n&quot;,a,b);
+    
+    return 0;
+    
+&#125; 
+
+void swap(int *pa,int *pb)&#123;
+    int t = *pa;
+    *pa= *pb;
+    *pb = t;
+&#125;	
+</code></pre>
+<h2 id="数组与指针的关系"><a href="#数组与指针的关系" class="headerlink" title="数组与指针的关系"></a>数组与指针的关系</h2><ol>
+<li><strong>函数参数表中的数组实际上是指针</strong><ul>
+<li>这就是为什么*q &#x3D; a[],但是在单只一个变量时或者是单指一个数组的某一个值的时候，是要用取地址符的，*q &#x3D; &amp;min; *p &#x3D; &amp;a[5];</li>
+</ul>
+</li>
+<li>但是可以用数组的运算符[]进行运算</li>
+<li>sizeof(a) &#x3D;&#x3D; sizeof(int*)</li>
+</ol>
+<p><strong>等价函数</strong></p>
+<ul>
+<li>int sum(*<em>int <em>ar</em></em>,int n);</li>
+<li>int sum(int *,int n);</li>
+<li>int sum(<strong>int ar[]</strong>,int n);</li>
+<li>int sum(int [],int n);</li>
+</ul>
+<h2 id="seziof的字节问题"><a href="#seziof的字节问题" class="headerlink" title="seziof的字节问题"></a>seziof的字节问题</h2><ol>
+<li><strong>char：通常为1字节。</strong></li>
+<li>unsigned char：通常为1字节。</li>
+<li>short：通常为2字节。</li>
+<li>unsigned short：通常为2字节。</li>
+<li><strong>int：通常为4字节。</strong></li>
+<li>unsigned int：通常为4字节。</li>
+<li>long：通常为4字节或8字节，具体取决于编译器和操作系统。</li>
+<li>unsigned long：通常为4字节或8字节，具体取决于编译器和操作系统。</li>
+<li>long long：通常为8字节。</li>
+<li>unsigned long long：通常为8字节。</li>
+<li>float：通常为4字节。</li>
+<li>double：通常为8字节。</li>
+<li>long double：通常为8字节、12字节或16字节，具体取决于编译器和操作系统。</li>
+</ol>
+<p><strong>当我们给地址加1以后，实际是进入到了下一个字节，就如同int，每四个字节为一个节节，加一就是进入到了下一个节节</strong></p>
+<h3 id="数组和字节的关系"><a href="#数组和字节的关系" class="headerlink" title="数组和字节的关系"></a>数组和字节的关系</h3><pre><code class="c">int a[];
+int *p = a;
+*(p + n) = a[n];
+</code></pre>
+<h1 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h1><h2 id="分清-c和-s的区别"><a href="#分清-c和-s的区别" class="headerlink" title="分清%c和%s的区别"></a>分清%c和%s的区别</h2><p><code>%c</code>和<code>%s</code>是C语言中用于格式化输出的占位符（placeholder）。它们分别用于打印单个字符和字符串。</p>
+<p><code>%c</code>用于输出一个字符，一个<code>%c</code>只能输出一个字符，可以将字符直接打印在双引号内，也可以将字符存储在变量中，然后以变量形式传递给<code>printf</code>函数。下面是一个例子：</p>
+<pre><code>cCopy Codechar ch = &#39;A&#39;;
+printf(&quot;%c\n&quot;, ch); // 输出 A
+</code></pre>
+<p><code>%s</code>用于输出一个字符串，即一串字符的集合。使用<code>%s</code>输出字符串时必须先将字符串存储在字符数组（或指向字符数组的指针）中，然后将数组名（或指针）传递给<code>printf</code>函数。下面是一个例子：</p>
+<pre><code>cCopy Codechar str[] = &quot;Hello, world!&quot;;
+printf(&quot;%s\n&quot;, str); // 输出 Hello, world!
+</code></pre>
+<p>需要注意的是，在输出字符串时，<code>%s</code>占位符会输出字符串中的所有字符，直到遇到字符串结束符<code>\0</code>为止。</p>
+<p>希望这个解释能够帮助到你！</p>
+<ul>
+<li><p>以0（整数零）结尾的一串字符</p>
+<ul>
+<li>0或者是‘\0’是一样的，但是和‘0’不同</li>
+</ul>
+</li>
+<li><p>0标志字符串的结束，但是他不是字符串的一个部分</p>
+<ul>
+<li>计算字符串长度的时候不包含这个0</li>
+</ul>
+</li>
+<li><p>字符串以数组的形式存在，以数组或指针的形式访问，更多的是以指针的形式</p>
+</li>
+<li><p>string.h里有很多处理字符串的函数</p>
+</li>
+</ul>
+<h2 id="字符串变量"><a href="#字符串变量" class="headerlink" title="字符串变量"></a>字符串变量</h2><ul>
+<li>char *str &#x3D; “Hello”;</li>
+<li>char word[] &#x3D; “Hello”;</li>
+<li>char line[10] &#x3D; “Hello”;</li>
+</ul>
+<h2 id="字符串常量"><a href="#字符串常量" class="headerlink" title="字符串常量"></a>字符串常量</h2><p>char *s &#x3D; “Hello , world!”;<br>实质上，这里的s是const char *s<br>所以我们不能随意的更改其中的值</p>
+<p>如果我们需要更改字符串里的某些字符，<strong>我们可以用数组的形式</strong><br>比如说：char s[] &#x3D; “Hello world!”;</p>
+<pre><code class="c">#include&lt;stdio.h&gt;
+
+int main(void)
+&#123;
+    char s[] = &quot;Hello world&quot;;
+    s[0] = &#39;B&#39;;
+    
+    printf(&quot;here!s[0] = %c&quot;,s[0]);
+    
+    return 0;
+&#125;
+</code></pre>
+<h2 id="指针还是数组？"><a href="#指针还是数组？" class="headerlink" title="指针还是数组？"></a>指针还是数组？</h2><ul>
+<li>char *str &#x3D; “Hello”;</li>
+<li>char word[] &#x3D; “Hello”;</li>
+</ul>
+<p>说白了： <strong>如果要构造一个字符&#x3D;&#x3D;&#x3D;&gt;数组。</strong></p>
+<p><strong>如果要处理一个字符串&#x3D;&#x3D;&#x3D;&gt;指针。</strong></p>
+<p>字符串可以表达为char*的形式</p>
+<p>char*不一定是字符串</p>
+<ul>
+<li>只有它所指的字符串组有结尾的0，才能说它所指的是字符串</li>
+</ul>
+<h2 id="字符串输入输出"><a href="#字符串输入输出" class="headerlink" title="字符串输入输出"></a>字符串输入输出</h2><ul>
+<li>char string[8];</li>
+<li>scanf(“%s”,string);</li>
+<li>printf(“%s”,string);</li>
+</ul>
+<p>scanf读入一个单词(到空格，tab或者回车为止)<br>但是有问题，他无法准确的读到一个位置</p>
+<p><strong>准确的做法</strong><br>scanf(“%<strong>7</strong>s”,string);<br>这个里面的7就是告诉电脑读入7个字符。</p>
+<h2 id="字符串的一部分函数"><a href="#字符串的一部分函数" class="headerlink" title="字符串的一部分函数"></a>字符串的一部分函数</h2><p><code>&lt;string.h&gt;</code>头文件中提供了一些常用的字符串操作函数，下面列举一些常见的函数：</p>
+<ul>
+<li><code>strlen</code>：获取字符串的长度。</li>
+<li><code>strcpy</code>：复制一个字符串到另一个字符串。</li>
+<li><code>strncpy</code>：复制指定长度的字符串到另一个字符串。</li>
+<li><code>strcat</code>：将一个字符串追加到另一个字符串的末尾。</li>
+<li><code>strncat</code>：将指定长度的字符串追加到另一个字符串的末尾。</li>
+<li><code>strcmp</code>：比较两个字符串。</li>
+<li><code>strncmp</code>：比较两个指定长度的字符串。</li>
+<li><code>strchr</code>：在一个字符串中查找指定字符首次出现的位置。</li>
+<li><code>strrchr</code>：在一个字符串中查找指定字符最后一次出现的位置。</li>
+<li><code>strstr</code>：在一个字符串中查找指定子字符串首次出现的位置。</li>
+<li><code>strtok</code>：将一个字符串分解为多个子字符串。</li>
+</ul>
+<h3 id="putchar函数"><a href="#putchar函数" class="headerlink" title="putchar函数"></a>putchar函数</h3><ul>
+<li>int putchar(int c);</li>
+<li>向标准输出写一个字符；</li>
+<li>返回几个字符，EOF(-1）表示失败</li>
+</ul>
+<h3 id="getchar函数"><a href="#getchar函数" class="headerlink" title="getchar函数"></a>getchar函数</h3><ul>
+<li>int getchar(void);</li>
+<li>从标准输入读入一个字符；</li>
+<li>返回类型是int是为了返回EOF(-1)；</li>
+</ul>
+<h3 id="strcpy函数"><a href="#strcpy函数" class="headerlink" title="strcpy函数"></a>strcpy函数</h3><p><code>strcpy</code> 是 C 语言中的一个字符串操作函数，用于将一个字符串复制到另一个字符串中。</p>
+<p>函数原型如下：</p>
+<pre><code>cCopy Codechar *strcpy(char *destination, const char *source);
+</code></pre>
+<p>参数解释：</p>
+<ul>
+<li><code>destination</code>：目标字符串的指针，用于存储源字符串的副本。</li>
+<li><code>source</code>：源字符串的指针，即要复制的字符串。</li>
+</ul>
+<p>函数返回值：</p>
+<ul>
+<li>返回目标字符串的指针（即第一个参数 <code>destination</code> 的值）。</li>
+</ul>
+<p>下面是一个示例，演示如何使用 <code>strcpy</code> 函数进行字符串复制：</p>
+<pre><code>cCopy Code#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+
+int main() &#123;
+    char source[] = &quot;Hello, world!&quot;;  // 源字符串
+    char destination[20];             // 目标字符串，需要预留足够空间
+    
+    strcpy(destination, source);      // 复制字符串
+    
+    printf(&quot;Source: %s\n&quot;, source);
+    printf(&quot;Destination: %s\n&quot;, destination);
+    
+    return 0;
+&#125;
+</code></pre>
+<p>在上面的示例中，我们首先声明了一个源字符串 <code>source</code> 和一个足够大的目标字符串 <code>destination</code>。然后使用 <code>strcpy</code> 函数将 <code>source</code> 复制到 <code>destination</code> 中。最后，通过 <code>printf</code> 函数分别输出源字符串和目标字符串的内容。</p>
+<p><strong>需要注意的是，在使用 <code>strcpy</code> 函数进行字符串复制时，目标字符串的大小必须足够大以容纳源字符串的内容，以防止发生缓冲区溢出。</strong></p>
+<h3 id="stract函数"><a href="#stract函数" class="headerlink" title="stract函数"></a>stract函数</h3><p>实例，如何将一个字符串放在另一个字符串的后面</p>
+<pre><code class="c">#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+
+void reverseString(char *a,char *b);
+
+int main() &#123;
+    char a[100];
+    scanf(&quot;%s&quot;,&amp;a);
+    char b[100];
+    scanf(&quot;%s&quot;,&amp;b);
+    
+    reverseString(a,b);
+    
+    return 0;
+&#125;
+
+void reverseString(char *a,char *b)&#123;
+    strcat(a,b);
+    printf(&quot;%s&quot;,a);
+&#125;
+</code></pre>
+<h2 id="字符串的专属输入方式"><a href="#字符串的专属输入方式" class="headerlink" title="字符串的专属输入方式"></a>字符串的专属输入方式</h2><p>fgets(str, sizeof(str), stdin);</p>
+<p>这里的意思是，stdin就是一个输入键盘，将读到的数据传输到str这个数组当中。<br><strong>seziof(str) &#x3D; int n;这里的意思是，你所能读取的最大长度。</strong></p>
+<pre><code class="c">#include &lt;stdio.h&gt;
+
+int main() &#123;
+    int num;
+    char str[100];
+    
+    printf(&quot;Enter a number: &quot;);
+    scanf(&quot;%d&quot;, &amp;num);
+    
+    printf(&quot;Enter a string: &quot;);
+    fgets(str, sizeof(str), stdin);
+    
+    printf(&quot;Number: %d\n&quot;, num);
+    printf(&quot;String: %s\n&quot;, str);
+    
+    return 0;
+&#125;
+</code></pre>
+<p><strong>这个相比于scanf，我们可以发现，在输入字符串的时候，我们一个可以输入空格，方便了许多</strong>，但是有很多地方不允许使用这个输入方式，我们也可以使用scanf</p>
+<pre><code class="c">#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+
+void reverseString(char *str);
+
+int main() &#123;
+    char str[101];
+    
+    scanf(&quot;%[^\n]%*c&quot;, str);
+    
+    reverseString(str);
+    
+    return 0;
+&#125;
+
+void reverseString(char *str) &#123;
+    int length = strlen(str);
+    
+    for (int i = length - 1; i &gt;= 0; i--) &#123;
+        printf(&quot;%c&quot;, str[i]);
+    &#125;
+&#125;
+</code></pre>
+<p>在这段代码中，我们使用<code>scanf</code>函数来读取一行字符串，并存储到<code>str</code>数组中。<code>%[^\n]</code>表示读取除换行符以外的任意字符，<code>%*c</code>表示读取并丢弃换行符。</p>
+<h2 id="判断字符类型"><a href="#判断字符类型" class="headerlink" title="判断字符类型"></a>判断字符类型</h2><p>该函数使用了C语言标准库中的<code>isalpha</code>、<code>isdigit</code> 和 <code>isspace</code> 函数来判断字符的类型。通过循环遍历字符串中的每个字符，根据字符类型将计数器递增。<br><strong>一般与if语句一同使用</strong><br><strong>这个位置我要声明一点，做字符的判断时，我们不要将其与判断数字混为一谈，在做字符的比较时，我们要带上‘ ’</strong></p>
+<h2 id="ASCALL码"><a href="#ASCALL码" class="headerlink" title="ASCALL码"></a>ASCALL码</h2><p>在C语言中，字符类型实际上是用整数值来表示的。每个字符都对应一个唯一的整数值，称为字符编码（character encoding）。在常见的字符编码中，比如ASCII编码和Unicode编码，字母按顺序排列，相邻字母之间的整数值是连续的。</p>
+<p>在这个示例中，我们假设使用的是ASCII编码或者类似的编码，其中字母’a’的整数值是97，字母’z’的整数值是122。根据ASCII编码中字母顺序的连续性，我们可以通过<code>ch + 1</code>来获取下一个字符的整数值，因为在ASCII编码中，下一个字符的整数值刚好是当前字符的整数值加1。</p>
+<p><strong>其实字符对应一个整数，我们可以直接在字符这里加上一，我们就可以得到下一位</strong></p>
+
+    </div>
+    
+    
+    
+    
+    
+    
+    
+</div>
+
+                <footer id="footer">
+    <div id="footer-wrap">
+        <div>
+            &copy;
+            2022 - 2023 Argvchs の小窝
+            <span id="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            &commat;Argvchs
+        </div>
+        <div>
+            Based on the <a target="_blank" rel="noopener" href="https://hexo.io">Hexo Engine</a> &amp;
+            <a target="_blank" rel="noopener" href="https://github.com/theme-particlex/hexo-theme-particlex">ParticleX Theme</a>
+        </div>
+        
+    </div>
+</footer>
+
+            </div>
+            
+            <transition name="fade">
+                <div id="preview" ref="preview" v-show="previewShow">
+                    <img id="preview-content" ref="previewContent" />
+                </div>
+            </transition>
+            
+        </div>
+        <script src="/js/main.js"></script>
+        
+        
+
+
+
+
+        
+    </body>
+</html>

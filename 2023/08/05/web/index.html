@@ -1,0 +1,1017 @@
+
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+        <meta charset="utf-8" />
+        <title>Web前端开发 | Argvchs の小窝</title>
+        <meta name="author" content="Argvchs" />
+        <meta name="description" content="" />
+        <meta name="keywords" content="" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+        <link rel="icon" href="/images/avatar1.jpg" />
+        <script src="https://cdn.staticfile.org/vue/3.3.4/vue.global.prod.min.js"></script>
+<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/6.4.0/css/all.min.css" />
+<link rel="stylesheet" href="/css/fonts.min.css" />
+<script> const mixins = {}; </script>
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+
+
+<script src="https://cdn.staticfile.org/highlight.js/11.8.0/highlight.min.js"></script>
+<script src="https://cdn.staticfile.org/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+<link
+    rel="stylesheet"
+    href="https://cdn.staticfile.org/highlight.js/11.8.0/styles/github.min.css"
+/>
+<script src="/js/lib/highlight.js"></script>
+
+
+
+<script src="/js/lib/preview.js"></script>
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/main.css" />
+
+    <meta name="generator" content="Hexo 6.3.0"></head>
+    <body>
+        <div id="layout">
+            <transition name="fade">
+                <div id="loading" v-show="loading">
+                    <div id="loading-circle">
+                        <h2>LOADING</h2>
+                        <p>加载过慢请开启缓存 浏览器默认开启</p>
+                        <img src="/images/loading.gif" />
+                    </div>
+                </div>
+            </transition>
+            <div id="menu" :class="{ hidden: hiddenMenu, 'menu-color': menuColor}">
+    <nav id="desktop-menu">
+        <a class="title" href="/">
+            <span>ARGVCHS の小窝</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;Home</span>
+        </a>
+        
+        <a href="/about">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;About</span>
+        </a>
+        
+        <a href="/archives">
+            <i class="fa-solid fa-box-archive fa-fw"></i>
+            <span>&ensp;Archives</span>
+        </a>
+        
+        <a href="/categories">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;Categories</span>
+        </a>
+        
+        <a href="/tags">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;Tags</span>
+        </a>
+        
+    </nav>
+    <nav id="mobile-menu">
+        <div class="title" @click="showMenuItems = !showMenuItems">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;ARGVCHS の小窝</span>
+        </div>
+        <transition name="slide">
+            <div class="items" v-show="showMenuItems">
+                
+                <a href="/">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-house fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Home</div>
+                    </div>
+                </a>
+                
+                <a href="/about">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-id-card fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">About</div>
+                    </div>
+                </a>
+                
+                <a href="/archives">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-box-archive fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Archives</div>
+                    </div>
+                </a>
+                
+                <a href="/categories">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-bookmark fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Categories</div>
+                    </div>
+                </a>
+                
+                <a href="/tags">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-tags fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Tags</div>
+                    </div>
+                </a>
+                
+            </div>
+        </transition>
+    </nav>
+</div>
+<transition name="fade">
+    <div id="menu-curtain" @click="showMenuItems = !showMenuItems" v-show="showMenuItems"></div>
+</transition>
+
+            <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
+                <div class="article">
+    <div>
+        <h1>Web前端开发</h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2023/8/5
+        </span>
+        
+        <span class="category">
+            <a href="/categories/%E6%8A%80%E6%9C%AF/">
+                <span class="icon">
+                    <i class="fa-solid fa-bookmark fa-fw"></i>
+                </span>
+                技术
+            </a>
+        </span>
+        
+        
+        <span class="tags">
+            <span class="icon">
+                <i class="fa-solid fa-tags fa-fw"></i>
+            </span>
+            
+            
+            <span class="tag">
+                
+                <a href="/tags/Typora/" style="color: #00bcd4">Typora</a>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/Markdown/" style="color: #03a9f4">Markdown</a>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/VScoede/" style="color: #00a596">VScoede</a>
+            </span>
+            
+        </span>
+        
+    </div>
+    
+    <div class="content" v-pre>
+        <h1 id="Web前端开发"><a href="#Web前端开发" class="headerlink" title="Web前端开发"></a>Web前端开发</h1><h2 id="什么是Html"><a href="#什么是Html" class="headerlink" title="什么是Html?"></a>什么是Html?</h2><h3 id="html是一种用来描述网页的一种语言"><a href="#html是一种用来描述网页的一种语言" class="headerlink" title="html是一种用来描述网页的一种语言"></a><code>html是一种用来描述网页的一种语言</code></h3><pre><code>    -  HTML指的是超文本标记语言（**H**yper **T**ext **M**arkup **L**anguage）
+</code></pre>
+<ul>
+<li>是一种标记语言，不是编程语言<br>-  如:&lt;center&gt;  &lt;&#x2F;center&gt;</li>
+</ul>
+<h3 id="H5新增效果"><a href="#H5新增效果" class="headerlink" title="H5新增效果"></a>H5新增效果</h3><p><img src="https://typora200483.oss-cn-chengdu.aliyuncs.com/Snipaste_2023-07-18_20-05-50.png" alt="Snipaste_2023-07-18_20-05-50"></p>
+<h2 id="Web标准的制定"><a href="#Web标准的制定" class="headerlink" title="Web标准的制定"></a>Web标准的制定</h2><h3 id="WEB的组成成分"><a href="#WEB的组成成分" class="headerlink" title="WEB的组成成分:"></a><strong>WEB的组成成分</strong>:</h3><ol>
+<li>HTML结构 </li>
+<li>CSS表现</li>
+<li>JS行为</li>
+</ol>
+<h2 id="你的第一个网页"><a href="#你的第一个网页" class="headerlink" title="你的第一个网页"></a>你的第一个网页</h2><pre><code class="html">&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;我的第一个网页&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;center&gt;
+           锣声一响，&lt;br/&gt; 黄金万两。
+        &lt;/center&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>&lt;html&gt;和&lt;&#x2F;html&gt;是固定的格式，谱写的内容都包裹在里面，<br>和人的身体结构一样，内容包括<em><strong>&lt;head&gt;&lt;&#x2F;head&gt;<em><strong>和</strong></em>&lt;body&gt;&lt;&#x2F;body&gt;</strong></em></p>
+<ul>
+<li>head和body是兄弟关系</li>
+<li>head和body是html孩子</li>
+<li>title内的内容是浏览器的检索依据</li>
+</ul>
+<h3 id="HTML的基本语法"><a href="#HTML的基本语法" class="headerlink" title="HTML的基本语法"></a>HTML的基本语法</h3><blockquote>
+<ol>
+<li><p>&lt;常规标记&gt;也叫<strong>双标记</strong><br> &lt;标记&gt;&lt;&#x2F;标记&gt;</p>
+<p> &lt;标记 属性 &#x3D; “属性值” 属性 &#x3D; “”属性值&gt;&lt;&#x2F;标记&gt;</p>
+<p> 标记也可叫做标签和元素<br> 例如:&lt;head&gt;&lt;&#x2F;head&gt;</p>
+</li>
+</ol>
+</blockquote>
+<blockquote>
+<ol start="2">
+<li>空标记也叫*<em>单标记</em><br> &lt;标记&#x2F;&gt;<br> &lt;标记 属性 &#x3D; “属性值” &#x2F;&gt;</li>
+</ol>
+<p>例如:&lt;br&#x2F;&gt;(换行)</p>
+</blockquote>
+<h2 id="趁手兵器——VSCode"><a href="#趁手兵器——VSCode" class="headerlink" title="趁手兵器——VSCode"></a>趁手兵器——VSCode</h2><p><strong>！加 回车键 可以快捷创建模板，方便我们进行</strong></p>
+<p><strong>需要进行的组件安装</strong></p>
+<ol>
+<li>Auto Rename Tag(快速的更改双标代码的一致性)</li>
+<li>view-in-browser(帮助我们快速浏览我们的源代码)</li>
+<li>Live Server(保存的同时直接更改浏览器中的数据)</li>
+</ol>
+<h2 id="文档声明与字符编码"><a href="#文档声明与字符编码" class="headerlink" title="文档声明与字符编码"></a>文档声明与字符编码</h2><ul>
+<li>&lt;!DOCTYPE html&gt;:用来告诉浏览器按照html5来加载页面</li>
+<li>&lt;html lang&#x3D;”en”&gt;:设定网页的语言<ul>
+<li>“en”英语</li>
+<li>“zh-CN”中文</li>
+<li>“ja-jp”日文</li>
+</ul>
+</li>
+<li>&lt;meta **charset**&#x3D;“***“&gt;:一种密钥，告诉浏览器等会用什么密钥来解码，如果编写和破解代码的密钥不同，会导致破解不成功 </li>
+<li><strong>我们一般用UTF-8</strong></li>
+</ul>
+<p> ![屏幕截图 2023-05-21 214111](..&#x2F;images&#x2F;屏幕截图 2023-05-21 214111.png)</p>
+<p><strong>破解不成功会显示如上内容</strong>（因为你告诉对方你使用a编码，结果你用b密钥编码让对方用a密钥解码，结果肯定是解不出来的）</p>
+<h2 id="HTML常用标签"><a href="#HTML常用标签" class="headerlink" title="HTML常用标签"></a>HTML常用标签</h2><h3 id="1-语义是什么"><a href="#1-语义是什么" class="headerlink" title="1. 语义是什么"></a>1. 语义是什么</h3><ul>
+<li>什么语义化？其实就是让机器可以读懂内容</li>
+</ul>
+<h3 id="2-常用标签"><a href="#2-常用标签" class="headerlink" title="2. 常用标签"></a>2. 常用标签</h3><ol>
+<li><p>文本标题</p>
+<ul>
+<li>&lt;h1&gt;一级标题&lt;&#x2F;h1&gt;</li>
+<li>&lt;h2&gt;二级标题&lt;&#x2F;h2&gt;</li>
+</ul>
+<p> 类推3，4，5，6，7级标题:<code>每个标题独占一行，每个标题的大小不同，粗细不同。每个文本中最好不要有过多的h1标题</code></p>
+</li>
+<li><p>段落文本（p）</p>
+</li>
+</ol>
+<blockquote>
+<p>&lt;p&gt;段落文本内容&lt;&#x2F;p&gt;</p>
+<p>标识一个段落（段落与段落之间有间距）</p>
+</blockquote>
+<ol start="3">
+<li>换行（br）</li>
+</ol>
+<blockquote>
+<p>&lt;br&#x2F;&gt;</p>
+<p>换行是一个空标记（强行换行）</p>
+</blockquote>
+<ol start="4">
+<li>水平线</li>
+</ol>
+<blockquote>
+<p>&lt;hr&#x2F;&gt;</p>
+</blockquote>
+<ol start="5">
+<li>加粗标记（推荐strong）</li>
+</ol>
+<blockquote>
+<p>&lt;b&gt;加粗内容&lt;&#x2F;b&gt;:<code>只显示加粗</code></p>
+<p>&lt;strong&gt;强调的内容&lt;&#x2F;strong&gt;:<code>突出文本</code></p>
+</blockquote>
+<ol start="6">
+<li>倾斜标记（推荐em）</li>
+</ol>
+<blockquote>
+<p>&lt;em&gt;强调的内容&lt;&#x2F;em&gt;</p>
+<p>&lt;i&gt;倾斜文本&lt;&#x2F;i&gt;</p>
+</blockquote>
+<p>7.删除线标记（推荐del）</p>
+<blockquote>
+<p>&lt;s&gt;文本&lt;&#x2F;s&gt;</p>
+<p>&lt;del&gt;文本&lt;&#x2F;del&gt;</p>
+</blockquote>
+<p>8.扩展</p>
+<blockquote>
+<p>&lt;u&gt;文本&lt;&#x2F;u&gt;下划线</p>
+<p>&lt;sub&gt;&lt;&#x2F;sub&gt;下标</p>
+<p>&lt;sup&gt;&lt;&#x2F;sup&gt;上标</p>
+</blockquote>
+<h2 id="百科词条案例"><a href="#百科词条案例" class="headerlink" title="百科词条案例"></a>百科词条案例</h2><pre><code class="html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;我的第一篇浏览器文章&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;center&gt;&lt;h1&gt;HTML5&lt;/h1&gt;&lt;/center&gt;
+    &lt;p&gt;html是构建Web内容的一种语言描述方式。HTML5是互联网的下一代标准，是构建以及呈现&lt;strong&gt;互联网内容&lt;/strong&gt;的一种语言方式．被认为是互联网的&lt;strong&gt;核心技术&lt;/strong&gt;之一。HTML产生于1990年，1997年&lt;strong&gt;HTML4&lt;/strong&gt;成为互联网标准，并广泛应用于互联网应用的开发。
+    &lt;/p&gt;
+    &lt;hr&gt;
+    &lt;P&gt;HTML5是Web中&lt;strong&gt;核心语言&lt;/strong&gt;HTML的规范，用户使用任何手段进行&lt;strong&gt;网页浏览&lt;/strong&gt;时看到的内容原本都是HTML格式的，在浏览器中通过一些技术处理将其转换成为了可识别的信息。HTML5在从前HTML4.01的基础上进行了一定的改进，虽然技术人员在开发过程中可能不会将这些新技术投入应用，但是对于该种技术的新特性，网站开发技术人员是必须要有所了解的。 
+    &lt;/P&gt;
+    &lt;hr&gt;
+    &lt;p&gt;HTML5 是 &lt;strong&gt;HyperText Markup Language 5 的缩写&lt;/strong&gt; ，&lt;strong&gt;HTML5 &lt;/strong&gt; 技术结合了 HTML4.01 的&lt;em&gt;相关标准&lt;/em&gt;并革新，符合现代网络发展要求，在 2008 年正式发布。HTML5 由不同的技术构成，其在互联网中得到了非常广泛的应用，提供更多增强&lt;em&gt;网络应用&lt;/em&gt;的标准机。与传统的技术相比，HTML5 的语法特征更加明显，并且结合了 SVG 的内容。这些内容在网页中使用可以更加便捷地处理多媒体内容，而且 HTML5中还结合了其他元素，对原有的功能进行调整和修改，进行标准化工作。HTML5 在 2012 年已形成了稳定的版本。2014年10月28日，W3C发布了&lt;u&gt;HTML5的最终版&lt;/u&gt;。 [3]
+    &lt;/p&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h2 id="不一般的hr-划线符"><a href="#不一般的hr-划线符" class="headerlink" title="不一般的hr(划线符)"></a>不一般的hr(划线符)</h2><p>&lt;hr 属性 &#x3D; “属性值”&gt;&lt;hr&gt; <strong><code>分享一个快捷键:shift+alt+下键是快速复制上一栏</code></strong><br>以颜色为例:</p>
+<pre><code class="html">&lt;hr color=&quot;green&quot;&gt;
+</code></pre>
+<p><strong><code>属性栏中可以有多个属性</code></strong></p>
+<pre><code class="html">&lt;hr color = &quot;red&quot; width = &quot;500&quot; align = &quot;right&quot;
+</code></pre>
+<p><strong>align : 选择从左开始，还是从右开始</strong></p>
+<p><strong>noshade :取消阴影</strong></p>
+<p><code>分享一个快捷键 : ctrl + 滚轮 放大缩小</code></p>
+<h2 id="特殊符号"><a href="#特殊符号" class="headerlink" title="特殊符号"></a>特殊符号</h2><p><img src="https://typora200483.oss-cn-chengdu.aliyuncs.com/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-05-23%20214357.png" alt="屏幕截图 2023-05-23 214357"></p>
+<ol>
+<li>尖角符号（<code>目的是为了让标签作为信息显示出来</code>）<br> 格式:&amp;lt;标签&#x2F;&amp;gt；</li>
+<li>空格符号(<code>lorem,一个快捷键，生成很多单词</code>，目的是让段落空行）<br> 推荐使用<code>\&amp;emsp;</code>,他直接空一个汉字元</li>
+</ol>
+<h2 id="div和span标签"><a href="#div和span标签" class="headerlink" title="div和span标签"></a>div和span标签</h2><ol>
+<li>div标签，没有具体含义，用来划分页面的区域，独占一行。<br> 如下图所示：<code>每一个框框就是一块区域</code></li>
+</ol>
+<p><img src="https://typora200483.oss-cn-chengdu.aliyuncs.com/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-05-23%20222815.png" alt="屏幕截图 2023-05-23 222815"></p>
+<p>用法:&lt;div&gt;内容&lt;&#x2F;div&gt;   (快捷用法：div*3)</p>
+<ol start="2">
+<li><p>span标签（<strong>用于文本单独修饰</strong>）,没有实际意义，主要应用在对于文本修饰的时候，内容有多宽就占用多宽的空间距离</p>
+<pre><code class="html">&lt;h3&gt;
+    体育&lt;span style=&quot;color: blue;&quot;&gt;sport&lt;/span&gt;
+&lt;/h3&gt;
+</code></pre>
+</li>
+</ol>
+<h2 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h2><h3 id="有序列表"><a href="#有序列表" class="headerlink" title="有序列表"></a>有序列表</h3><p><img src="https://typora200483.oss-cn-chengdu.aliyuncs.com/image-20230525215915503.png" alt="image-20230525215915503"></p>
+<p><code>自定义列表其实也就是图文混搭</code></p>
+<p>有序列表:&lt;ol&gt;标签&lt;&#x2F;ol&gt;，里面的标签只能是&lt;li&gt;&lt;&#x2F;li&gt;</p>
+<pre><code class="html">&lt;body&gt;
+    1.li里面可以随意放标签，但是ol里面只能放li。
+    2.数字是自动生成的。
+    &lt;ol&gt;
+        &lt;li&gt;打开冰箱&lt;/li&gt;
+        &lt;li&gt;放入大象&lt;/li&gt;
+        &lt;li&gt;关上冰箱&lt;/li&gt;
+    &lt;/ol&gt;
+&lt;/body&gt;
+</code></pre>
+<p><strong>注意，ol标签可以添加一些属性</strong></p>
+<ol>
+<li><p>改变序列的数字，不仅仅是“1”</p>
+<ul>
+<li>&lt;ol type &#x3D; “A”&gt;    &lt;ol&gt;</li>
+</ul>
+</li>
+<li><p>控制序列的开始值</p>
+<ul>
+<li>&lt;ol type &#x3D; “A” start &#x3D; “3”&gt;    &lt;ol&gt;  序列会从“C”开始</li>
+</ul>
+</li>
+</ol>
+<h3 id="无序列表"><a href="#无序列表" class="headerlink" title="无序列表"></a>无序列表</h3><p><code>快捷指令小技巧</code>：当我们想快速打出存在父子关系的标签，我们可以用 <strong>ol&gt;li</strong>,如果想打出一列，我们可以使用 <strong>ol&gt;li*n</strong></p>
+<pre><code class="html">&lt;body&gt;
+    1.li里面可以随意放标签，但是ul里面只能放li。
+    2.默认的是黑色实心圆
+    3.type = &quot;disc circle square none&quot;
+    &lt;ul&gt;
+        &lt;li&gt;打开冰箱&lt;/li&gt;
+        &lt;li&gt;放入大象&lt;/li&gt;
+        &lt;li&gt;关上冰箱&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/body&gt;
+</code></pre>
+<h3 id="自定义列表"><a href="#自定义列表" class="headerlink" title="自定义列表"></a>自定义列表</h3><p>&lt;dl&gt;&lt;&#x2F;dl&gt;就是自定义标签<br>&lt;dt&gt;文字&lt;&#x2F;dt&gt;<br>&lt;dd&gt;图篇&lt;&#x2F;dd&gt;</p>
+<pre><code class="html">&lt;body&gt;
+    &lt;dl&gt;
+        &lt;dt&gt;我是图片&lt;/dt&gt;
+        &lt;dd&gt;我是文字&lt;/dd&gt;
+    &lt;/dl&gt;
+&lt;/body&gt;
+</code></pre>
+<h2 id="图片标签的路径"><a href="#图片标签的路径" class="headerlink" title="图片标签的路径"></a>图片标签的路径</h2><p>图片标签&lt;img&gt;是个单标签</p>
+<p>图片的插入有三种方案</p>
+<ol>
+<li><code>**一种相对路径：需要将图片存放的文件夹放在目标的同目录下，可以上传至网上**</code></li>
+<li>一种绝对路径：一般不建议使用绝对路径，因为你上传的图片，不能在网上看到</li>
+</ol>
+<p><img src="/./web%20-%20%E5%89%AF%E6%9C%AC/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-05-27%20200912-1685189446040-1.png" alt="屏幕截图 2023-05-27 200912"></p>
+<p>上者为相对路径，下者为绝对路径，因为你所有的D盘，别人不一定有，所以你上传至网上，别人是看不到的</p>
+<p><em><strong>如何让同级文件夹里的html显示出图片</strong></em><br>在相对路径的前面加一个“.”,也就是<strong>”..&#x2F;相对路径“</strong></p>
+<h2 id="图片标签的属性"><a href="#图片标签的属性" class="headerlink" title="图片标签的属性"></a>图片标签的属性</h2><p>&lt;img src &#x3D; “图片路径” title &#x3D; “鼠标悬停上去之后的提示信息” alt &#x3D; “图片不显示之后（加载失败）的提示信息”width &#x3D; “200px” height &#x3D; “200px”&#x2F;&gt;</p>
+<p><strong>alt标签是为了让加载不出页面显示提示信息</strong></p>
+<p><img src="/./web%20-%20%E5%89%AF%E6%9C%AC/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-05-28%20163548.png" alt="屏幕截图 2023-05-28 163548"></p>
+<p><strong>title标签可以让图片显示出我们的注释</strong><br><strong>就算图片没有显示出来，title的提示信息依旧可以显示出来</strong></p>
+<p><img src="/./web%20-%20%E5%89%AF%E6%9C%AC/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-05-28%20164032.png" alt="屏幕截图 2023-05-28 164032"></p>
+<p><strong>width &#x3D; “” 和 height &#x3D; “”标签用来编辑图片，也就是定义图片长宽</strong>（单位是像素px）</p>
+<h2 id="实例1"><a href="#实例1" class="headerlink" title="实例1"></a>实例1</h2><h2 id="超链接标签"><a href="#超链接标签" class="headerlink" title="超链接标签"></a>超链接标签</h2><p>标签格式：&lt;a&gt;&lt;&#x2F;a&gt;</p>
+<p>属性href &#x3D; “路径”<br>title &#x3D; “鼠标悬停上去之后的提示信息”<br>target &#x3D; “规定在何处打开文档”</p>
+<p><strong>&lt;a&gt;标签内可以添加&lt;image&gt;标签，也就是说，点图片就可以进入想进入的链接</strong></p>
+<p><img src="/./web%20-%20%E5%89%AF%E6%9C%AC/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-07%20224415.png" alt="屏幕截图 2023-06-07 224415"></p>
+<p><img src="/./web%20-%20%E5%89%AF%E6%9C%AC/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-07%20224537.png" alt="屏幕截图 2023-06-07 224537"></p>
+<h3 id="a标签的css样式"><a href="#a标签的css样式" class="headerlink" title="a标签的css样式"></a>a标签的css样式</h3><pre><code class="css">a &#123;
+  color: blue; /* 设置链接文本颜色为蓝色 */
+  text-decoration: underline; /* 给链接添加下划线 */
+  font-weight: bold; /* 设置链接文本为粗体 */
+  font-style: italic; /* 设置链接文本为斜体 */
+  cursor: pointer; /* 鼠标悬停时显示指针光标 */
+  padding: 5px 10px; /* 设置链接的内边距 */
+  margin-right: 10px; /* 设置链接的右外边距 */
+  display: inline-block; /* 将链接显示为内联块级元素 */
+&#125;
+</code></pre>
+<h2 id="table表格"><a href="#table表格" class="headerlink" title="table表格"></a>table表格</h2><p><img src="/./web%20-%20%E5%89%AF%E6%9C%AC/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-08%20215244.png" alt="屏幕截图 2023-06-08 215244"></p>
+<pre><code class="html">&lt;table&gt;   &lt;!-- 创建表格  --&gt;
+    &lt;tr&gt; &lt;!-- tr 表示行 -- &gt;
+        &lt;td&gt;1&lt;/td&gt;  &lt;!-- td 表示单元格 --&gt;
+        &lt;td&gt;2&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;
+</code></pre>
+<p><em><strong>总的来说，tr是行标签，td是列标签</strong></em><br>补充一点，<strong>th</strong>是强调单元格</p>
+<p>快捷键：当你想输入三行四列的时候，你可以这样输入<br><strong>table&gt;tr*3&gt;td*4</strong>，就可以了</p>
+<h3 id="table表格的相关属性"><a href="#table表格的相关属性" class="headerlink" title="table表格的相关属性"></a>table表格的相关属性</h3><p><img src="/./web%20-%20%E5%89%AF%E6%9C%AC/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-08%20221236.png" alt="屏幕截图 2023-06-08 221236"></p>
+<p><strong>width 可以百分比</strong><br><strong>（是占<em>body</em>窗口的百分之多少）</strong></p>
+<p><strong><code>cellpadding也可以用百分比，是以单元格为对象</code></strong></p>
+<h3 id="行tr的属性"><a href="#行tr的属性" class="headerlink" title="行tr的属性"></a>行tr的属性</h3><p><img src="/./web%20-%20%E5%89%AF%E6%9C%AC/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-09%20201644.png" alt="屏幕截图 2023-06-09 201644"> </p>
+<p><strong>tr标签属性不可设计宽度，但可以设计高度</strong></p>
+<h3 id="单元格td的属性"><a href="#单元格td的属性" class="headerlink" title="单元格td的属性"></a>单元格td的属性</h3><p><img src="/./web%20-%20%E5%89%AF%E6%9C%AC/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-09%20203052.png" alt="屏幕截图 2023-06-09 203052"></p>
+<p><strong>一个单元格长宽变化，一整列都会变化</strong><br><strong>颜色不受牵连</strong></p>
+<h3 id="表格的和并列"><a href="#表格的和并列" class="headerlink" title="表格的和并列"></a>表格的和并列</h3><p><img src="/./web%20-%20%E5%89%AF%E6%9C%AC/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-09%20204353.png" alt="屏幕截图 2023-06-09 204353"></p>
+<p><strong>colspan &#x3D; “2”意思是A这个数要占俩个列</strong></p>
+<p>同理</p>
+<p><img src="/./web%20-%20%E5%89%AF%E6%9C%AC/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-09%20204508.png" alt="屏幕截图 2023-06-09 204508"></p>
+<p><strong>rowspan &#x3D; “5”意思就是A这个数占五行</strong></p>
+<h3 id="表格的css属性"><a href="#表格的css属性" class="headerlink" title="表格的css属性"></a>表格的css属性</h3><p>在CSS中，可以使用以下属性来控制表格的样式和布局：</p>
+<ol>
+<li><code>border-collapse</code>：设置表格边框的合并方式。常用的取值有：<ul>
+<li><code>collapse</code>：边框会合并为单一的边框，相邻单元格间没有间隙。</li>
+<li><code>separate</code>：每个单元格都有独立的边框，相邻单元格间有间隙。</li>
+</ul>
+</li>
+<li><code>border-spacing</code>：设置相邻单元格之间的边框间距。只在<code>border-collapse</code>属性值为<code>separate</code>时生效。</li>
+<li><code>caption-side</code>：设置表格标题（<code>&lt;caption&gt;</code>标签）的位置。常用的取值有：<ul>
+<li><code>top</code>：表格标题显示在表格上方。</li>
+<li><code>bottom</code>：表格标题显示在表格下方。</li>
+</ul>
+</li>
+<li><code>empty-cells</code>：设置空单元格（没有内容）的边框显示方式。常用的取值有：<ul>
+<li><code>show</code>：显示空单元格的边框。</li>
+<li><code>hide</code>：隐藏空单元格的边框。</li>
+</ul>
+</li>
+<li><code>table-layout</code>：设置表格的布局算法。常用的取值有：<ul>
+<li><code>auto</code>：浏览器根据内容自动调整列宽和表格布局。</li>
+<li><code>fixed</code>：固定表格布局，列宽由开发者手动设置。</li>
+</ul>
+</li>
+<li><code>text-align</code>：设置单元格中内容的水平对齐方式。常用的取值有：<ul>
+<li><code>left</code>：左对齐。</li>
+<li><code>center</code>：居中对齐。</li>
+<li><code>right</code>：右对齐。</li>
+</ul>
+</li>
+<li><code>vertical-align</code>：设置单元格中内容的垂直对齐方式。常用的取值有：<ul>
+<li><code>top</code>：顶部对齐。</li>
+<li><code>middle</code>：居中对齐。</li>
+<li><code>bottom</code>：底部对齐。</li>
+</ul>
+</li>
+<li><code>width</code>：设置表格的宽度。可以使用像素、百分比或其他长度单位进行设置。</li>
+</ol>
+<p>这些属性可以应用于 <code>&lt;table&gt;</code> 元素本身，也可以应用于 <code>&lt;th&gt;</code>（表头）和 <code>&lt;td&gt;</code>（表格数据）这些单元格元素。需要注意的是，不同浏览器可能对这些属性的解析和显示有所差异。</p>
+<h3 id="养成好习惯"><a href="#养成好习惯" class="headerlink" title="养成好习惯"></a>养成好习惯</h3><p>当我们制作表格时，我们需要区分标头和主体，标头我们用 &lt;thead&gt;&lt;&#x2F;thead&gt;,主体我们用&lt;tbody&gt;&lt;&#x2F;tbody&gt;</p>
+<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><p><img src="/./web%20-%20%E5%89%AF%E6%9C%AC/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-09%20210038.png" alt="屏幕截图 2023-06-09 210038"></p>
+<pre><code class="html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;table bordercolor=&quot;pink&quot; align=&quot;center&quot; border=&quot;1&quot; cellspacing=&quot;0&quot; cellpadding=&quot;0&quot;&gt;
+        &lt;tr&gt;
+            &lt;td align=&quot;center&quot; width=&quot;100&quot; height=&quot;50&quot;&gt;会员姓名&lt;/td&gt;
+            &lt;td colspan=&quot;2&quot; width=&quot;200&quot; &gt;&lt;/td&gt;
+            &lt;td align=&quot;center&quot; width=&quot;100&quot; &gt;出生日期&lt;/td&gt;
+            &lt;td colspan=&quot;2&quot; width=&quot;200&quot;&gt;&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td align=&quot;center&quot; height=&quot;50&quot;&gt;身份证号&lt;/td&gt;
+            &lt;td colspan=&quot;4&quot;&gt;&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td align=&quot;center&quot; height=&quot;50&quot;&gt;通信地址&lt;/td&gt;
+            &lt;td colspan=&quot;4&quot;&gt;&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td align=&quot;center&quot; height=&quot;50&quot;&gt;联系电话&lt;/td&gt;
+            &lt;td colspan=&quot;4&quot;&gt;&lt;/td&gt;
+            
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td align=&quot;center&quot; height=&quot;50&quot;&gt;会员卡号&lt;/td&gt;
+            &lt;td colspan=&quot;4&quot;&gt;&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/table&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p><strong>自己完成的第一个实例</strong></p>
+<h2 id="表单标签"><a href="#表单标签" class="headerlink" title="表单标签"></a>表单标签</h2><p> <code>**什么是表单？**</code><br><code>**收集用户信息**</code></p>
+<p><img src="/./web%20-%20%E5%89%AF%E6%9C%AC/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-09%20214117.png" alt="屏幕截图 2023-06-09 214117"></p>
+<p><strong>value:可以自定义内容的按钮</strong></p>
+<p><strong>在提交表单时，我们必须有name值，不然后端无法接受到</strong></p>
+<p>在开始填写之前，我们要用input标签</p>
+<p>text：用于填写用户名账号（可以直接看到）<br>password：密码，别人不可直接看到<br>reset：重置按钮，一键清除<br>submit：登陆按键<br><em><strong>详细可以见上述图片</strong></em></p>
+<h3 id="下拉标签select"><a href="#下拉标签select" class="headerlink" title="下拉标签select"></a>下拉标签select</h3><p>&lt;select&gt;<br>        &lt;option&gt;&lt;&#x2F;option&gt;<br>        &lt;option&gt;&lt;&#x2F;option&gt;<br>        &lt;option&gt;&lt;&#x2F;option&gt;</p>
+<p>&lt;&#x2F;select&gt;</p>
+<h2 id="css样式表"><a href="#css样式表" class="headerlink" title="css样式表"></a>css样式表</h2><p><img src="/./web%20-%20%E5%89%AF%E6%9C%AC/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-09%20222151.png" alt="屏幕截图 2023-06-09 222151"></p>
+<p><img src="/./web%20-%20%E5%89%AF%E6%9C%AC/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-09%20222222.png" alt="屏幕截图 2023-06-09 222222"></p>
+<p><code>此图中，脸就是选择符，眼睛，鼻子和嘴就是属性。冒号后的内容就是属性值</code></p>
+<p><strong>记住，为了方便，我们将css语法写在head标签里，防止眼花</strong></p>
+<p><img src="/./web%20-%20%E5%89%AF%E6%9C%AC/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-09%20223715.png" alt="屏幕截图 2023-06-09 223715"></p>
+<p>举例：</p>
+<pre><code class="html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+    &lt;style&gt;
+        h1&#123;
+       color:red;
+        &#125;
+        h2&#123;
+            color:yellow;
+        &#125;
+        h3&#123;
+            color:blue;
+        &#125;
+   &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;1111111111111&lt;/h1&gt;
+    &lt;h2&gt;2222222222222&lt;/h2&gt;
+    &lt;h3&gt;3333333333333&lt;/h3&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h2 id="css写法"><a href="#css写法" class="headerlink" title="css写法"></a>css写法</h2><p>外部样式的创建，将html文件与css外部样式连接起来，在外部样式里去装饰html文件<br>那么我们需要用<strong>link</strong>标签去连接</p>
+<p><img src="/./web%20-%20%E5%89%AF%E6%9C%AC/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-10%20095511.png" alt="屏幕截图 2023-06-10 095511"></p>
+<p><img src="/./web%20-%20%E5%89%AF%E6%9C%AC/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-10%20100312.png" alt="屏幕截图 2023-06-10 100312"></p>
+<h3 id="行内样式的创建"><a href="#行内样式的创建" class="headerlink" title="行内样式的创建"></a>行内样式的创建</h3><p><strong>在标签内部写上style属性</strong><br><strong>可以替代css外部标签</strong><br>但css外部样式更大众化，推荐外部样式</p>
+<p>行内样式一般给某一个作变化</p>
+<h2 id="选择器"><a href="#选择器" class="headerlink" title="选择器"></a>选择器</h2><p>为什么要用选择器？<br>        要使用CSS对HTML页面中的元素实现一对一，一对一或者多对一的控制，这就需要用到CSS选择器</p>
+<h3 id="class选择器"><a href="#class选择器" class="headerlink" title="class选择器"></a>class选择器</h3><p><code>如果有多个div标签，你只想对其中的三个标签进行选择，我们可以选择class选择器</code></p>
+<p><img src="/./web%20-%20%E5%89%AF%E6%9C%AC/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-10%20103538.png" alt="屏幕截图 2023-06-10 103538"></p>
+<p><img src="/./web%20-%20%E5%89%AF%E6%9C%AC/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-10%20103842.png" alt="屏幕截图 2023-06-10 103842"></p>
+<p>如图，用class单独定义一个div标签，这样就可以只让一个div标签显示出颜色，但严格注意，定义了之后，在css样式表里一定要以<code>.</code>开头，如<code>.math</code></p>
+<h3 id="id选择器"><a href="#id选择器" class="headerlink" title="id选择器"></a>id选择器</h3><p><strong>区别于class是它具有唯一性</strong><br>最好我们设置id选择器的时候最好是一个id设置一个名字<br>如：<code>\&lt;div id=“box1”&gt;``````\&lt;/div&gt;</code></p>
+<h2 id="通配符"><a href="#通配符" class="headerlink" title="通配符"></a>通配符</h2><p>用来修改内边距和外边距的符号<br><img src="/./web%20-%20%E5%89%AF%E6%9C%AC/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-10%20192855.png" alt="屏幕截图 2023-06-10 192855"></p>
+<p>paddding是内边距<br>margin是外边距<br>*的作用表示全部的内容<br><code>上述含义为：你的每项内容的内边框和外边框都为零</code></p>
+<p><img src="/./web%20-%20%E5%89%AF%E6%9C%AC/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-10%20193102.png" alt="屏幕截图 2023-06-10 193102"></p>
+<p><img src="/./web%20-%20%E5%89%AF%E6%9C%AC/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-10%20193131.png" alt="屏幕截图 2023-06-10 193131"></p>
+<p><strong>以上两图就是有无使用通配符带来的结果</strong></p>
+<h2 id="伪类选择器"><a href="#伪类选择器" class="headerlink" title="伪类选择器"></a>伪类选择器</h2><p><img src="/./web%20-%20%E5%89%AF%E6%9C%AC/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-10%20194846.png" alt="屏幕截图 2023-06-10 194846"></p>
+<p><strong>用在超链接&lt;a&gt;标签上的</strong></p>
+<p><strong>要注意使用顺序，不要打乱标签顺序</strong></p>
+<p>伪类选择器就是用来给链接做修饰的</p>
+<h3 id="实例-1"><a href="#实例-1" class="headerlink" title="实例"></a>实例</h3><p>hover和active我们可以只用hover，不要问为什么</p>
+<pre><code class="html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+    &lt;style&gt;
+      a:link&#123;
+        background-color: red;
+        color: aqua;
+      &#125;
+      a:visited&#123;
+        background-color: red;
+        color: aqua;
+      &#125;
+      a:hover&#123;
+        background-color: yellow;
+        color: black;
+      &#125;
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;a href=&quot;https://news.sohu.com/&quot; id=&quot;num1&quot;&gt;新闻&lt;/a&gt;
+    &lt;a href=&quot;https://sports.sohu.com/&quot; id=&quot;num2&quot;&gt;体育&lt;/a&gt;
+    &lt;a href=&quot;https://auto.sohu.com/&quot; id=&quot;num3&quot;&gt;汽车&lt;/a&gt;
+    &lt;a href=&quot;https://house.focus.cn/&quot; id=&quot;num4&quot;&gt;房产&lt;/a&gt;
+    &lt;a href=&quot;https://travel.sohu.com/&quot; id=&quot;num5&quot;&gt;旅游&lt;/a&gt;
+    &lt;a href=&quot;https://learning.sohu.com/&quot; id=&quot;num6&quot;&gt;教育&lt;/a&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p><img src="/./web%20-%20%E5%89%AF%E6%9C%AC/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-10%20203027.png" alt="屏幕截图 2023-06-10 203027"></p>
+<p>结果如上图所示！<br><code>**class前加.**</code><br><code>**id前#**</code></p>
+<h2 id="CSS的文本属性"><a href="#CSS的文本属性" class="headerlink" title="CSS的文本属性"></a>CSS的文本属性</h2><h3 id="文本属性"><a href="#文本属性" class="headerlink" title="文本属性"></a>文本属性</h3><p><img src="/./web%20-%20%E5%89%AF%E6%9C%AC/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-10%20214539.png" alt="屏幕截图 2023-06-10 214539"></p>
+<p><img src="/./web%20-%20%E5%89%AF%E6%9C%AC/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-10%20221007.png" alt="屏幕截图 2023-06-10 221007"></p>
+<p>字体的属性如图所示</p>
+<p>常见字体展示<br>font-family&#x3D;“****”</p>
+<p><img src="/./web%20-%20%E5%89%AF%E6%9C%AC/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-10%20220007.png" alt="屏幕截图 2023-06-10 220007"></p>
+<p><strong>行高和实在垂直方向上的的操控：line-height</strong><br><strong>align是对水平方向上的操控</strong><br><code>当行高等于height时，文本居中</code></p>
+<p><strong>首行缩进只对首行起作用</strong><br><strong>text-indent</strong></p>
+<p>text-transform:用于大小转换用的有以下用法<br>capitalize:单词首字母大写<br>lowercase:全部小写<br>uppercase：全部大写</p>
+<p>font属性可以可以多个使用<br>如：严格注意，不要改变顺序，style（字体），字形，字的大小，字型</p>
+<pre><code class="html">&lt;style&gt;
+    p&#123;
+        font:style bold 20px/1em 微软雅黑
+    &#125;
+
+&lt;/style&gt;
+</code></pre>
+<h3 id="列表属性"><a href="#列表属性" class="headerlink" title="列表属性"></a>列表属性</h3><p><img src="/./web%20-%20%E5%89%AF%E6%9C%AC/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-11%20194829.png" alt="屏幕截图 2023-06-11 194829"></p>
+<p> <strong>position 用来控制小表示在框内还是框外</strong></p>
+<p><strong>列表属性也可以复合表示</strong></p>
+<p><code>如：list-style:circle inside</code></p>
+<h3 id="背景的属性"><a href="#背景的属性" class="headerlink" title="背景的属性"></a>背景的属性</h3><p>背景的颜色我们可以采用<br><strong><em>background-color</em>: rgba</strong>(*,*,*,*),<strong>a是透明度</strong>（并且取值是0到1）</p>
+<p>背景图片的属性：<br>当我们图片太大，我们不想让他铺满墙面，我们可以用：<strong><em>background-repeat</em>: repeat</strong></p>
+<p>我们可以通过下列属性控制图片的位置<br><strong><em>background-position</em>: center center;</strong></p>
+<p>当我们使用了<em>background-attachment</em>: fixed以后，图片就已经被固定（<strong>你要记住，是相对浏览器窗口</strong>）举个例子：</p>
+<pre><code class="html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+    &lt;style&gt;
+        div&#123;
+            width: 800px;
+            height: 1000px;
+        &#125;
+        .box1&#123;
+            background-image: url(./image/2.jpg);
+            background-attachment: fixed;
+            background-color: red;
+            background-repeat: no-repeat;
+        &#125;
+        .box2&#123;
+            background-image: url(./image/1000.jpg);
+            background-attachment: fixed;
+            background-color: green;
+            background-repeat: no-repeat;
+        &#125;
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class=&quot;box1&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;box2&quot;&gt;&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>背景的复合使用：<br><em><strong>background-image</strong></em><br><em><strong>background-repeat</strong></em><br><em><strong>background-attachment</strong></em><br><em><strong>background-position</strong></em><br><strong>background-color</strong></p>
+<h3 id="浮动属性"><a href="#浮动属性" class="headerlink" title="浮动属性"></a>浮动属性</h3><p><strong>浮动就是让div盒子横着排列</strong></p>
+<p><img src="/./web%20-%20%E5%89%AF%E6%9C%AC/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-12%20155337.png" alt="屏幕截图 2023-06-12 155337"><br><code>文字是不会被其他表格遮挡，而是会出现在其他空位置</code></p>
+<p><img src="/./web%20-%20%E5%89%AF%E6%9C%AC/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-12%20160821.png" alt="屏幕截图 2023-06-12 160821"></p>
+<h2 id="盒子模型"><a href="#盒子模型" class="headerlink" title="盒子模型"></a>盒子模型</h2><p><img src="/./web%20-%20%E5%89%AF%E6%9C%AC/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-12%20191818.png" alt="屏幕截图 2023-06-12 191818"></p>
+<p><strong>盒子模型的基本框架</strong><br><strong>内边距是padding属性</strong><br><strong>框架是border属性</strong>：框架的大小（px），solid（实线）double（）dashed（）dotted（点状），颜色</p>
+<p><code>我们可以知道背景色是可以蔓延到边框</code></p>
+<p><strong>外边距问题</strong><br><strong>要记住：垂直方向上，外边距取最大值，水平方向上，外边距合并处理</strong></p>
+<p>想要子盒子与父盒子上边距隔有距离，那我们不要对子盒子用<strong>margin-top</strong>，而要对父盒子用<strong>padding-up</strong></p>
+<p><strong>如何让盒子显示在屏幕中间：</strong><br><strong>margin:0 auto;</strong></p>
+<h3 id="溢出属性"><a href="#溢出属性" class="headerlink" title="溢出属性"></a>溢出属性</h3><p>当文字太长，盒子模型内无法完全显示，我们可以使用溢出属性</p>
+<p><img src="/./web%20-%20%E5%89%AF%E6%9C%AC/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-16%20151149.png" alt="屏幕截图 2023-06-16 151149"></p>
+<p><img src="/./web%20-%20%E5%89%AF%E6%9C%AC/image-20230616153149205.png" alt="image-20230616153149205"></p>
+<p><strong>overflow-x与overflow-y需要一起使用</strong></p>
+<p><img src="/./web%20-%20%E5%89%AF%E6%9C%AC/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-22%20100831.png" alt="屏幕截图 2023-06-22 100831"></p>
+<h2 id="元素显示类型"><a href="#元素显示类型" class="headerlink" title="元素显示类型"></a>元素显示类型</h2><ol>
+<li>块元素：div p ul li ol dl dt dd h1-h6<br> <strong>display:block</strong></li>
+</ol>
+<p><img src="/./web%20-%20%E5%89%AF%E6%9C%AC/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-22%20101233.png" alt="屏幕截图 2023-06-22 101233"></p>
+<ol start="2">
+<li><p>行内（内联）元素:a b em i span strong等(<strong>可以不独占一行</strong>)</p>
+<p> <strong>display:inline</strong></p>
+</li>
+</ol>
+<p><img src="/./web%20-%20%E5%89%AF%E6%9C%AC/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-22%20101355.png" alt="屏幕截图 2023-06-22 101355"></p>
+<ol start="3">
+<li>行内块元素：略</li>
+</ol>
+<p><strong>display:inline-block</strong></p>
+<h2 id="二级菜单"><a href="#二级菜单" class="headerlink" title="二级菜单"></a>二级菜单</h2><p>需要明白的几种标签用法：<br><strong>.item :hover{}</strong> :意思是当鼠标放上“item”标签上时，发生伪类变化<br><strong>.item :hover ul{}</strong> :意思是当鼠标放上“item”标签上时，发生伪类变化的是ul</p>
+<p><strong>意思就是：前面是你鼠标所检索的目标，后面是你检索目标后变化的目标</strong></p>
+<h2 id="定位"><a href="#定位" class="headerlink" title="定位"></a>定位</h2><p><code>定位—position</code></p>
+<ol>
+<li><p>position:static</p>
+</li>
+<li><p><strong>position:absolute(绝对定位)</strong></p>
+</li>
+<li><p><strong>position:relative(相对定位)(相对自己的初始位置)</strong></p>
+</li>
+<li><p><strong>position:fixed(固定定位)(浏览器的当前窗口)</strong></p>
+</li>
+<li><h3 id="静态定位"><a href="#静态定位" class="headerlink" title="静态定位"></a>静态定位</h3></li>
+</ol>
+<p>默认</p>
+<ol start="2">
+<li><h3 id="相对定位"><a href="#相对定位" class="headerlink" title="相对定位"></a>相对定位</h3></li>
+</ol>
+<pre><code class="html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+    &lt;style&gt;
+        div&#123;
+            width: 200px;
+            height: 200px;
+        &#125;
+        .box1&#123;
+            background-color: blue;
+        &#125;
+        .box2&#123;
+            background-color: yellow;
+            position: relative;
+            top: 100px;
+            left: 100px;
+        &#125;
+        .box3&#123;
+            background-color: aqua;
+        &#125;
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class=&quot;box1&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;box2&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;box3&quot;&gt;&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>输入top，则往下运动（没有bottom）<br>输入left，则往右运动（没有right）</p>
+<ol start="3">
+<li><h3 id="绝对定位"><a href="#绝对定位" class="headerlink" title="绝对定位"></a>绝对定位</h3></li>
+</ol>
+<pre><code class="html">
+</code></pre>
+<p><strong>绝对定位是相对<code>第一页面</code>的，不会随着屏幕的滑动而变化</strong><br><strong>一般情况下，我们给父盒子为相对定位，子盒子为绝对定位，这样的话，子盒子就是相对我们的父盒子（子绝父相）</strong></p>
+<ol start="4">
+<li><h3 id="固定定位"><a href="#固定定位" class="headerlink" title="固定定位"></a>固定定位</h3></li>
+</ol>
+<p><strong>就是让内容相对屏幕的位置，一直不会发生位置变化</strong></p>
+<ol start="5">
+<li>粘连定位</li>
+</ol>
+<p><strong>让文本一直出现在界面的的某一位置</strong></p>
+<h2 id="知识点课堂"><a href="#知识点课堂" class="headerlink" title="知识点课堂"></a><strong>知识点课堂</strong></h2><p>当一个图片无法占满整个盒子，我们可以对div下的image进行css处理，<code>width=100%,height=100%</code></p>
+<h2 id="透明属性标签"><a href="#透明属性标签" class="headerlink" title="透明属性标签"></a>透明属性标签</h2><p><strong>opacity</strong><br>透明属性标签，0到1为颜色的调整范围</p>
+<h2 id="层级的大小"><a href="#层级的大小" class="headerlink" title="层级的大小"></a>层级的大小</h2><p>层级的标签：z-index<br>属性值：z-index：（<strong>数字</strong>），数字越大层级越大，优先级越大</p>
+<h2 id="锚点知识"><a href="#锚点知识" class="headerlink" title="锚点知识"></a>锚点知识</h2><p>同一页面的跳转<br>当我们点击某一个标签时，页面会跳转至这个标签所对应的位置在前端开发中，锚点（Anchor）是一种常用的技术，用于在页面内部进行导航定位或创建内部链接。下面是一些锚点的应用场景和实现方法：</p>
+<ol>
+<li><p>页面内部导航：通过点击链接或按钮，在页面内部进行平滑滚动到指定位置。</p>
+<ul>
+<li><p>创建锚点链接：</p>
+<pre><code class="html">htmlCopy Code&lt;a href=&quot;#section1&quot;&gt;跳转到第一部分&lt;/a&gt;
+</code></pre>
+</li>
+<li><p>创建目标位置的锚点：</p>
+<pre><code class="html">htmlCopy Code&lt;h2 id=&quot;section1&quot;&gt;第一部分&lt;/h2&gt;
+</code></pre>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="box-sizing-border-box的用法"><a href="#box-sizing-border-box的用法" class="headerlink" title="box-sizing: border-box的用法"></a>box-sizing: border-box的用法</h2><p>使用了这个css后，指定的宽度（<code>width</code>）和高度（<code>height</code>）会包括元素的内边距和边框的尺寸，而不会增加元素的总宽度和总高度。<strong>也就是说宽度就是总宽度</strong>，包括了边框和内边距。</p>
+<h2 id="transform的用法"><a href="#transform的用法" class="headerlink" title="transform的用法"></a>transform的用法</h2><p>在 CSS 中，<code>transform</code> 是一个属性，用于对元素进行变换（transformation）操作。它可以实现旋转、缩放、平移和倾斜等效果，为元素提供了强大的视觉变换能力。</p>
+<p><code>transform</code> 属性可以与不同的函数一起使用，以达到所需的变换效果。以下是常用的 <code>transform</code> 函数：</p>
+<ol>
+<li><code>translate()</code>：平移元素，接受参数为长度值或百分比。<ul>
+<li><code>translateX()</code>：水平平移。</li>
+<li><code>translateY()</code>：垂直平移。</li>
+<li><code>translateZ()</code>：三维环境下的平移。</li>
+</ul>
+</li>
+<li><code>scale()</code>：缩放元素，接受参数为数字。<ul>
+<li><code>scaleX()</code>：水平缩放。</li>
+<li><code>scaleY()</code>：垂直缩放。</li>
+<li><code>scaleZ()</code>：三维环境下的缩放。</li>
+</ul>
+</li>
+<li><code>rotate()</code>：旋转元素，接受参数为角度值。<ul>
+<li><code>rotateX()</code>：绕 X 轴旋转。</li>
+<li><code>rotateY()</code>：绕 Y 轴旋转。</li>
+<li><code>rotateZ()</code>：绕 Z 轴旋转。</li>
+</ul>
+</li>
+<li><code>skew()</code>：倾斜元素，接受参数为角度值。<ul>
+<li><code>skewX()</code>：在 X 轴方向上倾斜。</li>
+<li><code>skewY()</code>：在 Y 轴方向上倾斜。</li>
+</ul>
+</li>
+<li><code>matrix()</code>：通过定义矩阵变换来实现更复杂的变换。</li>
+</ol>
+<p>以下是一个示例，展示了如何使用 <code>transform</code> 属性对元素进行旋转和平移：</p>
+<pre><code>cssCopy Code.box &#123;
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  transform: rotate(45deg) translateX(50px);
+&#125;
+</code></pre>
+<p>在上述示例中，<code>.box</code> 类的元素被设置为 100px x 100px 的尺寸，并应用了 <code>transform</code> 属性。通过 <code>rotate(45deg)</code>，元素将以顺时针方向旋转 45 度。然后，使用 <code>translateX(50px)</code>，元素沿 X 轴平移 50 像素。最终，元素将以旋转和平移的效果显示在页面上。</p>
+<p>请注意，<code>transform</code> 属性只影响元素的视觉呈现，不会改变其在文档流中的位置和布局。</p>
+<h2 id="表单的进阶用法"><a href="#表单的进阶用法" class="headerlink" title="表单的进阶用法"></a>表单的进阶用法</h2><h3 id="单选框"><a href="#单选框" class="headerlink" title="单选框"></a>单选框</h3><p>如何出现有选择的条件按钮呢<br>我们需要使用<strong>type &#x3D; “radio”</strong>，我们需要注意每一个分选项，我们都是需要分组的，不然我们不能进行单选<br>当我们点击文字时即可默认点击选中</p>
+<pre><code class="html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div&gt;你最喜欢那个科目:&lt;/div&gt;
+    &lt;div&gt;
+        &lt;input type=&quot;radio&quot; name=&quot;subject&quot; id=&quot;China&quot;&gt;
+        &lt;label for=&quot;China&quot;&gt;语文&lt;/label&gt;
+    &lt;/div&gt;
+    &lt;div&gt;
+        &lt;input type=&quot;radio&quot; name=&quot;subject&quot; id=&quot;Math&quot;&gt;
+        &lt;label for=&quot;Math&quot;&gt;数学&lt;/label&gt;
+    &lt;/div&gt;
+    &lt;div&gt;
+        &lt;input type=&quot;radio&quot; name=&quot;subject&quot; id=&quot;English&quot;&gt;
+        &lt;label for=&quot;English&quot;&gt;英语&lt;/label&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h3 id="复选框"><a href="#复选框" class="headerlink" title="复选框"></a>复选框</h3><p>代码如下：</p>
+<pre><code class="html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div&gt;我最喜欢做的事：&lt;/div&gt;
+    &lt;div&gt;
+        &lt;input type=&quot;checkbox&quot; name=&quot;like&quot; id=&quot;aaa&quot;&gt;
+        &lt;label for=&quot;aaa&quot;&gt;玩游戏&lt;/label&gt;
+        &lt;input type=&quot;checkbox&quot; name=&quot;like&quot; id=&quot;bbb&quot;&gt;
+        &lt;label for=&quot;bbb&quot;&gt;看电视&lt;/label&gt;
+        &lt;input type=&quot;checkbox&quot; name=&quot;like&quot; id=&quot;ccc&quot;&gt;
+        &lt;label for=&quot;ccc&quot;&gt;听英语&lt;/label&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h3 id="文件的上传"><a href="#文件的上传" class="headerlink" title="文件的上传"></a>文件的上传</h3><p>文件</p>
+<pre><code class="html">&lt;input type=&quot;file&quot; name=&quot;aaa&quot; id=&quot;666&quot;&gt;
+</code></pre>
+<p>引申其他的：<strong>disabled readonly</strong></p>
+<h3 id="下拉菜单"><a href="#下拉菜单" class="headerlink" title="下拉菜单"></a>下拉菜单</h3><p><strong>select 标签搭配 option</strong></p>
+<p>在select中<strong>size属性是显示多少，multiple属性是多选</strong></p>
+<h3 id="字段集"><a href="#字段集" class="headerlink" title="字段集"></a>字段集</h3><p><img src="https://typora200483.oss-cn-chengdu.aliyuncs.com/Snipaste_2023-07-17_21-44-59.png" alt="Snipaste_2023-07-17_21-44-59"></p>
+<p><strong>当我们需要制作如图所示的框框时，我们可以使用字符集</strong></p>
+<h2 id="如何采用自己喜欢的字体"><a href="#如何采用自己喜欢的字体" class="headerlink" title="如何采用自己喜欢的字体"></a>如何采用自己喜欢的字体</h2><p><strong>在网上下载自己喜欢的字体，存入文件夹中</strong></p>
+<p><strong><code>@font-face</code></strong></p>
+<p> <img src="https://typora200483.oss-cn-chengdu.aliyuncs.com/Snipaste_2023-07-20_18-40-56.png" alt="Snipaste_2023-07-20_18-40-56"></p>
+<h3 id="弹性盒的用法"><a href="#弹性盒的用法" class="headerlink" title="弹性盒的用法"></a>弹性盒的用法</h3><p><strong>display:flex</strong></p>
+<p><strong>作用是让盒子横向排版</strong><br>当父盒子被设置为弹性盒，且子盒子只有一个，我们可以使用<strong>margin：auto</strong>，直接让子盒子居中</p>
+<h1 id="css函数"><a href="#css函数" class="headerlink" title="css函数"></a>css函数</h1><ol>
+<li><h2 id="创建线性渐变背景"><a href="#创建线性渐变背景" class="headerlink" title="创建线性渐变背景"></a>创建线性渐变背景</h2></li>
+</ol>
+<p><code>linear-gradient()</code> 是一个 CSS 函数，用于创建线性渐变背景。它允许你在元素的背景中使用两个或多个颜色，并在它们之间创建平滑的过渡效果。</p>
+<p> <strong><em>background</em>: linear-gradient(to bottom, #f1f4f9, #dff1ff);</strong></p>
+<ul>
+<li><code>direction</code>：指定渐变的方向，可以是关键字（如 <code>to bottom</code>、<code>to top</code>、<code>to left</code>、<code>to right</code>）或角度值（如 <code>45deg</code>、<code>90deg</code>）。方向关键字表示从哪个方向开始渐变，而角度值表示从元素中心开始的渐变角度。</li>
+<li><code>color-stop1</code>、<code>color-stop2</code>：指定颜色和位置。颜色可以是十六进制值、RGB 值、颜色关键字等。位置是可选的，表示颜色在渐变中的位置，默认按照颜色停止点的顺序均匀分布。</li>
+</ul>
+<p>这是一个示例，展示了如何在 CSS 中使用 <code>linear-gradient()</code> 函数创建一个从左到右的渐变背景：</p>
+<pre><code>css复制代码.element &#123;
+  background: linear-gradient(to right, red, blue);
+&#125;
+</code></pre>
+<p>在这个示例中，<code>.element</code> 选择器表示要应用渐变背景的元素。<code>to right</code> 表示渐变的方向是从左到右。<code>red</code> 和 <code>blue</code> 是两个颜色停止点，表示渐变的起始和结束颜色。</p>
+<p>使用 <code>linear-gradient()</code> 函数可以创建更复杂和多彩的渐变背景。你可以根据需要添加更多的颜色停止点，并通过调整方向和位置来实现不同的渐变效果。</p>
+<h1 id="javascript"><a href="#javascript" class="headerlink" title="javascript"></a>javascript</h1><h2 id="基础知识"><a href="#基础知识" class="headerlink" title="基础知识"></a>基础知识</h2><p>在js中，var是给予赋值的意思，当我们使用var num &#x3D; 100的时候，意思就是将100这个数值放进num这个盒子当中<br>在网页中，我们有三种输出方式</p>
+<p><img src="https://typora200483.oss-cn-chengdu.aliyuncs.com/Snipaste_2023-07-21_19-37-50.png" alt="Snipaste_2023-07-21_19-37-50"></p>
+<p><strong>prompt()是输入框</strong></p>
+<p>以上三种用法用法相同，显示不同</p>
+<h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><p>js的数据：</p>
+<ol>
+<li><p>基本数据类型</p>
+<ul>
+<li>数值类型</li>
+<li>字符串类型</li>
+<li>布尔类型</li>
+<li>空类型<ul>
+<li>Udefined</li>
+<li>Null</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>引用数据类型</p>
+</li>
+</ol>
+<h3 id="数值类型"><a href="#数值类型" class="headerlink" title="数值类型"></a>数值类型</h3><p>var n1 &#x3D; 100<br>var n2 &#x3D; -100<br>var n3 &#x3D; 100.1314</p>
+<p><strong>var n5 &#x3D; 2e5</strong>的意思是<strong>二乘以10的五次方</strong></p>
+<p>0x十六进制<br>0o八进制<br>0b二进制</p>
+<h3 id="空类型"><a href="#空类型" class="headerlink" title="空类型"></a>空类型</h3><p>null：表示有值，有一个空值<br>undefined：表示没有值</p>
+<h3 id="如何查看变量的数据类型"><a href="#如何查看变量的数据类型" class="headerlink" title="如何查看变量的数据类型"></a>如何查看变量的数据类型</h3><p><strong>我们可以使用typoraf</strong><br>var num &#x3D; 100<br>var result &#x3D; typoraf num</p>
+<h2 id="如何转换数据类型"><a href="#如何转换数据类型" class="headerlink" title="如何转换数据类型"></a>如何转换数据类型</h2><h3 id="转数值"><a href="#转数值" class="headerlink" title="转数值"></a>转数值</h3><ol>
+<li>Number():    		语法：Num(要转换的内容)<br>                             结果： 转换好数值类型的结果</li>
+<li>parseInt():           语法：parseInt()</li>
+<li>parseFloat():</li>
+</ol>
+<pre><code>            																									
+</code></pre>
+<p><strong>二和三不同的地方在于，一个转换为整数，一个转换为小数</strong></p>
+<h3 id="转字符"><a href="#转字符" class="headerlink" title="转字符"></a>转字符</h3><ol>
+<li>String()              语法:String(要转换的内容)</li>
+<li>toString()           语法:要转换的内容.toString()</li>
+</ol>
+<p>转布尔</p>
+<ol>
+<li>Boolean()          语法：Boolean(要转换的内容)</li>
+</ol>
+<h1 id="DOM"><a href="#DOM" class="headerlink" title="DOM"></a>DOM</h1><h2 id="className"><a href="#className" class="headerlink" title="className"></a>className</h2><p><code>className</code> 是 DOM 元素对象的一个属性，用于获取或设置元素的类名。</p>
+<p>通过访问元素的 <code>className</code> 属性，可以获取该元素当前设置的所有类名，多个类名之间通过空格分隔。例如，如果一个元素的类名是 <code>&quot;class1 class2&quot;</code>，那么通过 <code>element.className</code> 获取到的值就是 <code>&quot;class1 class2&quot;</code>。</p>
+<p>同时，也可以使用 <code>className</code> 属性来设置元素的类名。你可以直接给 <code>className</code> 赋值一个字符串，用于替换元素原有的类名。例如，<code>element.className = &quot;newClass&quot;</code> 将会将元素的类名设置为 “newClass”。</p>
+<p>需要注意的是，使用 <code>className</code> 替换元素的类名时会覆盖原有的类名。如果你希望保留原有的类名，并添加新的类名，可以使用其他方法，例如使用 <code>classList.add()</code> 方法来添加类名。</p>
+<p>总结起来，<code>className</code> 是用于获取和设置元素类名的属性。</p>
+<p>如果还有其他问题，欢迎继续提问。</p>
+<h2 id="newRow-innerHTML"><a href="#newRow-innerHTML" class="headerlink" title="newRow.innerHTML"></a>newRow.innerHTML</h2><p><code>newRow.innerHTML</code> 是一个属性，用于获取或设置 HTML 元素的内容。</p>
+<p>对于一个元素对象 <code>newRow</code>，<code>newRow.innerHTML</code> 可以返回该元素包含的 HTML 内容，以字符串的形式表示。这包括元素标签内的文本内容以及任何子元素和它们的内容。</p>
+<p>例如，如果 <code>newRow</code> 是一个 <code>&lt;tr&gt;</code> 元素，那么 <code>newRow.innerHTML</code> 将返回该表格行内包含的 HTML 内容，包括其单元格（<code>&lt;td&gt;</code>）等子元素的 HTML 内容。</p>
+<p>同时，你也可以使用 <code>newRow.innerHTML</code> 来设置元素的 HTML 内容。通过给 <code>newRow.innerHTML</code> 赋值一个包含有效的 HTML 代码的字符串，可以替换元素的当前内容并更新显示。</p>
+<p>需要注意的是，使用 <code>innerHTML</code> 属性设置内容时，要谨慎防止跨站脚本攻击（XSS），确保只插入可信任的 HTML 内容。</p>
+<p>总结一下，<code>newRow.innerHTML</code> 属性用于获取或设置 HTML 元素的内容。</p>
+<p>如果还有其他问题，请随时提问。</p>
+
+    </div>
+    
+    
+    
+    
+    
+    
+    
+</div>
+
+                <footer id="footer">
+    <div id="footer-wrap">
+        <div>
+            &copy;
+            2022 - 2023 Argvchs の小窝
+            <span id="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            &commat;Argvchs
+        </div>
+        <div>
+            Based on the <a target="_blank" rel="noopener" href="https://hexo.io">Hexo Engine</a> &amp;
+            <a target="_blank" rel="noopener" href="https://github.com/theme-particlex/hexo-theme-particlex">ParticleX Theme</a>
+        </div>
+        
+    </div>
+</footer>
+
+            </div>
+            
+            <transition name="fade">
+                <div id="preview" ref="preview" v-show="previewShow">
+                    <img id="preview-content" ref="previewContent" />
+                </div>
+            </transition>
+            
+        </div>
+        <script src="/js/main.js"></script>
+        
+        
+
+
+
+
+        
+    </body>
+</html>

@@ -1,0 +1,339 @@
+
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+        <meta charset="utf-8" />
+        <title>Excel的专题讲解 | Argvchs の小窝</title>
+        <meta name="author" content="Argvchs" />
+        <meta name="description" content="" />
+        <meta name="keywords" content="" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+        <link rel="icon" href="/images/avatar1.jpg" />
+        <script src="https://cdn.staticfile.org/vue/3.3.4/vue.global.prod.min.js"></script>
+<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/6.4.0/css/all.min.css" />
+<link rel="stylesheet" href="/css/fonts.min.css" />
+<script> const mixins = {}; </script>
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+
+
+<script src="https://cdn.staticfile.org/highlight.js/11.8.0/highlight.min.js"></script>
+<script src="https://cdn.staticfile.org/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+<link
+    rel="stylesheet"
+    href="https://cdn.staticfile.org/highlight.js/11.8.0/styles/github.min.css"
+/>
+<script src="/js/lib/highlight.js"></script>
+
+
+
+<script src="/js/lib/preview.js"></script>
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/main.css" />
+
+    <meta name="generator" content="Hexo 6.3.0"></head>
+    <body>
+        <div id="layout">
+            <transition name="fade">
+                <div id="loading" v-show="loading">
+                    <div id="loading-circle">
+                        <h2>LOADING</h2>
+                        <p>加载过慢请开启缓存 浏览器默认开启</p>
+                        <img src="/images/loading.gif" />
+                    </div>
+                </div>
+            </transition>
+            <div id="menu" :class="{ hidden: hiddenMenu, 'menu-color': menuColor}">
+    <nav id="desktop-menu">
+        <a class="title" href="/">
+            <span>ARGVCHS の小窝</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;Home</span>
+        </a>
+        
+        <a href="/about">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;About</span>
+        </a>
+        
+        <a href="/archives">
+            <i class="fa-solid fa-box-archive fa-fw"></i>
+            <span>&ensp;Archives</span>
+        </a>
+        
+        <a href="/categories">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;Categories</span>
+        </a>
+        
+        <a href="/tags">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;Tags</span>
+        </a>
+        
+    </nav>
+    <nav id="mobile-menu">
+        <div class="title" @click="showMenuItems = !showMenuItems">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;ARGVCHS の小窝</span>
+        </div>
+        <transition name="slide">
+            <div class="items" v-show="showMenuItems">
+                
+                <a href="/">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-house fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Home</div>
+                    </div>
+                </a>
+                
+                <a href="/about">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-id-card fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">About</div>
+                    </div>
+                </a>
+                
+                <a href="/archives">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-box-archive fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Archives</div>
+                    </div>
+                </a>
+                
+                <a href="/categories">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-bookmark fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Categories</div>
+                    </div>
+                </a>
+                
+                <a href="/tags">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-tags fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Tags</div>
+                    </div>
+                </a>
+                
+            </div>
+        </transition>
+    </nav>
+</div>
+<transition name="fade">
+    <div id="menu-curtain" @click="showMenuItems = !showMenuItems" v-show="showMenuItems"></div>
+</transition>
+
+            <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
+                <div class="article">
+    <div>
+        <h1>Excel的专题讲解</h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2023/8/5
+        </span>
+        
+        <span class="category">
+            <a href="/categories/%E6%8A%80%E6%9C%AF/">
+                <span class="icon">
+                    <i class="fa-solid fa-bookmark fa-fw"></i>
+                </span>
+                技术
+            </a>
+        </span>
+        
+        
+        <span class="tags">
+            <span class="icon">
+                <i class="fa-solid fa-tags fa-fw"></i>
+            </span>
+            
+            
+            <span class="tag">
+                
+                <a href="/tags/Typora/" style="color: #00a596">Typora</a>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/Markdown/" style="color: #03a9f4">Markdown</a>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/WPS/" style="color: #00bcd4">WPS</a>
+            </span>
+            
+        </span>
+        
+    </div>
+    
+    <div class="content" v-pre>
+        <h1 id="Excel的专题讲解"><a href="#Excel的专题讲解" class="headerlink" title="Excel的专题讲解"></a>Excel的专题讲解</h1><h2 id="Excel的基本操作"><a href="#Excel的基本操作" class="headerlink" title="Excel的基本操作"></a><strong>Excel的基本操作</strong></h2><h3 id="快捷键"><a href="#快捷键" class="headerlink" title="快捷键"></a>快捷键</h3><table>
+<thead>
+<tr>
+<th align="left"><em><strong>功能说明</strong></em></th>
+<th align="left"><em><strong>快捷键</strong></em></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">复制选定的单元格</td>
+<td align="left">Ctrl+C</td>
+</tr>
+<tr>
+<td align="left">剪切选定的单元格</td>
+<td align="left">Ctrl+X</td>
+</tr>
+<tr>
+<td align="left">粘贴复制的单元格</td>
+<td align="left">Ctrl+V</td>
+</tr>
+<tr>
+<td align="left">清除选定单元格的内容</td>
+<td align="left">Del</td>
+</tr>
+<tr>
+<td align="left">删除选定的单元格</td>
+<td align="left">Ctrl+连字符</td>
+</tr>
+<tr>
+<td align="left">插入空白单元格</td>
+<td align="left">Ctrl+Shift+加号</td>
+</tr>
+<tr>
+<td align="left">关闭工作簿</td>
+<td align="left">Ctrl+W</td>
+</tr>
+<tr>
+<td align="left">打开工作簿</td>
+<td align="left">Ctrl+O</td>
+</tr>
+<tr>
+<td align="left">保存工作簿</td>
+<td align="left">Ctrl+S</td>
+</tr>
+<tr>
+<td align="left">撤销操作</td>
+<td align="left">Ctrl+Z</td>
+</tr>
+<tr>
+<td align="left">加粗</td>
+<td align="left">Ctrl+B</td>
+</tr>
+<tr>
+<td align="left">居中显示单元格内容</td>
+<td align="left">Alt+H、A、C</td>
+</tr>
+<tr>
+<td align="left">查找</td>
+<td align="left">Ctrl+F</td>
+</tr>
+<tr>
+<td align="left">替换</td>
+<td align="left">Ctrl+H</td>
+</tr>
+</tbody></table>
+<h2 id="Excel函数（COUNT篇）"><a href="#Excel函数（COUNT篇）" class="headerlink" title="Excel函数（COUNT篇）"></a>Excel函数（COUNT篇）</h2><ol>
+<li><strong>COUNT函数</strong></li>
+</ol>
+<img src="../images/屏幕截图 2023-05-18 160143.png" alt="屏幕截图 2023-05-18 160143" style="zoom:50%;" />
+
+
+
+<p>count()函数只对数字生效，对文本不生效，<strong>如商品栏，单价栏和进价栏均显示9</strong>，<strong>而名称栏和类型栏均显示0</strong>，如果在计算数量时没有出现数字栏，我们可以推行一个辅助列，来帮助我们计算数量</p>
+<img src="../images/屏幕截图 2023-05-18 160831.png" alt="屏幕截图 2023-05-18 160831" style="zoom: 80%;" />
+
+<ol start="2">
+<li><strong>COUNTIF函数</strong></li>
+</ol>
+<img src="../images/屏幕截图 2023-05-18 161437.png" alt="屏幕截图 2023-05-18 161437" style="zoom:50%;" />
+
+<ol>
+<li>先将类型列出来</li>
+<li>去除重复类型</li>
+<li>在格子里填写countif函数。<code>注意：在控制范围时，我们需要使用\$来固定范围，如：c\2:c\10</code></li>
+</ol>
+<p><em><strong>如有问题，请看课堂</strong></em></p>
+<p><strong><a target="_blank" rel="noopener" href="https://www.qingjiaoclass.com/">青椒课堂</a></strong></p>
+<p><strong>3.COUNTIFS</strong></p>
+<p><code>与COUNTIF的函数模型差不多，在原来的基础上又多了个限制条件</code></p>
+<p>如图所示</p>
+<img src="../images/屏幕截图 2023-05-18 210437.png" alt="屏幕截图 2023-05-18 210437" style="zoom:50%;" />
+
+<p><code>COUNTIFS(C\$2:c\$10,G19,D\$2:D\$10,”&lt;”&amp;“50”)</code></p>
+<ul>
+<li><strong>C$2:c$10</strong>:确定商品的范围<br>  <strong>G19</strong>：移动到的位置</li>
+<li><strong>D$2:D$10</strong>：确定所取单价的范围<br>  <strong>”&lt;”&amp;“50”</strong>：给单价限制函数范围</li>
+</ul>
+<h2 id="Excel函数（SUM函数）"><a href="#Excel函数（SUM函数）" class="headerlink" title="Excel函数（SUM函数）"></a><strong>Excel函数（SUM函数）</strong></h2>
+    </div>
+    
+    
+    
+    
+    
+    
+    
+</div>
+
+                <footer id="footer">
+    <div id="footer-wrap">
+        <div>
+            &copy;
+            2022 - 2023 Argvchs の小窝
+            <span id="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            &commat;Argvchs
+        </div>
+        <div>
+            Based on the <a target="_blank" rel="noopener" href="https://hexo.io">Hexo Engine</a> &amp;
+            <a target="_blank" rel="noopener" href="https://github.com/theme-particlex/hexo-theme-particlex">ParticleX Theme</a>
+        </div>
+        
+    </div>
+</footer>
+
+            </div>
+            
+            <transition name="fade">
+                <div id="preview" ref="preview" v-show="previewShow">
+                    <img id="preview-content" ref="previewContent" />
+                </div>
+            </transition>
+            
+        </div>
+        <script src="/js/main.js"></script>
+        
+        
+
+
+
+
+        
+    </body>
+</html>

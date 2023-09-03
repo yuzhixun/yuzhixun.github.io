@@ -1,0 +1,295 @@
+
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+        <meta charset="utf-8" />
+        <title>python的学习 | Argvchs の小窝</title>
+        <meta name="author" content="Argvchs" />
+        <meta name="description" content="" />
+        <meta name="keywords" content="" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+        <link rel="icon" href="/images/avatar1.jpg" />
+        <script src="https://cdn.staticfile.org/vue/3.3.4/vue.global.prod.min.js"></script>
+<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/6.4.0/css/all.min.css" />
+<link rel="stylesheet" href="/css/fonts.min.css" />
+<script> const mixins = {}; </script>
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+
+
+<script src="https://cdn.staticfile.org/highlight.js/11.8.0/highlight.min.js"></script>
+<script src="https://cdn.staticfile.org/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+<link
+    rel="stylesheet"
+    href="https://cdn.staticfile.org/highlight.js/11.8.0/styles/github.min.css"
+/>
+<script src="/js/lib/highlight.js"></script>
+
+
+
+<script src="/js/lib/preview.js"></script>
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/main.css" />
+
+    <meta name="generator" content="Hexo 6.3.0"></head>
+    <body>
+        <div id="layout">
+            <transition name="fade">
+                <div id="loading" v-show="loading">
+                    <div id="loading-circle">
+                        <h2>LOADING</h2>
+                        <p>加载过慢请开启缓存 浏览器默认开启</p>
+                        <img src="/images/loading.gif" />
+                    </div>
+                </div>
+            </transition>
+            <div id="menu" :class="{ hidden: hiddenMenu, 'menu-color': menuColor}">
+    <nav id="desktop-menu">
+        <a class="title" href="/">
+            <span>ARGVCHS の小窝</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;Home</span>
+        </a>
+        
+        <a href="/about">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;About</span>
+        </a>
+        
+        <a href="/archives">
+            <i class="fa-solid fa-box-archive fa-fw"></i>
+            <span>&ensp;Archives</span>
+        </a>
+        
+        <a href="/categories">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;Categories</span>
+        </a>
+        
+        <a href="/tags">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;Tags</span>
+        </a>
+        
+    </nav>
+    <nav id="mobile-menu">
+        <div class="title" @click="showMenuItems = !showMenuItems">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;ARGVCHS の小窝</span>
+        </div>
+        <transition name="slide">
+            <div class="items" v-show="showMenuItems">
+                
+                <a href="/">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-house fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Home</div>
+                    </div>
+                </a>
+                
+                <a href="/about">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-id-card fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">About</div>
+                    </div>
+                </a>
+                
+                <a href="/archives">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-box-archive fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Archives</div>
+                    </div>
+                </a>
+                
+                <a href="/categories">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-bookmark fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Categories</div>
+                    </div>
+                </a>
+                
+                <a href="/tags">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-tags fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Tags</div>
+                    </div>
+                </a>
+                
+            </div>
+        </transition>
+    </nav>
+</div>
+<transition name="fade">
+    <div id="menu-curtain" @click="showMenuItems = !showMenuItems" v-show="showMenuItems"></div>
+</transition>
+
+            <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
+                <div class="article">
+    <div>
+        <h1>python的学习</h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2023/8/5
+        </span>
+        
+        <span class="category">
+            <a href="/categories/%E6%8A%80%E6%9C%AF/">
+                <span class="icon">
+                    <i class="fa-solid fa-bookmark fa-fw"></i>
+                </span>
+                技术
+            </a>
+        </span>
+        
+        
+        <span class="tags">
+            <span class="icon">
+                <i class="fa-solid fa-tags fa-fw"></i>
+            </span>
+            
+            
+            <span class="tag">
+                
+                <a href="/tags/Typora/" style="color: #00bcd4">Typora</a>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/Markdown/" style="color: #03a9f4">Markdown</a>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/pycharm/" style="color: #ffa2c4">pycharm</a>
+            </span>
+            
+        </span>
+        
+    </div>
+    
+    <div class="content" v-pre>
+        <p>**print(sum(list(map(int,input().split()))))**：</p>
+<ol>
+<li><code>input()</code> 函数用于从控制台读取一行输入，返回的结果是一个字符串；</li>
+<li><code>input().split()</code> 方法用于将这个字符串按照空格分割成一个字符串列表；</li>
+<li><code>map(int, ...)</code> 函数用于将这个字符串列表中的每个元素转换为整数类型，返回的结果是一个迭代器；</li>
+<li><code>list(map(int, ...))</code> 将上一步中得到的迭代器转换为列表；</li>
+<li><code>sum(...)</code> 函数用于计算列表中所有元素的和；</li>
+<li><code>print(...)</code> 函数用于将上一步得到的结果输出到控制台。</li>
+</ol>
+<p>因此，当输入例如 “1 2 3 4” 后，代码会将其转换为整数列表 [1, 2, 3, 4] 并计算它们的和，最终输出 10。</p>
+<p><strong>good &#x3D; []</strong></p>
+<p>这是一个 Python 代码段，它定义了一个名为 <code>goods</code> 的空列表。</p>
+<p>在 Python 中，列表是一种序列类型的数据结构，可以用于存储多个数据元素。列表中可以存储任何类型的数据，包括数字、字符串、元组、字典等。<strong>列表使用方括号 [] 表示，元素之间用逗号 , 分隔开。</strong></p>
+<p>本代码段中，<code>goods = []</code> 定义了一个空列表 <code>goods</code>，其中没有任何元素。可以通过向 <code>goods</code> 列表中添加元素来实现对列表的操作，例如：</p>
+<pre><code class="python">goods = []
+goods.append(&quot;apple&quot;)
+goods.append(&quot;banana&quot;)
+goods.append(&quot;orange&quot;)
+print(goods)
+[&quot;apple&quot;, &quot;banana&quot;, &quot;orange&quot;]
+</code></pre>
+<p>append 用在列表后面给列表添加新的元素：<strong>list.append(else)</strong></p>
+<p>len（）的用法：用来计算数量的</p>
+<pre><code class="python">money = [1,5,10,20,50,100]
+print(len(money))
+6
+</code></pre>
+<p>range()函数的用法</p>
+<pre><code class="python">my_list = [1, 2, 3, 4, 5, 6]
+for i in range(len(my_list) - 2, 1, -1):
+    if my_list[i] % 2 == 0:
+        del my_list[i]
+</code></pre>
+<ol>
+<li>给出了一个<strong>列表</strong></li>
+<li>这里的range(a,b,-1)，意思是i的逆索引，<strong>i会从python的索引方式开始索引</strong>，从a开始，一直到1，默认间距-1，如上述<code>for i in range(len(my_list) - 2, 1, -1):</code>就是[5，4，3，2]</li>
+</ol>
+<p>在返回函数之的时候，会遇到小无线循环的小数，我们可以用两种解法：一般我们选用第二种，<em><strong>函数走第二种，非函数走第一张。</strong></em></p>
+<pre><code class="python">import math
+def ganweihao_shi_wo_die(r):
+    return math.pi * r**2
+s = ganweihao_shi_wo_die(1)
+print(&quot;圆的面积为：&#123;:.3f&#125;&quot;.format(s))
+</code></pre>
+<pre><code class="python">import math
+def ganweihao_shi_wo_die(r):
+    return round(math.pi * r ** 2,2)
+print(&quot;圆的面积为：&quot;,ganweihao_shi_wo_die(1))
+</code></pre>
+<h2 id="isalpha"><a href="#isalpha" class="headerlink" title="isalpha()"></a>isalpha()</h2><p><code>isalpha()</code> 是 Python 字符串的一个方法，用于判断字符串中所有的字符是否<strong>都为字母</strong>。如果字符串中所有的字符都是字母，则返回 True，否则返回 False。</p>
+<h2 id="isdigit"><a href="#isdigit" class="headerlink" title="isdigit()"></a>isdigit()</h2><p><code>isdigit()</code> 是 Python 字符串的一个方法，用于判断字符串中所有的字符是否<strong>都为数字</strong>。如果字符串中所有的字符都是数字，则返回 True，否则返回 False。</p>
+<h2 id="isspace"><a href="#isspace" class="headerlink" title="isspace()"></a>isspace()</h2><p><code>isspace()</code> 是 Python 字符串的一个方法，用于判断字符串中所有的字符是否<strong>都是空格</strong>。如果字符串中所有的字符都是空格，则返回 True，否则返回 False。</p>
+
+    </div>
+    
+    
+    
+    
+    
+    
+    
+</div>
+
+                <footer id="footer">
+    <div id="footer-wrap">
+        <div>
+            &copy;
+            2022 - 2023 Argvchs の小窝
+            <span id="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            &commat;Argvchs
+        </div>
+        <div>
+            Based on the <a target="_blank" rel="noopener" href="https://hexo.io">Hexo Engine</a> &amp;
+            <a target="_blank" rel="noopener" href="https://github.com/theme-particlex/hexo-theme-particlex">ParticleX Theme</a>
+        </div>
+        
+    </div>
+</footer>
+
+            </div>
+            
+            <transition name="fade">
+                <div id="preview" ref="preview" v-show="previewShow">
+                    <img id="preview-content" ref="previewContent" />
+                </div>
+            </transition>
+            
+        </div>
+        <script src="/js/main.js"></script>
+        
+        
+
+
+
+
+        
+    </body>
+</html>
