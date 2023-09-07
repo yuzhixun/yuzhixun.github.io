@@ -175,17 +175,17 @@
             
             <span class="tag">
                 
-                <a href="/tags/Typora/" style="color: #03a9f4">Typora</a>
+                <a href="/tags/Typora/" style="color: #ff7d73">Typora</a>
             </span>
             
             <span class="tag">
                 
-                <a href="/tags/Markdown/" style="color: #ffa2c4">Markdown</a>
+                <a href="/tags/Markdown/" style="color: #00a596">Markdown</a>
             </span>
             
             <span class="tag">
                 
-                <a href="/tags/vscode/" style="color: #00a596">vscode</a>
+                <a href="/tags/vscode/" style="color: #ff7d73">vscode</a>
             </span>
             
         </span>
@@ -1803,6 +1803,46 @@ void reverseString(char *str) &#123;
 <h2 id="ASCALL码"><a href="#ASCALL码" class="headerlink" title="ASCALL码"></a>ASCALL码</h2><p>在C语言中，字符类型实际上是用整数值来表示的。每个字符都对应一个唯一的整数值，称为字符编码（character encoding）。在常见的字符编码中，比如ASCII编码和Unicode编码，字母按顺序排列，相邻字母之间的整数值是连续的。</p>
 <p>在这个示例中，我们假设使用的是ASCII编码或者类似的编码，其中字母’a’的整数值是97，字母’z’的整数值是122。根据ASCII编码中字母顺序的连续性，我们可以通过<code>ch + 1</code>来获取下一个字符的整数值，因为在ASCII编码中，下一个字符的整数值刚好是当前字符的整数值加1。</p>
 <p><strong>其实字符对应一个整数，我们可以直接在字符这里加上一，我们就可以得到下一位</strong></p>
+<h1 id="蛇形长阵的案例"><a href="#蛇形长阵的案例" class="headerlink" title="蛇形长阵的案例"></a>蛇形长阵的案例</h1><p>我们该如何形成一个上三角的图案？<br>我们该如何准确的让每一个二元数组对应到属于自己的数字？</p>
+<pre><code class="c">#include &lt;stdio.h&gt;
+
+void art(int N);
+
+int main()&#123;
+    int N;
+    scanf(&quot;%d&quot;, &amp;N);
+    art(N);
+&#125;
+
+void art(int N)&#123;
+    int num[N][N];
+    int digit = N - 1; // 将digit的初始值改为N-1
+    
+    int n = 0,all = 0;
+    for(n=;n&lt;=N;n++&#123;
+        all = all + n;
+    &#125;
+    int j,i;
+
+    while(digit &gt;= 0)&#123;
+        for(j = digit; j &gt;= 0; j--)&#123;
+            num[digit - j][j] = all;
+            all--;
+        &#125;
+        digit--;
+    &#125;
+
+    for(i = 0; i &lt; N; i++)&#123; // 修改循环条件，使其循环N次
+        for(j = 0; j &lt; N - i; j++)&#123; // 修改循环条件，使其循环N-i次
+            printf(&quot;%d&quot;, num[i][j]);
+            if(j &lt; N - i - 1)&#123;
+                printf(&quot; &quot;);
+            &#125;
+        &#125;
+        printf(&quot;\n&quot;);
+    &#125;
+</code></pre>
+<p>29到30行这一串连锁循环就可以形成一个上三角图像。</p>
 
     </div>
     

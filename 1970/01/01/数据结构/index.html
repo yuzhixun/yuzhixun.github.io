@@ -175,12 +175,12 @@
             
             <span class="tag">
                 
-                <a href="/tags/Typora/" style="color: #ffa2c4">Typora</a>
+                <a href="/tags/Typora/" style="color: #03a9f4">Typora</a>
             </span>
             
             <span class="tag">
                 
-                <a href="/tags/Markdown/" style="color: #03a9f4">Markdown</a>
+                <a href="/tags/Markdown/" style="color: #ffa2c4">Markdown</a>
             </span>
             
         </span>
@@ -260,7 +260,30 @@ for(i = 0;i&lt;n;i++)&#123;
 </code></pre>
 <p>以上代码我们如何求平方阶<br><strong>n+n-1+n-2+n-3+………1&#x3D;?&#x3D;n(n+1)&#x2F;2</strong><br>第一步去掉常数项没有常数，我们省略这一步；<br>第二步去掉除了最高阶以外的阶，变成了n^2&#x2F;2;<br><strong>第三步去掉最高阶项的常数，变成n^2;</strong></p>
 <p><img src="https://typora200483.oss-cn-chengdu.aliyuncs.com/Snipaste_2023-09-05_22-50-01.png" alt="Snipaste_2023-09-05_22-50-01"></p>
-<h2 id="线性表"><a href="#线性表" class="headerlink" title="线性表"></a>线性表</h2>
+<h2 id="线性表"><a href="#线性表" class="headerlink" title="线性表"></a>线性表</h2><p>线性表的特性：像排队一样，具有线一样的性质</p>
+<blockquote>
+<p><strong>什么是线性表呢</strong>？</p>
+<p><strong>线性表是给人看的，不是给机器看的</strong></p>
+</blockquote>
+<p>由零个或多个数据元素组成的有限序列。</p>
+<p>需要强调几个地方：</p>
+<ol>
+<li>线性表是一个序列，也就是说有个先来后到的特点</li>
+<li>线性表的处理元素时有限的。</li>
+<li>线性表允许为空表，也就是元素为零。</li>
+</ol>
+<p>我们用简单的数学来定义：</p>
+<p><img src="https://typora200483.oss-cn-chengdu.aliyuncs.com/Snipaste_2023-09-07_21-55-29.png" alt="Snipaste_2023-09-07_21-55-29"></p>
+<p><strong>如上图所示，ai-1是ai的直接前驱元素，ai+1是ai的直接后继元素</strong></p>
+<h2 id="抽象数据类型"><a href="#抽象数据类型" class="headerlink" title="抽象数据类型"></a>抽象数据类型</h2><p><strong>数据类型：是指一组性质相同的值的集合及定义在此集合上的一些操作的总称。</strong></p>
+<pre><code class="mermaid">graph LR
+    数据类型 --&gt; 原子类型
+    数据类型 --&gt; 结构类型
+</code></pre>
+<p>原子类型：不可再分解<br>结构类型：可在分解。<strong>例如：整型数组是由若干整型数据组成的</strong></p>
+<p><strong>抽象数据类型（Abstract Data Type，简称ADT）</strong>是一种计算机科学中的概念，用于描述数据结构的逻辑特性和操作。它定义了一个数据类型的抽象模型，包括数据的组织方式和可执行的操作，而不需关注具体的实现细节。</p>
+<h2 id="线性表的抽象数据类型"><a href="#线性表的抽象数据类型" class="headerlink" title="线性表的抽象数据类型"></a>线性表的抽象数据类型</h2><p>线性表的抽象数据类型的定义：<br>ATD 线性表（list）<br>Date：线性表的数据对象集合为{a1,a2,a3,a4…..,an}，每一个元素的类型均为DateType。其中，除第一个元素a1外，每一个元素只有一个直接前驱元素，除了最后一个元素，每一个元素只有一个直接后继元素。<br>operation：<br>Initlist(*L):初始化操作，家里一个空的线性表L。<br>ListEmpty(L)：判断线性表是否为空表，若为空表返回true，反则false。<br>ClearList(*L):将列表清空。<br>GetElem(L,i,*e):将线性表L中的第i个位置的元素值返回给e。<br>ListInsert(*L,i,e):在线性表L中第i个位置插入新元素e。<br>ListDelete(*L,i,*e):删除线性表L中第i个位置元素，并用e返回其值。<br>ListLength(L):返回线性表L的元素个数。</p>
+
     </div>
     
     
