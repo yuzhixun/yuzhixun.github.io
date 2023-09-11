@@ -175,17 +175,17 @@
             
             <span class="tag">
                 
-                <a href="/tags/Typora/" style="color: #ffa2c4">Typora</a>
+                <a href="/tags/Typora/" style="color: #00a596">Typora</a>
             </span>
             
             <span class="tag">
                 
-                <a href="/tags/Markdown/" style="color: #00bcd4">Markdown</a>
+                <a href="/tags/Markdown/" style="color: #ff7d73">Markdown</a>
             </span>
             
             <span class="tag">
                 
-                <a href="/tags/vscode/" style="color: #00a596">vscode</a>
+                <a href="/tags/vscode/" style="color: #00bcd4">vscode</a>
             </span>
             
         </span>
@@ -276,7 +276,145 @@ for(i = 0;i&lt;n;i++)&#123;
 <li>线性表的处理元素时有限的。</li>
 <li>线性表允许为空表，也就是元素为零。</li>
 </ol>
-<p>线性表的声明：**list L</p>
+<p><strong>这句话的意思是，线性表中有四个元素，分别是1，2，3，4.</strong></p>
+<p>我们用简单的数学来定义：</p>
+<p><img src="https://typora200483.oss-cn-chengdu.aliyuncs.com/Snipaste_2023-09-07_21-55-29.png" alt="Snipaste_2023-09-07_21-55-29"></p>
+<p><strong>如上图所示，ai-1是ai的直接前驱元素，ai+1是ai的直接后继元素</strong></p>
+<h2 id="抽象数据类型"><a href="#抽象数据类型" class="headerlink" title="抽象数据类型"></a>抽象数据类型</h2><p><strong>数据类型：是指一组性质相同的值的集合及定义在此集合上的一些操作的总称。</strong></p>
+<pre><code class="mermaid">graph LR
+    数据类型 --&gt; 原子类型
+    数据类型 --&gt; 结构类型
+</code></pre>
+<p>原子类型：不可再分解<br>结构类型：可在分解。<strong>例如：整型数组是由若干整型数据组成的</strong></p>
+<p><strong>抽象数据类型（Abstract Data Type，简称ADT）</strong>是一种计算机科学中的概念，用于描述数据结构的逻辑特性和操作。它定义了一个数据类型的抽象模型，包括数据的组织方式和可执行的操作，而不需关注具体的实现细节。</p>
+<h2 id="线性表的抽象数据类型"><a href="#线性表的抽象数据类型" class="headerlink" title="线性表的抽象数据类型"></a>线性表的抽象数据类型</h2><p>线性表的抽象数据类型的定义：<br>ATD 线性表（list）<br>Date：线性表的数据对象集合为{a1,a2,a3,a4…..,an}，每一个元素的类型均为DateType。其中，除第一个元素a1外，每一个元素只有一个直接前驱元素，除了最后一个元素，每一个元素只有一个直接后继元素。<br>operation：<br>Initlist(*L):初始化操作，家里一个空的线性表L。<br>ListEmpty(L)：判断线性表是否为空表，若为空表返回true，反则false。<br>ClearList(*L):将列表清空。<br>GetElem(L,i,*e):将线性表L中的第i个位置的元素值返回给e。<br>ListInsert(*L,i,e):在线性表L中第i个位置插入新元素e。<br>ListDelete(*L,i,*e):删除线性表L中第i个位置元素，并用e返回其值。<br>ListLength(L):返回线性表L的元素个数。</p>
+<h2 id="线性表的顺序存储结构"><a href="#线性表的顺序存储结构" class="headerlink" title="线性表的顺序存储结构"></a>线性表的顺序存储结构</h2><pre><code class="c">#define MAXSIZE 20;
+typedef int ElemType;
+typedef struct&#123;
+    ElemType date[MAXSIZE];
+    int length;    	//线性表当前的长度
+&#125;splist;
+</code></pre>
+<p>顺序的存储表结构的封装需要三个属性</p>
+<ol>
+<li>存储空间的起始位置，数组date，他的存储位置就是线性表存储空间的存储位置。</li>
+<li>线性表的最大存储容量：数组的长度MaxSize。</li>
+<li>线性表的当前长度：length。</li>
+</ol>
+<blockquote>
+<p><strong>注意，数组与线性表的区别主要是，数组的长度一旦规定，就不能随意更改，而线性表的长度是线性表中现有元素的个数，是会改变的。线性表是给人看的，不是给机器看的</strong></p>
+</blockquote>
+<p>假设ElemType占用c个字节，那我们可以用这样的一个关系式来表达顺序结构之间的关系：<strong>LOC(Ai+1) &#x3D; LOC(Ai)  + c;</strong><br><strong>LOC(Ai) &#x3D; LOC(1)  + (i-1)*c;</strong></p>
+<h3 id="获取元素的操作："><a href="#获取元素的操作：" class="headerlink" title="获取元素的操作："></a>获取元素的操作：</h3><pre><code class="c">#include &lt;stdio.h&gt;
+
+#define MAX_SIZE 100   // 假设线性表的最大长度为100
+
+typedef int ElemType;  // 假设线性表中的元素类型为整数
+
+typedef struct &#123;
+    ElemType data[MAX_SIZE];  // 用数组存储线性表的元素
+    int length;               // 记录线性表的当前长度
+&#125; List;
+
+int GetElem(List L, int i, ElemType *e);
+
+int main() &#123;
+    
+    ElemType e = 0;
+    
+    // 获取线性表 L 中的第 2 个元素
+    if(GetElem(L, 2, &amp;e)) &#123;
+        printf(&quot;线性表 L 中的第 2 个元素是: %d\n&quot;, e);
+    &#125; else &#123;
+        printf(&quot;获取元素失败！\n&quot;);
+    &#125;
+    
+    return 0;
+&#125;
+
+int GetElem(List L, int i, ElemType *e) &#123;
+    if (i &lt; 1 || i &gt; L.length) &#123;   // 判断下标是否越界
+        return 0;
+    &#125;
+    
+    *e = L.data[i - 1];   // 获取元素的值
+    
+    return 1;
+&#125;
+</code></pre>
+<h3 id="插入操作"><a href="#插入操作" class="headerlink" title="插入操作"></a>插入操作</h3><p><strong>从最后一个元素开始</strong></p>
+<pre><code class="c">// 在线性表 L 的第 i 个位置插入新元素 e
+int ListInsert(List* L, int i, ElemType e) &#123;
+    // 判断线性表是否已满
+    if (L-&gt;length &gt;= MAX_SIZE) &#123;
+        return ERROR;  // 线性表已满，返回错误信息
+    &#125;
+    
+    // 判断插入位置是否合法
+    if (i &lt; 1 || i &gt; L-&gt;length+1) &#123;
+        return ERROR;  // 插入位置非法，返回错误信息
+    &#125;
+    
+    // 将插入位置 i 和之后的元素向后移动一位
+    for (int j = L-&gt;length-1; j &gt;= i-1; j--) &#123;
+        L-&gt;data[j+1] = L-&gt;data[j];
+    &#125;
+    
+    // 插入新元素并更新线性表长度
+    L-&gt;data[i-1] = e;
+    L-&gt;length++;
+    
+    return OK;  // 插入成功，返回 OK
+&#125;
+</code></pre>
+<p><strong>要注意，数组的和线性表要区分开来，线性表里的1是数组里的0，也就是线性表里的n是数组里的n-1;</strong></p>
+<p><strong>还有就是数组是线性表里的一个子集，线性表就是一个架构，里面包含了数据，还有长度</strong></p>
+<h2 id="删除操作"><a href="#删除操作" class="headerlink" title="删除操作"></a>删除操作</h2><p>删除的思路：<br><strong>去除删除的元素，从删除的元素位置开始遍历到最后一个元素的位置，分别将他们都向前移动一个位置；</strong></p>
+<pre><code class="c">// 在线性表 L 的第 i 个位置插入新元素 e
+int ListDelete(List* L, int i, ElemType e) &#123;
+    int k;
+    // 判断线性表是否已满
+    if (L-&gt;length == 0) &#123;
+        return ERROR;  // 线性表已满，返回错误信息
+    &#125;
+    
+    // 判断插入位置是否合法
+    if (i &lt; 1 || i &gt; L-&gt;length+1) &#123;
+        return ERROR;  // 插入位置非法，返回错误信息
+    &#125;
+    
+    // 将插入位置 i 和之后的元素向后移动一位
+    for (k = i;k &lt; L-&gt;length;k++) &#123;
+        L-&gt;data[k-1] = L-&gt;data[k];
+    &#125;
+    
+    // 插入新元素并更新线性表长度
+    L-&gt;length--;
+    
+    return OK;  // 插入成功，返回 OK
+&#125;
+</code></pre>
+<h2 id="链式存储结构"><a href="#链式存储结构" class="headerlink" title="链式存储结构"></a>链式存储结构</h2><p>​		<strong>线性表的链式存储结构的特点是用一组任意的存储单元线性表的数据元素，这组存储单元可以存在内存中未被占用的任意位置。</strong></p>
+<blockquote>
+<p><em><strong>也就是说每一个存储位置都包含一个数据以及一个指针</strong></em>，这个存储位置我们形象的称为<strong>节点</strong></p>
+</blockquote>
+<p><img src="https://typora200483.oss-cn-chengdu.aliyuncs.com/Snipaste_2023-09-11_10-57-36.png" alt="Snipaste_2023-09-11_10-57-36"></p>
+<p>线性表中的第一个节点称为头节点，最后一个节点称为NULL</p>
+<h3 id="头指针与头节点的异同"><a href="#头指针与头节点的异同" class="headerlink" title="头指针与头节点的异同"></a>头指针与头节点的异同</h3><p>在链表中，头指针（Head Pointer）和头节点（Head Node）是两个不同的概念。</p>
+<p><strong>头指针</strong>是指向链表中第一个节点的指针。它是一个指针变量，<strong>存储了链表中第一个节点的内存地址</strong>。使用头指针，我们可以遍历整个链表，访问和操作链表中的每个节点。</p>
+<p><strong>头节点</strong>是一个特殊的节点，位于链表的开头，<strong>并且不存储具体的数据</strong>。头节点的作用是提供一个统一的入口，方便对链表进行操作。在某些链表实现中，头节点可能存储链表的长度等附加信息。</p>
+<p><strong>头指针和头节点的关系通常是：头指针指向头节点。通过头指针，我们可以访问到头节点，进而遍历整个链表。</strong></p>
+<p>需要注意的是，在某些情况下，头节点也可以是第一个真实存储数据的节点（即功能上同时充当头节点和首个数据节点），而没有额外的头指针。</p>
+<p>总结来说：</p>
+<ul>
+<li>头指针是指向链表中第一个节点的指针变量。</li>
+<li>头节点是链表中的一个特殊节点，位于链表开头，不存储具体数据，用于提供一个统一的入口。</li>
+</ul>
+<p>这些概念在不同的链表实现和编程语言中可能有所不同，但通常遵循这个基本的概念。</p>
+<blockquote>
+<p><strong>这是个单链表</strong></p>
+</blockquote>
+<p><img src="https://typora200483.oss-cn-chengdu.aliyuncs.com/Snipaste_2023-09-11_11-07-30.png" alt="Snipaste_2023-09-11_11-07-30"></p>
 
     </div>
     
