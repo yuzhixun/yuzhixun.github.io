@@ -175,17 +175,17 @@
             
             <span class="tag">
                 
-                <a href="/tags/Typora/" style="color: #00a596">Typora</a>
+                <a href="/tags/Typora/" style="color: #ffa2c4">Typora</a>
             </span>
             
             <span class="tag">
                 
-                <a href="/tags/Markdown/" style="color: #ff7d73">Markdown</a>
+                <a href="/tags/Markdown/" style="color: #00bcd4">Markdown</a>
             </span>
             
             <span class="tag">
                 
-                <a href="/tags/vscode/" style="color: #00bcd4">vscode</a>
+                <a href="/tags/vscode/" style="color: #ff7d73">vscode</a>
             </span>
             
         </span>
@@ -369,7 +369,7 @@ int ListInsert(List* L, int i, ElemType e) &#123;
 </code></pre>
 <p><strong>要注意，数组的和线性表要区分开来，线性表里的1是数组里的0，也就是线性表里的n是数组里的n-1;</strong></p>
 <p><strong>还有就是数组是线性表里的一个子集，线性表就是一个架构，里面包含了数据，还有长度</strong></p>
-<h2 id="删除操作"><a href="#删除操作" class="headerlink" title="删除操作"></a>删除操作</h2><p>删除的思路：<br><strong>去除删除的元素，从删除的元素位置开始遍历到最后一个元素的位置，分别将他们都向前移动一个位置；</strong></p>
+<h3 id="删除操作"><a href="#删除操作" class="headerlink" title="删除操作"></a>删除操作</h3><p>删除的思路：<br><strong>去除删除的元素，从删除的元素位置开始遍历到最后一个元素的位置，分别将他们都向前移动一个位置；</strong></p>
 <pre><code class="c">// 在线性表 L 的第 i 个位置插入新元素 e
 int ListDelete(List* L, int i, ElemType e) &#123;
     int k;
@@ -415,6 +415,127 @@ int ListDelete(List* L, int i, ElemType e) &#123;
 <p><strong>这是个单链表</strong></p>
 </blockquote>
 <p><img src="https://typora200483.oss-cn-chengdu.aliyuncs.com/Snipaste_2023-09-11_11-07-30.png" alt="Snipaste_2023-09-11_11-07-30"></p>
+<p>单链表是一种链式存储结构，由一系列节点组成，每个节点包含一个数据元素和一个指向下一个节点的指针。单链表的存储结构可以用以下代码实现：</p>
+<pre><code class="c">typedef struct Node&#123;
+    int data;             // 数据域
+    struct Node *next;    // 指针域
+&#125;Node, *LinkedList;
+</code></pre>
+<p>其中，Node代表一个节点，LinkedList则是一个指向节点的指针。在单链表中，我们通常采用头指针来表示整个链表，它指向第一个节点。如果链表为空，则头指针为NULL。</p>
+<p>需要注意的是，<strong>单链表没有直接访问任意位置的能力，只能从头指针开始沿着链表逐个遍历，直到找到所需位置的节点</strong>。因此，在进行插入、删除等操作时，需要先找到要操作的节点的前一个节点。</p>
+<h3 id="单链表的读取"><a href="#单链表的读取" class="headerlink" title="单链表的读取"></a>单链表的读取</h3><ul>
+<li>​	获得链表第i个数据的算法思路：<ul>
+<li>声明一个节点p指向链表第一个节点，初始化j从1开始；</li>
+<li>当j&lt;i时，就遍历链表，让p的指针向后移动，不断指向下一个节点，j+1；</li>
+<li>若到链表末尾p为空，则说明第i元素不存在；</li>
+<li>若则查找成功，返回节点p的数据。</li>
+</ul>
+</li>
+</ul>
+<pre><code class="c">Status GetElem(Linklist L,int i,)&#123;
+    LinkList p = L-&gt;next;
+    int j = 1;
+    
+    while(p &amp;&amp; j&lt;i)&#123;
+        p = p-&gt;next;
+        j++;
+    &#125;
+    
+    if(!p || j &gt; i)&#123;
+        return error;
+    &#125;
+    
+    *e = p-&gt;data;
+    return ok;
+&#125;
+</code></pre>
+<h3 id="单链表的插入"><a href="#单链表的插入" class="headerlink" title="单链表的插入"></a>单链表的插入</h3><p>这个位置的逻辑其实很简单，我们把节点s安置在p和p-&gt;next的中间，也就是说，我们把原来的p-&gt;next赋值给现在的s-&gt;next，然后把现有的s赋值给前面的p-&gt;next;</p>
+<p><img src="https://typora200483.oss-cn-chengdu.aliyuncs.com/Snipaste_2023-09-12_22-04-46.png" alt="Snipaste_2023-09-12_22-04-46"></p>
+<p><strong>操作</strong>：</p>
+<ol>
+<li>声明一节点p指向链表头节点，初始化j从一开始；</li>
+<li>当j&lt;1时，就遍历链表，让p的指针向后移动，不断指向下一节点，j累加1；</li>
+<li>若到链表末尾p为空，则说明第i个元素不存在；</li>
+<li>否则查找成功，在系统中生成一个空节点s；</li>
+<li>将数据元素e赋值给s-&gt;date；</li>
+<li>单链表的插入刚才两个标准语句；</li>
+<li>返回成功</li>
+</ol>
+<pre><code class="c">Status listInsert(linklist *L,int i,ElemType e)&#123;
+    int j;
+    Linklist p,s;
+    
+    p = *L;
+    j = 1;
+    
+    while(p &amp;&amp; j&lt;i)&#123;
+        p = p-&gt;next;
+        j++;
+    &#125;
+    
+    if(!p || j&gt;i)&#123;
+        return ERROR;
+    &#125;
+    
+    s = (LinkList)malloc(sizeof(Node));
+    s-&gt;date = e;
+    s-&gt;next = p-&gt;next;
+    p-&gt;next = s;
+
+    return OK;
+&#125;
+
+/*s-&gt;next = p-&gt;next;
+    p-&gt;next = s;
+*/这个顺序我们是不能随便替换的
+</code></pre>
+<h3 id="单链表的删除"><a href="#单链表的删除" class="headerlink" title="单链表的删除"></a>单链表的删除</h3><p> 顾名思义，其实就是将p-&gt;next &#x3D; p-&gt;next-&gt;next;</p>
+<pre><code class="c">Status listInsert(linklist *L,int i,ElemType *e)&#123;
+    int j;
+    Linklist p,q;
+    
+    p = *L;
+    j = 1;
+    
+    while(p-&gt;next &amp;&amp; j&lt;i)&#123;
+        p = p-&gt;next;
+        j++;
+    &#125;
+    
+    if(!(p-&gt;next) || j&gt;i)&#123;
+        return ERROR;
+    &#125;
+       q = p-&gt;next;
+    p-&gt;next = q-&gt;next;
+    *e = q-&gt;data;
+    free(q);
+    return OK;
+&#125;
+</code></pre>
+<h2 id="单链表的整表创建"><a href="#单链表的整表创建" class="headerlink" title="单链表的整表创建"></a>单链表的整表创建</h2><p>单链表的创建并不是直接给定你大小，而是在之后的循环当中去决定，<strong>单链表一开始是从初始的空表状态，依次建立各个元素节点并逐个插入链表。</strong></p>
+<ul>
+<li>单链表的创建算法思路如下：<ul>
+<li>声明一节点p和计数器变量i；</li>
+<li>初始化一空链表；</li>
+<li>让L的头节点的指针指向NULL，及建立一个带头节点的单链表；</li>
+<li>循环实现后继节点的赋值和插入；</li>
+</ul>
+</li>
+</ul>
+<h3 id="头插法建立单链表"><a href="#头插法建立单链表" class="headerlink" title="头插法建立单链表"></a>头插法建立单链表</h3><p>​		<strong>使用头插法创建单链表是一种常见的方式，它可以将新节点插入到链表的头部，创建一个逆序的链表。</strong></p>
+<pre><code class="c">Node* CreateLinkedList(int arr[], int size) &#123;
+    Node* head = NULL;
+
+    for (int i = 0; i &lt; size; i++) &#123;
+        Node* newNode = (Node*)malloc(sizeof(Node));
+        newNode-&gt;data = arr[i];
+        newNode-&gt;next = head;
+        head = newNode;
+    &#125;
+
+    return head;
+&#125;
+</code></pre>
 
     </div>
     
