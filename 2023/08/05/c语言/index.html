@@ -175,17 +175,17 @@
             
             <span class="tag">
                 
-                <a href="/tags/Typora/" style="color: #00a596">Typora</a>
+                <a href="/tags/Typora/" style="color: #ff7d73">Typora</a>
             </span>
             
             <span class="tag">
                 
-                <a href="/tags/Markdown/" style="color: #00bcd4">Markdown</a>
+                <a href="/tags/Markdown/" style="color: #ffa2c4">Markdown</a>
             </span>
             
             <span class="tag">
                 
-                <a href="/tags/vscode/" style="color: #03a9f4">vscode</a>
+                <a href="/tags/vscode/" style="color: #00bcd4">vscode</a>
             </span>
             
         </span>
@@ -500,6 +500,34 @@ int main()
     return 0;
 &#125;
 </code></pre>
+<p>​		<strong>假设现在的时间是：5点13分。输入一个正整数N，问过N分钟后是几点几分。时间以24小时记。即23：59分后会是0：0</strong><br><strong>时间格式不用：HH:MM格式。如：9点零8分，直接写为：9:8  ,不要输出为：09:08</strong></p>
+<pre><code class="c">#include &lt;stdio.h&gt;
+
+int main()&#123;
+    int N,M,hour,num;
+    scanf(&quot;%d&quot;,&amp;N);
+    hour = 5;
+    
+    M = (N+13)/60;
+    
+    if(M==0)&#123;
+        printf(&quot;%d:%d&quot;,hour,N+13);
+    &#125;
+    
+    if(M!=0)&#123;
+        hour = hour + M;
+        num = (N+13)%60;
+        if(hour &gt; 24)&#123;
+            num = (N+13)%60;
+            printf(&quot;%d:%d&quot;,hour%24,num);
+        &#125;else&#123;
+            printf(&quot;%d:%d&quot;,hour,num);
+        &#125;
+    &#125;
+    
+    return 0;
+&#125;
+</code></pre>
 <h2 id="if的易错的方面"><a href="#if的易错的方面" class="headerlink" title="if的易错的方面"></a>if的易错的方面</h2><ol>
 <li>不加大括号</li>
 <li>if后面加分号</li>
@@ -533,6 +561,27 @@ int main()
             printf(&quot;你怕是个邵！\n&quot;);
             break;
     &#125;
+&#125;
+</code></pre>
+<p><strong>通过switch-case来写出数字对应的星期</strong></p>
+<pre><code class="c">#include &lt;stdio.h&gt;
+
+int main()&#123;
+    int N,M;
+    scanf(&quot;%d %d&quot;,&amp;N,&amp;M);
+    
+    N = (N+M-1)%7+1;
+    
+    switch(N)&#123;
+        case 1:printf(&quot;星期一\n&quot;);break;
+        case 2:printf(&quot;星期二\n&quot;);break;
+        case 3:printf(&quot;星期三\n&quot;);break;
+        case 4:printf(&quot;星期四\n&quot;);break;
+        case 5:printf(&quot;星期五\n&quot;);break;
+        case 6:printf(&quot;星期六\n&quot;);break;
+        case 7:printf(&quot;星期日\n&quot;);break;
+    &#125;
+    return 0;
 &#125;
 </code></pre>
 <p><strong>我们可以用switch-case来代替else-if语句</strong></p>
@@ -844,6 +893,25 @@ int main()
 &#125;
 </code></pre>
 <p><strong>有点伤脑筋，不过没那么难</strong></p>
+<p>判断是否为素数</p>
+<pre><code class="c">#include &lt;stdio.h&gt;
+#include &lt;math.h&gt;
+
+int main()&#123;
+    int n,i,j = 0;
+    scanf(&quot;%d&quot;,&amp;n);
+    
+    for(i=3;i&lt;=sqrt(n);i++)&#123;
+        if(n%i==0)&#123;
+            printf(&quot;not prime\n&quot;);
+            return 0;
+        &#125;
+    &#125;
+    
+    printf(&quot;prime\n&quot;);
+    return 0;
+&#125;
+</code></pre>
 <h2 id="离开多重循环"><a href="#离开多重循环" class="headerlink" title="离开多重循环"></a>离开多重循环</h2><p><strong>break和continue只能对它所在的那层循环执行跳出，不能跳出多个循环</strong></p>
 <p>举个例子<br><strong>用多少一角和两角和五角能够凑够几元钱</strong></p>
 <pre><code class="c">#include&lt;stdio.h&gt;
