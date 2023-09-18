@@ -175,7 +175,7 @@
             
             <span class="tag">
                 
-                <a href="/tags/Typora/" style="color: #ff7d73">Typora</a>
+                <a href="/tags/Typora/" style="color: #00a596">Typora</a>
             </span>
             
             <span class="tag">
@@ -185,7 +185,7 @@
             
             <span class="tag">
                 
-                <a href="/tags/vscode/" style="color: #00bcd4">vscode</a>
+                <a href="/tags/vscode/" style="color: #00a596">vscode</a>
             </span>
             
         </span>
@@ -1677,6 +1677,7 @@ void swap(int *pa,int *pb)&#123;
 <li>long double：通常为8字节、12字节或16字节，具体取决于编译器和操作系统。</li>
 </ol>
 <p><strong>当我们给地址加1以后，实际是进入到了下一个字节，就如同int，每四个字节为一个节节，加一就是进入到了下一个节节</strong></p>
+<p><strong>在 C 语言中，当数组作为函数参数传递时，会退化为指针类型，并且 <code>sizeof()</code> 操作符返回的是指针的大小（通常是 4 或 8 字节），而不是数组的大小。</strong></p>
 <h3 id="数组和字节的关系"><a href="#数组和字节的关系" class="headerlink" title="数组和字节的关系"></a>数组和字节的关系</h3><pre><code class="c">int a[];
 int *p = a;
 *(p + n) = a[n];
@@ -1747,7 +1748,7 @@ int main(void)
 <p><strong>准确的做法</strong><br>scanf(“%<strong>7</strong>s”,string);<br>这个里面的7就是告诉电脑读入7个字符。</p>
 <h2 id="字符串的一部分函数"><a href="#字符串的一部分函数" class="headerlink" title="字符串的一部分函数"></a>字符串的一部分函数</h2><p><code>&lt;string.h&gt;</code>头文件中提供了一些常用的字符串操作函数，下面列举一些常见的函数：</p>
 <ul>
-<li><code>strlen</code>：获取字符串的长度。</li>
+<li><code>strlen</code>：获取字符串的长度。(<strong>这里我要进行一个说明，使用 strlen() 函数计算的长度不包括字符串末尾的空字符（\0）。</strong>)</li>
 <li><code>strcpy</code>：复制一个字符串到另一个字符串。</li>
 <li><code>strncpy</code>：复制指定长度的字符串到另一个字符串。</li>
 <li><code>strcat</code>：将一个字符串追加到另一个字符串的末尾。</li>
@@ -1764,6 +1765,33 @@ int main(void)
 <li>向标准输出写一个字符；</li>
 <li>返回几个字符，EOF(-1）表示失败</li>
 </ul>
+<p>例题：如何让一个数字字符串中末尾的零全部删除</p>
+<pre><code class="c">#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+
+int main() &#123;
+    char str[100];
+    int i,j;
+    
+       while(fgets(str,sizeof(str),stdin))&#123;
+           int length = strlen(str);
+           	
+       	for(i=length-1;i&gt;=0;i--)&#123;
+       		if(str[i] == &#39;0&#39;)&#123;
+       			continue;
+            &#125;else&#123;
+                for(j=0;j&lt;i;j++)&#123;
+                    putchar(str[j]);
+                &#125;
+            break;	
+            &#125;	
+        &#125;
+    
+    &#125;
+    return 0;
+&#125;
+</code></pre>
+<p><strong>大致思路就是，我们从字符串的末尾开始遍历，如果是零，我们就continue这个循环，继续外层循环，同理，直到不是零开始，我们就开始遍历从零开始到这个i-1，将去零的字符串输出</strong></p>
 <h3 id="getchar函数"><a href="#getchar函数" class="headerlink" title="getchar函数"></a>getchar函数</h3><ul>
 <li>int getchar(void);</li>
 <li>从标准输入读入一个字符；</li>
@@ -1911,6 +1939,31 @@ void art(int N)&#123;
     &#125;
 </code></pre>
 <p>29到30行这一串连锁循环就可以形成一个上三角图像。</p>
+<h1 id="函数库"><a href="#函数库" class="headerlink" title="函数库"></a>函数库</h1><h2 id="ctype-h"><a href="#ctype-h" class="headerlink" title="ctype.h"></a>ctype.h</h2><p>ctype.h 是C标准库中的一个头文件，包含了一组用于字符处理的函数原型和宏定义。</p>
+<p>下面是 ctype.h 中常用的一些函数和宏定义：</p>
+<ol>
+<li><strong>int isalpha(int c): 检查字符是否为字母（a-z、A-Z）。</strong></li>
+<li><strong>int isdigit(int c): 检查字符是否为数字（0-9）。</strong></li>
+<li><strong>int isalnum(int c): 检查字符是否为字母或数字。</strong></li>
+<li><strong>int isupper(int c): 检查字符是否为大写字母（A-Z）。</strong></li>
+<li><strong>int islower(int c): 检查字符是否为小写字母（a-z）。</strong></li>
+<li><strong>int isspace(int c): 检查字符是否为空格、制表符、换行符等空白字符。</strong></li>
+<li><strong>int toupper(int c): 将小写字母转换为大写字母。</strong></li>
+<li><strong>int tolower(int c): 将大写字母转换为小写字母。</strong></li>
+</ol>
+<p>这些函数通常以整数形式接受一个字符作为参数，并返回一个非零值表示满足条件，返回零表示不满足条件。</p>
+<p>此外，ctype.h 还包含了一些用于字符分类和转换的宏定义，如以下示例所示：</p>
+<ul>
+<li><strong>isalpha(c)：判断字符c是否为字母。</strong></li>
+<li><strong>isdigit(c)：判断字符c是否为数字。</strong></li>
+<li><strong>isalnum(c)：判断字符c是否为字母或数字。</strong></li>
+<li><strong>islower(c)：判断字符c是否为小写字母。</strong></li>
+<li><strong>isupper(c)：判断字符c是否为大写字母。</strong></li>
+<li><strong>isspace(c)：判断字符c是否为空白字符。</strong></li>
+<li><strong>tolower(c)：将大写字母c转换为小写字母。</strong></li>
+<li><strong>toupper(c)：将小写字母c转换为大写字母。</strong></li>
+</ul>
+<p><strong>通过使用 ctype.h 中的这些函数和宏定义，您可</strong>以对字符进行各种常见的处理和判断。</p>
 
     </div>
     

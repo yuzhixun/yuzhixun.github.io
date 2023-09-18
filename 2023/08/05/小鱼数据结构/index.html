@@ -175,17 +175,17 @@
             
             <span class="tag">
                 
-                <a href="/tags/Typora/" style="color: #03a9f4">Typora</a>
+                <a href="/tags/Typora/" style="color: #00bcd4">Typora</a>
             </span>
             
             <span class="tag">
                 
-                <a href="/tags/Markdown/" style="color: #ff7d73">Markdown</a>
+                <a href="/tags/Markdown/" style="color: #ffa2c4">Markdown</a>
             </span>
             
             <span class="tag">
                 
-                <a href="/tags/vscode/" style="color: #03a9f4">vscode</a>
+                <a href="/tags/vscode/" style="color: #00a596">vscode</a>
             </span>
             
         </span>
@@ -534,6 +534,46 @@ int ListDelete(List* L, int i, ElemType e) &#123;
     &#125;
 
     return head;
+&#125;
+</code></pre>
+<h3 id="尾插法建立单链表"><a href="#尾插法建立单链表" class="headerlink" title="尾插法建立单链表"></a>尾插法建立单链表</h3><p>​		<strong>头插法的缺点也很明晰，头插法属于顺序相反的插法</strong></p>
+<pre><code class="c">void CreateListTail(Linklist *L,int n)&#123;
+    LinkList p,r;
+    int i;
+    
+    srand(time(0));
+    *L = (LinkList)malloc(sizeof(Node));
+    r = *L;
+    
+    for(i=0;i&lt;n;i++)&#123;
+        p = (Node *)malloc(sizeof(Node));
+        p-&gt;data = rand()%100+1;
+        r-&gt;next = p;
+        r = p;
+    &#125;
+    
+    r-&gt;next = NULL;
+    
+&#125;
+</code></pre>
+<h2 id="单链表的整表删除"><a href="#单链表的整表删除" class="headerlink" title="单链表的整表删除"></a>单链表的整表删除</h2><p>​		单链表的删除其实就是在内存中将它释放：</p>
+<ol>
+<li>声明节点p和q。</li>
+<li>将第一个节点赋值给p，下一个节点赋值给q。</li>
+<li>循环执行释放p和将q赋值给p的操作。</li>
+</ol>
+<pre><code class="c">Status ClearList(LinkList *L)&#123;
+    LinkList p,q;
+    p = (*L)-&gt;next;
+    
+    while(p)&#123;
+        q = p-&gt;next;
+        free(p);
+        p = q;
+    &#125;
+    (*L)-&gt;next = NULL;
+    
+    return OK;
 &#125;
 </code></pre>
 
