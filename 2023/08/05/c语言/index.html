@@ -175,17 +175,17 @@
             
             <span class="tag">
                 
-                <a href="/tags/Typora/" style="color: #ffa2c4">Typora</a>
+                <a href="/tags/Typora/" style="color: #00a596">Typora</a>
             </span>
             
             <span class="tag">
                 
-                <a href="/tags/Markdown/" style="color: #00a596">Markdown</a>
+                <a href="/tags/Markdown/" style="color: #03a9f4">Markdown</a>
             </span>
             
             <span class="tag">
                 
-                <a href="/tags/vscode/" style="color: #03a9f4">vscode</a>
+                <a href="/tags/vscode/" style="color: #ffa2c4">vscode</a>
             </span>
             
         </span>
@@ -1303,6 +1303,63 @@ int main()
     return 0;
 &#125;
 </code></pre>
+<h2 id="输入年月日，得到这一天是这一年的第几天"><a href="#输入年月日，得到这一天是这一年的第几天" class="headerlink" title="输入年月日，得到这一天是这一年的第几天"></a>输入年月日，得到这一天是这一年的第几天</h2><p><strong>这一题考察了我们的结构体，结构体实质是一个数据类型，本身并不是数据，不要混淆了</strong></p>
+<pre><code class="c">#include &lt;stdio.h&gt;
+
+struct data&#123;
+        int day;
+        int month;
+        int year;
+    &#125;;
+
+int days(int year,int month,int day, int digit);
+
+
+int main()&#123;
+    struct data time;
+    int num = 0;
+    scanf(&quot;%d %d %d&quot;,&amp;time.year,&amp;time.month,&amp;time.day);
+    
+    num = days(time.year,time.month,time.day,num);
+
+    printf(&quot;%d&quot;,num);
+    
+    return 0;
+&#125;
+
+int days(int year,int month,int day, int digit)&#123;
+    int i;
+    int months[13] = &#123;0,31,28,31,30,31,30,31,31,30,31,30,31&#125;;
+    
+    if((year % 4 == 0 &amp;&amp; year % 100 != 0) || year % 400 == 0)&#123;
+        if(month &gt; 2)&#123;
+            for(i=1;i&lt;=month-1;i++)&#123;
+                digit = digit + months[i];
+            &#125;
+            digit = digit + day + 1;
+        &#125;else&#123;
+            for(i=1;i&lt;=month-1;i++)&#123;
+                digit = digit + months[i];
+            &#125;
+            digit = digit + day;
+        &#125;
+    &#125;else&#123;
+        if(month &gt; 2)&#123;
+            for(i=1;i&lt;=month-1;i++)&#123;
+                digit = digit + months[i];
+            &#125;
+            digit = digit + day;
+        &#125;else&#123;
+            for(i=1;i&lt;=month-1;i++)&#123;
+                digit = digit + months[i];
+            &#125;
+            digit = digit + day;
+        &#125;
+    &#125;
+    
+    return digit;
+&#125;		
+</code></pre>
 <h1 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h1><h2 id="定义函数中有无void的作用"><a href="#定义函数中有无void的作用" class="headerlink" title="定义函数中有无void的作用"></a>定义函数中有无void的作用</h2><ol>
 <li><strong>有void时，我们可以让函数内部直接printf()</strong></li>
 <li><strong>没有void时，比如说是int，那就是让函数返回一个整数。</strong></li>
@@ -1682,7 +1739,12 @@ void swap(int *pa,int *pb)&#123;
 int *p = a;
 *(p + n) = a[n];
 </code></pre>
-<h1 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h1><h2 id="分清-c和-s的区别"><a href="#分清-c和-s的区别" class="headerlink" title="分清%c和%s的区别"></a>分清%c和%s的区别</h2><p><code>%c</code>和<code>%s</code>是C语言中用于格式化输出的占位符（placeholder）。它们分别用于打印单个字符和字符串。</p>
+<p><strong>这里强调一个易错的，比如说，我们设定一个字符型数组a[n];<br>sizeof(a) &#x3D; n*sizeof(char) .</strong>  </p>
+<h1 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h1><h2 id="初始化字符型数组"><a href="#初始化字符型数组" class="headerlink" title="初始化字符型数组"></a>初始化字符型数组</h2><p><strong>如果我们想要一个空字符，那我们呢必须要初始化一个字符型数组，不然会出现数组里有很多随便自定义字符</strong></p>
+<p><code>char word2[100] = &quot;&quot;</code> 是将 <code>word2</code> 数组初始化为空字符串。</p>
+<p>在这里，它的作用是确保 <code>word2</code> 数组一开始是空的，这样后续的字符串拼接操作可以正确进行。如果不进行初始化，<code>word2</code> 数组中可能会包含一些随机的字符值，导致字符串拼接出错。</p>
+<p>通过将 <code>word2</code> 初始化为空字符串，我们可以确保在拼接之前，<code>word2</code> 中不会包含任何其他字符，从而保证字符串拼接的正确性。</p>
+<h2 id="分清-c和-s的区别"><a href="#分清-c和-s的区别" class="headerlink" title="分清%c和%s的区别"></a>分清%c和%s的区别</h2><p><code>%c</code>和<code>%s</code>是C语言中用于格式化输出的占位符（placeholder）。它们分别用于打印单个字符和字符串。</p>
 <p><code>%c</code>用于输出一个字符，一个<code>%c</code>只能输出一个字符，可以将字符直接打印在双引号内，也可以将字符存储在变量中，然后以变量形式传递给<code>printf</code>函数。下面是一个例子：</p>
 <pre><code>cCopy Codechar ch = &#39;A&#39;;
 printf(&quot;%c\n&quot;, ch); // 输出 A
@@ -1752,7 +1814,7 @@ int main(void)
 <li><code>strcpy</code>：复制一个字符串到另一个字符串。</li>
 <li><code>strncpy</code>：复制指定长度的字符串到另一个字符串。</li>
 <li><code>strcat</code>：将一个字符串追加到另一个字符串的末尾。</li>
-<li><code>strncat</code>：将指定长度的字符串追加到另一个字符串的末尾。</li>
+<li><code>strncat</code>：将指定长度的字符串追加到另一个字符串的末尾。 <strong>注意我们在追加的时候，是以数组的形式追加，不能以字符型追加。</strong></li>
 <li><code>strcmp</code>：比较两个字符串。</li>
 <li><code>strncmp</code>：比较两个指定长度的字符串。</li>
 <li><code>strchr</code>：在一个字符串中查找指定字符首次出现的位置。</li>
@@ -1848,6 +1910,32 @@ int main() &#123;
 void reverseString(char *a,char *b)&#123;
     strcat(a,b);
     printf(&quot;%s&quot;,a);
+&#125;
+</code></pre>
+<h2 id="strcat函数"><a href="#strcat函数" class="headerlink" title="strcat函数"></a>strcat函数</h2><p><strong>这题当中，我们要将元音字母单独储存到另一个数组当中，然后输出</strong><br>然后我们要注意的的是，我们将找到的字符储存到字符串当中去，所以我们没一次都要初始化一个数组用来储存，想得到一个只有一个字符的字符串也很简单，只需要添加“”</p>
+<pre><code class="c">#include &lt;stdio.h&gt;
+#include &lt;string.h&gt; 
+
+int main()&#123;
+    int i;
+    char word1[100];
+    char word2[100] = &quot;&quot;;
+    scanf(&quot;%s&quot;,word1);
+    
+    int length = strlen(word1);
+    
+    for(i=0;i&lt;length;i++)&#123;
+        if(word1[i] == &#39;a&#39; || word1[i] == &#39;e&#39; || word1[i] == &#39;i&#39; || word1[i] == &#39;o&#39; || word1[i] == &#39;u&#39;)&#123;
+            char temp[2];
+            temp[0] = word1[i];
+            temp[1] = &#39;\0&#39;;
+            strcat(word2,temp);
+        &#125;
+    &#125;
+    
+    printf(&quot;%s&quot;,word2);
+    
+    return 0;
 &#125;
 </code></pre>
 <h2 id="字符串的专属输入方式"><a href="#字符串的专属输入方式" class="headerlink" title="字符串的专属输入方式"></a>字符串的专属输入方式</h2><p>fgets(str, sizeof(str), stdin);</p>
@@ -1964,6 +2052,32 @@ void art(int N)&#123;
 <li><strong>toupper(c)：将小写字母c转换为大写字母。</strong></li>
 </ul>
 <p><strong>通过使用 ctype.h 中的这些函数和宏定义，您可</strong>以对字符进行各种常见的处理和判断。</p>
+<p>例题：</p>
+<pre><code class="c">#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+#include &lt;ctype.h&gt;
+
+int main() &#123;
+    char word;
+    char str[200];
+    
+    while(scanf(&quot; %c %s&quot;,&amp;word,str) != EOF)&#123;
+        int i = 0,length,num = 0;
+        length = strlen(str);
+        
+        for(i=0;i&lt;length;i++)&#123;
+            if(tolower(str[i]) == tolower(word))&#123;
+                num++;
+            &#125;
+        &#125;
+        
+        printf(&quot;%.5f\n&quot;,(float)num/length);
+    &#125;
+    
+    return 0;
+&#125;
+</code></pre>
+<p>在其中我们使用了**tolower(c)**，用于题目要求不需要区分大小写的情况下<br><strong>然后我们需要注意的是，在用scanf输入同时出现的字符和字符串的时候，我们最好在前面添加空格，这样可以有效防止将空格也读入其中。</strong></p>
 
     </div>
     

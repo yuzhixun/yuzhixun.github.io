@@ -3,7 +3,7 @@
 <html lang="zh">
     <head>
         <meta charset="utf-8" />
-        <title>学好C++，你就是C位！ | Argvchs の小窝</title>
+        <title> | Argvchs の小窝</title>
         <meta name="author" content="Argvchs" />
         <meta name="description" content="" />
         <meta name="keywords" content="" />
@@ -147,53 +147,65 @@
             <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
                 <div class="article">
     <div>
-        <h1>学好C++，你就是C位！</h1>
+        <h1></h1>
     </div>
     <div class="info">
         <span class="date">
             <span class="icon">
                 <i class="fa-solid fa-calendar fa-fw"></i>
             </span>
-            2023/8/5
+            2023/9/21
         </span>
         
-        <span class="category">
-            <a href="/categories/%E6%8A%80%E6%9C%AF/">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                技术
-            </a>
-        </span>
-        
-        
-        <span class="tags">
-            <span class="icon">
-                <i class="fa-solid fa-tags fa-fw"></i>
-            </span>
-            
-            
-            <span class="tag">
-                
-                <a href="/tags/Typora/" style="color: #ff7d73">Typora</a>
-            </span>
-            
-            <span class="tag">
-                
-                <a href="/tags/Markdown/" style="color: #03a9f4">Markdown</a>
-            </span>
-            
-            <span class="tag">
-                
-                <a href="/tags/vscode/" style="color: #ff7d73">vscode</a>
-            </span>
-            
-        </span>
         
     </div>
     
     <div class="content" v-pre>
-        
+        <p>2.2</p>
+<ol>
+<li>在顺序表中插入或删除一个元素，需要平均移动<u><strong>（n+1)&#x2F;2</strong></u>元素，具体移动的元素个数与<u>线性表中元素的个数</u>有关。</li>
+<li>顺序表中逻辑上相邻的元素的物理位置<u><strong>一定</strong></u>紧邻。单链表中逻辑上相邻的元素物理位置**<u>不一定</u>**紧邻</li>
+<li>在单链表中，除了首元结点外，任一节点的存储位置由**<u>指针域</u>**指示</li>
+<li>在单链表中设置头结点的作用是**<u>简化链表操作、提供链表入口、处理空链表和存储附加信息</u>**。</li>
+</ol>
+<p>2.7</p>
+<ol>
+<li>删除p结点的直接后继结点的语句序列是**<u>（14）（3）（14）</u>**。</li>
+<li>删除p结点的直接前驱结点的语句序列是**<u>（10）（12）（8）（11）（3）（14）</u>**。</li>
+<li>删除p结点的语句序列是**<u>（10）（12）（7）（3）（14）</u>**。</li>
+<li>删除首元结点的语句序列是**<u>（12）（11）（3）（14）</u>**。</li>
+<li>删除尾元结点的语句序列是**<u>（9）（11）（3）（14）或者（12）（10）（6）（3）（14）</u>**。</li>
+</ol>
+<p>2.21</p>
+<p>试写一算法，实现顺序表的就地逆置，及利用元表的存储空间将线性表（a1,a2,….,an)逆置为(an,an-1……a1)</p>
+<pre><code class="c">void Change(List L,ElemType &amp;e)&#123;
+    int length = len(L) - 1;
+    for(int i = 0;i&lt;=length/2;i++)&#123;
+        e = L[0];
+        L[i] = L[length - 1 - i];
+        L[length - 1 - i] = e;
+    &#125;
+&#125;
+</code></pre>
+<p>2.22 试写一算法，实现单链表的就地逆置</p>
+<pre><code class="c">struct ListNode* reverseLinkedList(struct ListNode* head) &#123;
+    if (head == NULL || head-&gt;next == NULL)
+        return head;
+    
+    struct ListNode* prev = NULL;
+    struct ListNode* curr = head;
+    
+    while (curr != NULL) &#123;
+        struct ListNode* temp = curr-&gt;next;
+        curr-&gt;next = prev;
+        prev = curr;
+        curr = temp;
+    &#125;
+    
+    return prev;
+&#125;
+</code></pre>
+
     </div>
     
     
