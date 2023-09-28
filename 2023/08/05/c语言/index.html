@@ -180,12 +180,12 @@
             
             <span class="tag">
                 
-                <a href="/tags/Markdown/" style="color: #03a9f4">Markdown</a>
+                <a href="/tags/Markdown/" style="color: #ffa2c4">Markdown</a>
             </span>
             
             <span class="tag">
                 
-                <a href="/tags/vscode/" style="color: #ffa2c4">vscode</a>
+                <a href="/tags/vscode/" style="color: #ff7d73">vscode</a>
             </span>
             
         </span>
@@ -1718,6 +1718,86 @@ void swap(int *pa,int *pb)&#123;
 <li>int sum(<strong>int ar[]</strong>,int n);</li>
 <li>int sum(int [],int n);</li>
 </ul>
+<h2 id="字符型数组指针"><a href="#字符型数组指针" class="headerlink" title="字符型数组指针"></a>字符型数组指针</h2><p>举例：</p>
+<pre><code class="c">#include &lt;stdio.h&gt;
+
+int main() &#123;
+    char str[] = &quot;hello world&quot;;  // 定义一个字符数组
+    char *pstr = str;  // 定义一个指向字符数组的指针
+
+    printf(&quot;%s\n&quot;, str);  // 输出字符数组，结果为 &quot;hello world&quot;
+    printf(&quot;%s\n&quot;, pstr);  // 输出指针所指向的字符数组，结果同上
+
+    return 0;
+&#125;
+</code></pre>
+<blockquote>
+<p>在这个代码当中，我们定义了一个字符数组，<strong>并储存了一串字符</strong>，然后，我们又将其赋值给了一个指针，这个指针当中，str &#x3D; *str[0]，所以*str[0] &#x3D; *pstr，实质**pstr &#x3D; str[0]**。</p>
+</blockquote>
+<p>加*只是为了<strong>取</strong>，所以pstr它不仅仅是指针也是一个值，只是没有取出罢了。</p>
+<p>我们来看附加题题目描述</p>
+<p>输入一个整数N(9&lt;N&lt;100),按人民币的大写输出钱数N。</p>
+<h4 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h4><p>一个整数N(9&lt;N&lt;100)。如：90</p>
+<h4 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h4><p>按人民币的大写输出钱数N。如：人民币：玖拾元整</p>
+<pre><code class="c">#include &lt;stdio.h&gt;
+
+void transform(int N)&#123;
+    char *RMB[] = &#123;&quot;零&quot;,&quot;壹&quot;,&quot;贰&quot;,&quot;叁&quot;,&quot;肆&quot;,&quot;伍&quot;, &quot;陆&quot;, &quot;柒&quot;, &quot;捌&quot;, &quot;玖&quot;&#125;;
+    
+    int firstnum = N/10;
+    int secondnum = N%10; 
+    
+    if(secondnum == 0)&#123;
+        printf(&quot;人民币：%s拾元&quot;,RMB[firstnum]);
+    &#125;else&#123;
+        printf(&quot;人民币：%s拾%s元&quot;,RMB[firstnum],RMB[secondnum]);
+    &#125;
+    
+    printf(&quot;整&quot;); 
+&#125;
+
+int main()&#123;
+    int N;
+    scanf(&quot;%d&quot;,&amp;N);
+    
+    transform(N);
+    return 0;
+&#125;
+</code></pre>
+<p>这个代码当中，难以理解的地方就是，为什么第十行不加*号，有了以上的探讨，我们就知道了，这里我们并不是取这个值，而是得到他这个字符，所以我们就不加*</p>
+<p>同类型的题：</p>
+<p>变成三位数：</p>
+<pre><code class="c">#include &lt;stdio.h&gt;
+
+void transform(int N)&#123;
+    char *RMB[] = &#123;&quot;零&quot;,&quot;壹&quot;,&quot;贰&quot;,&quot;叁&quot;,&quot;肆&quot;,&quot;伍&quot;, &quot;陆&quot;, &quot;柒&quot;, &quot;捌&quot;, &quot;玖&quot;&#125;;
+    
+    int firstnum = N/100;
+    int secondnum = (N-firstnum*100)/10; 
+    int thirdnum = N%10;
+    
+    if(secondnum == 0 &amp;&amp; thirdnum == 0)&#123;
+        printf(&quot;%s佰元&quot;,RMB[firstnum]);
+    &#125;else if(secondnum == 0 &amp;&amp; thirdnum != 0)&#123;
+        printf(&quot;%s佰零%s元&quot;,RMB[firstnum],RMB[thirdnum]);
+    &#125;else if(secondnum != 0 &amp;&amp; thirdnum == 0)&#123;
+        printf(&quot;%s佰%s拾元&quot;,RMB[firstnum],RMB[secondnum]);
+    &#125;else&#123;
+        printf(&quot;%s佰%s拾%s元&quot;,RMB[firstnum],RMB[secondnum],RMB[thirdnum]);
+    &#125;
+    
+    printf(&quot;整\n&quot;); 
+&#125;
+
+int main()&#123;
+    int N;
+    while(scanf(&quot;%d&quot;,&amp;N)!=EOF)&#123;
+        transform(N);
+    &#125;
+    
+    return 0;
+&#125;
+</code></pre>
 <h2 id="seziof的字节问题"><a href="#seziof的字节问题" class="headerlink" title="seziof的字节问题"></a>seziof的字节问题</h2><ol>
 <li><strong>char：通常为1字节。</strong></li>
 <li>unsigned char：通常为1字节。</li>
@@ -2027,6 +2107,52 @@ void art(int N)&#123;
     &#125;
 </code></pre>
 <p>29到30行这一串连锁循环就可以形成一个上三角图像。</p>
+<h2 id="结构体"><a href="#结构体" class="headerlink" title="结构体"></a>结构体</h2><p>例题1：</p>
+<p><strong>比较年份大小，输出较大的年份</strong></p>
+<pre><code class="c">#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+
+struct Data&#123;
+    int year;
+    int month;
+    int day;
+&#125;;
+
+int compare(struct Data Data1,struct Data Data2)&#123;
+    if(Data1.year &gt; Data2.year)&#123;
+        return 1;
+    &#125;else if(Data1.year &lt; Data2.year)&#123;
+        return -1;
+    &#125;else&#123;
+        if(Data1.month &gt; Data2.month)&#123;
+            return 1;
+        &#125;else if(Data1.month &lt; Data2.month)&#123;
+            return -1;
+        &#125;else&#123;
+            if(Data1.day &gt; Data2.day)&#123;
+                return 1;
+            &#125;else if(Data1.day &lt; Data2.day)&#123;
+                return -1;
+            &#125;
+        &#125;
+    &#125;
+&#125;
+
+int main()&#123;
+    struct Data Data1,Data2;
+    scanf(&quot;%d-%d-%d&quot;,&amp;Data1.year,&amp;Data1.month,&amp;Data1.day);
+    scanf(&quot;%d-%d-%d&quot;,&amp;Data2.year,&amp;Data2.month,&amp;Data2.day);
+    
+    int num = compare(Data1,Data2);
+    
+    if(num==1)&#123;
+        printf(&quot;%d-%d-%d&quot;,Data1.year,Data1.month,Data1.day);
+    &#125;else if(num==-1)&#123;
+        printf(&quot;%d-%d-%d&quot;,Data2.year,Data2.month,Data2.day);
+    &#125;
+    return 0;
+&#125;
+</code></pre>
 <h1 id="函数库"><a href="#函数库" class="headerlink" title="函数库"></a>函数库</h1><h2 id="ctype-h"><a href="#ctype-h" class="headerlink" title="ctype.h"></a>ctype.h</h2><p>ctype.h 是C标准库中的一个头文件，包含了一组用于字符处理的函数原型和宏定义。</p>
 <p>下面是 ctype.h 中常用的一些函数和宏定义：</p>
 <ol>
