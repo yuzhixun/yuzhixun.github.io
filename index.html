@@ -205,7 +205,7 @@
         
         <span class="tag">
             
-            <a href="/tags/Typora/" style="color: #ffa2c4">Typora</a>
+            <a href="/tags/Typora/" style="color: #03a9f4">Typora</a>
         </span>
         
         <span class="tag">
@@ -215,189 +215,6 @@
         
     </div>
     <a href="/2023/10/01/%E5%A8%81%E6%B5%B7%E4%B9%90%E6%B8%B8/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
-    <a href="/2023/09/29/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%BD%9C%E4%B8%9A/">
-        <h2 class="post-title"></h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2023/9/29
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <p>3.1</p>
-<p>（1）：123，132，213，231，321<br>（2）：能得到135426，不能得到435612</p>
-<p>3.3</p>
-<pre><code class="c">void main()&#123;
-    Stack S;
-    char x,y;
-    InitStack(S);
-    x=&#39;c&#39;;y=&#39;k&#39;;
-    Push(S,x);Push(S,&#39;a&#39;);Push(S,y);
-    Pop(S,x);Pop(S,&#39;t&#39;);Push(S,x);
-    Pop(S,x);Push(S,&#39;s&#39;);
-    while(!StackEmpty(S))&#123;Pop(S,y);pritnf(y);&#125;;
-    printf(x);
-&#125;
-</code></pre>
-<p><strong>输出结果为stack</strong></p>
-<p>3.4</p>
-<pre><code class="c">Status algo1(Stack S)&#123;
-    int i,n,A[255];
-    n=0;
-    while(!StackEmpty(S))&#123;n++;Pop(S,A[n]);&#125;;
-    for(i=1;i&lt;=n;i++)Push(S,A[i]);
-&#125;
-</code></pre>
-<p><strong>功能：将原栈里的元素出栈存储到到整型数组中，然后出栈得到了元素逆置排列</strong></p>
-<pre><code class="c">Status algo2(Stack S,int e)&#123;
-    Stack T;int d;
-    InitStack(T);
-    while(!StackEmpty(S))&#123;
-        POp(S,d);
-        if(d!=e)Push(T,d);
-    &#125;
-    while(!StackEmpty(T))&#123;
-        Pop(T,d);
-        Push(S,d);
-    &#125;
-&#125;
-</code></pre>
-<p><strong>功能：先将不等于e的元素取出放入到栈T当中，然后又将T中的值返回给S当中，这样栈S就没有与e相等的元素了。</strong></p>
-<p>3.11</p>
-<p>简述队列和栈这两种数据类型的相同点和差异处：</p>
-<p><strong>相同点</strong>：</p>
-<ol>
-<li>队列和栈都是线性数据结构，即它们的元素按照一定的顺序排列。</li>
-<li>队列和栈都可以用数组或链表来实现。</li>
-</ol>
-<p><strong>不同点</strong>：</p>
-<ol>
-<li>队列中的元素先进先出，栈中的元素后进先出。</li>
-<li>队列可以有循环队列（即循环形式），而栈只有单向的形式。</li>
-</ol>
-<p>3.12</p>
-<pre><code class="c">void main()&#123;
-    Queue Q;InitQueue(Q);
-    char x = &#39;e&#39;,y = &#39;c&#39;;
-    EnQueue(Q,&#39;h&#39;);Enqueue(Q,&#39;r&#39;);Enqueue(Q,y);
-    DeQueue(Q,x);EeQueue(Q,x);
-    DeQueue(Q,x);EeQueue(Q,&#39;a&#39;);
-    while(!QueueEmpyt(Q))&#123;
-        DeQueue(Q,y);
-        printf(y);
-    &#125;
-    printf(x);
-&#125;
-</code></pre>
-<p><strong>输出结果：char</strong></p>
-<p>3.13</p>
-<pre><code class="c">void alog3(Queue &amp;Q)&#123;
-    Stack S; int d;
-        InitStack(S);
-    while(!QueueEmpty(Q))&#123;
-        DeQueue(Q,d);Push(S,d);
-    &#125;
-    while(!StackEmoty(S))&#123;
-        Pop(S,d);EnQueue(Q,d);
-    &#125;
-&#125;
-</code></pre>
-<p><strong>功能：将队列中的元素取出，放在栈当中，实现了逆序排列</strong></p>
-
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        
-        
-    </div>
-    <a href="/2023/09/29/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%BD%9C%E4%B8%9A/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
-    <a href="/2023/09/21/2.2/">
-        <h2 class="post-title"></h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2023/9/21
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <p>2.2</p>
-<ol>
-<li>在顺序表中插入或删除一个元素，需要平均移动<u><strong>（n+1)&#x2F;2</strong></u>元素，具体移动的元素个数与<u>线性表中元素的个数</u>有关。</li>
-<li>顺序表中逻辑上相邻的元素的物理位置<u><strong>一定</strong></u>紧邻。单链表中逻辑上相邻的元素物理位置**<u>不一定</u>**紧邻</li>
-<li>在单链表中，除了首元结点外，任一节点的存储位置由**<u>指针域</u>**指示</li>
-<li>在单链表中设置头结点的作用是**<u>简化链表操作、提供链表入口、处理空链表和存储附加信息</u>**。</li>
-</ol>
-<p>2.7</p>
-<ol>
-<li>删除p结点的直接后继结点的语句序列是**<u>（14）（3）（14）</u>**。</li>
-<li>删除p结点的直接前驱结点的语句序列是**<u>（10）（12）（8）（11）（3）（14）</u>**。</li>
-<li>删除p结点的语句序列是**<u>（10）（12）（7）（3）（14）</u>**。</li>
-<li>删除首元结点的语句序列是**<u>（12）（11）（3）（14）</u>**。</li>
-<li>删除尾元结点的语句序列是**<u>（9）（11）（3）（14）或者（12）（10）（6）（3）（14）</u>**。</li>
-</ol>
-<p>2.21</p>
-<p>试写一算法，实现顺序表的就地逆置，及利用元表的存储空间将线性表（a1,a2,….,an)逆置为(an,an-1……a1)</p>
-<pre><code class="c">void Change(List L,ElemType &amp;e)&#123;
-    int length = len(L) - 1;
-    for(int i = 0;i&lt;=length/2;i++)&#123;
-        e = L[0];
-        L[i] = L[length - 1 - i];
-        L[length - 1 - i] = e;
-    &#125;
-&#125;
-</code></pre>
-<p>2.22 试写一算法，实现单链表的就地逆置</p>
-<pre><code class="c">struct ListNode* reverseLinkedList(struct ListNode* head) &#123;
-    if (head == NULL || head-&gt;next == NULL)
-        return head;
-    
-    struct ListNode* prev = NULL;
-    struct ListNode* curr = head;
-    
-    while (curr != NULL) &#123;
-        struct ListNode* temp = curr-&gt;next;
-        curr-&gt;next = prev;
-        prev = curr;
-        curr = temp;
-    &#125;
-    
-    return prev;
-&#125;
-</code></pre>
-
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        
-        
-    </div>
-    <a href="/2023/09/21/2.2/" class="go-post">阅读全文</a>
 </div>
 
 <div class="post">
@@ -442,17 +259,17 @@
         
         <span class="tag">
             
-            <a href="/tags/Typora/" style="color: #00a596">Typora</a>
+            <a href="/tags/Typora/" style="color: #ffa2c4">Typora</a>
         </span>
         
         <span class="tag">
             
-            <a href="/tags/Markdown/" style="color: #03a9f4">Markdown</a>
+            <a href="/tags/Markdown/" style="color: #00bcd4">Markdown</a>
         </span>
         
         <span class="tag">
             
-            <a href="/tags/WPS/" style="color: #ff7d73">WPS</a>
+            <a href="/tags/WPS/" style="color: #00a596">WPS</a>
         </span>
         
     </div>
@@ -501,12 +318,12 @@
         
         <span class="tag">
             
-            <a href="/tags/Typora/" style="color: #ffa2c4">Typora</a>
+            <a href="/tags/Typora/" style="color: #03a9f4">Typora</a>
         </span>
         
         <span class="tag">
             
-            <a href="/tags/Markdown/" style="color: #00a596">Markdown</a>
+            <a href="/tags/Markdown/" style="color: #00bcd4">Markdown</a>
         </span>
         
         <span class="tag">
@@ -565,16 +382,75 @@
         
         <span class="tag">
             
+            <a href="/tags/Markdown/" style="color: #00bcd4">Markdown</a>
+        </span>
+        
+        <span class="tag">
+            
+            <a href="/tags/vscode/" style="color: #ffa2c4">vscode</a>
+        </span>
+        
+    </div>
+    <a href="/2023/08/05/c%E8%AF%AD%E8%A8%80/" class="go-post">阅读全文</a>
+</div>
+
+<div class="post">
+    <a href="/2023/08/05/python/">
+        <h2 class="post-title">python的学习</h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="category">
+            <a href="/categories/%E6%8A%80%E6%9C%AF/">
+                <span class="icon">
+                    <i class="fa-solid fa-bookmark fa-fw"></i>
+                </span>
+                技术
+            </a>
+        </span>
+        
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2023/8/5
+        </span>
+        
+        
+    </div>
+    <div class="description">
+        <div class="content" v-pre>
+            
+            <p>作为一名资深优秀的互联网选手，看看我如何学python</p>
+
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        <span class="icon">
+            <i class="fa-solid fa-tags fa-fw"></i>
+        </span>
+        
+        
+        
+        <span class="tag">
+            
+            <a href="/tags/Typora/" style="color: #ffa2c4">Typora</a>
+        </span>
+        
+        <span class="tag">
+            
             <a href="/tags/Markdown/" style="color: #ff7d73">Markdown</a>
         </span>
         
         <span class="tag">
             
-            <a href="/tags/vscode/" style="color: #00a596">vscode</a>
+            <a href="/tags/pycharm/" style="color: #00a596">pycharm</a>
         </span>
         
     </div>
-    <a href="/2023/08/05/c%E8%AF%AD%E8%A8%80/" class="go-post">阅读全文</a>
+    <a href="/2023/08/05/python/" class="go-post">阅读全文</a>
 </div>
 
 <div class="post">
@@ -629,70 +505,11 @@
         
         <span class="tag">
             
-            <a href="/tags/gitbash/" style="color: #00a596">gitbash</a>
+            <a href="/tags/gitbash/" style="color: #ff7d73">gitbash</a>
         </span>
         
     </div>
     <a href="/2023/08/05/git/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
-    <a href="/2023/08/05/python/">
-        <h2 class="post-title">python的学习</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="category">
-            <a href="/categories/%E6%8A%80%E6%9C%AF/">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                技术
-            </a>
-        </span>
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2023/8/5
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <p>作为一名资深优秀的互联网选手，看看我如何学python</p>
-
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        <span class="icon">
-            <i class="fa-solid fa-tags fa-fw"></i>
-        </span>
-        
-        
-        
-        <span class="tag">
-            
-            <a href="/tags/Typora/" style="color: #03a9f4">Typora</a>
-        </span>
-        
-        <span class="tag">
-            
-            <a href="/tags/Markdown/" style="color: #ffa2c4">Markdown</a>
-        </span>
-        
-        <span class="tag">
-            
-            <a href="/tags/pycharm/" style="color: #00bcd4">pycharm</a>
-        </span>
-        
-    </div>
-    <a href="/2023/08/05/python/" class="go-post">阅读全文</a>
 </div>
 
 <div class="post">
@@ -737,12 +554,12 @@
         
         <span class="tag">
             
-            <a href="/tags/Typora/" style="color: #ffa2c4">Typora</a>
+            <a href="/tags/Typora/" style="color: #00a596">Typora</a>
         </span>
         
         <span class="tag">
             
-            <a href="/tags/Markdown/" style="color: #00a596">Markdown</a>
+            <a href="/tags/Markdown/" style="color: #03a9f4">Markdown</a>
         </span>
         
         <span class="tag">
@@ -796,21 +613,129 @@
         
         <span class="tag">
             
+            <a href="/tags/Typora/" style="color: #ffa2c4">Typora</a>
+        </span>
+        
+        <span class="tag">
+            
+            <a href="/tags/Markdown/" style="color: #03a9f4">Markdown</a>
+        </span>
+        
+        <span class="tag">
+            
+            <a href="/tags/vscode/" style="color: #ff7d73">vscode</a>
+        </span>
+        
+    </div>
+    <a href="/2023/08/05/%E5%B0%8F%E9%B1%BC%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="go-post">阅读全文</a>
+</div>
+
+<div class="post">
+    <a href="/1970/01/01/%E4%B9%A0%E8%BF%91%E5%B9%B3%E6%96%B0%E6%80%9D%E6%83%B3/">
+        <h2 class="post-title">是心得啊</h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="category">
+            <a href="/categories/%E8%AE%A4%E8%AF%86/">
+                <span class="icon">
+                    <i class="fa-solid fa-bookmark fa-fw"></i>
+                </span>
+                认识
+            </a>
+        </span>
+        
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            1970/1/1
+        </span>
+        
+        
+    </div>
+    <div class="description">
+        <div class="content" v-pre>
+            
+            <p>学习新思想，争作新青年</p>
+
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        <span class="icon">
+            <i class="fa-solid fa-tags fa-fw"></i>
+        </span>
+        
+        
+        
+        <span class="tag">
+            
+            <a href="/tags/Typora/" style="color: #ffa2c4">Typora</a>
+        </span>
+        
+        <span class="tag">
+            
+            <a href="/tags/Markdown/" style="color: #00bcd4">Markdown</a>
+        </span>
+        
+    </div>
+    <a href="/1970/01/01/%E4%B9%A0%E8%BF%91%E5%B9%B3%E6%96%B0%E6%80%9D%E6%83%B3/" class="go-post">阅读全文</a>
+</div>
+
+<div class="post">
+    <a href="/1970/01/01/%E5%BF%83%E5%BE%97%E4%BD%93%E4%BC%9A/">
+        <h2 class="post-title">是心得啊</h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="category">
+            <a href="/categories/%E8%AE%A4%E8%AF%86/">
+                <span class="icon">
+                    <i class="fa-solid fa-bookmark fa-fw"></i>
+                </span>
+                认识
+            </a>
+        </span>
+        
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            1970/1/1
+        </span>
+        
+        
+    </div>
+    <div class="description">
+        <div class="content" v-pre>
+            
+            <p>瞎写写</p>
+
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        <span class="icon">
+            <i class="fa-solid fa-tags fa-fw"></i>
+        </span>
+        
+        
+        
+        <span class="tag">
+            
             <a href="/tags/Typora/" style="color: #03a9f4">Typora</a>
         </span>
         
         <span class="tag">
             
-            <a href="/tags/Markdown/" style="color: #00a596">Markdown</a>
-        </span>
-        
-        <span class="tag">
-            
-            <a href="/tags/vscode/" style="color: #03a9f4">vscode</a>
+            <a href="/tags/Markdown/" style="color: #00bcd4">Markdown</a>
         </span>
         
     </div>
-    <a href="/2023/08/05/%E5%B0%8F%E9%B1%BC%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="go-post">阅读全文</a>
+    <a href="/1970/01/01/%E5%BF%83%E5%BE%97%E4%BD%93%E4%BC%9A/" class="go-post">阅读全文</a>
 </div>
 
 
@@ -818,14 +743,8 @@
     
     <span class="current">1</span>
     
-    <a class="page-num" href="/page/2">2</a>
     
     
-    
-    
-    <a class="page-num" href="/page/2/">
-        <i class="fa-solid fa-caret-right fa-fw"></i>
-    </a>
     
 </div>
 
