@@ -3,7 +3,7 @@
 <html lang="zh">
     <head>
         <meta charset="utf-8" />
-        <title>Tags: VScoede | Argvchs の小窝</title>
+        <title> | Argvchs の小窝</title>
         <meta name="author" content="Argvchs" />
         <meta name="description" content="" />
         <meta name="keywords" content="" />
@@ -28,6 +28,10 @@
 
 
 <script src="/js/lib/preview.js"></script>
+
+
+
+
 
 
 
@@ -141,137 +145,109 @@
 </transition>
 
             <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
-                <div id="archives">
-    
-    <div class="categories-tags">
-        
-        
-        
-        <span>
-            <a href="/tags/Typora/" style="background: #ffa2c4">
-                <span class="icon">
-                    <i class="fa-solid fa-tags fa-fw"></i>
-                </span>
-                Typora
-            </a>
+                <div class="article">
+    <div>
+        <h1></h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2023/9/29
         </span>
-        
-        
-        
-        <span>
-            <a href="/tags/Markdown/" style="background: #00a596">
-                <span class="icon">
-                    <i class="fa-solid fa-tags fa-fw"></i>
-                </span>
-                Markdown
-            </a>
-        </span>
-        
-        
-        
-        <span>
-            <a href="/tags/WPS/" style="background: #ff7d73">
-                <span class="icon">
-                    <i class="fa-solid fa-tags fa-fw"></i>
-                </span>
-                WPS
-            </a>
-        </span>
-        
-        
-        
-        <span>
-            <a href="/tags/vscode/" style="background: #03a9f4">
-                <span class="icon">
-                    <i class="fa-solid fa-tags fa-fw"></i>
-                </span>
-                vscode
-            </a>
-        </span>
-        
-        
-        
-        <span>
-            <a href="/tags/gitbash/" style="background: #00a596">
-                <span class="icon">
-                    <i class="fa-solid fa-tags fa-fw"></i>
-                </span>
-                gitbash
-            </a>
-        </span>
-        
-        
-        
-        <span>
-            <a href="/tags/pycharm/" style="background: #ff7d73">
-                <span class="icon">
-                    <i class="fa-solid fa-tags fa-fw"></i>
-                </span>
-                pycharm
-            </a>
-        </span>
-        
-        
-        
-        <span>
-            <a href="/tags/VScoede/" style="background: linear-gradient(120deg, #9abbf7 0%, #ffbbf4 100%)">
-                <span class="icon">
-                    <i class="fa-solid fa-tags fa-fw"></i>
-                </span>
-                VScoede
-            </a>
-        </span>
-        
-        
         
         
     </div>
     
-    <div class="timeline">
-        <div class="timeline-tail"></div>
-        <div class="timeline-content">
-            <div class="item-time">2023/8/5</div>
-            <a href="/2023/08/05/web/">
-                <h3>Web前端开发</h3>
-            </a>
-            <div class="info">
-                
-                <span class="category">
-                    <a href="/categories/%E6%8A%80%E6%9C%AF/">
-                        <span class="icon">
-                            <i class="fa-solid fa-bookmark fa-fw"></i>
-                        </span>
-                        技术
-                    </a>
-                </span>
-                
-                
-                <span class="tags">
-                    <span class="icon">
-                        <i class="fa-solid fa-tags fa-fw"></i>
-                    </span>
-                    
-                    
-                    <span class="tag">
-                        
-                        <a href="/tags/Typora/" style="color: #ff7d73">Typora</a>
-                    </span>
-                    
-                    <span class="tag">
-                        
-                        <a href="/tags/Markdown/" style="color: #ffa2c4">Markdown</a>
-                    </span>
-                    
-                    <span class="tag">
-                        
-                        <a href="/tags/VScoede/" style="color: #00bcd4">VScoede</a>
-                    </span>
-                    
-                </span>
-                
-            </div>
-        </div>
+    <div class="content" v-pre>
+        <p>3.1</p>
+<p>（1）：123，132，213，231，321<br>（2）：能得到135426，不能得到435612</p>
+<p>3.3</p>
+<pre><code class="c">void main()&#123;
+    Stack S;
+    char x,y;
+    InitStack(S);
+    x=&#39;c&#39;;y=&#39;k&#39;;
+    Push(S,x);Push(S,&#39;a&#39;);Push(S,y);
+    Pop(S,x);Pop(S,&#39;t&#39;);Push(S,x);
+    Pop(S,x);Push(S,&#39;s&#39;);
+    while(!StackEmpty(S))&#123;Pop(S,y);pritnf(y);&#125;;
+    printf(x);
+&#125;
+</code></pre>
+<p><strong>输出结果为stack</strong></p>
+<p>3.4</p>
+<pre><code class="c">Status algo1(Stack S)&#123;
+    int i,n,A[255];
+    n=0;
+    while(!StackEmpty(S))&#123;n++;Pop(S,A[n]);&#125;;
+    for(i=1;i&lt;=n;i++)Push(S,A[i]);
+&#125;
+</code></pre>
+<p><strong>功能：将原栈里的元素出栈存储到到整型数组中，然后出栈得到了元素逆置排列</strong></p>
+<pre><code class="c">Status algo2(Stack S,int e)&#123;
+    Stack T;int d;
+    InitStack(T);
+    while(!StackEmpty(S))&#123;
+        POp(S,d);
+        if(d!=e)Push(T,d);
+    &#125;
+    while(!StackEmpty(T))&#123;
+        Pop(T,d);
+        Push(S,d);
+    &#125;
+&#125;
+</code></pre>
+<p><strong>功能：先将不等于e的元素取出放入到栈T当中，然后又将T中的值返回给S当中，这样栈S就没有与e相等的元素了。</strong></p>
+<p>3.11</p>
+<p>简述队列和栈这两种数据类型的相同点和差异处：</p>
+<p><strong>相同点</strong>：</p>
+<ol>
+<li>队列和栈都是线性数据结构，即它们的元素按照一定的顺序排列。</li>
+<li>队列和栈都可以用数组或链表来实现。</li>
+</ol>
+<p><strong>不同点</strong>：</p>
+<ol>
+<li>队列中的元素先进先出，栈中的元素后进先出。</li>
+<li>队列可以有循环队列（即循环形式），而栈只有单向的形式。</li>
+</ol>
+<p>3.12</p>
+<pre><code class="c">void main()&#123;
+    Queue Q;InitQueue(Q);
+    char x = &#39;e&#39;,y = &#39;c&#39;;
+    EnQueue(Q,&#39;h&#39;);Enqueue(Q,&#39;r&#39;);Enqueue(Q,y);
+    DeQueue(Q,x);EeQueue(Q,x);
+    DeQueue(Q,x);EeQueue(Q,&#39;a&#39;);
+    while(!QueueEmpyt(Q))&#123;
+        DeQueue(Q,y);
+        printf(y);
+    &#125;
+    printf(x);
+&#125;
+</code></pre>
+<p><strong>输出结果：char</strong></p>
+<p>3.13</p>
+<pre><code class="c">void alog3(Queue &amp;Q)&#123;
+    Stack S; int d;
+        InitStack(S);
+    while(!QueueEmpty(Q))&#123;
+        DeQueue(Q,d);Push(S,d);
+    &#125;
+    while(!StackEmoty(S))&#123;
+        Pop(S,d);EnQueue(Q,d);
+    &#125;
+&#125;
+</code></pre>
+<p><strong>功能：将队列中的元素取出，放在栈当中，实现了逆序排列</strong></p>
+
     </div>
+    
+    
+    
+    
+    
+    
     
 </div>
 
@@ -315,6 +291,12 @@
         <script src="/js/cursor.min.js"></script>
 
         <script src="/js/main.js"></script>
+        
+        
+
+
+
+
         
 
         <script src="https://giscus.app/client.js"

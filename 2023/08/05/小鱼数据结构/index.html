@@ -180,12 +180,12 @@
             
             <span class="tag">
                 
-                <a href="/tags/Markdown/" style="color: #03a9f4">Markdown</a>
+                <a href="/tags/Markdown/" style="color: #00a596">Markdown</a>
             </span>
             
             <span class="tag">
                 
-                <a href="/tags/vscode/" style="color: #00a596">vscode</a>
+                <a href="/tags/vscode/" style="color: #03a9f4">vscode</a>
             </span>
             
         </span>
@@ -649,7 +649,7 @@ int main() &#123;
 <p> <img src="https://typora200483.oss-cn-chengdu.aliyuncs.com/Snipaste_2023-09-19_16-53-57.png" alt="Snipaste_2023-09-19_16-53-57"></p>
 <pre><code class="c">
 </code></pre>
-<h1 id="栈和队列"><a href="#栈和队列" class="headerlink" title="栈和队列"></a>栈和队列</h1><p><strong>栈可以说是线性表的具体结构</strong></p>
+<h1 id="栈和队列"><a href="#栈和队列" class="headerlink" title="栈和队列"></a>栈和队列</h1><h2 id="栈"><a href="#栈" class="headerlink" title="栈"></a>栈</h2><p><strong>栈可以说是线性表的具体结构</strong></p>
 <p><strong>栈中的数据是先进后出 ，后进先出，只要求在表尾，或者表头进行插入和删除</strong></p>
 <p><strong>最开始栈中没有任何元素，此时，栈顶就是栈底，此时的栈就是“空栈”</strong></p>
 <h3 id="定义一个栈"><a href="#定义一个栈" class="headerlink" title="定义一个栈"></a>定义一个栈</h3><pre><code class="c">typedef struct&#123;
@@ -675,6 +675,38 @@ Push(sqStack *s,Elemtype e)&#123;
     &#125;
 &#125;
 </code></pre>
+<h3 id="出栈操作"><a href="#出栈操作" class="headerlink" title="出栈操作"></a>出栈操作</h3><ul>
+<li><code>Pop(S, &amp;x)</code> 将栈顶元素出栈并赋值给变量 x，此时 x 的值为 ‘k’。<br>  <strong>要记住pop一定是出栈顶元素，不会是找到栈表中的x，然后将其删除，而是删除栈顶元素，然后将删除的值赋值给变量x，让其继续延续下去</strong></li>
+</ul>
+<pre><code class="c">void main()&#123;
+    Stack S;
+    char x,y;
+    InitStack(S);
+    x=&#39;c&#39;;y=&#39;k&#39;;
+    Push(S,x);Push(S,&#39;a&#39;);Push(S,y);
+    Pop(S,x);Pop(S,&#39;t&#39;);Push(S,x);
+    Pop(S,x);Push(S,&#39;s&#39;);
+    while(!StackEmpty(S))&#123;Pop(S,y);pritnf(y);&#125;;
+    printf(x);
+&#125;
+</code></pre>
+<p><strong>这个实例就运用了出栈和入栈操作，以及如何将栈里的元素一个一个输出出来</strong></p>
+<p><strong>结果就是stack</strong></p>
+<h2 id="对列"><a href="#对列" class="headerlink" title="对列"></a>对列</h2><p>长话短说，其实和栈差不多。<br>这里举一个进队和出队的一个例子</p>
+<pre><code class="c">void main()&#123;
+    Queue Q;InitQueue(Q);
+    char x = &#39;e&#39;,y = &#39;c&#39;;
+    EnQueue(Q,&#39;h&#39;);Enqueue(Q,&#39;r&#39;);Enqueue(Q,y);
+    DeQueue(Q,x);EeQueue(Q,x);
+    DeQueue(Q,x);EeQueue(Q,&#39;a&#39;);
+    while(!QueueEmpyt(Q))&#123;
+        DeQueue(Q,y);
+        printf(y);
+    &#125;
+    printf(x);
+&#125;
+</code></pre>
+<p><strong>结果就是char</strong></p>
 
     </div>
     
