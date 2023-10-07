@@ -3,7 +3,7 @@
 <html lang="zh">
     <head>
         <meta charset="utf-8" />
-        <title>Web前端开发 | Argvchs の小窝</title>
+        <title>征服前端 | Argvchs の小窝</title>
         <meta name="author" content="Argvchs" />
         <meta name="description" content="" />
         <meta name="keywords" content="" />
@@ -147,14 +147,14 @@
             <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
                 <div class="article">
     <div>
-        <h1>Web前端开发</h1>
+        <h1>征服前端</h1>
     </div>
     <div class="info">
         <span class="date">
             <span class="icon">
                 <i class="fa-solid fa-calendar fa-fw"></i>
             </span>
-            2023/8/5
+            2023/4/4
         </span>
         
         <span class="category">
@@ -175,17 +175,17 @@
             
             <span class="tag">
                 
-                <a href="/tags/Typora/" style="color: #00a596">Typora</a>
+                <a href="/tags/Typora/" style="color: #ff7d73">Typora</a>
             </span>
             
             <span class="tag">
                 
-                <a href="/tags/Markdown/" style="color: #ff7d73">Markdown</a>
+                <a href="/tags/Markdown/" style="color: #03a9f4">Markdown</a>
             </span>
             
             <span class="tag">
                 
-                <a href="/tags/VScoede/" style="color: #03a9f4">VScoede</a>
+                <a href="/tags/vscode/" style="color: #ffa2c4">vscode</a>
             </span>
             
         </span>
@@ -193,7 +193,9 @@
     </div>
     
     <div class="content" v-pre>
-        <h1 id="Web前端开发"><a href="#Web前端开发" class="headerlink" title="Web前端开发"></a>Web前端开发</h1><h2 id="什么是Html"><a href="#什么是Html" class="headerlink" title="什么是Html?"></a>什么是Html?</h2><h3 id="html是一种用来描述网页的一种语言"><a href="#html是一种用来描述网页的一种语言" class="headerlink" title="html是一种用来描述网页的一种语言"></a><code>html是一种用来描述网页的一种语言</code></h3><pre><code>    -  HTML指的是超文本标记语言（**H**yper **T**ext **M**arkup **L**anguage）
+        <hr>
+<hr>
+<h1 id="Web前端开发"><a href="#Web前端开发" class="headerlink" title="Web前端开发"></a>Web前端开发</h1><h2 id="什么是Html"><a href="#什么是Html" class="headerlink" title="什么是Html?"></a>什么是Html?</h2><h3 id="html是一种用来描述网页的一种语言"><a href="#html是一种用来描述网页的一种语言" class="headerlink" title="html是一种用来描述网页的一种语言"></a><code>html是一种用来描述网页的一种语言</code></h3><pre><code>    -  HTML指的是超文本标记语言（**H**yper **T**ext **M**arkup **L**anguage）
 </code></pre>
 <ul>
 <li>是一种标记语言，不是编程语言<br>-  如:&lt;center&gt;  &lt;&#x2F;center&gt;</li>
@@ -914,9 +916,58 @@
 <p>使用 <code>linear-gradient()</code> 函数可以创建更复杂和多彩的渐变背景。你可以根据需要添加更多的颜色停止点，并通过调整方向和位置来实现不同的渐变效果。</p>
 <h1 id="javascript"><a href="#javascript" class="headerlink" title="javascript"></a>javascript</h1><h2 id="基础知识"><a href="#基础知识" class="headerlink" title="基础知识"></a>基础知识</h2><p>在js中，var是给予赋值的意思，当我们使用var num &#x3D; 100的时候，意思就是将100这个数值放进num这个盒子当中<br>在网页中，我们有三种输出方式</p>
 <p><img src="https://typora200483.oss-cn-chengdu.aliyuncs.com/Snipaste_2023-07-21_19-37-50.png" alt="Snipaste_2023-07-21_19-37-50"></p>
-<p><strong>prompt()是输入框</strong></p>
-<p>以上三种用法用法相同，显示不同</p>
-<h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><p>js的数据：</p>
+<p><strong>prompt()是输入框</strong><br>以上三种用法用法相同，显示不同</p>
+<h2 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h2><p><strong>和众多语言相似，此处不再赘述</strong></p>
+<h2 id="变量的使用"><a href="#变量的使用" class="headerlink" title="变量的使用"></a>变量的使用</h2><ul>
+<li><strong>var</strong>是一个js的关键字，用来声明变量（variable变量的意思），使用该关键字声明变量后，计算机自动为变量分配内存空间，不需要程序猿管</li>
+</ul>
+<pre><code class="javascript">//声明变量
+var age;
+</code></pre>
+<h3 id="实例1："><a href="#实例1：" class="headerlink" title="实例1："></a>实例1：</h3><pre><code class="javascript">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+    &lt;script&gt;
+        var myname = prompt(&#39;请输入你的姓名:&#39;);
+        alert(myname);
+    &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h3 id="变量的交换"><a href="#变量的交换" class="headerlink" title="变量的交换"></a>变量的交换</h3><pre><code class="javascript">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+    &lt;script&gt;
+        var c;
+        var a = 10;
+        var b = 20
+        c = a;
+        a = b;
+        b = c;
+        console.log(a);
+        console.log(b);
+    &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><p><strong>我们要知道js的数据类型是只有在程序在运行的过程中来确定的</strong><br>他是弱类型的语言，和c语言不一样</p>
+<pre><code class="c">int num = 1;
+</code></pre>
+<pre><code class="javascript">var num = 1;
+</code></pre>
+<p>js的数据：</p>
 <ol>
 <li><p>基本数据类型</p>
 <ul>
@@ -938,21 +989,98 @@
 <p>0x十六进制<br>0o八进制<br>0b二进制</p>
 <h3 id="空类型"><a href="#空类型" class="headerlink" title="空类型"></a>空类型</h3><p>null：表示有值，有一个空值<br>undefined：表示没有值</p>
 <h3 id="如何查看变量的数据类型"><a href="#如何查看变量的数据类型" class="headerlink" title="如何查看变量的数据类型"></a>如何查看变量的数据类型</h3><p><strong>我们可以使用typoraf</strong><br>var num &#x3D; 100<br>var result &#x3D; typoraf num</p>
-<h2 id="如何转换数据类型"><a href="#如何转换数据类型" class="headerlink" title="如何转换数据类型"></a>如何转换数据类型</h2><h3 id="转数值"><a href="#转数值" class="headerlink" title="转数值"></a>转数值</h3><ol>
-<li>Number():    		语法：Num(要转换的内容)<br>                             结果： 转换好数值类型的结果</li>
-<li>parseInt():           语法：parseInt()</li>
-<li>parseFloat():</li>
-</ol>
-<pre><code>            																									
+<h2 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h2><p><strong>js里的字符产我们可以用.length来求出字符串的长度</strong><br><strong>我们必须要知道，在js中我们进行字符串的拼接时，任何类型的数据类型与字符串拼接，结果都是字符串</strong></p>
+<pre><code class="javascript">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+    &lt;script&gt;
+        var age = 18;
+        alert(&#39;小鱼丸&#39; + age + &#39;岁&#39;);
+    &lt;/script&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+
+&lt;/body&gt;
+
+&lt;/html&gt;
 </code></pre>
-<p><strong>二和三不同的地方在于，一个转换为整数，一个转换为小数</strong></p>
-<h3 id="转字符"><a href="#转字符" class="headerlink" title="转字符"></a>转字符</h3><ol>
-<li>String()              语法:String(要转换的内容)</li>
-<li>toString()           语法:要转换的内容.toString()</li>
+<p><strong>为什么我们要加“+”，因为age是变量而不是字符串</strong></p>
+<p>实例1</p>
+<pre><code class="javascript">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+    &lt;script&gt;
+        var age = prompt(&#39;请输入你的年龄&#39;);
+        alert(&#39;您今年&#39; + age + &#39;岁啦&#39;);
+    &lt;/script&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+
+&lt;/body&gt;
+
+&lt;/html&gt;
+</code></pre>
+<pre><code class="javascript">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+    &lt;script&gt;
+        var year = prompt(&#39;请输入您的出生年份&#39;);
+        alert(&#39;您的年龄是&#39; + (2023 - year) + &#39;岁&#39;);
+
+    &lt;/script&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+
+&lt;/body&gt;
+
+&lt;/html&gt;
+</code></pre>
+<h2 id="用typeof获取数据类型"><a href="#用typeof获取数据类型" class="headerlink" title="用typeof获取数据类型"></a>用typeof获取数据类型</h2><pre><code class="javascript">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+    &lt;script&gt;
+        var word = &#39;woshihahah&#39;;
+        console.log(typeof word);
+        var num = 10;
+        console.log(typeof num);
+    &lt;/script&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+
+&lt;/body&gt;
+
+&lt;/html&gt;
+</code></pre>
+<h2 id="数据类型的转换"><a href="#数据类型的转换" class="headerlink" title="数据类型的转换"></a>数据类型的转换</h2><h3 id="转化字符"><a href="#转化字符" class="headerlink" title="转化字符"></a>转化字符</h3><ol>
+<li>变量.toString();</li>
+<li>String(变量)；</li>
+<li>变量 + ‘’；</li>
 </ol>
-<p>转布尔</p>
-<ol>
-<li>Boolean()          语法：Boolean(要转换的内容)</li>
+<h3 id="转换数字"><a href="#转换数字" class="headerlink" title="转换数字"></a>转换数字</h3><ol>
+<li>parseInt(变量)（只能得到整数）；</li>
+<li>parseFloat(变量)（只能得到小数）；</li>
+<li>Number(变量)；</li>
+<li>‘字符’ - 0</li>
 </ol>
 <h1 id="DOM"><a href="#DOM" class="headerlink" title="DOM"></a>DOM</h1><h2 id="className"><a href="#className" class="headerlink" title="className"></a>className</h2><p><code>className</code> 是 DOM 元素对象的一个属性，用于获取或设置元素的类名。</p>
 <p>通过访问元素的 <code>className</code> 属性，可以获取该元素当前设置的所有类名，多个类名之间通过空格分隔。例如，如果一个元素的类名是 <code>&quot;class1 class2&quot;</code>，那么通过 <code>element.className</code> 获取到的值就是 <code>&quot;class1 class2&quot;</code>。</p>
@@ -966,7 +1094,7 @@
 <p>同时，你也可以使用 <code>newRow.innerHTML</code> 来设置元素的 HTML 内容。通过给 <code>newRow.innerHTML</code> 赋值一个包含有效的 HTML 代码的字符串，可以替换元素的当前内容并更新显示。</p>
 <p>需要注意的是，使用 <code>innerHTML</code> 属性设置内容时，要谨慎防止跨站脚本攻击（XSS），确保只插入可信任的 HTML 内容。</p>
 <p>总结一下，<code>newRow.innerHTML</code> 属性用于获取或设置 HTML 元素的内容。</p>
-<p>如果还有其他问题，请随时提问。</p>
+<p>如果还有其他问题，请随时提问。 </p>
 
     </div>
     
