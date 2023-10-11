@@ -167,29 +167,6 @@
         </span>
         
         
-        <span class="tags">
-            <span class="icon">
-                <i class="fa-solid fa-tags fa-fw"></i>
-            </span>
-            
-            
-            <span class="tag">
-                
-                <a href="/tags/Typora/" style="color: #03a9f4">Typora</a>
-            </span>
-            
-            <span class="tag">
-                
-                <a href="/tags/Markdown/" style="color: #00bcd4">Markdown</a>
-            </span>
-            
-            <span class="tag">
-                
-                <a href="/tags/vscode/" style="color: #00a596">vscode</a>
-            </span>
-            
-        </span>
-        
     </div>
     
     <div class="content" v-pre>
@@ -918,7 +895,7 @@
 <p><img src="https://typora200483.oss-cn-chengdu.aliyuncs.com/Snipaste_2023-07-21_19-37-50.png" alt="Snipaste_2023-07-21_19-37-50"></p>
 <p><strong>prompt()是输入框</strong><br>以上三种用法用法相同，显示不同</p>
 <h2 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h2><p><strong>和众多语言相似，此处不再赘述</strong></p>
-<h2 id="变量的使用"><a href="#变量的使用" class="headerlink" title="变量的使用"></a>变量的使用</h2><ul>
+<h3 id="变量的使用"><a href="#变量的使用" class="headerlink" title="变量的使用"></a>变量的使用</h3><ul>
 <li><strong>var</strong>是一个js的关键字，用来声明变量（variable变量的意思），使用该关键字声明变量后，计算机自动为变量分配内存空间，不需要程序猿管</li>
 </ul>
 <pre><code class="javascript">//声明变量
@@ -989,7 +966,7 @@ var age;
 <p>0x十六进制<br>0o八进制<br>0b二进制</p>
 <h3 id="空类型"><a href="#空类型" class="headerlink" title="空类型"></a>空类型</h3><p>null：表示有值，有一个空值<br>undefined：表示没有值</p>
 <h3 id="如何查看变量的数据类型"><a href="#如何查看变量的数据类型" class="headerlink" title="如何查看变量的数据类型"></a>如何查看变量的数据类型</h3><p><strong>我们可以使用typoraf</strong><br>var num &#x3D; 100<br>var result &#x3D; typoraf num</p>
-<h2 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h2><p><strong>js里的字符产我们可以用.length来求出字符串的长度</strong><br><strong>我们必须要知道，在js中我们进行字符串的拼接时，任何类型的数据类型与字符串拼接，结果都是字符串</strong></p>
+<h3 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h3><p><strong>js里的字符产我们可以用&#x3D;&#x3D;str.length&#x3D;&#x3D;来求出字符串的长度</strong><br><strong>我们必须要知道，在js中我们进行字符串的拼接时，任何类型的数据类型与字符串拼接，结果都是字符串</strong></p>
 <pre><code class="javascript">&lt;!DOCTYPE html&gt;
 &lt;html lang=&quot;en&quot;&gt;
 
@@ -1071,7 +1048,8 @@ var age;
 
 &lt;/html&gt;
 </code></pre>
-<h2 id="数据类型的转换"><a href="#数据类型的转换" class="headerlink" title="数据类型的转换"></a>数据类型的转换</h2><h3 id="转化字符"><a href="#转化字符" class="headerlink" title="转化字符"></a>转化字符</h3><ol>
+<h2 id="数据类型的转换"><a href="#数据类型的转换" class="headerlink" title="数据类型的转换"></a>数据类型的转换</h2><p><strong>我们要注意，在js中，默认数据类型为字符型</strong></p>
+<h3 id="转化字符"><a href="#转化字符" class="headerlink" title="转化字符"></a>转化字符</h3><ol>
 <li>变量.toString();</li>
 <li>String(变量)；</li>
 <li>变量 + ‘’；</li>
@@ -1082,6 +1060,268 @@ var age;
 <li>Number(变量)；</li>
 <li>‘字符’ - 0</li>
 </ol>
+<p>例题1.</p>
+<pre><code class="javascript">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+    &lt;script&gt;
+        var num1 = prompt(&#39;请输入第一个值：&#39;);
+        var num2 = prompt(&#39;请输入第二个值：&#39;);
+        var num3 = parseInt(num1) + parseInt(num2);
+        alert(&#39;结果是:&#39; + num3);
+
+    &lt;/script&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+
+&lt;/body&gt;
+
+&lt;/html&gt;
+</code></pre>
+<p><strong>在第11行中我们发现，我们虽然定义了变量，但是很明显，这个变量默认为字符串，所以我们要想得到整数类型，我们必须就要将其转换为整型</strong></p>
+<h2 id="课外补充"><a href="#课外补充" class="headerlink" title="课外补充"></a>课外补充</h2><p><strong>解释语言和编译语言的区别</strong></p>
+<ul>
+<li>编译语言：首先把所有的菜做好，才能上桌吃饭。</li>
+<li>解释语言：好比吃火锅，边吃边刷 ，同时进行。</li>
+</ul>
+<h2 id="基础习题"><a href="#基础习题" class="headerlink" title="基础习题"></a>基础习题</h2><pre><code class="javascript">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+    &lt;script&gt;
+        var word1 = prompt(&#39;请输入你的姓名&#39;);
+        var word2 = parseInt(prompt(&#39;请输入你的年龄&#39;));
+        var word3 = prompt(&#39;请输入你的性别&#39;);
+
+        alert(&#39;您的姓名是:&#39; + word1 + &#39;\n&#39; + &#39;您的年龄是:&#39; + word2 + &#39;\n&#39; + &#39;您的性别是:&#39; + word3);
+    &lt;/script&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+
+&lt;/body&gt;
+
+&lt;/html&gt;
+</code></pre>
+<p><strong>这串代码中，我们要注意，转义字符我们也需要用引号括起来，然后第十行代码我们可以在他还没用之前就将其定义为其他类型</strong></p>
+<h2 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h2><p><strong>不过多赘述</strong></p>
+<ul>
+<li><p><strong>此处强调一点，在js中“&#x3D;&#x3D;”这个逻辑运算符有点特殊，它会将等式两边的不同的数据类型转换成同一个数据类型（将等号右边转换为左边的）也可以叫隐式转换</strong></p>
+</li>
+<li><p><strong>于此相反，“==&#x3D;”这个逻辑运算符与“=&#x3D;”又有些不一样的，后者只需要数值一样即可，但是前者还需要&#x3D;&#x3D;数据类型&#x3D;&#x3D;相同</strong></p>
+</li>
+</ul>
+<h2 id="流程控制"><a href="#流程控制" class="headerlink" title="流程控制"></a>流程控制</h2><h3 id="if语句"><a href="#if语句" class="headerlink" title="if语句"></a>if语句</h3><p>和c<strong>语言差不多</strong></p>
+<pre><code class="javascript">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+    &lt;script&gt;
+        var word = prompt(&#39;请输入您查询的水果:&#39;);
+
+        if (word == &#39;苹果&#39;) &#123;
+            alert(&#39;3.5元/斤&#39;);
+        &#125; else if (word == &#39;榴莲&#39;) &#123;
+            alert(&#39;35元/斤&#39;);
+        &#125; else &#123;
+            alert(&#39;没有此水果&#39;);
+        &#125;
+    &lt;/script&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+
+&lt;/body&gt;
+
+&lt;/html&gt;
+</code></pre>
+<p><strong>和c语言差不多，简单看看</strong></p>
+<h3 id="循环语句"><a href="#循环语句" class="headerlink" title="循环语句"></a>循环语句</h3><p>和c一样</p>
+<p><strong>追加字符串的方法</strong></p>
+<pre><code class="javascript">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+    &lt;script&gt;
+        var str = &#39;&#39;;
+        var num = prompt(&#39;请输入你想要的星星的个数:&#39;);
+
+        for (var i = 0; i &lt; num; i++) &#123;
+            str = str + &#39;*&#39;;
+        &#125;
+
+        console.log(str);
+    &lt;/script&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+
+&lt;/body&gt;
+
+&lt;/html&gt;
+</code></pre>
+<h3 id="利用双重循环，我们可以得到蛇形图形"><a href="#利用双重循环，我们可以得到蛇形图形" class="headerlink" title="利用双重循环，我们可以得到蛇形图形"></a><strong>利用双重循环，我们可以得到蛇形图形</strong></h3><pre><code class="javascript">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+    &lt;script&gt;
+        var num = prompt(&#39;请输入你想要的行数:&#39;);
+
+        for (var i = num; i &gt; 0; i--) &#123;
+            var str = &#39;&#39;;
+            for (var j = i; j &gt; 0; j--) &#123;
+                str = str + &#39;😜&#39;;
+            &#125;
+            console.log(str + &#39;\n&#39;);
+        &#125;
+    &lt;/script&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+
+&lt;/body&gt;
+
+&lt;/html&gt;
+</code></pre>
+<h3 id="九九乘法表"><a href="#九九乘法表" class="headerlink" title="九九乘法表"></a>九九乘法表</h3><pre><code class="javascript">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+    &lt;script&gt;
+        var str = &#39;&#39;;
+        for (var i = 1; i &lt;= 9; i++) &#123;
+            for (var j = 1; i &lt;= i; j++) &#123;
+                str += j + &#39;×&#39; + i + &#39;=&#39; + i * j + &#39;\t&#39;;
+            &#125;
+            str += &#39;\n&#39;;
+        &#125;
+        console.log(str);
+    &lt;/script&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+
+&lt;/body&gt;
+
+&lt;/html&gt;
+</code></pre>
+<p><strong>与c语言不同的是，他需要用字符串的叠加，也即是空字符开始叠加</strong></p>
+<h2 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h2><p>和c差不多，看我的c语言<br><strong>求数组的长度</strong>：&#x3D;&#x3D;数组名.length&#x3D;&#x3D;</p>
+<pre><code class="javascript">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+    &lt;script&gt;
+        var str = &#39;&#39;;
+        var color = [&#39;red&#39;, &#39;green&#39;, &#39;blue&#39;, &#39;pink&#39;];
+
+        for (var i = 0; i &lt; color.length; i++) &#123;
+            str += color[i];
+            str += &#39;|&#39;;
+        &#125;
+
+        console.log(str);
+
+    &lt;/script&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+
+&lt;/body&gt;
+
+&lt;/html&gt;
+</code></pre>
+<p><img src="https://typora200483.oss-cn-chengdu.aliyuncs.com/Snipaste_2023-10-09_22-16-07.png" alt="Snipaste_2023-10-09_22-16-07"></p>
+<p>&#x3D;&#x3D;<em><strong>以上代码可以得到以上输出</strong></em>&#x3D;&#x3D;</p>
+<h2 id="修改数组的长度"><a href="#修改数组的长度" class="headerlink" title="修改数组的长度"></a>修改数组的长度</h2><p><strong>同过arr.length &#x3D; N;来将其变大，但是添加以后，其中值为空，需要手动添加</strong></p>
+<p><strong>注意！！！！</strong><br><strong>不要给我们的数组名赋值，不然之前的赋值都将消失</strong></p>
+<h2 id="对象"><a href="#对象" class="headerlink" title="对象"></a>对象</h2><p>对象是一个具体的事物，记住一定是具体</p>
+<p>在js中，对象是一组无序的相关属性和方法的集合，所有的事物都是对象，例如字符串，数值，数组，函数等。</p>
+<p><img src="https://typora200483.oss-cn-chengdu.aliyuncs.com/Snipaste_2023-10-11_21-26-32.png" alt="Snipaste_2023-10-11_21-26-32"></p>
+<h3 id="为什么需要对象"><a href="#为什么需要对象" class="headerlink" title="为什么需要对象"></a>为什么需要对象</h3><p><img src="https://typora200483.oss-cn-chengdu.aliyuncs.com/Snipaste_2023-10-11_21-30-14.png" alt="Snipaste_2023-10-11_21-30-14"></p>
+<h3 id="创建对象的三种方式"><a href="#创建对象的三种方式" class="headerlink" title="创建对象的三种方式"></a>创建对象的三种方式</h3><h4 id="利用字面量创建对象"><a href="#利用字面量创建对象" class="headerlink" title="利用字面量创建对象"></a>利用字面量创建对象</h4><p>对象字面量：<strong>就是花括号{ }里面包含了表达这个具体事务（对象）的属性方法</strong></p>
+<pre><code class="javascript">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+    &lt;script&gt;
+        //var obj = &#123;&#125;;  //创建一个空的对象
+        var obj = &#123;
+            uname: &#39;张三丰&#39;,
+            age: 18,
+            sex: &#39;男&#39;,
+            sayHi: function () &#123; //这个位置属于方法
+                alert(&#39;hi~&#39;);
+            &#125;
+        &#125;
+
+        alert(obj.sayHi); //调用的第一种方法
+        alert(obj[&#39;age&#39;]); //调用的第二种方法
+        obj.sayHi();
+
+    &lt;/script&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+
+&lt;/body&gt;
+
+&lt;/html&gt;
+</code></pre>
+<p><strong>看代码的第19，20，21行，我们发现有三种调用方法，其中我们调用函数时，不要忘记给功能加‘（）’</strong></p>
+<h3 id="利用new-Object来创建对象"><a href="#利用new-Object来创建对象" class="headerlink" title="利用new Object来创建对象"></a>利用new Object来创建对象</h3><pre><code class="javascript">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+    &lt;script&gt;
+        var obj = new Object();
+        obj.uname = &#39;张三丰&#39;;
+        obj.age = 18;
+        obj.sex = &#39;男&#39;;
+        obj.sayHi = function () &#123;
+            alert(&#39;Hi ~&#39;);
+        &#125;
+
+        
+    &lt;/script&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+
+&lt;/body&gt;
+
+&lt;/html&gt;
+</code></pre>
+<p><strong>调用和前面的一摸一样</strong></p>
 <h1 id="DOM"><a href="#DOM" class="headerlink" title="DOM"></a>DOM</h1><h2 id="className"><a href="#className" class="headerlink" title="className"></a>className</h2><p><code>className</code> 是 DOM 元素对象的一个属性，用于获取或设置元素的类名。</p>
 <p>通过访问元素的 <code>className</code> 属性，可以获取该元素当前设置的所有类名，多个类名之间通过空格分隔。例如，如果一个元素的类名是 <code>&quot;class1 class2&quot;</code>，那么通过 <code>element.className</code> 获取到的值就是 <code>&quot;class1 class2&quot;</code>。</p>
 <p>同时，也可以使用 <code>className</code> 属性来设置元素的类名。你可以直接给 <code>className</code> 赋值一个字符串，用于替换元素原有的类名。例如，<code>element.className = &quot;newClass&quot;</code> 将会将元素的类名设置为 “newClass”。</p>

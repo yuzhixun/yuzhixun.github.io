@@ -180,12 +180,12 @@
             
             <span class="tag">
                 
-                <a href="/tags/Markdown/" style="color: #03a9f4">Markdown</a>
+                <a href="/tags/Markdown/" style="color: #00bcd4">Markdown</a>
             </span>
             
             <span class="tag">
                 
-                <a href="/tags/vscode/" style="color: #ffa2c4">vscode</a>
+                <a href="/tags/vscode/" style="color: #03a9f4">vscode</a>
             </span>
             
         </span>
@@ -1360,7 +1360,27 @@ int days(int year,int month,int day, int digit)&#123;
     return digit;
 &#125;		
 </code></pre>
-<h1 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h1><h2 id="定义函数中有无void的作用"><a href="#定义函数中有无void的作用" class="headerlink" title="定义函数中有无void的作用"></a>定义函数中有无void的作用</h2><ol>
+<h2 id="输入整数N，求能够整除3或5的所有数中第N个"><a href="#输入整数N，求能够整除3或5的所有数中第N个" class="headerlink" title="输入整数N，求能够整除3或5的所有数中第N个"></a>输入整数N，求能够整除3或5的所有数中第N个</h2><pre><code class="c">#include &lt;stdio.h&gt;
+
+int main()&#123;
+    int N,i;
+    while(scanf(&quot;%d&quot;,&amp;N)!=EOF)&#123;
+        for(i=3;;i++)&#123;
+            if(i%3==0 || i%5==0)&#123;
+                N--;
+            &#125;
+            if(N==0)&#123;
+                printf(&quot;%d\n&quot;,i);
+                break;
+            &#125;
+        &#125;
+    &#125;
+    return 0;
+&#125; 
+</code></pre>
+<h1 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h1><h2 id="函数的传递形式"><a href="#函数的传递形式" class="headerlink" title="函数的传递形式"></a>函数的传递形式</h2><p>​		<strong>在 C 语言中，函数的参数传递方式有两种：值传递和引用传递。对于结构体这样的复杂数据类型，一般都建议使用指针进行引用传递，以便能够修改原始结构体的值。当使用指针作为函数参数时，传递的是指针的地址，函数内部可以通过该指针直接访问和修改原始数据。</strong></p>
+<p>&#x3D;&#x3D;所以我们在传递参数给函数的时候，建议用指针&#x3D;&#x3D;</p>
+<h2 id="定义函数中有无void的作用"><a href="#定义函数中有无void的作用" class="headerlink" title="定义函数中有无void的作用"></a>定义函数中有无void的作用</h2><ol>
 <li><strong>有void时，我们可以让函数内部直接printf()</strong></li>
 <li><strong>没有void时，比如说是int，那就是让函数返回一个整数。</strong></li>
 </ol>
@@ -2107,8 +2127,15 @@ void art(int N)&#123;
     &#125;
 </code></pre>
 <p>29到30行这一串连锁循环就可以形成一个上三角图像。</p>
-<h2 id="结构体"><a href="#结构体" class="headerlink" title="结构体"></a>结构体</h2><p>例题1：</p>
-<p><strong>比较年份大小，输出较大的年份</strong></p>
+<h1 id="结构体"><a href="#结构体" class="headerlink" title="结构体"></a>结构体</h1><h2 id="gt-和-在c结构体中的区别"><a href="#gt-和-在c结构体中的区别" class="headerlink" title="-&gt;和.在c结构体中的区别"></a>-&gt;和.在c结构体中的区别</h2><p><strong>在 C 语言中，<code>stu-&gt;studyname</code> 和 <code>stu.studyname</code> 都是访问结构体指针 <code>stu</code> 中的成员 <code>studyname</code> 的方式，但是使用的运算符不同。</strong></p>
+<ol>
+<li><p><strong><code>stu-&gt;studyname</code> 是通过指针变量 <code>stu</code> 使用箭头运算符 <code>-&gt;</code> 访问结构体成员。<code>-&gt;</code> 运算符用于访问指针所指向的结构体或联合体的成员。它相当于间接引用指针并访问成员的简化写法。也就是说，<code>stu-&gt;studyname</code> 等价于 <code>(*stu).studyname</code>。</strong></p>
+</li>
+<li><p><strong><code>stu.studyname</code> 是通过结构体变量 <code>stu</code> 使用点运算符 <code>.</code> 访问结构体成员。点运算符用于直接访问结构体或联合体的成员。</strong></p>
+</li>
+</ol>
+<p><strong>所以，<code>stu-&gt;studyname</code> 和 <code>stu.studyname</code> 都可以用来访问结构体指针 <code>stu</code> 中的成员 <code>studyname</code>，它们的结果是一样的。但通常情况下，使用 <code>-&gt;</code> 运算符更加方便和简洁，特别是当我们操作指向结构体的指针时。</strong></p>
+<h2 id="例题1"><a href="#例题1" class="headerlink" title="例题1"></a>例题1</h2><p><strong>比较年份大小，输出较大的年份</strong></p>
 <pre><code class="c">#include &lt;stdio.h&gt;
 #include &lt;string.h&gt;
 
@@ -2152,6 +2179,43 @@ int main()&#123;
     &#125;
     return 0;
 &#125;
+</code></pre>
+<h2 id="例题2"><a href="#例题2" class="headerlink" title="例题2"></a>例题2</h2><p><strong>先输入多个学生的信息，然后将他们的信息全部输出，用函数进行</strong></p>
+<pre><code>#include &lt;stdio.h&gt;
+
+struct data&#123;
+    char studyname[10];
+    char name[10];
+    int result1;
+    int result2;
+    int result3;
+&#125;;
+
+void input(struct data *stu)&#123;
+    scanf(&quot;%s %s %d %d %d&quot;,stu-&gt;studyname,stu-&gt;name,&amp;stu-&gt;result1,&amp;stu-&gt;result2,&amp;stu-&gt;result3);
+&#125;
+
+void print(struct data stu)&#123;
+    printf(&quot;%s,%s,%d,%d,%d\n&quot;,stu.studyname,stu.name,stu.result1,stu.result2,stu.result3);
+&#125;
+
+int main()&#123;
+    int N,i;
+    struct data student[100];
+    
+    scanf(&quot;%d&quot;,&amp;N);
+    
+    for(i=0;i&lt;N;i++)&#123;
+        input(&amp;student[i]);
+    &#125;
+    
+    for(i=0;i&lt;N;i++)&#123;
+        print(student[i]);
+    &#125;
+    
+    return 0;
+&#125;
+
 </code></pre>
 <h1 id="函数库"><a href="#函数库" class="headerlink" title="函数库"></a>函数库</h1><h2 id="ctype-h"><a href="#ctype-h" class="headerlink" title="ctype.h"></a>ctype.h</h2><p>ctype.h 是C标准库中的一个头文件，包含了一组用于字符处理的函数原型和宏定义。</p>
 <p>下面是 ctype.h 中常用的一些函数和宏定义：</p>
@@ -2204,6 +2268,18 @@ int main() &#123;
 &#125;
 </code></pre>
 <p>在其中我们使用了**tolower(c)**，用于题目要求不需要区分大小写的情况下<br><strong>然后我们需要注意的是，在用scanf输入同时出现的字符和字符串的时候，我们最好在前面添加空格，这样可以有效防止将空格也读入其中。</strong></p>
+<h2 id="stdlib-h"><a href="#stdlib-h" class="headerlink" title="stdlib.h"></a><strong>stdlib.h</strong></h2><p><code>#include &lt;stdlib.h&gt;</code> 是一个 C 语言中的预处理指令，其作用是引入标准库头文件 <code>stdlib.h</code>，从而让程序能够使用该头文件中所声明的函数和类型。</p>
+<p><code>stdlib.h</code> 是 C 标准库中的一个头文件，它包含了许多与内存分配、随机数生成、字符串转换、进程控制等功能相关的函数和类型。这些函数和类型的定义和声明都在 <code>stdlib.h</code> 头文件中。</p>
+<p>一些常见的在 <code>stdlib.h</code> 中声明的函数如下：</p>
+<ul>
+<li><code>malloc</code>：用于动态分配内存空间。</li>
+<li><code>free</code>：用于释放动态分配的内存空间。</li>
+<li><code>atoi</code>：将字符串转换为整数。</li>
+<li><code>rand</code>：生成伪随机数。</li>
+<li><code>exit</code>：终止程序运行。</li>
+<li><code>system</code>：执行系统命令。</li>
+</ul>
+<p>通过在程序中包含 <code>stdlib.h</code> 头文件，我们可以使用其中定义的函数来完成各种任务，比如动态内存分配、类型转换、随机数生成等。</p>
 
     </div>
     
