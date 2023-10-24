@@ -3,7 +3,7 @@
 <html lang="zh">
     <head>
         <meta charset="utf-8" />
-        <title>余某人聊git | Argvchs の小窝</title>
+        <title>Tags: 使用pandas进行数据清理和分析 | Argvchs の小窝</title>
         <meta name="author" content="Argvchs" />
         <meta name="description" content="" />
         <meta name="keywords" content="" />
@@ -28,10 +28,6 @@
 
 
 <script src="/js/lib/preview.js"></script>
-
-
-
-
 
 
 
@@ -145,119 +141,118 @@
 </transition>
 
             <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
-                <div class="article">
-    <div>
-        <h1>余某人聊git</h1>
-    </div>
-    <div class="info">
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2023/8/5
-        </span>
+                <div id="archives">
+    
+    <div class="categories-tags">
         
-        <span class="category">
-            <a href="/categories/%E6%8A%80%E6%9C%AF/">
+        
+        
+        <span>
+            <a href="/tags/Typora/" style="background: #00bcd4">
                 <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
+                    <i class="fa-solid fa-tags fa-fw"></i>
                 </span>
-                技术
+                Typora
             </a>
         </span>
         
         
-        <span class="tags">
-            <span class="icon">
-                <i class="fa-solid fa-tags fa-fw"></i>
-            </span>
-            
-            
-            <span class="tag">
-                
-                <a href="/tags/Typora/" style="color: #ffa2c4">Typora</a>
-            </span>
-            
-            <span class="tag">
-                
-                <a href="/tags/Markdown/" style="color: #00a596">Markdown</a>
-            </span>
-            
-            <span class="tag">
-                
-                <a href="/tags/gitbash/" style="color: #ff7d73">gitbash</a>
-            </span>
-            
+        
+        <span>
+            <a href="/tags/Markdown/" style="background: #00a596">
+                <span class="icon">
+                    <i class="fa-solid fa-tags fa-fw"></i>
+                </span>
+                Markdown
+            </a>
         </span>
+        
+        
+        
+        <span>
+            <a href="/tags/WPS/" style="background: #ffa2c4">
+                <span class="icon">
+                    <i class="fa-solid fa-tags fa-fw"></i>
+                </span>
+                WPS
+            </a>
+        </span>
+        
+        
+        
+        <span>
+            <a href="/tags/vscode/" style="background: #ff7d73">
+                <span class="icon">
+                    <i class="fa-solid fa-tags fa-fw"></i>
+                </span>
+                vscode
+            </a>
+        </span>
+        
+        
+        
+        <span>
+            <a href="/tags/gitbash/" style="background: #00a596">
+                <span class="icon">
+                    <i class="fa-solid fa-tags fa-fw"></i>
+                </span>
+                gitbash
+            </a>
+        </span>
+        
+        
+        
+        <span>
+            <a href="/tags/pycharm/" style="background: #00bcd4">
+                <span class="icon">
+                    <i class="fa-solid fa-tags fa-fw"></i>
+                </span>
+                pycharm
+            </a>
+        </span>
+        
+        
+        
+        <span>
+            <a href="/tags/%E4%BD%BF%E7%94%A8pandas%E8%BF%9B%E8%A1%8C%E6%95%B0%E6%8D%AE%E6%B8%85%E7%90%86%E5%92%8C%E5%88%86%E6%9E%90/" style="background: linear-gradient(120deg, #9abbf7 0%, #ffbbf4 100%)">
+                <span class="icon">
+                    <i class="fa-solid fa-tags fa-fw"></i>
+                </span>
+                使用pandas进行数据清理和分析
+            </a>
+        </span>
+        
+        
+        
         
     </div>
     
-    <div class="content" v-pre>
-        <h1 id="余某人聊git"><a href="#余某人聊git" class="headerlink" title="余某人聊git"></a>余某人聊git</h1><h2 id="版本控制"><a href="#版本控制" class="headerlink" title="版本控制"></a>版本控制</h2><blockquote>
-<p>什么是版本控制？ <strong>其实就是版本迭代</strong></p>
-<p>版本控制是一种记录和管理文件或代码的变更历史的系统。它允许开发人员或团队跟踪和控制文件的变更，以便在需要时进行回溯、恢复或合并不同的版本。</p>
-</blockquote>
-<p><strong>多人开发就必须使用我们的版本控制</strong><br>常见的现象就是，如果你创建的代码与别人的有差别。</p>
-<blockquote>
-<p>版本控制分类</p>
-</blockquote>
-<ol>
-<li><strong>本地版本控制</strong></li>
-</ol>
-<p>​		本地版本控制主要用于<strong>管理和跟踪</strong>文件的更改历史，并提供回滚、比较和恢复功能。本地版本控制仅适用于单个开发者在其本地机器上进行版本控制。</p>
-<ol start="2">
-<li><strong>集中式版本控制</strong>(SVN)</li>
-</ol>
-<p>​		集中式版本控制，其中所有文件和版本历史都存储在一个中央仓库中，开发者通过与中央仓库进行交互，进行代码的提交、更新和获取历史版本等操作。</p>
-<p>这种版本控制的优势：</p>
-<ol>
-<li><p>中央化：所有文件和版本信息集中存储在中央服务器上，开发者需要与服务器进行交互才能进行版本控制操作。</p>
-</li>
-<li><p>协作：多个开发者可以同时从中央服务器上获取最新代码，并将自己的更改提交回服务器。服务器会合并不同开发者的更改，并保持代码库的一致性。</p>
-</li>
-<li><p>版本历史：中央服务器会保存完整的版本历史记录，包括每个文件的所有更改、提交者和提交时间等信息。</p>
-</li>
-<li><p>更新与提交：开发者可以从服务器上更新最新的代码到本地工作副本，也可以将自己的更改提交到服务器。服务器会记录每个提交，并将其应用到代码库中。</p>
-</li>
-<li><p>冲突解决：当多个开发者同时修改同一文件并提交时，可能会发生冲突。集中式版本控制系统通常提供一些机制来解决冲突，如手动合并或自动合并工具。</p>
-</li>
-<li><p><strong>分布式版本控制系统</strong>（git）</p>
-</li>
-</ol>
-<p><strong>每个人拥有全部代码</strong>！<strong>安全隐患！</strong></p>
-<ol>
-<li>全本地副本：每个开发者都拥有整个代码库的完整副本，包括所有文件和完整的版本历史。这使得开发者可以在本地快速访问和操作代码，而无需依赖网络连接。</li>
-<li>离线操作：由于每个开发者都有完整的代码副本，因此可以在没有网络连接的情况下进行版本控制操作。开发者可以在本地进行提交、查看历史记录等操作，直到有网络连接后再同步到中央服务器。</li>
-<li>分支和合并：分布式版本控制系统提供了强大而灵活的分支和合并功能。开发者可以轻松地创建分支来尝试新功能或进行实验性开发，然后将分支合并回主线或其他分支。</li>
-<li>异地协作：分布式版本控制系统支持多个开发者之间的异地协作。每个开发者可以在本地独立进行开发，并通过同步操作将代码分享给其他开发者。</li>
-<li>安全性和完整性：每个提交都有一个唯一的标识符，称为哈希值，用于确保提交的完整性和安全性。这使得检测和纠正潜在的数据损坏或篡改变得更加容易。</li>
-</ol>
-<blockquote>
-<p>&#x3D;&#x3D;<strong>GIT 与 SVN最主要的区别</strong>&#x3D;&#x3D;</p>
-</blockquote>
-<h2 id="聊聊git历史"><a href="#聊聊git历史" class="headerlink" title="聊聊git历史"></a>聊聊git历史</h2><ol>
-<li><code>ls</code>：列出目录中的文件和文件夹。</li>
-<li><code>cd</code>：切换工作目录。例如，<code>cd /path/to/directory</code> 将进入指定路径的目录。</li>
-<li><code>pwd</code>：显示当前工作目录的绝对路径。</li>
-<li><code>mkdir</code>：创建一个新目录。例如，<code>mkdir mydir</code> 将创建名为 “mydir” 的目录。</li>
-<li><code>touch</code>：创建一个新文件或更新文件的访问和修改时间。例如，<code>touch myfile.txt</code> 将创建一个名为 “myfile.txt” 的新文件。</li>
-<li><code>cp</code>：复制文件或目录。例如，<code>cp file1.txt file2.txt</code> 将文件 “file1.txt” 复制到 “file2.txt”。</li>
-<li><code>mv</code>：移动文件或重命名文件。例如，<code>mv file1.txt newdir/file1.txt</code> 将文件 “file1.txt” 移动到名为 “newdir” 的目录中。</li>
-<li><code>rm</code>：删除文件或目录。例如，<code>rm myfile.txt</code> 将删除文件 “myfile.txt”。要删除目录及其内容，请使用 <code>-r</code> 选项，例如，<code>rm -r mydir</code>。</li>
-<li><code>cat</code>：显示文件的内容。例如，<code>cat myfile.txt</code> 将在终端上显示文件 “myfile.txt” 的内容。</li>
-<li><code>grep</code>：用于在文件中搜索指定模式。例如，<code>grep &quot;keyword&quot; myfile.txt</code> 将在 “myfile.txt” 中搜索包含 “keyword” 的行。</li>
-<li><code>chmod</code>：更改文件或目录的权限。例如，<code>chmod 755 myfile.txt</code> 将文件 “myfile.txt” 设置为具有所有者可读、写和执行权限，其他用户具有读和执行权限。</li>
-<li><code>chown</code>：更改文件或目录的所有者。例如，<code>chown user1 myfile.txt</code> 将文件 “myfile.txt” 的所有者更改为 “user1”。</li>
-<li><code>sudo</code>：在以管理员权限执行命令时使用。例如，<code>sudo apt-get update</code> 将以管理员权限运行 <code>apt-get update</code> 命令。</li>
-</ol>
-
+    <div class="timeline">
+        <div class="timeline-tail"></div>
+        <div class="timeline-content">
+            <div class="item-time">2023/10/14</div>
+            <a href="/2023/10/14/%E5%AE%9E%E9%AA%8C%E6%8A%A5%E5%91%8A%2020220301020%20%E4%BD%99%E5%BF%97%E5%8B%8B/">
+                <h3>实验报告 20220301020 余志勋</h3>
+            </a>
+            <div class="info">
+                
+                
+                <span class="tags">
+                    <span class="icon">
+                        <i class="fa-solid fa-tags fa-fw"></i>
+                    </span>
+                    
+                    
+                    <span class="tag">
+                        
+                        <a href="/tags/%E4%BD%BF%E7%94%A8pandas%E8%BF%9B%E8%A1%8C%E6%95%B0%E6%8D%AE%E6%B8%85%E7%90%86%E5%92%8C%E5%88%86%E6%9E%90/" style="color: #03a9f4">使用pandas进行数据清理和分析</a>
+                    </span>
+                    
+                </span>
+                
+            </div>
+        </div>
     </div>
-    
-    
-    
-    
-    
-    
     
 </div>
 
@@ -301,12 +296,6 @@
         <script src="/js/cursor.min.js"></script>
 
         <script src="/js/main.js"></script>
-        
-        
-
-
-
-
         
 
         <script src="https://giscus.app/client.js"

@@ -1322,6 +1322,42 @@ var age;
 &lt;/html&gt;
 </code></pre>
 <p><strong>调用和前面的一摸一样</strong></p>
+<h3 id="new-Star-调用函数"><a href="#new-Star-调用函数" class="headerlink" title="new Star()调用函数"></a>new Star()调用函数</h3><pre><code class="javascript">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+    &lt;script&gt;
+        function Star(uname, age, sex) &#123;
+            this.name = uname;
+            this.age = age;
+            this.sex = sex;
+        &#125;
+        var yzx = new Star(&#39;余志勋&#39;, 18, &#39;男&#39;);
+        console.log(yzx.name);
+        console.log(yzx.age);
+        console.log(yzx.sex);
+
+        var zzh = new Star(&#39;曾子豪&#39;, 20, &#39;男&#39;);
+        console.log(zzh.name);
+        console.log(zzh.age);
+        console.log(zzh.sex);
+    &lt;/script&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+
+&lt;/body&gt;
+
+&lt;/html&gt;
+</code></pre>
+<h3 id="new关键字的执行过程"><a href="#new关键字的执行过程" class="headerlink" title="new关键字的执行过程"></a>new关键字的执行过程</h3><ol>
+<li>new构造函数可以在内存中一个空的对象</li>
+<li>this就会指向刚才创建的空对象</li>
+<li>执行构造函数里的代码，给这个新对象添加属性和g</li>
+</ol>
 <h1 id="DOM"><a href="#DOM" class="headerlink" title="DOM"></a>DOM</h1><h2 id="className"><a href="#className" class="headerlink" title="className"></a>className</h2><p><code>className</code> 是 DOM 元素对象的一个属性，用于获取或设置元素的类名。</p>
 <p>通过访问元素的 <code>className</code> 属性，可以获取该元素当前设置的所有类名，多个类名之间通过空格分隔。例如，如果一个元素的类名是 <code>&quot;class1 class2&quot;</code>，那么通过 <code>element.className</code> 获取到的值就是 <code>&quot;class1 class2&quot;</code>。</p>
 <p>同时，也可以使用 <code>className</code> 属性来设置元素的类名。你可以直接给 <code>className</code> 赋值一个字符串，用于替换元素原有的类名。例如，<code>element.className = &quot;newClass&quot;</code> 将会将元素的类名设置为 “newClass”。</p>

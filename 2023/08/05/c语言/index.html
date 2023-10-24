@@ -175,17 +175,17 @@
             
             <span class="tag">
                 
-                <a href="/tags/Typora/" style="color: #00bcd4">Typora</a>
+                <a href="/tags/Typora/" style="color: #03a9f4">Typora</a>
             </span>
             
             <span class="tag">
                 
-                <a href="/tags/Markdown/" style="color: #03a9f4">Markdown</a>
+                <a href="/tags/Markdown/" style="color: #ffa2c4">Markdown</a>
             </span>
             
             <span class="tag">
                 
-                <a href="/tags/vscode/" style="color: #00a596">vscode</a>
+                <a href="/tags/vscode/" style="color: #03a9f4">vscode</a>
             </span>
             
         </span>
@@ -1586,6 +1586,42 @@ void transpose(int a[][3]) &#123;
 <li><strong>数组的转换其实和数字的转换是一样的</strong></li>
 <li><strong>行列式的转换，我们只需要进行一个三角即可，如若全部进行，相当于没有变化</strong></li>
 </ol>
+<h3 id="二维数组的实例"><a href="#二维数组的实例" class="headerlink" title="二维数组的实例"></a>二维数组的实例</h3><pre><code class="c">#include &lt;stdio.h&gt;
+
+int main() &#123;
+    int t,i,j,k;
+    scanf(&quot;%d&quot;, &amp;t);
+    int num[t];
+    
+    for(i=0;i&lt;t;i++)&#123;
+        scanf(&quot;%d&quot;, &amp;num[i]);
+    &#125;
+    
+    for(i=0;i&lt;t;i++)&#123;
+        char a[num[i]][num[i]];
+        for (j = 0; j &lt; num[i]; j++) &#123;
+            for (k = 0; k &lt; num[i]; k++) &#123;
+                a[j][k] = &#39; &#39;;
+            &#125;
+        &#125;
+        
+        for (j = 0; j &lt; num[i]; j++) &#123;
+            a[j][j] = a[j][num[i]-1-j] = &#39;X&#39;;
+        &#125;
+        
+        for (j = 0; j &lt; num[i]; j++) &#123;
+            for (k = 0; k &lt; num[i]; k++) &#123;
+               printf(&quot;%c&quot;,a[j][k]);
+            &#125;
+            printf(&quot;\n&quot;);
+        &#125;
+            printf(&quot;\n&quot;);
+        &#125;
+    
+    return 0;
+&#125;
+</code></pre>
+<p><strong>此题利用二维数组，完成了“X”的放大</strong></p>
 <h2 id="运算符-1"><a href="#运算符-1" class="headerlink" title="运算符"></a><strong>运算符</strong></h2><p>scanf(“%d”,&amp;i)里的&amp;用来获取变量的地址他的操作数</p>
 <h2 id="如何用函数求出最大公约数和最小公倍数"><a href="#如何用函数求出最大公约数和最小公倍数" class="headerlink" title="如何用函数求出最大公约数和最小公倍数"></a>如何用函数求出最大公约数和最小公倍数</h2><pre><code class="c">#include&lt;stdio.h&gt;
 
@@ -1915,7 +1951,7 @@ int main(void)
 <li><code>strncpy</code>：复制指定长度的字符串到另一个字符串。</li>
 <li><code>strcat</code>：将一个字符串追加到另一个字符串的末尾。</li>
 <li><code>strncat</code>：将指定长度的字符串追加到另一个字符串的末尾。 <strong>注意我们在追加的时候，是以数组的形式追加，不能以字符型追加。</strong></li>
-<li><code>strcmp</code>：比较两个字符串。</li>
+<li><code>strcmp</code>：比较两个字符串。<br>  <strong>这个函数可以用于指针和字符的比较</strong></li>
 <li><code>strncmp</code>：比较两个指定长度的字符串。</li>
 <li><code>strchr</code>：在一个字符串中查找指定字符首次出现的位置。</li>
 <li><code>strrchr</code>：在一个字符串中查找指定字符最后一次出现的位置。</li>
@@ -1935,16 +1971,17 @@ int main() &#123;
     char str[100];
     int i,j;
     
-       while(fgets(str,sizeof(str),stdin))&#123;
+       while(scanf(&quot;%s&quot;,str)!=EOF)&#123;
            int length = strlen(str);
            	
        	for(i=length-1;i&gt;=0;i--)&#123;
        		if(str[i] == &#39;0&#39;)&#123;
        			continue;
             &#125;else&#123;
-                for(j=0;j&lt;i;j++)&#123;
+                for(j=0;j&lt;=i;j++)&#123;
                     putchar(str[j]);
                 &#125;
+            printf(&quot;\n&quot;);
             break;	
             &#125;	
         &#125;
@@ -1973,7 +2010,7 @@ int main() &#123;
 <li>返回目标字符串的指针（即第一个参数 <code>destination</code> 的值）。</li>
 </ul>
 <p>下面是一个示例，演示如何使用 <code>strcpy</code> 函数进行字符串复制：</p>
-<pre><code>cCopy Code#include &lt;stdio.h&gt;
+<pre><code class="c">include &lt;stdio.h&gt;
 #include &lt;string.h&gt;
 
 int main() &#123;
@@ -2280,6 +2317,105 @@ int main() &#123;
 <li><code>system</code>：执行系统命令。</li>
 </ul>
 <p>通过在程序中包含 <code>stdlib.h</code> 头文件，我们可以使用其中定义的函数来完成各种任务，比如动态内存分配、类型转换、随机数生成等。</p>
+<h1 id="动态规划"><a href="#动态规划" class="headerlink" title="动态规划"></a>动态规划</h1><p>​		好的，动态规划是一类常见的算法，用于解决具有优化子结构和重复子问题的问题。<strong>其基本思想是将原问题分解为若干个子问题，通过求解子问题的最优解来推导出原问题的最优解</strong>。</p>
+<p>通常使用动态规划有三个步骤： </p>
+<ol>
+<li>确定状态：将原问题转化为一个含有若干个子问题的问题，其中每个子问题的求解都可以转化为一组状态的求解。</li>
+<li>确定状态转移方程：通过求解子问题的最优解来推导出原问题的最优解，这需要找到子问题之间的联系，实现状态转移。</li>
+<li>确定初始状态和边界条件：求解状态转移方程时，需要对最小子问题进行特殊处理，这就涉及到初始状态和边界条件。</li>
+</ol>
+<p>举个例子来说，假设我们要求解一个背包问题：给定n个物品，每个物品有各自的价值和重量，在限定的总重量下，如何选择物品能够使得总价值最大？这个问题可以使用动态规划来解决：</p>
+<ol>
+<li>确定状态：令f[i][j]表示前i个物品，放入容量为j的背包中所能得到的最大价值。</li>
+<li>确定状态转移方程：f[i][j] &#x3D; max{f[i-1][j], f[i-1][j-w[i]] + v[i]} ，其中w[i]表示第i个物品的重量，v[i]表示第i个物品的价值。状态转移方程的意思是，当我们考虑将第i个物品放入背包时，如果放不下（即j&lt;w[i]），那么最大价值就是前i-1个物品放入容量为j的背包的最大价值；否则我们需要在前i-1个物品已经装满容量为j-w[i]的背包的前提下，再把第i个物品放入背包，这样得到的最大价值就是f[i-1][j-w[i]] + v[i]。</li>
+<li>确定初始状态和边界条件：f[0][0]&#x3D;0，因为前0个物品放进容量为0的背包获得的最大价值是0；f[0][j]&#x3D;0，因为前0个物品放进容量为j的背包获得的最大价值也是0。</li>
+</ol>
+<p>通过这三步，我们就可以使用动态规划来解决背包问题了。</p>
+<p>希望这个例子可以帮助您更好地理解动态规划的基本思想。如果您有其他问题，请随时提问。</p>
+<h2 id="铺砖类型的算法"><a href="#铺砖类型的算法" class="headerlink" title="铺砖类型的算法"></a>铺砖类型的算法</h2><pre><code class="c">#include &lt;stdio.h&gt;
+
+int main()&#123;
+    int T,i;
+    int num[31];
+    num[0] = num[1] = 1;
+    
+    for(i=2;i&lt;31;i++)&#123;
+        num[i] = num[i-1] + 2*num[i-2];
+    &#125;
+    
+    scanf(&quot;%d&quot;,&amp;T);
+    
+    for(i=0;i&lt;T;i++)&#123;
+        int N;
+        scanf(&quot;%d&quot;,&amp;N);
+        printf(&quot;%d\n&quot;,num[N]);
+    &#125;
+    return 0;
+&#125;
+</code></pre>
+<h2 id="跳台阶"><a href="#跳台阶" class="headerlink" title="跳台阶"></a>跳台阶</h2><p>​		一个楼梯共有n级台阶，每次可以走一级或者两级，问从0级台阶走到第n级台阶一共有多少种方案</p>
+<blockquote>
+<p>  假设我么要求走到第五级台阶，因为题目要求我们只能走一阶或者两阶，所以走到第五阶，我们可以从第三阶和第四阶求算，为什么不考虑三阶到五阶出现的两种情况，因为，其中一种已经被四到五涵盖了。</p>
+</blockquote>
+<p><strong>暴力算法</strong></p>
+<pre><code class="c">#include &lt;stdio.h&gt;
+
+int dfs(int x)&#123;
+    if(x==1)&#123;
+        return 1;
+    &#125;else if(x==2)&#123;
+        return 2;
+    &#125;else&#123;
+        return dfs(x-1) + dfs(x-2);
+    &#125;
+&#125;
+
+int main()&#123;
+    int n;
+    scanf(&quot;%d&quot;,&amp;n);
+    
+    int res = dfs(n);
+    printf(&quot;%d\n&quot;,res);
+    return 0;
+&#125;
+</code></pre>
+<p><strong>记忆算法</strong></p>
+<pre><code class="c">#include &lt;stdio.h&gt;
+
+const int N = 100;
+int mem[100];
+
+int climbStairs(int n) &#123;
+    
+    if (mem[n] != 0) &#123;
+        return mem[n];
+    &#125;
+    
+    if (n &lt;= 1) &#123;
+        mem[n] = 1;
+    &#125; else if (n == 2) &#123;
+        mem[n] = 2;
+    &#125; else &#123;
+        mem[n] = climbStairs(n - 1) + climbStairs(n - 2);
+    &#125;
+    
+    return mem[n];
+&#125;
+
+int main() &#123;
+    int n,i;
+    printf(&quot;请输入台阶数：&quot;);
+    scanf(&quot;%d&quot;, &amp;n);
+
+    for (i = 0; i &lt; N; i++) &#123;
+        mem[i] = 0;
+    &#125;
+    
+    int ans = climbStairs(n);
+    printf(&quot;从0级台阶走到第%d级台阶的方案数为：%d\n&quot;, n, ans);
+    return 0;
+&#125;
+</code></pre>
 
     </div>
     

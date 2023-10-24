@@ -3,7 +3,7 @@
 <html lang="zh">
     <head>
         <meta charset="utf-8" />
-        <title>Argvchs の小窝</title>
+        <title>实验报告 20220301020 余志勋 | Argvchs の小窝</title>
         <meta name="author" content="Argvchs" />
         <meta name="description" content="" />
         <meta name="keywords" content="" />
@@ -33,7 +33,9 @@
 
 
 
-<script src="/js/lib/home.js"></script>
+
+
+
 
 <link rel="stylesheet" href="/css/main.css" />
 
@@ -143,32 +145,11 @@
 </transition>
 
             <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
-                <div id="home-head">
-    <div id="home-background" ref="homeBackground" data-images="/images/background1.jpg"></div>
-    <div id="home-info" @click="homeClick">
-        <span class="loop"></span>
-        <span class="loop"></span>
-        <span class="loop"></span>
-        <span class="loop"></span>
-        <span class="info">
-            <div class="wrap">
-                <h1>Argvchs の小窝</h1>
-                <h3>Here&#39;s an argvchs...</h3>
-                <h5></h5>
-            </div>
-        </span>
+                <div class="article">
+    <div>
+        <h1>实验报告 20220301020 余志勋</h1>
     </div>
-</div>
-<div id="home-posts-wrap" true ref="homePostsWrap">
-    <div id="home-posts">
-        
-
-<div class="post">
-    <a href="/2023/10/14/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
-        <h2 class="post-title"></h2>
-    </a>
-    <div class="category-and-date">
-        
+    <div class="info">
         <span class="date">
             <span class="icon">
                 <i class="fa-solid fa-calendar fa-fw"></i>
@@ -177,45 +158,23 @@
         </span>
         
         
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <p>6.2<br><strong>一棵度为2的树与一棵二叉树有何区别？</strong></p>
-<p>解答：<strong>度为2的树</strong>是一种通用的树结构，其中每个节点可以有<strong>0、1或2个子节点</strong>。而<strong>二叉树</strong>则是一种特殊的树结构，<strong>每个节点最多只能有两个子节点</strong>，分别称为<strong>左子节点和右子节点</strong>，并且子节点的顺序是有限制的（<strong>左子节点在前，右子节点在后</strong>）。</p>
-<p><strong>需要注意的是，度为2的树可以包含二叉树，但二叉树不一定是度为2的树。</strong></p>
-<p>6.3<br>试分别画出具有三个节点的树和三个结点的二叉树的所有不同形态。</p>
-
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        
-        
-    </div>
-    <a href="/2023/10/14/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
-    <a href="/2023/10/14/%E5%AE%9E%E9%AA%8C%E6%8A%A5%E5%91%8A%2020220301020%20%E4%BD%99%E5%BF%97%E5%8B%8B/">
-        <h2 class="post-title">实验报告 20220301020 余志勋</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="date">
+        <span class="tags">
             <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
+                <i class="fa-solid fa-tags fa-fw"></i>
             </span>
-            2023/10/14
+            
+            
+            <span class="tag">
+                
+                <a href="/tags/%E4%BD%BF%E7%94%A8pandas%E8%BF%9B%E8%A1%8C%E6%95%B0%E6%8D%AE%E6%B8%85%E7%90%86%E5%92%8C%E5%88%86%E6%9E%90/" style="color: #03a9f4">使用pandas进行数据清理和分析</a>
+            </span>
+            
         </span>
         
-        
     </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <h1 id="一-实验目的"><a href="#一-实验目的" class="headerlink" title="一.实验目的"></a>一.实验目的</h1><p>​		<strong>本实验旨在通过使用&#x3D;&#x3D;pandas&#x3D;&#x3D;库中的各种函数，对数据进行清理、分析和可视化，以理解数据中的信息，并处理缺失值、异常值，以及进行数据类型转换等操作。</strong></p>
+    
+    <div class="content" v-pre>
+        <h1 id="一-实验目的"><a href="#一-实验目的" class="headerlink" title="一.实验目的"></a>一.实验目的</h1><p>​		<strong>本实验旨在通过使用&#x3D;&#x3D;pandas&#x3D;&#x3D;库中的各种函数，对数据进行清理、分析和可视化，以理解数据中的信息，并处理缺失值、异常值，以及进行数据类型转换等操作。</strong></p>
 <h1 id="二-实验步骤"><a href="#二-实验步骤" class="headerlink" title="二.实验步骤"></a>二.实验步骤</h1><ol>
 <li><p><strong>导入必要的库</strong></p>
 <ul>
@@ -311,517 +270,13 @@
 <p><code>map()</code>函数是Pandas库中用于对Series对象进行映射操作的函数。它可以将Series中的每个元素按照指定的映射关系进行替换或转换。</p>
 <p>综上所述，这些数据处理和分析方法可以帮助我们更好地理解和处理数据，为进一步的数据分析和建模提供有效的支持。</p>
 
-            
-        </div>
     </div>
-    <div class="post-tags">
-        
-        <span class="icon">
-            <i class="fa-solid fa-tags fa-fw"></i>
-        </span>
-        
-        
-        
-        <span class="tag">
-            
-            <a href="/tags/%E4%BD%BF%E7%94%A8pandas%E8%BF%9B%E8%A1%8C%E6%95%B0%E6%8D%AE%E6%B8%85%E7%90%86%E5%92%8C%E5%88%86%E6%9E%90/" style="color: #ffa2c4">使用pandas进行数据清理和分析</a>
-        </span>
-        
-    </div>
-    <a href="/2023/10/14/%E5%AE%9E%E9%AA%8C%E6%8A%A5%E5%91%8A%2020220301020%20%E4%BD%99%E5%BF%97%E5%8B%8B/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
-    <a href="/2023/10/01/%E5%A8%81%E6%B5%B7%E4%B9%90%E6%B8%B8/">
-        <h2 class="post-title">小鱼丸威海游</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="category">
-            <a href="/categories/%E6%97%85%E6%B8%B8/">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                旅游
-            </a>
-        </span>
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2023/10/1
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <p>学习小鱼丸如何攻略威海</p>
-
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        <span class="icon">
-            <i class="fa-solid fa-tags fa-fw"></i>
-        </span>
-        
-        
-        
-        <span class="tag">
-            
-            <a href="/tags/Typora/" style="color: #03a9f4">Typora</a>
-        </span>
-        
-        <span class="tag">
-            
-            <a href="/tags/Markdown/" style="color: #ff7d73">Markdown</a>
-        </span>
-        
-    </div>
-    <a href="/2023/10/01/%E5%A8%81%E6%B5%B7%E4%B9%90%E6%B8%B8/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
-    <a href="/2023/08/05/Excel%E7%9A%84%E4%B8%93%E9%A2%98%E8%AE%B2%E8%A7%A3/">
-        <h2 class="post-title">Excel的专题讲解</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="category">
-            <a href="/categories/%E6%8A%80%E6%9C%AF/">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                技术
-            </a>
-        </span>
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2023/8/5
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <p>对escel的小理解，并未深入</p>
-
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        <span class="icon">
-            <i class="fa-solid fa-tags fa-fw"></i>
-        </span>
-        
-        
-        
-        <span class="tag">
-            
-            <a href="/tags/Typora/" style="color: #00bcd4">Typora</a>
-        </span>
-        
-        <span class="tag">
-            
-            <a href="/tags/Markdown/" style="color: #ff7d73">Markdown</a>
-        </span>
-        
-        <span class="tag">
-            
-            <a href="/tags/WPS/" style="color: #00bcd4">WPS</a>
-        </span>
-        
-    </div>
-    <a href="/2023/08/05/Excel%E7%9A%84%E4%B8%93%E9%A2%98%E8%AE%B2%E8%A7%A3/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
-    <a href="/2023/08/05/c++/">
-        <h2 class="post-title">学好C++，你就是C位！</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="category">
-            <a href="/categories/%E6%8A%80%E6%9C%AF/">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                技术
-            </a>
-        </span>
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2023/8/5
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <p>余某人对c++极致的理解，以下内容均为思想和实操</p>
-
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        <span class="icon">
-            <i class="fa-solid fa-tags fa-fw"></i>
-        </span>
-        
-        
-        
-        <span class="tag">
-            
-            <a href="/tags/Typora/" style="color: #03a9f4">Typora</a>
-        </span>
-        
-        <span class="tag">
-            
-            <a href="/tags/Markdown/" style="color: #ff7d73">Markdown</a>
-        </span>
-        
-        <span class="tag">
-            
-            <a href="/tags/vscode/" style="color: #ffa2c4">vscode</a>
-        </span>
-        
-    </div>
-    <a href="/2023/08/05/c++/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
-    <a href="/2023/08/05/git/">
-        <h2 class="post-title">余某人聊git</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="category">
-            <a href="/categories/%E6%8A%80%E6%9C%AF/">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                技术
-            </a>
-        </span>
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2023/8/5
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <p>作为一名资深优秀的互联网选手，看看我如何学git</p>
-
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        <span class="icon">
-            <i class="fa-solid fa-tags fa-fw"></i>
-        </span>
-        
-        
-        
-        <span class="tag">
-            
-            <a href="/tags/Typora/" style="color: #00bcd4">Typora</a>
-        </span>
-        
-        <span class="tag">
-            
-            <a href="/tags/Markdown/" style="color: #03a9f4">Markdown</a>
-        </span>
-        
-        <span class="tag">
-            
-            <a href="/tags/gitbash/" style="color: #00bcd4">gitbash</a>
-        </span>
-        
-    </div>
-    <a href="/2023/08/05/git/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
-    <a href="/2023/08/05/python/">
-        <h2 class="post-title">python的学习</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="category">
-            <a href="/categories/%E6%8A%80%E6%9C%AF/">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                技术
-            </a>
-        </span>
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2023/8/5
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <p>作为一名资深优秀的互联网选手，看看我如何学python</p>
-
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        <span class="icon">
-            <i class="fa-solid fa-tags fa-fw"></i>
-        </span>
-        
-        
-        
-        <span class="tag">
-            
-            <a href="/tags/Typora/" style="color: #00a596">Typora</a>
-        </span>
-        
-        <span class="tag">
-            
-            <a href="/tags/Markdown/" style="color: #ffa2c4">Markdown</a>
-        </span>
-        
-        <span class="tag">
-            
-            <a href="/tags/pycharm/" style="color: #00bcd4">pycharm</a>
-        </span>
-        
-    </div>
-    <a href="/2023/08/05/python/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
-    <a href="/2023/08/05/c%E8%AF%AD%E8%A8%80/">
-        <h2 class="post-title">学号C，你就是C位！</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="category">
-            <a href="/categories/%E6%8A%80%E6%9C%AF/">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                技术
-            </a>
-        </span>
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2023/8/5
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <p>余某人对c极致的理解，以下内容均为思想和实操</p>
-
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        <span class="icon">
-            <i class="fa-solid fa-tags fa-fw"></i>
-        </span>
-        
-        
-        
-        <span class="tag">
-            
-            <a href="/tags/Typora/" style="color: #00a596">Typora</a>
-        </span>
-        
-        <span class="tag">
-            
-            <a href="/tags/Markdown/" style="color: #ff7d73">Markdown</a>
-        </span>
-        
-        <span class="tag">
-            
-            <a href="/tags/vscode/" style="color: #ffa2c4">vscode</a>
-        </span>
-        
-    </div>
-    <a href="/2023/08/05/c%E8%AF%AD%E8%A8%80/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
-    <a href="/2023/08/05/%E5%B0%8F%E9%B1%BC%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
-        <h2 class="post-title">小鱼数据库</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="category">
-            <a href="/categories/%E6%8A%80%E6%9C%AF/">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                技术
-            </a>
-        </span>
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2023/8/5
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <p>观摩小鱼丸对数据结构极致的理解</p>
-
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        <span class="icon">
-            <i class="fa-solid fa-tags fa-fw"></i>
-        </span>
-        
-        
-        
-        <span class="tag">
-            
-            <a href="/tags/Typora/" style="color: #00bcd4">Typora</a>
-        </span>
-        
-        <span class="tag">
-            
-            <a href="/tags/Markdown/" style="color: #03a9f4">Markdown</a>
-        </span>
-        
-        <span class="tag">
-            
-            <a href="/tags/vscode/" style="color: #ff7d73">vscode</a>
-        </span>
-        
-    </div>
-    <a href="/2023/08/05/%E5%B0%8F%E9%B1%BC%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
-    <a href="/2023/04/04/web/">
-        <h2 class="post-title">征服前端</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="category">
-            <a href="/categories/%E6%8A%80%E6%9C%AF/">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                技术
-            </a>
-        </span>
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2023/4/4
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <p>轻舟已过万重山，遇事不慌前端瞧</p>
-
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        
-        
-    </div>
-    <a href="/2023/04/04/web/" class="go-post">阅读全文</a>
-</div>
-
-
-        <div class="page-current">
     
-    <span class="current">1</span>
-    
-    <a class="page-num" href="/page/2">2</a>
     
     
     
     
-    <a class="page-num" href="/page/2/">
-        <i class="fa-solid fa-caret-right fa-fw"></i>
-    </a>
     
-</div>
-
-    </div>
-    
-    <div id="home-card">
-        <div id="card-style">
-    <div id="card-div">
-        <div class="avatar">
-            <img src="/images/avatar1.jpg" alt="avatar" />
-        </div>
-        <div class="name">Argvchs</div>
-        <div class="description">
-            <p>Description<br>…</p>
-
-        </div>
-        
-        
-        <div class="friend-links">
-            
-            <div class="friend-link">
-                <a target="_blank" rel="noopener" href="https://argvchs.github.io">Argvchs</a>
-            </div>
-            
-        </div>
-        
-    </div>
-</div>
-
-    </div>
     
 </div>
 
@@ -865,6 +320,12 @@
         <script src="/js/cursor.min.js"></script>
 
         <script src="/js/main.js"></script>
+        
+        
+
+
+
+
         
 
         <script src="https://giscus.app/client.js"
