@@ -175,17 +175,17 @@
             
             <span class="tag">
                 
-                <a href="/tags/Typora/" style="color: #03a9f4">Typora</a>
+                <a href="/tags/Typora/" style="color: #ff7d73">Typora</a>
             </span>
             
             <span class="tag">
                 
-                <a href="/tags/Markdown/" style="color: #ffa2c4">Markdown</a>
+                <a href="/tags/Markdown/" style="color: #00a596">Markdown</a>
             </span>
             
             <span class="tag">
                 
-                <a href="/tags/vscode/" style="color: #03a9f4">vscode</a>
+                <a href="/tags/vscode/" style="color: #ffa2c4">vscode</a>
             </span>
             
         </span>
@@ -1381,10 +1381,22 @@ int main()&#123;
 <h1 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h1><h2 id="函数的传递形式"><a href="#函数的传递形式" class="headerlink" title="函数的传递形式"></a>函数的传递形式</h2><p>​		<strong>在 C 语言中，函数的参数传递方式有两种：值传递和引用传递。对于结构体这样的复杂数据类型，一般都建议使用指针进行引用传递，以便能够修改原始结构体的值。当使用指针作为函数参数时，传递的是指针的地址，函数内部可以通过该指针直接访问和修改原始数据。</strong></p>
 <p>&#x3D;&#x3D;所以我们在传递参数给函数的时候，建议用指针&#x3D;&#x3D;</p>
 <h2 id="定义函数中有无void的作用"><a href="#定义函数中有无void的作用" class="headerlink" title="定义函数中有无void的作用"></a>定义函数中有无void的作用</h2><ol>
-<li><strong>有void时，我们可以让函数内部直接printf()</strong></li>
-<li><strong>没有void时，比如说是int，那就是让函数返回一个整数。</strong></li>
+<li><p><strong>有void时，我们可以让函数内部直接printf()</strong></p>
+</li>
+<li><p><strong>没有void时，比如说是int，那就是让函数返回一个整数。</strong></p>
+<ul>
+<li><p>灵活使用return，他不仅可以返回值，也可以用来判断表达式</p>
+</li>
+<li><pre><code class="cc">  int in_room(int x, int y) &#123;
+      return x &gt;= 0 &amp;&amp; x &lt; H &amp;&amp; y &gt;= 0 &amp;&amp; y &lt; W;
+  &#125;
+</code></pre>
+<p>  <strong>如果表达式是对的，就返回1；否则就返回0。</strong></p>
+</li>
+</ul>
+</li>
 </ol>
-<h2 id="函数要赋值给某一个数，不能直接来当作一个运算过程来得到结果，而是需要将这个结果赋值给一个变量"><a href="#函数要赋值给某一个数，不能直接来当作一个运算过程来得到结果，而是需要将这个结果赋值给一个变量" class="headerlink" title="函数要赋值给某一个数，不能直接来当作一个运算过程来得到结果，而是需要将这个结果赋值给一个变量"></a>函数要赋值给某一个数，不能直接来当作一个运算过程来得到结果，而是需要将这个结果赋值给一个变量</h2><h2 id="函数求和"><a href="#函数求和" class="headerlink" title="函数求和"></a>函数求和</h2><pre><code class="c">#include &lt;stdio.h&gt;
+<h2 id="函数求和"><a href="#函数求和" class="headerlink" title="函数求和"></a>函数求和</h2><pre><code class="c">#include &lt;stdio.h&gt;
 
 void sum(int begin,int end)&#123;
     int i;
@@ -2332,6 +2344,11 @@ int main() &#123;
 </ol>
 <p>通过这三步，我们就可以使用动态规划来解决背包问题了。</p>
 <p>希望这个例子可以帮助您更好地理解动态规划的基本思想。如果您有其他问题，请随时提问。</p>
+<h2 id="动态规划的类型分类"><a href="#动态规划的类型分类" class="headerlink" title="动态规划的类型分类"></a>动态规划的类型分类</h2><ol>
+<li><strong>暴力dfs</strong></li>
+<li><strong>记忆化搜索 &#x3D; 暴力dfs + 记录答案</strong></li>
+<li><strong>递推的公式 &#x3D; dfs向下递推的公式</strong></li>
+</ol>
 <h2 id="铺砖类型的算法"><a href="#铺砖类型的算法" class="headerlink" title="铺砖类型的算法"></a>铺砖类型的算法</h2><pre><code class="c">#include &lt;stdio.h&gt;
 
 int main()&#123;
@@ -2413,6 +2430,335 @@ int main() &#123;
     
     int ans = climbStairs(n);
     printf(&quot;从0级台阶走到第%d级台阶的方案数为：%d\n&quot;, n, ans);
+    return 0;
+&#125;
+</code></pre>
+<p><strong>递归算法</strong></p>
+<pre><code class="c">#include &lt;stdio.h&gt;
+#define N 20
+int n,i;
+int f[N];
+
+int main()&#123;
+    scanf(&quot;%d&quot;,&amp;n);
+    
+    f[1] = 1,f[2] = 2;
+    if(n==1 || n==2)&#123;
+        printf(&quot;%d\n&quot;,f[n]);
+        return 0;
+    &#125;
+    for(i=3;i&lt;=n;i++)&#123;
+        f[i]=f[i-1] + f[i-2];
+    &#125;
+    printf(&quot;%d\n&quot;,f[n]);
+    return 0;
+&#125;
+</code></pre>
+<p>很明显，我们不难发现，代码简洁很多，这就属于递归的思想</p>
+<h2 id="大盗阿福"><a href="#大盗阿福" class="headerlink" title="大盗阿福"></a>大盗阿福</h2><p><strong>这条街有N条店铺，同时洗劫两家相邻的店铺时就会被警察抓获，那么阿福作为资深大盗，如何偷盗才能得到最多的现金</strong></p>
+<p><strong>暴力搜索</strong></p>
+<pre><code class="c">#include &lt;stdio.h&gt;
+#define M 50
+
+int N,T;
+int money[M];
+
+
+int max(int j,int k)&#123;
+    if(j&gt;k)&#123;
+        return j;
+    &#125;else&#123;
+        return k;
+    &#125;
+&#125;
+
+int dfs(int x)&#123;
+    if(x&gt;N)&#123;
+        return 0;
+    &#125;else&#123;
+        return max(dfs(x+1),dfs(x+2)+money[x]);
+    &#125;
+&#125; 
+
+int main()&#123;
+    int i;
+    scanf(&quot;%d&quot;,&amp;T);
+    
+    while(T--)&#123;
+        scanf(&quot;%d&quot;,&amp;N);
+        for(i=1;i&lt;=N;i++)&#123;
+            scanf(&quot;%d&quot;,&amp;money[i]);
+        &#125;
+        int res = dfs(1);
+        printf(&quot;%d\n&quot;,res); 
+    &#125;
+    return 0;
+&#125;
+</code></pre>
+<p><strong>记忆化搜索</strong></p>
+<pre><code class="c">#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+#define M 50
+
+int N,T;
+int money[M];
+int mem[M];
+
+
+int max(int j,int k)&#123;
+    if(j&gt;k)&#123;
+        return j;
+    &#125;else&#123;
+        return k;
+    &#125;
+&#125;
+
+int dfs(int x)&#123;
+    if(mem[x])&#123;
+        return mem[x];
+    &#125;
+    int sum = 0;
+    if(x&gt;N)&#123;
+        return sum = 0;
+    &#125;else&#123;
+        return sum = max(dfs(x+1),dfs(x+2)+money[x]);  
+    &#125;
+    mem[x] = sum;
+    return sum;
+&#125; 
+
+int main()&#123;
+    int i;
+    scanf(&quot;%d&quot;,&amp;T);
+    
+    while(T--)&#123;
+        scanf(&quot;%d&quot;,&amp;N);
+        for(i=1;i&lt;=N;i++)&#123;
+            scanf(&quot;%d&quot;,&amp;money[i]);
+        &#125;
+        memset(mem,0,sizeof(mem));
+        int res = dfs(1);
+        printf(&quot;%d\n&quot;,res); 
+    &#125;
+    return 0;
+&#125;
+</code></pre>
+<p><strong>递归算法</strong></p>
+<pre><code class="c">#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+#define M 50
+
+int N,T;
+int money[M];
+int f[M];
+
+
+int max(int j,int k)&#123; 
+    if(j&gt;k)&#123;
+        return j;
+    &#125;else&#123;
+        return k;
+    &#125;
+&#125;
+
+int main()&#123;
+    int i;
+    scanf(&quot;%d&quot;,&amp;T);
+    
+    while(T--)&#123;
+        scanf(&quot;%d&quot;,&amp;N);
+        for(i=1;i&lt;=N;i++)&#123;
+            scanf(&quot;%d&quot;,&amp;money[i]);
+        &#125;
+        memset(f,0,sizeof(f));
+        for(i=N;i&gt;=1;i--)&#123;
+            f[i] = max(f[i+1],f[i+2] + money[i]);
+        &#125;
+        printf(&quot;%d\n&quot;,f[1]); 
+    &#125;
+    return 0;
+&#125;
+</code></pre>
+<p><strong>在其中，发现f[i] 的意思就是：从i这个位置开始，一直到N能洗劫到的最大的金钱量。然后再慢慢的向上延伸，储存每一次能够洗劫道德最大金额，一直到 “1”，这样我们就可以找到最划算的一条线路</strong></p>
+<p><strong>进行一下空间优化</strong></p>
+<pre><code class="c">#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+#define M 50
+
+int N,T;
+int money[M];
+//int f[M];
+
+
+int max(int j,int k)&#123; 
+    if(j&gt;k)&#123;
+        return j;
+    &#125;else&#123;
+        return k;
+    &#125;
+&#125;
+
+int main()&#123;
+    int i;
+    scanf(&quot;%d&quot;,&amp;T);
+    
+    while(T--)&#123;
+        scanf(&quot;%d&quot;,&amp;N);
+        for(i=1;i&lt;=N;i++)&#123;
+            scanf(&quot;%d&quot;,&amp;money[i]);
+        &#125;
+        //memset(f,0,sizeof(f));
+           int newf = 0,temp1 = 0,temp2 = 0;
+           for(i=1;i&lt;=N;i++)&#123;
+            newf = max(temp1,temp2+money[i]);
+            temp2 = temp1;
+            temp1 = newf;
+       &#125;
+       printf(&quot;%d\n&quot;,newf);
+    &#125;
+    return 0;
+&#125;
+</code></pre>
+<h2 id="数字三角形"><a href="#数字三角形" class="headerlink" title="数字三角形"></a>数字三角形</h2><p>观察下面的数字金字塔。</p>
+<p>写一个程序来查找从最高点到底部任意处结束的路径，使路径经过数字的和最大。每一步可以走到左下方的点也可以到达右下方的点。</p>
+<p><img src="https://typora200483.oss-cn-chengdu.aliyuncs.com/95pzs0ne.png"></p>
+<p>在上面的样例中，从 $7 \to 3 \to 8 \to 7 \to 5$ 的路径产生了最大权值。</p>
+<p><strong>输入格式</strong></p>
+<p>第一个行一个正整数 $r$ ,表示行的数目。</p>
+<p>后面每行为这个数字金字塔特定行包含的整数。</p>
+<p><strong>输出格式</strong></p>
+<p>单独的一行,包含那个可能得到的最大的和。</p>
+<p> <strong>样例输入</strong> </p>
+<pre><code>5
+7
+3 8
+8 1 0
+2 7 4 4
+4 5 2 6 5
+</code></pre>
+<p> <strong>样例输出</strong> </p>
+<pre><code>30
+</code></pre>
+<p>解答</p>
+<p><strong>暴力搜索</strong></p>
+<pre><code class="c">#include &lt;stdio.h&gt;
+#define N 1010
+
+int n;
+int g[N][N];
+
+int dfs(int x1,int y1)&#123;
+    if(x1&gt;n || y1 &gt; n)&#123;
+        return 0;
+    &#125;else&#123;
+        return max(dfs(x1+1,y1),dfs(x1+1,y1+1)) + g[x1][y1];
+    &#125;
+&#125;
+
+int max(int x,int y)&#123;
+    if(x&gt;y)&#123;
+        return x;
+    &#125;else&#123;
+        return y;
+    &#125;
+&#125;
+
+int main()&#123;
+
+    scanf(&quot;%d&quot;,&amp;n); 
+    int i,j;
+    
+    for(i=1;i&lt;=n;i++)&#123;
+        for(j=1;j&lt;=i;j++)&#123;
+            scanf(&quot;%d&quot;,&amp;g[i][j]);
+        &#125;
+    &#125;
+    int res = dfs(1,1);
+    
+    printf(&quot;%d\n&quot;,res);
+    return 0;
+&#125;
+</code></pre>
+<p><strong>记忆化搜索</strong></p>
+<pre><code class="c">#include &lt;stdio.h&gt;
+#define N 1010
+
+int n;
+int g[N][N];
+int mem[N][N];
+
+int dfs(int x1,int y1)&#123;
+    if(mem[x1][y1])&#123;
+        return mem[x1][y1];
+    &#125;
+    int num = 0;
+    if(x1&gt;n || y1 &gt; n)&#123;
+        num = 0;
+    &#125;else&#123;
+        num =  max(dfs(x1+1,y1),dfs(x1+1,y1+1)) + g[x1][y1];
+    &#125;
+    mem[x1][y1] = num;
+    return num;
+&#125;
+
+int max(int x,int y)&#123;
+    if(x&gt;y)&#123;
+        return x;
+    &#125;else&#123;
+        return y;
+    &#125;
+&#125;
+
+int main()&#123;
+    scanf(&quot;%d&quot;,&amp;n); 
+    int i,j;
+    
+    for(i=1;i&lt;=n;i++)&#123;
+        for(j=1;j&lt;=i;j++)&#123;
+            scanf(&quot;%d&quot;,&amp;g[i][j]);
+        &#125;
+    &#125;
+    int res = dfs(1,1);
+    
+    printf(&quot;%d\n&quot;,res);
+    return 0;
+&#125;
+</code></pre>
+<p><strong>递归</strong></p>
+<pre><code class="c">#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+#define N 1010
+
+int n;
+int g[N][N];
+int f[N][N];
+
+
+int max(int x,int y)&#123;
+    if(x&gt;y)&#123;
+        return x;
+    &#125;else&#123;
+        return y;
+    &#125;
+&#125;
+
+
+int main()&#123;
+    scanf(&quot;%d&quot;,&amp;n); 
+    int i,j;
+    
+    memset(f,0,sizeof(f));
+    for(i=1;i&lt;=n;i++)&#123;
+        for(j=1;j&lt;=i;j++)&#123;
+            scanf(&quot;%d&quot;,&amp;g[i][j]);
+        &#125;
+    &#125;
+    for(i=n;i&gt;=1;i--)&#123;
+        for(j=1;j&lt;=n;j++)&#123;
+            f[i][j] = max(f[i+1][j],f[i+1][j+1]) + g[i][j];
+        &#125;
+    &#125;
+    printf(&quot;%d\n&quot;,f[1][1]);
     return 0;
 &#125;
 </code></pre>
