@@ -175,12 +175,12 @@
             
             <span class="tag">
                 
-                <a href="/tags/Typora/" style="color: #ff7d73">Typora</a>
+                <a href="/tags/Typora/" style="color: #00a596">Typora</a>
             </span>
             
             <span class="tag">
                 
-                <a href="/tags/Markdown/" style="color: #00a596">Markdown</a>
+                <a href="/tags/Markdown/" style="color: #ff7d73">Markdown</a>
             </span>
             
             <span class="tag">
@@ -2329,6 +2329,29 @@ int main() &#123;
 <li><code>system</code>：执行系统命令。</li>
 </ul>
 <p>通过在程序中包含 <code>stdlib.h</code> 头文件，我们可以使用其中定义的函数来完成各种任务，比如动态内存分配、类型转换、随机数生成等。</p>
+<h1 id="qsort-函数的用法实例"><a href="#qsort-函数的用法实例" class="headerlink" title="qsort()函数的用法实例"></a>qsort()函数的用法实例</h1><p>输入一个数组，储存10个元素，然后将数字从小到大进行输出</p>
+<pre><code class="c">#include&lt;stdio.h&gt;
+#include&lt;stdlib.h&gt;
+
+int compare(const void *a,const void *b)&#123;
+    return (*(int*)a-*(int*)b);
+&#125;
+
+int main()&#123;
+    int i;
+    int arr[] = &#123;3,1,4,1,5,9,2,6,5,3,5&#125;;
+    int n = sizeof(arr)/sizeof(arr[0]);
+    
+    qsort(arr,n,sizeof(int),compare);
+    
+    printf(&quot;排列后的顺序为：&quot;);
+    for(i=0;i&lt;n;i++)&#123;
+        printf(&quot;%d&quot;,arr[i]);
+    &#125; 
+    printf(&quot;\n&quot;);
+    return 0;
+&#125;
+</code></pre>
 <h1 id="动态规划"><a href="#动态规划" class="headerlink" title="动态规划"></a>动态规划</h1><p>​		好的，动态规划是一类常见的算法，用于解决具有优化子结构和重复子问题的问题。<strong>其基本思想是将原问题分解为若干个子问题，通过求解子问题的最优解来推导出原问题的最优解</strong>。</p>
 <p>通常使用动态规划有三个步骤： </p>
 <ol>
@@ -2762,6 +2785,174 @@ int main()&#123;
     return 0;
 &#125;
 </code></pre>
+<h2 id="背包问题"><a href="#背包问题" class="headerlink" title="背包问题"></a><strong>背包问题</strong></h2><p>有 N件物品和一个容量是 V的背包。每件物品只能使用一次。</p>
+<p>第 i 件物品的体积是 vi，价值是 wi。</p>
+<p>求解将哪些物品装入背包，可使这些物品的总体积不超过背包容量，且总价值最大。<br>输出最大价值。</p>
+<h4 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h4><p>第一行两个整数N，V用空格隔开，分别表示物品数量和背包容积。</p>
+<p>接下来有 N 行，每行两个整数 vi,wi，用空格隔开，分别表示第 i 件物品的体积和价值。</p>
+<h4 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h4><p>输出一个整数，表示最大价值。</p>
+<h4 id="数据范围"><a href="#数据范围" class="headerlink" title="数据范围"></a>数据范围</h4><p>0&lt;N,V≤10000&lt;N,V≤1000<br>0&lt;vi,wi≤10000&lt;vi,wi≤1000</p>
+<h4 id="输入样例"><a href="#输入样例" class="headerlink" title="输入样例"></a>输入样例</h4><pre><code>4 5
+1 2
+2 4
+3 4
+4 5
+</code></pre>
+<h4 id="输出样例："><a href="#输出样例：" class="headerlink" title="输出样例："></a>输出样例：</h4><pre><code>8
+</code></pre>
+<p><strong>暴力搜索</strong></p>
+<pre><code class="c">#include &lt;stdio.h&gt;
+#define N 1010
+
+int n,m,i;
+int v[N],w[N];
+
+int max(int x,int y)&#123;
+    if(x&gt;y)&#123;
+        return x;
+    &#125;else&#123;
+        return y;
+    &#125;
+&#125;
+
+int dfs(int x,int spV)&#123;
+    if(x&gt;n)&#123;
+        return 0;
+    &#125;	
+    if(spV &lt; v[x])&#123;
+        return dfs(x+1,spV);
+    &#125;else if(spV &gt;=v[x])&#123;
+        return max(dfs(x+1,spV),dfs(x+1,spV-v[x]) + w[x]);
+    &#125;
+&#125;
+
+int main()&#123;
+    scanf(&quot;%d %d&quot;,&amp;n,&amp;m);
+    for(i=1;i&lt;=n;i++)&#123;
+        scanf(&quot;%d %d&quot;,&amp;v[i],&amp;w[i]);
+    &#125;
+    int res = dfs(1,m);
+    printf(&quot;%d\n&quot;,res);
+    return 0;
+&#125;
+</code></pre>
+<p><strong>记忆化搜索</strong></p>
+<pre><code class="c">#include &lt;stdio.h&gt;
+#define N 1010
+
+int n,m,i;
+int v[N],w[N];
+int mem[N][N];
+
+int max(int x,int y)&#123;
+    if(x&gt;y)&#123;
+        return x;
+    &#125;else&#123;
+        return y;
+    &#125;
+&#125;
+
+int dfs(int x,int spV)&#123;
+    if(mem[x][spV])&#123;
+        return mem[x][spV];
+    &#125;
+    int sum = 0;
+    if(x&gt;n)&#123;
+        sum = 0;
+    &#125;
+        
+    if(spV &lt; v[x])&#123;
+        sum = dfs(x+1,spV);
+    &#125;else if(spV &gt;=v[x])&#123;
+        sum =  max(dfs(x+1,spV),dfs(x+1,spV-v[x]) + w[x]);
+    &#125;
+    mem[x][spV] = sum;
+    return sum;
+&#125;
+
+int main()&#123;
+    scanf(&quot;%d %d&quot;,&amp;n,&amp;m);
+    for(i=1;i&lt;=n;i++)&#123;
+        scanf(&quot;%d %d&quot;,&amp;v[i],&amp;w[i]);
+    &#125;
+    int res = dfs(1,m);
+    printf(&quot;%d\n&quot;,res);
+    return 0;
+&#125;
+</code></pre>
+<p><strong>递归</strong></p>
+<pre><code class="c">#include &lt;stdio.h&gt;
+#define N 1010
+
+int n,m,i,j;
+int v[N],w[N];
+int f[N][N];
+
+int max(int x,int y)&#123;
+    if(x&gt;y)&#123;
+        return x;
+    &#125;else&#123;
+        return y;
+    &#125;
+&#125;
+
+int main()&#123;
+    scanf(&quot;%d %d&quot;,&amp;n,&amp;m);
+    for(i=1;i&lt;=n;i++)&#123;
+        scanf(&quot;%d %d&quot;,&amp;v[i],&amp;w[i]);
+    &#125;
+    for(i=n;i&gt;=1;i--)&#123;
+        for(j=0;j&lt;=m;j++)&#123;
+            if(j&lt;v[i])&#123;
+                f[i][j] = f[i+1][j];
+            &#125;else if(j&gt;=v[i])&#123;
+                f[i][j] = max(f[i+1][j],f[i+1][j-v[i]] + w[i]);
+            &#125;
+        &#125;
+    &#125;
+    printf(&quot;%d\n&quot;,f[1][m]);
+    
+    return 0;
+&#125;
+</code></pre>
+<h2 id="寻找最大子数组"><a href="#寻找最大子数组" class="headerlink" title="寻找最大子数组"></a><strong>寻找最大子数组</strong></h2><p>输入一个 <strong>非空</strong> 整型数组，数组里的数可能为正，也可能为负。</p>
+<p>数组中一个或连续的多个整数组成一个子数组。</p>
+<p>求所有子数组的和的最大值。</p>
+<p>要求时间复杂度为 O(n)O(n)。</p>
+<p> <strong>数据范围</strong></p>
+<p>数组长度 [1,1000][1,1000]。<br>数组内元素取值范围 [−200,200][−200,200]。</p>
+<h4 id="样例"><a href="#样例" class="headerlink" title="样例"></a>样例</h4><pre><code>输入：[1, -2, 3, 10, -4, 7, 2, -5]
+输出：18
+</code></pre>
+<pre><code class="c">#include &lt;stdio.h&gt;
+
+int i;
+
+int dfs(int* nums,int length)&#123;
+    int cur_nums = nums[0];
+    int max_nums = nums[0];
+    
+    for(i=1;i&lt;length;i++)&#123;
+        if(cur_nums &lt; 0)&#123;
+            cur_nums = 0;
+        &#125;
+        cur_nums = cur_nums + nums[i];
+        if(cur_nums &gt; max_nums)&#123;
+            max_nums = cur_nums;
+        &#125;
+    &#125;
+    return max_nums;
+&#125;
+
+int main()&#123;
+    int nums[] = &#123;1, -2, 3, 10, -4, 7, 2, -5&#125;;
+    int length = sizeof(nums)/sizeof(nums[0]);
+    
+    int result = dfs(nums,length);
+    printf(&quot;%d\n&quot;,result);
+&#125;
+</code></pre>
+<p><strong>要记住这种思想，从第一个数开始加，一但为负数了，我们就没必要继续这个子数组，我们就可以直接将它清零，继续加后面的直到找到最大的</strong></p>
 
     </div>
     

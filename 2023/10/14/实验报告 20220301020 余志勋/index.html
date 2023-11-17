@@ -1,0 +1,348 @@
+
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+        <meta charset="utf-8" />
+        <title>实验报告 20220301020 余志勋 | Argvchs の小窝</title>
+        <meta name="author" content="Argvchs" />
+        <meta name="description" content="" />
+        <meta name="keywords" content="" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+        <link rel="icon" href="/images/avatar1.jpg" />
+        <script src="https://cdn.staticfile.org/vue/3.3.4/vue.global.prod.min.js"></script>
+<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/6.4.0/css/all.min.css" />
+<link rel="stylesheet" href="/css/fonts.min.css" />
+<script> const mixins = {}; </script>
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+
+
+<script src="https://cdn.staticfile.org/highlight.js/11.8.0/highlight.min.js"></script>
+<script src="https://cdn.staticfile.org/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+<link
+    rel="stylesheet"
+    href="https://cdn.staticfile.org/highlight.js/11.8.0/styles/github.min.css"
+/>
+<script src="/js/lib/highlight.js"></script>
+
+
+
+<script src="/js/lib/preview.js"></script>
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/main.css" />
+
+    <meta name="generator" content="Hexo 6.3.0"></head>
+    <body>
+        <div id="layout">
+            <transition name="fade">
+                <div id="loading" v-show="loading">
+                    <div id="loading-circle">
+                        <h2>LOADING</h2>
+                        <p>加载过慢请开启缓存 浏览器默认开启</p>
+                        <img src="/images/loading.gif" />
+                    </div>
+                </div>
+            </transition>
+            <div id="menu" :class="{ hidden: hiddenMenu, 'menu-color': menuColor}">
+    <nav id="desktop-menu">
+        <a class="title" href="/">
+            <span>ARGVCHS の小窝</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;Home</span>
+        </a>
+        
+        <a href="/about">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;About</span>
+        </a>
+        
+        <a href="/archives">
+            <i class="fa-solid fa-box-archive fa-fw"></i>
+            <span>&ensp;Archives</span>
+        </a>
+        
+        <a href="/categories">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;Categories</span>
+        </a>
+        
+        <a href="/tags">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;Tags</span>
+        </a>
+        
+    </nav>
+    <nav id="mobile-menu">
+        <div class="title" @click="showMenuItems = !showMenuItems">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;ARGVCHS の小窝</span>
+        </div>
+        <transition name="slide">
+            <div class="items" v-show="showMenuItems">
+                
+                <a href="/">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-house fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Home</div>
+                    </div>
+                </a>
+                
+                <a href="/about">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-id-card fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">About</div>
+                    </div>
+                </a>
+                
+                <a href="/archives">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-box-archive fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Archives</div>
+                    </div>
+                </a>
+                
+                <a href="/categories">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-bookmark fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Categories</div>
+                    </div>
+                </a>
+                
+                <a href="/tags">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-tags fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Tags</div>
+                    </div>
+                </a>
+                
+            </div>
+        </transition>
+    </nav>
+</div>
+<transition name="fade">
+    <div id="menu-curtain" @click="showMenuItems = !showMenuItems" v-show="showMenuItems"></div>
+</transition>
+
+            <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
+                <div class="article">
+    <div>
+        <h1>实验报告 20220301020 余志勋</h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2023/10/14
+        </span>
+        
+        
+        <span class="tags">
+            <span class="icon">
+                <i class="fa-solid fa-tags fa-fw"></i>
+            </span>
+            
+            
+            <span class="tag">
+                
+                <a href="/tags/%E4%BD%BF%E7%94%A8pandas%E8%BF%9B%E8%A1%8C%E6%95%B0%E6%8D%AE%E6%B8%85%E7%90%86%E5%92%8C%E5%88%86%E6%9E%90/" style="color: #00a596">使用pandas进行数据清理和分析</a>
+            </span>
+            
+        </span>
+        
+    </div>
+    
+    <div class="content" v-pre>
+        <h1 id="一-实验目的"><a href="#一-实验目的" class="headerlink" title="一.实验目的"></a>一.实验目的</h1><p>​		<strong>本实验旨在通过使用&#x3D;&#x3D;pandas&#x3D;&#x3D;库中的各种函数，对数据进行清理、分析和可视化，以理解数据中的信息，并处理缺失值、异常值，以及进行数据类型转换等操作。</strong></p>
+<h1 id="二-实验步骤"><a href="#二-实验步骤" class="headerlink" title="二.实验步骤"></a>二.实验步骤</h1><ol>
+<li><p><strong>导入必要的库</strong></p>
+<ul>
+<li>import pandas as pd</li>
+<li>import numpy as np</li>
+<li>from numpy import nan as NA</li>
+<li>import matplotlib.pyplot as plt</li>
+</ul>
+</li>
+<li><p><strong>利用isnull函数检测缺失值</strong></p>
+<ul>
+<li>df &#x3D; pd.read_csv(“data.csv”)  # 读取数据</li>
+<li>missing_values &#x3D; df.isnull()  # 检测缺失值</li>
+</ul>
+<p> <img src="https://typora200483.oss-cn-chengdu.aliyuncs.com/Snipaste_2023-10-13_14-33-50.png" alt="Snipaste_2023-10-13_14-33-50"></p>
+</li>
+</ol>
+<p>​		<img src="https://typora200483.oss-cn-chengdu.aliyuncs.com/Snipaste_2023-10-13_14-36-45.png" alt="Snipaste_2023-10-13_14-36-45"></p>
+<ol start="3">
+<li><p><strong>解决Series中的Node值处理</strong></p>
+</li>
+<li><p><strong>统计缺失值</strong></p>
+<ul>
+<li>统计每个字段的缺失值数量：missing_counts &#x3D; missing_values.sum()  # 计算缺失值的总数</li>
+</ul>
+<p> <img src="https://typora200483.oss-cn-chengdu.aliyuncs.com/Snipaste_2023-10-13_14-41-37.png" alt="Snipaste_2023-10-13_14-41-37"></p>
+</li>
+<li><p><strong>利用info函数查看缺失值</strong><br> <img src="https://typora200483.oss-cn-chengdu.aliyuncs.com/Snipaste_2023-10-13_14-47-38.png" alt="Snipaste_2023-10-13_14-47-38"></p>
+<p> <img src="https://typora200483.oss-cn-chengdu.aliyuncs.com/Snipaste_2023-10-13_14-47-46.png" alt="Snipaste_2023-10-13_14-47-46"></p>
+</li>
+<li><p><strong>利用dropna处理缺失值</strong></p>
+<p> &#x3D;&#x3D;dropna()&#x3D;&#x3D;是pandas中用于处理缺失值的函数之一，它可以从DataFrame中删除包含缺失值的行或列。</p>
+<p> <img src="https://typora200483.oss-cn-chengdu.aliyuncs.com/Snipaste_2023-10-13_14-50-01.png" alt="Snipaste_2023-10-13_14-50-01"></p>
+<p> <img src="https://typora200483.oss-cn-chengdu.aliyuncs.com/Snipaste_2023-10-13_14-56-23.png" alt="Snipaste_2023-10-13_14-56-23"></p>
+</li>
+<li><p><strong>展示dropna函数axis, thresh,how参数的应用</strong></p>
+<ul>
+<li><code>axis</code>：指定删除缺失值的轴，默认值为<code>0</code>，表示删除包含缺失值的行；设置为<code>1</code>时表示删除包含缺失值的列。</li>
+<li><code>how</code>：指定删除缺失值的方式，默认值为<code>&#39;any&#39;</code>，表示删除包含任何缺失值的行或列；设置为<code>&#39;all&#39;</code>时表示只有在整行或整列都是缺失值时才删除。</li>
+<li><code>thresh</code>参数则用于指定删除行或列的最小非空值数量</li>
+</ul>
+<p> <img src="https://typora200483.oss-cn-chengdu.aliyuncs.com/Snipaste_2023-10-13_14-59-32.png" alt="Snipaste_2023-10-13_14-59-32"></p>
+<p> <img src="https://typora200483.oss-cn-chengdu.aliyuncs.com/Snipaste_2023-10-13_14-57-25.png" alt="Snipaste_2023-10-13_14-57-25"></p>
+<p> <img src="https://typora200483.oss-cn-chengdu.aliyuncs.com/Snipaste_2023-10-13_15-02-58.png" alt="Snipaste_2023-10-13_15-02-58"></p>
+</li>
+<li><p><strong>利用series的均值填充method函数</strong><br> 在这个实验中，我们将使用Series的<strong>mean()函数</strong>来计算每列的平均值，然后使用<strong>fillna()函数</strong>将缺失值填充为该列的平均值。</p>
+<p> # 计算每列的平均值</p>
+<p> mean_values &#x3D; df.mean(axis&#x3D;0)<br> <img src="https://typora200483.oss-cn-chengdu.aliyuncs.com/Snipaste_2023-10-13_15-22-22.png" alt="Snipaste_2023-10-13_15-22-22"></p>
+<p> # 将缺失值填充为该列的平均值</p>
+<p> df &#x3D; df.fillna(mean_values)<br> <img src="https://typora200483.oss-cn-chengdu.aliyuncs.com/Snipaste_2023-10-13_15-24-34.png" alt="Snipaste_2023-10-13_15-24-34"></p>
+</li>
+<li><p><strong>展示fillna函数method的应用</strong><br> df &#x3D; df.fillna(method&#x3D;’ffill’)  # 用前一个非空值填充<br> 我们不难发现，这种用法已经慢慢被淘汰，所以很多用pycharm的朋友，会发现这里不停的报错</p>
+</li>
+</ol>
+<p>​		<strong>最新用法</strong><br>​		&#x3D;&#x3D;df.ffill()&#x3D;&#x3D;</p>
+<p><img src="https://typora200483.oss-cn-chengdu.aliyuncs.com/Snipaste_2023-10-13_15-14-58.png" alt="Snipaste_2023-10-13_15-14-58"></p>
+<ol start="10">
+<li><strong>利用fillna填充缺失值</strong></li>
+</ol>
+<ul>
+<li>fillna函数用于填充缺失值。例如：我们可以使用0填充所有的缺失值：<br>  df &#x3D; df.fillna(0)  # 用0填充所有缺失值</li>
+</ul>
+<p>一下例题中我们所表示的意思是，第一列我们用0.88来填充，第二列我们用0.66来填充</p>
+<p><img src="https://typora200483.oss-cn-chengdu.aliyuncs.com/Snipaste_2023-10-13_15-05-58.png" alt="Snipaste_2023-10-13_15-05-58"></p>
+<ol start="11">
+<li><p><strong>用replace替换数据值</strong></p>
+<p>在这个实验中，我们将使用replace()函数将特定值替换为其他值。例如，我们将所有的‘ ’值替换为0。</p>
+<p>df &#x3D; df.replace(‘ ‘, 0)<br><img src="https://typora200483.oss-cn-chengdu.aliyuncs.com/Snipaste_2023-10-13_15-27-22.png" alt="Snipaste_2023-10-13_15-27-22"></p>
+<p>如果你需要替换多个特定的值，你可以传入一个字典，其中键是你要替换的值，值是替换后的值。例如，如果你想将’A’替换为’a’，将’B’替换为’b’，可以如下操作：</p>
+<p>df &#x3D; df.replace({‘A’: ‘a’, ‘B’: ‘b’})<br><img src="https://typora200483.oss-cn-chengdu.aliyuncs.com/Snipaste_2023-10-13_15-31-11.png" alt="Snipaste_2023-10-13_15-31-11"></p>
+<p><strong>这里我们将1替换为男，0替换为女</strong></p>
+</li>
+<li><p><strong>传入列表实现多值替换</strong></p>
+<p>在这个实验中，我们将使用一个列表来替换多个特定的值。例如，我们将所有的[1,2]值替换为[3,4]，<strong>也就是说替换为3，2替换额为4</strong></p>
+<p>df &#x3D; df.replace([1,2], [3,4])</p>
+<p><img src="https://typora200483.oss-cn-chengdu.aliyuncs.com/Snipaste_2023-10-13_15-29-58.png" alt="Snipaste_2023-10-13_15-29-58"></p>
+</li>
+<li><p><strong>map（）映射数据</strong></p>
+<p>在这个实验中，我们将使用map()函数将每个元素映射到一个新的值。例如，我们将所有的字符串列中的’A’和’B’映射为’a’和’b’。</p>
+<p>df &#x3D; df.map({‘A’: ‘a’, ‘B’: ‘b’})<br><img src="https://typora200483.oss-cn-chengdu.aliyuncs.com/Snipaste_2023-10-13_15-33-39.png" alt="Snipaste_2023-10-13_15-33-39"></p>
+<ol start="14">
+<li><p>利用散点图检测数据异常值<br><img src="https://typora200483.oss-cn-chengdu.aliyuncs.com/Snipaste_2023-10-13_15-39-44.png" alt="Snipaste_2023-10-13_15-39-44"></p>
+<p><img src="https://typora200483.oss-cn-chengdu.aliyuncs.com/Snipaste_2023-10-13_15-43-25.png" alt="Snipaste_2023-10-13_15-43-25"></p>
+<p><img src="https://typora200483.oss-cn-chengdu.aliyuncs.com/Snipaste_2023-10-13_15-48-31.png" alt="Snipaste_2023-10-13_15-48-31"></p>
+</li>
+</ol>
+</li>
+</ol>
+<h1 id="三-总结"><a href="#三-总结" class="headerlink" title="三.总结"></a>三.总结</h1><p><code>isnull()</code>函数应用于Pandas Series或DataFrame对象来检测缺失值，它返回一个与原始数据结构相同形状的布尔值数组，其中True表示对应位置的值为缺失值（NaN），False表示对应位置的值不是缺失值。</p>
+<p><code>dropna()</code>函数是Pandas库中用于删除缺失值的函数。它可以应用于DataFrame和Series对象。在<strong>DataFrame</strong>对象上使用dropna()函数会删除包含缺失值（NaN）的行或列，具体取决于指定的轴参数。在<strong>Series</strong>对象上使用dropna()函数会删除含有缺失值的元素。</p>
+<p><code>fillna()</code>函数是Pandas库中用于填充缺失值的函数。它可以应用于DataFrame和Series对象。在<strong>DataFrame</strong>对象上使用fillna()函数可以填充包含缺失值（NaN）的单元格。在Series对象上使用fillna()函数可以填充含有缺失值的元素。</p>
+<p><code>replace()</code>函数是Pandas库中用于替换值的函数。它可以应用于DataFrame和Series对象。在<strong>DataFrame</strong>对象上使用replace()函数可以将指定的值替换为新的值。在<strong>Series</strong>对象上使用replace()函数可以将指定的值替换为新的值。</p>
+<p><code>map()</code>函数是Pandas库中用于对Series对象进行映射操作的函数。它可以将Series中的每个元素按照指定的映射关系进行替换或转换。</p>
+<p>综上所述，这些数据处理和分析方法可以帮助我们更好地理解和处理数据，为进一步的数据分析和建模提供有效的支持。</p>
+
+    </div>
+    
+    
+    
+    
+    
+    
+    
+</div>
+
+                <footer id="footer">
+    <div id="footer-wrap">
+        <div>
+            &copy;
+            2022 - 2023 Argvchs の小窝
+            <span id="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            &commat;Argvchs
+        </div>
+        <div>
+            Based on the <a target="_blank" rel="noopener" href="https://hexo.io">Hexo Engine</a> &amp;
+            <a target="_blank" rel="noopener" href="https://github.com/theme-particlex/hexo-theme-particlex">ParticleX Theme</a>
+        </div>
+        
+    </div>
+</footer>
+
+            </div>
+            
+            <transition name="fade">
+                <div id="preview" ref="preview" v-show="previewShow">
+                    <img id="preview-content" ref="previewContent" />
+                </div>
+            </transition>
+            
+        </div>
+        
+        <canvas id="fireworks" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; pointer-events: none; z-index: 32767"></canvas>
+        <script src="https://cdn.staticfile.org/animejs/3.2.1/anime.min.js"></script>
+        <script src="/js/fireworks.min.js"></script>
+
+        <canvas id="background" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; pointer-events: none; z-index: -1"></canvas>
+        <script src="/js/background.min.js"></script>
+
+        <div id="cursor"></div>
+        <link rel="stylesheet" href="/css/cursor.min.css" />
+        <script src="/js/cursor.min.js"></script>
+
+        <script src="/js/main.js"></script>
+        
+        
+
+
+
+
+        
+
+        <script src="https://giscus.app/client.js"
+            data-repo="yuzhixun/yuzhixun.github.io"
+            data-repo-id="R_kgDOJ1fZvw"
+            data-category="Announcements"
+            data-category-id="DIC_kwDOJ1fZv84CZEy-"
+            data-mapping="pathname"
+            data-strict="0"
+            data-reactions-enabled="1"
+            data-emit-metadata="0"
+            data-input-position="top"
+            data-theme="preferred_color_scheme"
+            data-lang="zh-CN"
+            crossorigin="anonymous"
+            async>
+        </script>
+
+    </body>
+</html>

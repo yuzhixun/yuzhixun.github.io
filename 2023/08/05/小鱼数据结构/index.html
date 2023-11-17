@@ -180,7 +180,7 @@
             
             <span class="tag">
                 
-                <a href="/tags/Markdown/" style="color: #ff7d73">Markdown</a>
+                <a href="/tags/Markdown/" style="color: #ffa2c4">Markdown</a>
             </span>
             
             <span class="tag">
@@ -707,6 +707,66 @@ Push(sqStack *s,Elemtype e)&#123;
 &#125;
 </code></pre>
 <p><strong>结果就是char</strong></p>
+<h1 id="易错点分析"><a href="#易错点分析" class="headerlink" title="易错点分析"></a>易错点分析</h1><h2 id="在创建结构体当中，我们需要注意"><a href="#在创建结构体当中，我们需要注意" class="headerlink" title="在创建结构体当中，我们需要注意"></a>在创建结构体当中，我们需要注意</h2><pre><code class="c">typedef struct LNode&#123;
+    elemType data;
+    struct LNode *next;
+&#125; LNode;
+
+typedef LNode *LinkList;
+</code></pre>
+<p>上述的写法实际上也是下面的写法</p>
+<pre><code class="c">typedef struct LNode&#123;
+    elemType data;
+    struct LNode *next;
+&#125;LNode,*LinkList
+</code></pre>
+<p><strong>这里的LNode 实际上是结构体类型并不是指针，而后续的LinkList是这个结构体类型的指针</strong></p>
+<h2 id="函数的参数声明"><a href="#函数的参数声明" class="headerlink" title="函数的参数声明"></a>函数的参数声明</h2><p><strong>函数有两种传递形式</strong></p>
+<ol>
+<li><p>当参数类型为值传递时，函数会在栈上创建一个新的变量副本来存储传入的实参的值。这意味着在函数内部对参数 <code>L</code> 的修改不会影响到原始的链表。</p>
+</li>
+<li><p>如果你希望在函数内部能够对链表进行修改并影响到原始的链表，可以使用引用类型作为参数。修改函数声明为 <code>void Show(LinkList &amp;L)</code> 就可以实现通过引用传递来修改链表。</p>
+</li>
+</ol>
+<p>需要注意的是，在使用引用类型作为参数时，要确保传入的实参是可修改的（非常量），否则会导致编译错误。</p>
+<p>总之，使用值传递或引用传递作为函数参数取决于你的需求，如果需要在函数内部修改链表并影响到原始链表，可以使用引用传递。如果只需要在函数内部读取链表而不修改原始链表，使用值传递即可。</p>
+<p>我们举个例子</p>
+<pre><code class="c">void SitDown(LNode* &amp;L,int number)
+&#123;
+    LNode* p;
+    L=(LNode*)malloc(sizeof(LNode)); //创建头节点 
+    L-&gt;data=1; //头结点的值给为1 
+    L-&gt;next=L; // 
+    
+    for(int i=number;i&gt;=2;i--)
+    &#123;
+       p=(LNode*)malloc(sizeof(LNode));
+       p-&gt;data=i;
+       p-&gt;next=L-&gt;next;
+       L-&gt;next=p;
+    &#125;
+&#125;
+</code></pre>
+<p>以上</p>
+<p>在我们在传递参数时，采用了形式传递，<strong>也就是传递地址</strong>，以上我们想要传递一个链表的地址，我写的是<em><em>LNode</em> &amp;L</em><em>,这就如错误一一样，LNode是个结构体类型但是不是指针，而我们要的是L的地址，所以我们写的是&amp;L，进而LNode 要写成LNode</em></p>
+<p>或者，我们也可以这样去思考</p>
+<pre><code class="c">void SitDown(LinkList &amp;L,int number)
+&#123;
+    LNode* p;
+    L=(LNode*)malloc(sizeof(LNode)); //创建头节点 
+    L-&gt;data=1; //头结点的值给为1 
+    L-&gt;next=L; // 
+    
+    for(int i=number;i&gt;=2;i--)
+    &#123;
+       p=(LNode*)malloc(sizeof(LNode));
+       p-&gt;data=i;
+       p-&gt;next=L-&gt;next;
+       L-&gt;next=p;
+    &#125;
+&#125;
+</code></pre>
+<p><strong>上述我们在构建结构体时，已经声明了LinkList是指向结构体类型的指针，所以我们可以直接使用，这样使代码看起来更舒服了</strong></p>
 
     </div>
     

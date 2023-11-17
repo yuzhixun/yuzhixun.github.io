@@ -3,7 +3,7 @@
 <html lang="zh">
     <head>
         <meta charset="utf-8" />
-        <title>是心得啊 | Argvchs の小窝</title>
+        <title>Vue我最C | Argvchs の小窝</title>
         <meta name="author" content="Argvchs" />
         <meta name="description" content="" />
         <meta name="keywords" content="" />
@@ -147,22 +147,22 @@
             <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
                 <div class="article">
     <div>
-        <h1>是心得啊</h1>
+        <h1>Vue我最C</h1>
     </div>
     <div class="info">
         <span class="date">
             <span class="icon">
                 <i class="fa-solid fa-calendar fa-fw"></i>
             </span>
-            1970/1/1
+            2023/11/1
         </span>
         
         <span class="category">
-            <a href="/categories/%E8%AE%A4%E8%AF%86/">
+            <a href="/categories/%E5%89%8D%E7%AB%AF/">
                 <span class="icon">
                     <i class="fa-solid fa-bookmark fa-fw"></i>
                 </span>
-                认识
+                前端
             </a>
         </span>
         
@@ -175,12 +175,12 @@
             
             <span class="tag">
                 
-                <a href="/tags/Typora/" style="color: #ffa2c4">Typora</a>
+                <a href="/tags/Typora/" style="color: #ff7d73">Typora</a>
             </span>
             
             <span class="tag">
                 
-                <a href="/tags/Markdown/" style="color: #03a9f4">Markdown</a>
+                <a href="/tags/Markdown/" style="color: #00bcd4">Markdown</a>
             </span>
             
         </span>
@@ -188,26 +188,126 @@
     </div>
     
     <div class="content" v-pre>
-        <h1 id="学习毛概的心得体会"><a href="#学习毛概的心得体会" class="headerlink" title="学习毛概的心得体会"></a>学习毛概的心得体会</h1><hr>
-<p>《毛泽东思想和中国特色社会主义理论体系概论》是中国共产党的基本理论，也是中国特色社会主义道路的理论基础。我在跟随老师学习《毛泽东思想和中国特色社会主义理论体系概论》这门课程的过程中，深深感受到了中国共产党的基本理论和中国特色社会主义道路的理论基础对于我自身思想认识的影响。具体的认识归结于以下几点：</p>
-<h2 id="以人民为中心"><a href="#以人民为中心" class="headerlink" title="以人民为中心"></a><em><strong>以人民为中心</strong></em></h2><p>学习毛泽东思想，我深刻领悟到它是中国革命成功的基本经验总结，它的核心是群众路线，以人民为中心。毛泽东思想强调实践、理论、知识三者的统一，提出了以阶级斗争为纲，实行全面的革命和全面的建设的路线；提出了独立自主、自力更生的工业化、农业近代化、科学技术现代化战略；提出了党的基本路线是“一个中心、两个基本点”，即始终把人民群众放在心中最高位置，坚持正确的政治方向和组织路线。</p>
-<h2 id="走适合国情的路线"><a href="#走适合国情的路线" class="headerlink" title="走适合国情的路线"></a><em><strong>走适合国情的路线</strong></em></h2><p>学习中国特色社会主义的理论体系，我更加深入地认识到，中国特色社会主义是在马克思列宁主义、毛泽东思想基础上，以邓小平理论为指导，通过长期实践和改革开放的经验总结而形成的。中国特色社会主义强调了科学发展观，把人民的利益放在首位，着力构建和谐社会；强调了经济社会发展的全面，着力打造创新型国家和世界一流的现代化经济体系；强调了国家治理的现代性，着力推进法治体系、民主制度和党的建设等各个方面的体制机制创新。</p>
-<hr>
-<h2 id="坚定不移跟党走"><a href="#坚定不移跟党走" class="headerlink" title="坚定不移跟党走"></a><em><strong>坚定不移跟党走</strong></em></h2><p>通过学习这门课程，我也更加深刻地认识到作为中国共产党员和年轻一代，要始终坚持马克思列宁主义、毛泽东思想、邓小平理论的指导，紧密团结在以习近平同志为核心的党中央周围，牢记“两个务必”、“四个意识”、“四个自信”，在实现中华民族伟大复兴的道路上不断前行。</p>
-<p>通过学习这门课程，我也更加深刻地认识到，作为一名大学生，我应该始终保持对国家和民族的热爱和责任感，努力学习专业知识和文化知识，掌握好科学方法，培养批判性思维和创新思维，积极投身到国家建设中去，为实现中华民族伟大复兴的中国梦贡献自己的力量。</p>
-<p>总之，通过学习《毛泽东思想和中国特色社会主义理论体系概论》，我深刻感悟到了中国共产党理论的重要性，深刻认识了中国特色社会主义道路的理论基础，也更加坚定了我为实现中华民族伟大复兴而奋斗的信念。</p>
-<p>1.<br>2. m<br>3. m<br>4. mm<br>5. m</p>
-<p>- </p>
-<ul>
-<li><p>mmm</p>
-</li>
-<li><p>m</p>
-</li>
-<li><p>m</p>
-</li>
-<li><p>m</p>
-</li>
+        <h1 id="初识vue"><a href="#初识vue" class="headerlink" title="初识vue"></a>初识vue</h1><h2 id="小案例1"><a href="#小案例1" class="headerlink" title="小案例1"></a>小案例1</h2><pre><code class="html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;初识vue&lt;/title&gt;
+    &lt;script type=&quot;text/javascript&quot; src=&quot;../js/vue.js&quot;&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div id=&quot;root&quot;&gt;
+        &lt;h1&gt;hello!我是&#123;&#123;name&#125;&#125;&lt;/h1&gt;
+        &lt;h1&gt;今年我&#123;&#123;age&#125;&#125;岁&lt;/h1&gt;
+        &lt;h1&gt;我最喜欢的英雄是&#123;&#123;hero&#125;&#125;&lt;/h1&gt;
+    &lt;/div&gt;
+
+    &lt;script type=&quot;text/javascript&quot;&gt;
+        Vue.config.productionTip = false
+
+        new Vue(&#123;
+            el:&#39;#root&#39;, //el用于指定当前vue实例为那个容器服务，值通常是css选择器的字符串。
+            data:&#123;
+                name:&#39;余志勋&#39;,
+                age:&#39;18&#39;,
+                hero:&#39;李白&#39;
+            &#125;
+        &#125;)
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>初识vue</p>
+<ol>
+<li>想让vue工作，就必须创建一个Vue实例，且要传入一个配置对象。</li>
+<li>root容器里的代码依然符合html的规格，只不过混入了一些特殊的Vue语法。</li>
+<li>root容器里的代码被称为【vue模板】</li>
+<li>一个实例和一个vue容器是一一对应的关系。</li>
+</ol>
+<h2 id="vue的模板语法"><a href="#vue的模板语法" class="headerlink" title="vue的模板语法"></a>vue的模板语法</h2><pre><code class="html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;初识vue&lt;/title&gt;
+    &lt;script type=&quot;text/javascript&quot; src=&quot;../js/vue.js&quot;&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div id=&quot;root&quot;&gt;
+        &lt;h1&gt;插值语法&lt;/h1&gt;
+        &lt;h3&gt;你好，&#123;&#123;name&#125;&#125;&lt;/h3&gt;
+        &lt;hr&gt;
+        &lt;h1&gt;指令语法&lt;/h1&gt;
+        &lt;a v-bind:href=&quot;url&quot;&gt;点我去小鱼丸的个人博客&lt;/a&gt; 
+        &lt;a :href=&quot;url&quot;&gt;点我去小鱼丸的个人博客&lt;/a&gt;
+    &lt;/div&gt;
+
+    &lt;script type=&quot;text/javascript&quot;&gt;
+        Vue.config.productionTip = false
+
+        new Vue(&#123;
+            el:&#39;#root&#39;,
+            data:&#123;
+                name:&#39;jack&#39;,
+                url:&#39;https://yuzhixun.github.io/&#39;
+            &#125;
+        &#125;)
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p><strong>Vue模板语法有两大类</strong>：</p>
+<ol>
+<li>插值语法：<ul>
+<li>功能：用于解析标签体内容。</li>
+<li>写法：，xxx是js表达式，且可以直接读取到data中的所有属性。</li>
 </ul>
+</li>
+<li>指令语法<ul>
+<li>功能：用于解析标签（包括：标签属性，标签体内容，绑定事件………..)。</li>
+<li>举例：v-bind:href &#x3D; ‘’xxx‘’ 或 简写成 :href&#x3D;“xxx”,xxx同样要简写成js表达式，且可以直接读取到data里的所有属性。</li>
+<li>备注：Vue中有很多的指令，且形式都是: v-????，此处我们只拿v-bind举个例子。</li>
+</ul>
+</li>
+</ol>
+<p><strong>当遇到多个插值时，我们可以在Vue当中创建一个对象，xxx.XXX</strong></p>
+<pre><code class="html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;初识vue&lt;/title&gt;
+    &lt;script type=&quot;text/javascript&quot; src=&quot;../js/vue.js&quot;&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div id=&quot;root&quot;&gt;
+        &lt;h1&gt;插值语法&lt;/h1&gt;
+        &lt;h3&gt;你好，&#123;&#123;name&#125;&#125;&lt;/h3&gt;
+        &lt;hr&gt;
+        &lt;h1&gt;指令语法&lt;/h1&gt;
+        &lt;a v-bind:href=&quot;url&quot;&gt;点我去小鱼丸的个人博客&lt;/a&gt; 
+        &lt;a :href=&quot;school.url&quot;&gt;点击我去&#123;&#123;school.name&#125;&#125;院的官网&lt;/a&gt;
+    &lt;/div&gt;
+
+    &lt;script type=&quot;text/javascript&quot;&gt;
+        Vue.config.productionTip = false
+
+        new Vue(&#123;
+            el:&#39;#root&#39;,
+            data:&#123;
+                name:&#39;刘泽&#39;,
+                url:&#39;https://yuzhixun.github.io/&#39;,
+                school:&#123;
+                    name:&#39;湖北警官学院&#39;,
+                    url:&#39;https://www.hbpa.edu.cn/&#39;
+                &#125;
+            &#125;
+        &#125;)
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
 
     </div>
     
