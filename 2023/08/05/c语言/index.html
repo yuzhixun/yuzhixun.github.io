@@ -175,17 +175,17 @@
             
             <span class="tag">
                 
-                <a href="/tags/Typora/" style="color: #00a596">Typora</a>
+                <a href="/tags/Typora/" style="color: #00bcd4">Typora</a>
             </span>
             
             <span class="tag">
                 
-                <a href="/tags/Markdown/" style="color: #ff7d73">Markdown</a>
+                <a href="/tags/Markdown/" style="color: #03a9f4">Markdown</a>
             </span>
             
             <span class="tag">
                 
-                <a href="/tags/vscode/" style="color: #ffa2c4">vscode</a>
+                <a href="/tags/vscode/" style="color: #00a596">vscode</a>
             </span>
             
         </span>
@@ -2953,6 +2953,110 @@ int main()&#123;
 &#125;
 </code></pre>
 <p><strong>要记住这种思想，从第一个数开始加，一但为负数了，我们就没必要继续这个子数组，我们就可以直接将它清零，继续加后面的直到找到最大的</strong></p>
+<h2 id="找到最大的联通量"><a href="#找到最大的联通量" class="headerlink" title="找到最大的联通量"></a>找到最大的联通量</h2><pre><code class="c">#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
+char arr[30][60];
+int num[30][60] = &#123;0&#125;;
+int digit = 0;
+
+void dfs(int x,int y)&#123;
+    if(num[x][y] == 0 &amp;&amp; arr[x][y] == &#39;1&#39;)&#123;
+        digit++;
+        num[x][y] = 1;
+        if(x!=29)&#123;
+            dfs(x+1,y);
+        &#125;
+        if(x!=0)&#123;
+            dfs(x-1,y);
+        &#125;
+        if(y!=59)&#123;
+            dfs(x,y+1);
+        &#125;
+        if(y!=0)
+            dfs(x,y-1);
+        &#125;
+&#125;
+
+
+int main()&#123;
+    int max = -1;
+    for(int i = 0;i&lt;30;i++)&#123;
+        scanf(&quot;%s&quot;,&amp;arr[i]);
+    &#125;
+    for(int i = 0;i&lt;30;i++)&#123;
+        for(int j = 0;j&lt;60;j++)&#123;
+            dfs(i,j);
+            if(digit &gt; max)&#123;
+                max = digit;
+            &#125;
+            digit = 0;
+        &#125;
+    &#125;
+    printf(&quot;%d&quot;,max);
+    return 0;
+&#125;
+</code></pre>
+<p>思路很简单，我们首先定义一个字符数组，以及记录这个字符数组中是否访问的数组，访问了加1，没有访问的仍然为零。</p>
+<p>8到24行就是动态规划的主要函数。多看看</p>
+<h1 id="十进制与其他进制之间的转换"><a href="#十进制与其他进制之间的转换" class="headerlink" title="十进制与其他进制之间的转换"></a>十进制与其他进制之间的转换</h1><h2 id="十进制转换为二进制"><a href="#十进制转换为二进制" class="headerlink" title="十进制转换为二进制"></a>十进制转换为二进制</h2><p>我们要了解思路，对二进行取余，将每次取余的结果放在一个数组里</p>
+<pre><code class="c">#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
+void tentotwo(int x)&#123;
+    int arr[100];
+    int length = 0;
+    while(x)&#123;
+        arr[length++] = x%8;
+        x/=8;
+    &#125;
+    
+    for(int i = length-1;i&gt;=0;i--)&#123;
+        printf(&quot;%d&quot;,arr[i]);
+    &#125;
+&#125;
+
+int main()&#123;
+    int n;
+    scanf(&quot;%d&quot;,&amp;n);
+    
+    tentotwo(n);
+    return 0;
+&#125;
+</code></pre>
+<h2 id="十进制转换为十六进制"><a href="#十进制转换为十六进制" class="headerlink" title="十进制转换为十六进制"></a>十进制转换为十六进制</h2><p>十六进制我们需要转换为字符型</p>
+<pre><code class="c">#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
+int tentosixteen(int x)&#123;
+  char word[100];
+  int length = 0;
+  while(x)&#123;
+    char c = 0;
+    int a = x%16;
+    if(a&gt;=10 &amp;&amp; a&lt;=15)&#123;
+      c = a + 55;
+    &#125;else&#123;
+      c = a + 48;
+    &#125;
+    word[length++] = c;
+    x /= 16;
+  &#125;
+
+  for(int i = length -1;i&gt;=0;i--)&#123;
+      printf(&quot;%c&quot;,word[i]);
+  &#125;
+&#125;
+
+int main(int argc, char *argv[])
+&#123;
+    int temp; 
+    scanf(&quot;%d&quot;,&amp;temp);
+    
+    tentosixteen(temp);
+      return 0;
+&#125;
+</code></pre>
 
     </div>
     
