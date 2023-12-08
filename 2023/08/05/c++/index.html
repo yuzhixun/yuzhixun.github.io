@@ -175,7 +175,7 @@
             
             <span class="tag">
                 
-                <a href="/tags/Typora/" style="color: #00bcd4">Typora</a>
+                <a href="/tags/Typora/" style="color: #ffa2c4">Typora</a>
             </span>
             
             <span class="tag">
@@ -193,7 +193,142 @@
     </div>
     
     <div class="content" v-pre>
-        
+        <h2 id="The-First-C-Program"><a href="#The-First-C-Program" class="headerlink" title="The First C++ Program"></a>The First C++ Program</h2><pre><code class="c++">#include &lt;iostream&gt;
+using namespace std;
+
+int main()&#123;
+    cout &lt;&lt; &quot;!!!Hello World!!! I&#39;m &quot;&lt;&lt;18&lt;&lt;&quot; Today &quot;&lt;&lt; endl;
+    return 0;
+&#125;
+</code></pre>
+<pre><code class="c++">#include &lt;iostream&gt;
+using namespace std;
+
+int main()&#123;
+    int number;
+    cin &gt;&gt; number;
+    cout &lt;&lt; &quot;!!!Hello World!!! I&#39;m &quot;&lt;&lt;18&lt;&lt;&quot; Today &quot;&lt;&lt; endl;
+    cout &lt;&lt; &quot;!!!Hello My name is &quot; &lt;&lt; number;
+    return 0;
+&#125;
+</code></pre>
+<p>输入：</p>
+<ul>
+<li>在C中，通常使用<code>scanf</code>函数进行输入。例如，<code>scanf(&quot;%d&quot;, &amp;number)</code>可以读取一个整数并将其存储到<code>number</code>变量中。</li>
+<li>在C++中，通常使用<code>cin</code>对象进行输入。例如，<code>cin &gt;&gt; number</code>可以实现与上述相同的功能。</li>
+</ul>
+<p>输出：</p>
+<ul>
+<li>在C中，通常使用<code>printf</code>函数进行输出。例如，<code>printf(&quot;Hello World\n&quot;)</code>可以打印出”Hello World”。</li>
+<li>在C++中，通常使用<code>cout</code>对象进行输出。例如，<code>cout &lt;&lt; &quot;Hello World&quot; &lt;&lt; endl</code>可以实现与上述相同的功能。</li>
+</ul>
+<p><strong>需要注意，整型的输出不需要加引号</strong></p>
+<h2 id="什么是面向对象"><a href="#什么是面向对象" class="headerlink" title="什么是面向对象"></a>什么是面向对象</h2><p><strong>对象就是变量</strong></p>
+<p>对象包含两个东西，<strong>一个是功能，一个是数据。</strong></p>
+<p>我们对比一下c和c++</p>
+<p>c:</p>
+<pre><code class="c">typedef struct point3d &#123;
+    float x;
+    float y;
+    float z;
+&#125;Ponit3d;
+
+void Point3d_print(const Ponit3d* pd);
+
+Point3d a;
+a.x=1;a.y=2;a.z=3;
+Point3d_print(&amp;a);
+</code></pre>
+<p>c++:</p>
+<pre><code class="c++">class Point3d&#123;
+    public:
+        Point3d(float x,float y,float z);
+        print();
+    private:
+        float x;
+        float y;
+        float z;
+&#125;;
+
+Point3d a(1,2,3);
+a.print();
+</code></pre>
+<h2 id="if语句"><a href="#if语句" class="headerlink" title="if语句"></a>if语句</h2><pre><code class="c++">#include &lt;iostream&gt;
+
+int multitly(int a,int b)&#123;
+    return a*b;
+&#125;
+
+int mult(int a,int b)&#123;
+    int result1 = multitly(a,b);
+    return result1;
+&#125;
+
+int main()&#123;
+    int result = mult(4,4);
+    bool temp = result == 12;
+    if(temp)&#123;
+        std::cout &lt;&lt; &quot;你是对的！！&quot; &lt;&lt; std::endl;
+    &#125;else&#123;
+        std::cout &lt;&lt; &quot;你是错的！！&quot; &lt;&lt; std::endl;
+    &#125;
+    return 0;
+&#125; 
+</code></pre>
+<p><strong>和c语言没有太大的变化</strong></p>
+<h2 id="stl-c"><a href="#stl-c" class="headerlink" title="stl(c++)"></a>stl(c++)</h2><p> <strong>什么是C++标准模板库（STL）？</strong></p>
+<p>​		<strong>标准模板库 STL</strong>（Standard Template Library），是 C++ 标准库的一部分，不需要单独安装，只需要#include 头文件。</p>
+<h2 id="STL六大部件"><a href="#STL六大部件" class="headerlink" title="STL六大部件"></a>STL六大部件</h2><ul>
+<li>容器（Containers）</li>
+<li>分配器（Allocators）</li>
+<li>算法（Algorithm）</li>
+<li>迭代器（Iterators）</li>
+<li>适配器（Adapters）</li>
+<li>仿函数（Functors）</li>
+</ul>
+<h2 id="vector容器"><a href="#vector容器" class="headerlink" title="vector容器"></a>vector容器</h2><ul>
+<li>vector时将元素置于一个动态数组中加以管理的容器。</li>
+<li>vector可以随机存取元素（支持索引值直接存取，用【】操作符或at【】方法，这个等会详讲。</li>
+<li>vector尾部添加或移除元素非常快速，但是在中部或者头部插入或者删除元素比较费劲。</li>
+</ul>
+<p><img src="https://typora200483.oss-cn-chengdu.aliyuncs.com/Snipaste_2023-12-08_23-39-23.png" alt="Snipaste_2023-12-08_23-39-23"></p>
+<pre><code class="c++">#include &lt;iostream&gt;
+#include &lt;vector&gt; 
+
+using namespace std;
+
+int main()&#123;
+    int arr[] = &#123;1,2,3,4,5&#125;;
+    vector&lt;int&gt; v1(arr,arr+5);
+    
+    for(int i = 0;i&lt;5;i++)&#123;
+        cout &lt;&lt; v1[i] &lt;&lt; &quot; &quot;;
+    &#125;
+    
+    cout &lt;&lt; endl;
+    
+    vector&lt;int&gt; v2(3,10);
+    for(int i = 0;i&lt;3;i++)&#123;
+        cout &lt;&lt; v2[i] &lt;&lt; &quot; &quot;;
+    &#125;
+    cout &lt;&lt; endl;
+    
+    vector&lt;int&gt; v3(v1);
+    for(int i = 0;i&lt;5;i++)&#123;
+        cout &lt;&lt; v3[i] &lt;&lt; &quot; &quot;;
+    &#125;
+    cout &lt;&lt; endl;
+    
+    vector&lt;int&gt; v4 = v1;
+    for(int i = 0;i&lt;5;i++)&#123;
+        cout &lt;&lt; v4[i] &lt;&lt; &quot; &quot;;
+    &#125;
+    
+    
+    return 0;
+&#125;
+</code></pre>
+
     </div>
     
     
