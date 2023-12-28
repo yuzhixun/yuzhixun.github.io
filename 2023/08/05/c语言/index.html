@@ -180,7 +180,7 @@
             
             <span class="tag">
                 
-                <a href="/tags/Markdown/" style="color: #00a596">Markdown</a>
+                <a href="/tags/Markdown/" style="color: #ff7d73">Markdown</a>
             </span>
             
             <span class="tag">
@@ -535,6 +535,7 @@ int main()&#123;
 <li>在C语言中，不支持使用 <code>80 &lt;= x &lt; 90</code> 或 <code>70 &lt;= x &lt; 80</code> 这样的写法来表示范围判断,如果你想判断 <code>x</code> 的值是否在某个范围内，需要使用逻辑运算符 <code>&amp;&amp;</code> 来连接条件表达式</li>
 </ol>
 <h2 id="switch-case语句"><a href="#switch-case语句" class="headerlink" title="switch-case语句"></a><strong>switch-case语句</strong></h2><p><strong>多分支语句</strong><br>优点，干净利落，不需要一个个去进行判断</p>
+<p><strong>我们要注意，使用完switch—case之后，一定要用break，不然他会继续运行之后的case</strong></p>
 <p><strong>要注意，表达式，也就是case一定是int类型的</strong></p>
 <pre><code class="c">#include&lt;stdio.h&gt;
 int main()
@@ -2002,12 +2003,13 @@ int main() &#123;
     return 0;
 &#125;
 </code></pre>
-<p><strong>大致思路就是，我们从字符串的末尾开始遍历，如果是零，我们就continue这个循环，继续外层循环，同理，直到不是零开始，我们就开始遍历从零开始到这个i-1，将去零的字符串输出</strong></p>
+<p><strong>大致思路就是，我们从字符串的末尾开始遍历，如果是零，我们就continue这个循环，继续外层循环，同理，直到不是零开始，我们就开始遍历从零开始到这个i-1，将去零的字符串输出，字符进来字符出去，字符串进来，字符串出去</strong></p>
 <h3 id="getchar函数"><a href="#getchar函数" class="headerlink" title="getchar函数"></a>getchar函数</h3><ul>
 <li>int getchar(void);</li>
 <li>从标准输入读入一个字符；</li>
 <li>返回类型是int是为了返回EOF(-1)；</li>
 </ul>
+<p><strong>大致总结一下这两个函数，getchar就是读入一个字符返回的是这个字符的ascll值，putchar就是读取一个字符的ascll值，然后输出这个字符。</strong></p>
 <h3 id="strcpy函数"><a href="#strcpy函数" class="headerlink" title="strcpy函数"></a>strcpy函数</h3><p><code>strcpy</code> 是 C 语言中的一个字符串操作函数，用于将一个字符串复制到另一个字符串中。</p>
 <p>函数原型如下：</p>
 <pre><code>cCopy Codechar *strcpy(char *destination, const char *source);
