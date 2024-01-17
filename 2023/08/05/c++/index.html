@@ -175,17 +175,17 @@
             
             <span class="tag">
                 
-                <a href="/tags/Typora/" style="color: #ff7d73">Typora</a>
+                <a href="/tags/Typora/" style="color: #00a596">Typora</a>
             </span>
             
             <span class="tag">
                 
-                <a href="/tags/Markdown/" style="color: #00bcd4">Markdown</a>
+                <a href="/tags/Markdown/" style="color: #03a9f4">Markdown</a>
             </span>
             
             <span class="tag">
                 
-                <a href="/tags/vscode/" style="color: #ff7d73">vscode</a>
+                <a href="/tags/vscode/" style="color: #00bcd4">vscode</a>
             </span>
             
         </span>
@@ -617,11 +617,198 @@ int main()&#123;
     for(it = vecintA.begin();it!=vecintA.end()-2;it++)&#123;
         cout &lt;&lt; *it &lt;&lt; &quot; &quot;;
     &#125;
-    
-        
     return 0;
 &#125;
 </code></pre>
+<p><img src="https://typora200483.oss-cn-chengdu.aliyuncs.com/Snipaste_2024-01-16_13-41-51.png" alt="Snipaste_2024-01-16_13-41-51"></p>
+<h3 id="迭代器it的使用"><a href="#迭代器it的使用" class="headerlink" title="迭代器it的使用"></a>迭代器it的使用</h3><pre><code class="c++">#include &lt;iostream&gt;
+#include &lt;vector&gt; 
+
+using namespace std;
+
+int main()&#123;
+    vector&lt;int&gt; v;
+    v.push_back(1);
+    v.push_back(2);
+    v.push_back(3);
+    v.push_back(4);
+    
+    vector&lt;int&gt;::iterator it = v.begin() + 3;
+    v.insert(it,6);
+    
+    for(it = v.begin();it!=v.end();it++)&#123;
+        cout &lt;&lt; *it &lt;&lt; &#39; &#39;;
+    &#125;
+    
+    cout &lt;&lt; endl;
+    
+    return 0;
+&#125;
+</code></pre>
+<h2 id="迭代器失效"><a href="#迭代器失效" class="headerlink" title="迭代器失效"></a>迭代器失效</h2><p>什么叫做迭代器失效？<br>    <strong>当我们给一个容器插入一个值以后，这个容器会发生移动，到达内存的任何位置，以至于我们的it指针会失效出现两种情况，其一就是输出任意一个值，其二就是导致系统崩掉</strong></p>
+<h3 id="插入带来的迭代器失效"><a href="#插入带来的迭代器失效" class="headerlink" title="插入带来的迭代器失效"></a>插入带来的迭代器失效</h3><p><img src="https://typora200483.oss-cn-chengdu.aliyuncs.com/Snipaste_2024-01-16_17-38-47.png" alt="Snipaste_2024-01-16_17-38-47"></p>
+<h4 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h4><p>​	我们需要知道，v.insert其实是一个返回类型的操作。它会返回新的迭代器的地址，也就是当容器整体发生了偏移，而指向同一个下标的指针也会跟着发生偏移。所以我们需要一个新的迭代器来储存他的返回值。</p>
+<pre><code class="c++">#include &lt;iostream&gt;
+#include &lt;vector&gt; 
+
+using namespace std;
+
+int main()&#123;
+    vector&lt;int&gt; v;
+    v.push_back(1);
+    v.push_back(2);
+    v.push_back(3);
+    v.push_back(4);
+    
+    vector&lt;int&gt;::iterator it = v.begin() + 3;
+    it = v.insert(it,6);
+    
+    cout &lt;&lt; *it &lt;&lt; endl;
+    
+    return 0;
+&#125;
+</code></pre>
+<p><strong>看14行，我们创建了一个新的迭代器来储存它的返回值。</strong></p>
+<h3 id="删除带来的迭代器失效"><a href="#删除带来的迭代器失效" class="headerlink" title="删除带来的迭代器失效"></a>删除带来的迭代器失效</h3><pre><code class="c++">#include &lt;iostream&gt;
+#include &lt;vector&gt; 
+
+using namespace std;
+
+int main()&#123;
+    int arr[] = &#123;1,2,3,4,4,4,5,6,7,8,9&#125;;
+    int n = sizeof(arr)/sizeof(int);
+    vector&lt;int&gt; v;
+    v.assign(arr,arr+n);
+    vector&lt;int&gt;::iterator it;
+    
+    for(it = v.begin();it!=v.end();)&#123;
+        if(*it == 4)&#123;
+            it = v.erase(it);
+        &#125;else&#123;
+            it++;
+        &#125;
+    &#125;
+    
+    for(it = v.begin();it!=v.end();it++)&#123;
+        cout &lt;&lt; *it &lt;&lt; &#39; &#39;;
+    &#125;	
+    cout &lt;&lt; endl;
+    return 0;
+&#125;
+</code></pre>
+<h1 id="deque容器"><a href="#deque容器" class="headerlink" title="deque容器"></a>deque容器</h1><h2 id="deque的简介"><a href="#deque的简介" class="headerlink" title="deque的简介"></a>deque的简介</h2><p>deque是double-ended-queue的缩写，是一个双端数组而vecto是单端的。 deque在头部和尾部添加或移除元素都非常迅速。但是中部安插元素或移除元素比较费事。</p>
+<h2 id="deque容器的操作"><a href="#deque容器的操作" class="headerlink" title="deque容器的操作"></a>deque容器的操作</h2><p>deque.push_front(elem);&#x2F;&#x2F;在容器头部插入一个数据。<br>deque.pop_front();&#x2F;&#x2F;删除容器第一个数据。</p>
+<p><img src="https://typora200483.oss-cn-chengdu.aliyuncs.com/Snipaste_2024-01-16_18-35-32.png" alt="Snipaste_2024-01-16_18-35-32"></p>
+<h1 id="list容器"><a href="#list容器" class="headerlink" title="list容器"></a>list容器</h1><h2 id="list容器的简介"><a href="#list容器的简介" class="headerlink" title="list容器的简介"></a>list容器的简介</h2><p> list是个双向链表，不可以随机的存取元素，不支持at.(pos)函数与【】操作符。</p>
+<h2 id="list构造对象"><a href="#list构造对象" class="headerlink" title="list构造对象"></a>list构造对象</h2><pre><code class="c++">list&lt;int&gt; IstInt;//定义一个存放int的list容器。
+list&lt;float&gt; IstFloat;//定义一个存放float的list容器。
+list&lt;string&gt; IstString;//定义一个存放string的list容器。
+</code></pre>
+<h2 id="进行操作"><a href="#进行操作" class="headerlink" title="进行操作"></a>进行操作</h2><ul>
+<li>list.push_back(elem);&#x2F;&#x2F;早容器尾部加入一个元素</li>
+<li>list.pop_back();&#x2F;&#x2F;删除容器中最后一个元素</li>
+<li>list.push_front(elem);&#x2F;&#x2F;在容器开头插入一个元素</li>
+<li>list.pop_front();&#x2F;&#x2F;删除容器中第一个元素</li>
+</ul>
+<pre><code class="c++">#include &lt;iostream&gt;
+#include &lt;list&gt;
+
+using namespace std;
+
+int main()&#123;
+    list&lt;int&gt; lst;
+    list&lt;int&gt;::iterator it;
+    
+    lst.push_back(3);
+    lst.push_front(1);
+    
+    for(it = lst.begin();it!=lst.end();it++)&#123;
+        cout &lt;&lt; *it &lt;&lt; &#39; &#39;;
+    &#125;
+    
+    cout &lt;&lt; endl;
+    return 0;
+&#125;
+</code></pre>
+<h2 id="list的数据存取"><a href="#list的数据存取" class="headerlink" title="list的数据存取"></a>list的数据存取</h2><ul>
+<li>list.front();&#x2F;&#x2F;返回第一个元素。</li>
+<li>list.back();&#x2F;&#x2F;返回最后一个元素</li>
+</ul>
+<p>需要注意，我们不仅可以用他来返回一个值，也可以返回首和尾的对象。<br><strong>list.front() &#x3D; num1;</strong><br><strong>list.back() &#x3D; num2；</strong></p>
+<p>这个操作是可以改变容器中第一个和最后一个位置的值</p>
+<h2 id="list迭代器"><a href="#list迭代器" class="headerlink" title="list迭代器"></a>list迭代器</h2><p>list.begin();&#x2F;&#x2F;返回容器中第一个元素的迭代器。<br>list.end();&#x2F;&#x2F;返回容器中最后一个元素之后的迭代器。<br>list.rbegin();&#x2F;&#x2F;<strong>返回容器中倒数第一个元素的迭代器</strong>。<br>list.rend();&#x2F;&#x2F;<strong>返回容器中第一个元素之前的迭代器</strong>。</p>
+<pre><code class="c++">#include &lt;iostream&gt;
+#include &lt;list&gt;
+
+using namespace std;
+
+int main()&#123;
+    //list容器的反向迭代器 
+    list&lt;int&gt; lst;
+    list&lt;int&gt;::reverse_iterator it1;
+    
+    lst.push_back(3);
+    lst.push_back(4);
+    lst.push_back(5);
+    lst.push_back(6);
+    lst.push_back(7);
+    lst.push_back(8);
+    lst.push_front(9);
+    
+    for(it1 = lst.rbegin();it1!=lst.rend();it1++)&#123;
+        cout &lt;&lt; *it1 &lt;&lt; &#39; &#39;;
+    &#125;
+    
+    cout &lt;&lt; endl;
+    return 0;
+&#125;
+</code></pre>
+<p><strong>这种函数可以很轻松的解决数组倒置输出的问题</strong></p>
+<h2 id="list容器带参数的构造方法"><a href="#list容器带参数的构造方法" class="headerlink" title="list容器带参数的构造方法"></a>list容器带参数的构造方法</h2><ul>
+<li>list(n,elem);&#x2F;&#x2F;构造函数将n个elem拷贝给本身。</li>
+<li>list(beg,end);&#x2F;&#x2F;构造函数将[beg,end）区间中的元素拷贝给本身。<strong>左闭右开</strong></li>
+<li>list(const list &amp;lst);&#x2F;&#x2F;拷贝构造函数。</li>
+</ul>
+<p>list(n,elem)：给list容器里拷贝n个elem，我们也可以说是初始化。</p>
+<p>list(beg,end)：我们不能写成list(lst.begin()+1,lst.begin()+2);&#x2F;&#x2F;因为list容器<strong>不支持＋n的操作</strong></p>
+<p><strong>我们可以通过不断使用beg++或者end–来进行指针移动的操作</strong></p>
+<pre><code class="c++">#include &lt;iostream&gt;
+#include &lt;list&gt;
+using namespace std;
+
+int main()&#123;
+    //list容器的反向迭代器 
+    list&lt;int&gt; lst;
+    list&lt;int&gt;::iterator it,beg,end;
+    
+    lst.push_back(3);
+    lst.push_back(4);
+    lst.push_back(5);
+    lst.push_back(6);
+    lst.push_back(7);
+    lst.push_back(8);
+    lst.push_front(9);
+    
+    beg = lst.begin();
+    beg++;
+    end = lst.end();
+    end--;end--;end--;
+    
+    list&lt;int&gt; lst1(beg,end);
+    
+    for(it = lst1.begin();it!=lst1.end();it++)&#123;
+        cout &lt;&lt; *it &lt;&lt; &#39; &#39;;
+    &#125;
+    cout &lt;&lt; endl;
+    return 0;
+&#125;
+</code></pre>
+<h2 id="list的赋值"><a href="#list的赋值" class="headerlink" title="list的赋值"></a>list的赋值</h2><ul>
+<li>list.assign(beg,end);&#x2F;&#x2F;将[beg,end)区间中的数据拷贝赋值给本身。注意该区间是左闭右开的区间。</li>
+<li>list.assign(n,elem);&#x2F;&#x2F;将n个elem拷贝赋值给本身。</li>
+<li>list&amp; operator &#x3D; (const list &amp;lst);&#x2F;&#x2F;重载等号操作符。</li>
+<li>list.swap(lst);&#x2F;&#x2F;将lst与本身的元素互换。</li>
+</ul>
 
     </div>
     
@@ -637,7 +824,7 @@ int main()&#123;
     <div id="footer-wrap">
         <div>
             &copy;
-            2022 - 2023 Argvchs の小窝
+            2022 - 2024 Argvchs の小窝
             <span id="footer-icon">
                 <i class="fa-solid fa-font-awesome fa-fw"></i>
             </span>
