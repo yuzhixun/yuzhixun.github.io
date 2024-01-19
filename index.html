@@ -205,7 +205,7 @@
         
         <span class="tag">
             
-            <a href="/tags/Typora/" style="color: #00bcd4">Typora</a>
+            <a href="/tags/Typora/" style="color: #03a9f4">Typora</a>
         </span>
         
     </div>
@@ -254,12 +254,12 @@
         
         <span class="tag">
             
-            <a href="/tags/Typora/" style="color: #03a9f4">Typora</a>
+            <a href="/tags/Typora/" style="color: #ffa2c4">Typora</a>
         </span>
         
         <span class="tag">
             
-            <a href="/tags/Markdown/" style="color: #00bcd4">Markdown</a>
+            <a href="/tags/Markdown/" style="color: #ff7d73">Markdown</a>
         </span>
         
     </div>
@@ -308,7 +308,7 @@
         
         <span class="tag">
             
-            <a href="/tags/Typora/" style="color: #ff7d73">Typora</a>
+            <a href="/tags/Typora/" style="color: #03a9f4">Typora</a>
         </span>
         
         <span class="tag">
@@ -367,17 +367,17 @@
         
         <span class="tag">
             
-            <a href="/tags/Typora/" style="color: #00bcd4">Typora</a>
+            <a href="/tags/Typora/" style="color: #00a596">Typora</a>
         </span>
         
         <span class="tag">
             
-            <a href="/tags/Markdown/" style="color: #00a596">Markdown</a>
+            <a href="/tags/Markdown/" style="color: #ff7d73">Markdown</a>
         </span>
         
         <span class="tag">
             
-            <a href="/tags/pycharm/" style="color: #00bcd4">pycharm</a>
+            <a href="/tags/pycharm/" style="color: #03a9f4">pycharm</a>
         </span>
         
     </div>
@@ -426,12 +426,12 @@
         
         <span class="tag">
             
-            <a href="/tags/Typora/" style="color: #ffa2c4">Typora</a>
+            <a href="/tags/Typora/" style="color: #ff7d73">Typora</a>
         </span>
         
         <span class="tag">
             
-            <a href="/tags/Markdown/" style="color: #ff7d73">Markdown</a>
+            <a href="/tags/Markdown/" style="color: #00a596">Markdown</a>
         </span>
         
     </div>
@@ -480,16 +480,917 @@
         
         <span class="tag">
             
-            <a href="/tags/Typora/" style="color: #ff7d73">Typora</a>
+            <a href="/tags/Typora/" style="color: #03a9f4">Typora</a>
         </span>
         
         <span class="tag">
             
-            <a href="/tags/Markdown/" style="color: #03a9f4">Markdown</a>
+            <a href="/tags/Markdown/" style="color: #ffa2c4">Markdown</a>
         </span>
         
     </div>
     <a href="/2023/10/01/%E5%A8%81%E6%B5%B7%E4%B9%90%E6%B8%B8/" class="go-post">阅读全文</a>
+</div>
+
+<div class="post">
+    <a href="/2023/09/03/c++/">
+        <h2 class="post-title"></h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2023/9/3
+        </span>
+        
+        
+    </div>
+    <div class="description">
+        <div class="content" v-pre>
+            
+            <h2 id="The-First-C-Program"><a href="#The-First-C-Program" class="headerlink" title="The First C++ Program"></a>The First C++ Program</h2><pre><code class="c++">#include &lt;iostream&gt;
+using namespace std;
+
+int main()&#123;
+    cout &lt;&lt; &quot;!!!Hello World!!! I&#39;m &quot;&lt;&lt;18&lt;&lt;&quot; Today &quot;&lt;&lt; endl;
+    return 0;
+&#125;
+</code></pre>
+<pre><code class="c++">#include &lt;iostream&gt;
+using namespace std;
+
+int main()&#123;
+    int number;
+    cin &gt;&gt; number;
+    cout &lt;&lt; &quot;!!!Hello World!!! I&#39;m &quot;&lt;&lt;18&lt;&lt;&quot; Today &quot;&lt;&lt; endl;
+    cout &lt;&lt; &quot;!!!Hello My name is &quot; &lt;&lt; number;
+    return 0;
+&#125;
+</code></pre>
+<p>输入：</p>
+<ul>
+<li>在C中，通常使用<code>scanf</code>函数进行输入。例如，<code>scanf(&quot;%d&quot;, &amp;number)</code>可以读取一个整数并将其存储到<code>number</code>变量中。</li>
+<li>在C++中，通常使用<code>cin</code>对象进行输入。例如，<code>cin &gt;&gt; number</code>可以实现与上述相同的功能。</li>
+</ul>
+<p>输出：</p>
+<ul>
+<li>在C中，通常使用<code>printf</code>函数进行输出。例如，<code>printf(&quot;Hello World\n&quot;)</code>可以打印出”Hello World”。</li>
+<li>在C++中，通常使用<code>cout</code>对象进行输出。例如，<code>cout &lt;&lt; &quot;Hello World&quot; &lt;&lt; endl</code>可以实现与上述相同的功能。</li>
+</ul>
+<p><strong>需要注意，整型的输出不需要加引号</strong></p>
+<h2 id="什么是面向对象"><a href="#什么是面向对象" class="headerlink" title="什么是面向对象"></a>什么是面向对象</h2><p><strong>对象就是变量</strong></p>
+<p>对象包含两个东西，<strong>一个是功能，一个是数据。</strong></p>
+<p>我们对比一下c和c++</p>
+<p>c:</p>
+<pre><code class="c">typedef struct point3d &#123;
+    float x;
+    float y;
+    float z;
+&#125;Ponit3d;
+
+void Point3d_print(const Ponit3d* pd);
+
+Point3d a;
+a.x=1;a.y=2;a.z=3;
+Point3d_print(&amp;a);
+</code></pre>
+<p>c++:</p>
+<pre><code class="c++">class Point3d&#123;
+    public:
+        Point3d(float x,float y,float z);
+        print();
+    private:
+        float x;
+        float y;
+        float z;
+&#125;;
+
+Point3d a(1,2,3);
+a.print();
+</code></pre>
+<h2 id="if语句"><a href="#if语句" class="headerlink" title="if语句"></a>if语句</h2><pre><code class="c++">#include &lt;iostream&gt;
+
+int multitly(int a,int b)&#123;
+    return a*b;
+&#125;
+
+int mult(int a,int b)&#123;
+    int result1 = multitly(a,b);
+    return result1;
+&#125;
+
+int main()&#123;
+    int result = mult(4,4);
+    bool temp = result == 12;
+    if(temp)&#123;
+        std::cout &lt;&lt; &quot;你是对的！！&quot; &lt;&lt; std::endl;
+    &#125;else&#123;
+        std::cout &lt;&lt; &quot;你是错的！！&quot; &lt;&lt; std::endl;
+    &#125;
+    return 0;
+&#125; 
+</code></pre>
+<p><strong>和c语言没有太大的变化</strong></p>
+<h2 id="stl-c"><a href="#stl-c" class="headerlink" title="stl(c++)"></a>stl(c++)</h2><p> <strong>什么是C++标准模板库（STL）？</strong></p>
+<p>​		<strong>标准模板库 STL</strong>（Standard Template Library），是 C++ 标准库的一部分，不需要单独安装，只需要#include 头文件。</p>
+<h2 id="STL六大部件"><a href="#STL六大部件" class="headerlink" title="STL六大部件"></a>STL六大部件</h2><ul>
+<li>容器（Containers）</li>
+<li>分配器（Allocators）</li>
+<li>算法（Algorithm）</li>
+<li>迭代器（Iterators）</li>
+<li>适配器（Adapters）</li>
+<li>仿函数（Functors）</li>
+</ul>
+<h1 id="vector容器"><a href="#vector容器" class="headerlink" title="vector容器"></a>vector容器</h1><ul>
+<li>vector时将元素置于一个动态数组中加以管理的容器。</li>
+<li>bvector可以随机存取元素（支持索引值直接存取，用【】操作符或at【】方法，这个等会详讲。</li>
+<li>vector尾部添加或移除元素非常快速，但是在中部或者头部插入或者删除元素比较费劲。</li>
+</ul>
+<p><img src="https://typora200483.oss-cn-chengdu.aliyuncs.com/Snipaste_2023-12-08_23-39-23.png" alt="Snipaste_2023-12-08_23-39-23"></p>
+<pre><code class="c++">#include &lt;iostream&gt;
+#include &lt;vector&gt; 
+
+using namespace std;
+
+int main()&#123;
+    int arr[] = &#123;1,2,3,4,5&#125;;
+    vector&lt;int&gt; v1(arr,arr+5);
+    
+    for(int i = 0;i&lt;5;i++)&#123;
+        cout &lt;&lt; v1[i] &lt;&lt; &quot; &quot;;
+    &#125;
+    
+    cout &lt;&lt; endl;
+    
+    vector&lt;int&gt; v2(3,10);
+    for(int i = 0;i&lt;3;i++)&#123;
+        cout &lt;&lt; v2[i] &lt;&lt; &quot; &quot;;
+    &#125;
+    cout &lt;&lt; endl;
+    
+    vector&lt;int&gt; v3(v1);
+    for(int i = 0;i&lt;5;i++)&#123;
+        cout &lt;&lt; v3[i] &lt;&lt; &quot; &quot;;
+    &#125;
+    cout &lt;&lt; endl;
+    
+    vector&lt;int&gt; v4 = v1;
+    for(int i = 0;i&lt;5;i++)&#123;
+        cout &lt;&lt; v4[i] &lt;&lt; &quot; &quot;;
+    &#125;
+    
+    
+    return 0;
+&#125;
+</code></pre>
+<h2 id="vcetor的赋值"><a href="#vcetor的赋值" class="headerlink" title="vcetor的赋值"></a>vcetor的赋值</h2><pre><code class="c++">#include &lt;iostream&gt;
+#include &lt;vector&gt; 
+
+using namespace std;
+
+int main()&#123;
+    int arr[] = &#123;1,2,3,4,5&#125;;
+    vector&lt;int&gt;  vecINTA;
+    vecINTA.assign(arr,arr+5);
+    
+    for(int i = 0;i&lt;vecINTA.size();i++)&#123;
+        cout &lt;&lt; vecINTA[i] &lt;&lt;&quot; &quot;;
+    &#125;
+    cout &lt;&lt; endl;
+    return 0;
+&#125;
+</code></pre>
+<p><strong>数组名.size()，可以直接获取数组的长度</strong><br>如果我们用assign函数，那么就会将原容器里的内容全部清空。</p>
+<pre><code class="c++">#include &lt;iostream&gt;
+#include &lt;vector&gt; 
+
+using namespace std;
+
+int main()&#123;
+    int arr[] = &#123;1,2,3,4,5&#125;;
+    vector&lt;int&gt;  vecINTA,vecINTB;
+    vecINTA.assign(arr,arr+5);
+    
+    //将vecINTSA的内容赋值给vecINTB
+    
+    vecINTB.assign(vecINTA.begin(),vecINTA.end()); 
+    
+    for(int i = 0;i&lt;vecINTA.size();i++)&#123;
+        cout &lt;&lt; vecINTA[i] &lt;&lt;&quot; &quot;;
+    &#125;
+    cout &lt;&lt; endl;
+    
+    for(int i = 0;i&lt;vecINTB.size();i++)&#123;
+        cout &lt;&lt; vecINTB[i] &lt;&lt;&quot; &quot;;
+    &#125;
+    
+    cout &lt;&lt; endl;
+    
+    
+    return 0;
+
+&#125;
+</code></pre>
+<p><strong>数组.begin,将指针指向数组的第一个元素。</strong><br><strong>数组.end，将指针指向最后一个元素的下一个元素。</strong></p>
+<p>我们通过对指针的灵活运用，来更改数据的储存</p>
+<pre><code class="c++">#include &lt;iostream&gt;
+#include &lt;vector&gt; 
+
+using namespace std;
+
+int main()&#123;
+    int arr[] = &#123;1,2,3,4,5&#125;;
+    vector&lt;int&gt;  vecINTA,vecINTB;
+    vecINTA.assign(arr,arr+5);
+    
+    //将vecINTSA的内容赋值给vecINTB
+    
+    vecINTB.assign(vecINTA.begin()+2,vecINTA.end()-1); 
+    
+    for(int i = 0;i&lt;vecINTA.size();i++)&#123;
+        cout &lt;&lt; vecINTA[i] &lt;&lt;&quot; &quot;;
+    &#125;
+    cout &lt;&lt; endl;
+    
+    for(int i = 0;i&lt;vecINTB.size();i++)&#123;
+        cout &lt;&lt; vecINTB[i] &lt;&lt;&quot; &quot;;
+    &#125;
+    
+    cout &lt;&lt; endl;
+    
+    
+    return 0;
+
+&#125;
+</code></pre>
+<p><strong>vecINTB.assign(vecINTA.begin()+2,vecINTA.end()-1);</strong> </p>
+<p><strong>元素的互换</strong></p>
+<p><strong>vector.swap</strong></p>
+<pre><code class="c++">#include &lt;iostream&gt;
+#include &lt;vector&gt; 
+
+using namespace std;
+
+int main()&#123;
+
+    
+    int arr[] = &#123;1,2,3,4,5&#125;;
+    vector&lt;int&gt;  vecINTA,vecINTB,vecINTC;
+    vecINTA.assign(arr,arr+5);
+    
+    //将vecINTSA的内容赋值给vecINTB
+    
+    vecINTB.assign(vecINTA.begin()+2,vecINTA.end()-1); 
+    vecINTC.assign(4,10);
+    
+    for(int i = 0;i&lt;vecINTA.size();i++)&#123;
+        cout &lt;&lt; vecINTA[i] &lt;&lt;&quot; &quot;;
+    &#125;
+    cout &lt;&lt; endl;
+    
+    for(int i = 0;i&lt;vecINTB.size();i++)&#123;
+        cout &lt;&lt; vecINTB[i] &lt;&lt;&quot; &quot;;
+    &#125;
+    cout &lt;&lt; endl;
+    
+    for(int i = 0;i&lt;vecINTC.size();i++)&#123;
+        cout &lt;&lt; vecINTC[i] &lt;&lt;&quot; &quot;;
+    &#125;
+    cout &lt;&lt; endl;
+    
+    cout &lt;&lt; &quot;交换过后&quot; &lt;&lt; endl;
+    
+    vecINTB.swap(vecINTC);
+    for(int i = 0;i&lt;vecINTB.size();i++)&#123;
+        cout &lt;&lt; vecINTB[i] &lt;&lt;&quot; &quot;;
+    &#125;
+    cout &lt;&lt; endl;
+    
+    for(int i = 0;i&lt;vecINTC.size();i++)&#123;
+        cout &lt;&lt; vecINTC[i] &lt;&lt;&quot; &quot;;
+    &#125;
+    cout &lt;&lt; endl;
+    return 0;
+&#125;
+</code></pre>
+<p><strong>vecINTB.swap(vecINTC);</strong></p>
+<p>其中，就这一行代码，我们将vecINTB与vecINTC中的元素互换。</p>
+<h2 id="vcetor的大小"><a href="#vcetor的大小" class="headerlink" title="vcetor的大小"></a>vcetor的大小</h2><ul>
+<li>vector.size();&#x2F;&#x2F;返回容器中元素的个数</li>
+<li>vector.empty();&#x2F;&#x2F;判断容器是否为空</li>
+<li>vector.resize(num，num1);&#x2F;&#x2F;重新规定容器的大小，超出容器的内容被删除，而少于容器部分用整数num1填充</li>
+</ul>
+<p><strong>vector.empty()</strong></p>
+<pre><code class="c++">int arr[] = &#123;1,2,3,4,5&#125;;
+    vector&lt;int&gt; v1;
+    cout&lt;&lt;&quot;v1.size:&quot;&lt;&lt;v1.size()&lt;&lt;endl;
+    
+    if(v1.empty())&#123;
+        cout &lt;&lt;&quot;v1 is empty!&quot; &lt;&lt; endl;
+    &#125;
+    
+    v1.assign(arr,arr+5);
+    if(v1.empty())&#123;
+        cout &lt;&lt;&quot;v1 is empty!&quot; &lt;&lt; endl;
+    &#125;else&#123;
+        cout &lt;&lt;&quot;v1 not is empty!&quot; &lt;&lt;endl;
+    &#125;
+</code></pre>
+<p><strong>vector.resize(num，num1)</strong></p>
+<pre><code class="c++">v1.resize(10,1);
+    for(int i = 0;i&lt;v1.size();i++)&#123;
+        cout &lt;&lt; v1[i] &lt;&lt;&quot;  &quot;;
+    &#125;
+    cout &lt;&lt; endl;
+    
+    v1.resize(3);
+    for(int i = 0;i&lt;v1.size();i++)&#123;
+        cout &lt;&lt; v1[i] &lt;&lt;&quot;  &quot;;
+    &#125;
+            
+</code></pre>
+<h2 id="vector元素的访问方式"><a href="#vector元素的访问方式" class="headerlink" title="vector元素的访问方式"></a>vector元素的访问方式</h2><p><strong>vec.at(num)</strong>:当num越界了，系统就会报错，告诉你你超出了范围了</p>
+<pre><code class="c++">    v1.assign(arr,arr+5);
+    v1.at(8);
+</code></pre>
+<p><img src="https://typora200483.oss-cn-chengdu.aliyuncs.com/Snipaste_2023-12-09_16-53-12.png" alt="Snipaste_2023-12-09_16-53-12"></p>
+<h2 id="vector的添加移除操作"><a href="#vector的添加移除操作" class="headerlink" title="vector的添加移除操作"></a>vector的添加移除操作</h2><p>vec.push_back(num):在末尾插入数num；</p>
+<p>vec.pop_back();删除末尾的元素；</p>
+<pre><code class="c++">int arr[] = &#123;1,2,3,4,5&#125;;
+    vector&lt;int&gt; v1;
+    cout&lt;&lt;&quot;v1.size:&quot;&lt;&lt;v1.size()&lt;&lt;endl;
+    
+    v1.assign(arr,arr+5);
+    v1.push_back(10);
+    v1.push_back(11);
+    
+    for(int i = 0;i&lt;v1.size();i++)&#123;
+        cout &lt;&lt; v1[i] &lt;&lt;&quot; &quot;;
+    &#125;
+    cout &lt;&lt; endl;
+</code></pre>
+<p><img src="https://typora200483.oss-cn-chengdu.aliyuncs.com/Snipaste_2023-12-09_17-01-07.png" alt="Snipaste_2023-12-09_17-01-07"></p>
+<pre><code class="c++">    int arr[] = &#123;1,2,3,4,5&#125;;
+    vector&lt;int&gt; v1;
+    cout&lt;&lt;&quot;v1.size:&quot;&lt;&lt;v1.size()&lt;&lt;endl;
+    
+    v1.assign(arr,arr+5);
+    v1.push_back(10);
+    v1.push_back(11);
+    v1.pop_back();
+    
+    for(int i = 0;i&lt;v1.size();i++)&#123;
+        cout &lt;&lt; v1[i] &lt;&lt;&quot; &quot;;
+    &#125;
+    cout &lt;&lt; endl;
+</code></pre>
+<p><img src="https://typora200483.oss-cn-chengdu.aliyuncs.com/Snipaste_2023-12-09_17-02-43.png" alt="Snipaste_2023-12-09_17-02-43"></p>
+<p>元素的中间插入</p>
+<p><img src="https://typora200483.oss-cn-chengdu.aliyuncs.com/Snipaste_2023-12-09_17-04-30.png" alt="Snipaste_2023-12-09_17-04-30"></p>
+<pre><code class="c++">int arr[] = &#123;1,2,3,4,5&#125;;
+    vector&lt;int&gt; v1;
+    cout&lt;&lt;&quot;v1.size:&quot;&lt;&lt;v1.size()&lt;&lt;endl;
+    
+    v1.assign(arr,arr+5);
+    v1.push_back(10);
+    v1.push_back(11);
+    v1.pop_back();
+    
+    v1.insert(v1.begin()+3,100);
+    
+    for(int i = 0;i&lt;v1.size();i++)&#123;
+        cout &lt;&lt; v1[i] &lt;&lt;&quot; &quot;;
+    &#125;
+    cout &lt;&lt; endl;
+</code></pre>
+<p><img src="https://typora200483.oss-cn-chengdu.aliyuncs.com/Snipaste_2023-12-09_17-07-08.png" alt="Snipaste_2023-12-09_17-07-08"></p>
+<p><strong>v1.insert(v1.begin()+3,100);</strong><br><strong>前者为要插入位置的指针，后者为要插入的值</strong></p>
+<pre><code class="c++">int arr[] = &#123;1,2,3,4,5&#125;;
+    vector&lt;int&gt; v1;
+    cout&lt;&lt;&quot;v1.size:&quot;&lt;&lt;v1.size()&lt;&lt;endl;
+    
+    v1.assign(arr,arr+5);
+    v1.push_back(10);
+    v1.push_back(11);
+    v1.pop_back();
+    
+    v1.insert(v1.begin()+3,3,100);
+    
+    for(int i = 0;i&lt;v1.size();i++)&#123;
+        cout &lt;&lt; v1[i] &lt;&lt;&quot; &quot;;
+    &#125;
+    cout &lt;&lt; endl;
+</code></pre>
+<p><strong>v1.insert(v1.begin()+3,3,100);</strong><br><strong>在指定的位置插入多个元素的值</strong></p>
+<p><strong>vector.insert(pos,beg,end);</strong></p>
+<pre><code class="c++">int arr[] = &#123;1,2,3,4,5&#125;;
+    int arr1[] = &#123;7,8,9,21,22,23&#125;;
+    vector&lt;int&gt; v1;
+    cout&lt;&lt;&quot;v1.size:&quot;&lt;&lt;v1.size()&lt;&lt;endl;
+    
+    v1.assign(arr,arr+5);
+    v1.push_back(10);
+    v1.push_back(11);
+    v1.pop_back();
+    
+    v1.insert(v1.begin()+3,3,100);
+    v1.insert(v1.begin()+3,arr1,arr1+3);
+    
+    
+    for(int i = 0;i&lt;v1.size();i++)&#123;
+        cout &lt;&lt; v1[i] &lt;&lt;&quot; &quot;;
+    &#125;
+    cout &lt;&lt; endl;
+</code></pre>
+<h1 id="迭代器"><a href="#迭代器" class="headerlink" title="迭代器"></a>迭代器</h1><p><strong>什么是迭代器？</strong></p>
+<ul>
+<li>迭代器是一种检查容器内元素并且遍历容器内元素的数据类型</li>
+</ul>
+<p><strong>迭代器的作用</strong></p>
+<ul>
+<li>迭代器提供一个容器中的对象的访问方法，并且定义了容器中对象的范围</li>
+</ul>
+<h2 id="vector容器的迭代器"><a href="#vector容器的迭代器" class="headerlink" title="vector容器的迭代器"></a>vector容器的迭代器</h2><ul>
+<li>vector&lt;int&gt;::iterator iter;&#x2F;&#x2F;变量名为iter</li>
+</ul>
+<h2 id="begin和end函数"><a href="#begin和end函数" class="headerlink" title="begin和end函数"></a>begin和end函数</h2><p><strong>vector<int>::iterator it;</strong></p>
+<p><strong>it是指针，并且begin和end得到的也是地址</strong></p>
+<pre><code class="c++">#include &lt;iostream&gt;
+#include &lt;vector&gt; 
+
+using namespace std;
+
+int main()&#123;
+    vector&lt;int&gt;::iterator it;
+    int arr[] = &#123;12,15,19,45,49&#125;;
+    
+    vector&lt;int&gt; vecintA;
+    vecintA.assign(arr,arr+5);
+    
+    it = vecintA.begin();
+    
+    for(it = vecintA.begin();it!=vecintA.end()-2;it++)&#123;
+        cout &lt;&lt; *it &lt;&lt; &quot; &quot;;
+    &#125;
+    return 0;
+&#125;
+</code></pre>
+<p><img src="https://typora200483.oss-cn-chengdu.aliyuncs.com/Snipaste_2024-01-16_13-41-51.png" alt="Snipaste_2024-01-16_13-41-51"></p>
+<h3 id="迭代器it的使用"><a href="#迭代器it的使用" class="headerlink" title="迭代器it的使用"></a>迭代器it的使用</h3><pre><code class="c++">#include &lt;iostream&gt;
+#include &lt;vector&gt; 
+
+using namespace std;
+
+int main()&#123;
+    vector&lt;int&gt; v;
+    v.push_back(1);
+    v.push_back(2);
+    v.push_back(3);
+    v.push_back(4);
+    
+    vector&lt;int&gt;::iterator it = v.begin() + 3;
+    v.insert(it,6);
+    
+    for(it = v.begin();it!=v.end();it++)&#123;
+        cout &lt;&lt; *it &lt;&lt; &#39; &#39;;
+    &#125;
+    
+    cout &lt;&lt; endl;
+    
+    return 0;
+&#125;
+</code></pre>
+<h2 id="迭代器失效"><a href="#迭代器失效" class="headerlink" title="迭代器失效"></a>迭代器失效</h2><p>什么叫做迭代器失效？<br>    <strong>当我们给一个容器插入一个值以后，这个容器会发生移动，到达内存的任何位置，以至于我们的it指针会失效出现两种情况，其一就是输出任意一个值，其二就是导致系统崩掉</strong></p>
+<h3 id="插入带来的迭代器失效"><a href="#插入带来的迭代器失效" class="headerlink" title="插入带来的迭代器失效"></a>插入带来的迭代器失效</h3><p><img src="https://typora200483.oss-cn-chengdu.aliyuncs.com/Snipaste_2024-01-16_17-38-47.png" alt="Snipaste_2024-01-16_17-38-47"></p>
+<h4 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h4><p>​	我们需要知道，v.insert其实是一个返回类型的操作。它会返回新的迭代器的地址，也就是当容器整体发生了偏移，而指向同一个下标的指针也会跟着发生偏移。所以我们需要一个新的迭代器来储存他的返回值。</p>
+<pre><code class="c++">#include &lt;iostream&gt;
+#include &lt;vector&gt; 
+
+using namespace std;
+
+int main()&#123;
+    vector&lt;int&gt; v;
+    v.push_back(1);
+    v.push_back(2);
+    v.push_back(3);
+    v.push_back(4);
+    
+    vector&lt;int&gt;::iterator it = v.begin() + 3;
+    it = v.insert(it,6);
+    
+    cout &lt;&lt; *it &lt;&lt; endl;
+    
+    return 0;
+&#125;
+</code></pre>
+<p><strong>看14行，我们创建了一个新的迭代器来储存它的返回值。</strong></p>
+<h3 id="删除带来的迭代器失效"><a href="#删除带来的迭代器失效" class="headerlink" title="删除带来的迭代器失效"></a>删除带来的迭代器失效</h3><pre><code class="c++">#include &lt;iostream&gt;
+#include &lt;vector&gt; 
+
+using namespace std;
+
+int main()&#123;
+    int arr[] = &#123;1,2,3,4,4,4,5,6,7,8,9&#125;;
+    int n = sizeof(arr)/sizeof(int);
+    vector&lt;int&gt; v;
+    v.assign(arr,arr+n);
+    vector&lt;int&gt;::iterator it;
+    
+    for(it = v.begin();it!=v.end();)&#123;
+        if(*it == 4)&#123;
+            it = v.erase(it);
+        &#125;else&#123;
+            it++;
+        &#125;
+    &#125;
+    
+    for(it = v.begin();it!=v.end();it++)&#123;
+        cout &lt;&lt; *it &lt;&lt; &#39; &#39;;
+    &#125;	
+    cout &lt;&lt; endl;
+    return 0;
+&#125;
+</code></pre>
+<h1 id="deque容器"><a href="#deque容器" class="headerlink" title="deque容器"></a>deque容器</h1><h2 id="deque的简介"><a href="#deque的简介" class="headerlink" title="deque的简介"></a>deque的简介</h2><p>deque是double-ended-queue的缩写，是一个双端数组而vecto是单端的。 deque在头部和尾部添加或移除元素都非常迅速。但是中部安插元素或移除元素比较费事。</p>
+<h2 id="deque容器的操作"><a href="#deque容器的操作" class="headerlink" title="deque容器的操作"></a>deque容器的操作</h2><p>deque.push_front(elem);&#x2F;&#x2F;在容器头部插入一个数据。<br>deque.pop_front();&#x2F;&#x2F;删除容器第一个数据。</p>
+<p><img src="https://typora200483.oss-cn-chengdu.aliyuncs.com/Snipaste_2024-01-16_18-35-32.png" alt="Snipaste_2024-01-16_18-35-32"></p>
+<h1 id="list容器"><a href="#list容器" class="headerlink" title="list容器"></a>list容器</h1><h2 id="list容器的简介"><a href="#list容器的简介" class="headerlink" title="list容器的简介"></a>list容器的简介</h2><p> list是个双向链表，不可以随机的存取元素，不支持at.(pos)函数与【】操作符。</p>
+<h2 id="list构造对象"><a href="#list构造对象" class="headerlink" title="list构造对象"></a>list构造对象</h2><pre><code class="c++">list&lt;int&gt; IstInt;//定义一个存放int的list容器。
+list&lt;float&gt; IstFloat;//定义一个存放float的list容器。
+list&lt;string&gt; IstString;//定义一个存放string的list容器。
+</code></pre>
+<h2 id="进行操作"><a href="#进行操作" class="headerlink" title="进行操作"></a>进行操作</h2><ul>
+<li>list.push_back(elem);&#x2F;&#x2F;早容器尾部加入一个元素</li>
+<li>list.pop_back();&#x2F;&#x2F;删除容器中最后一个元素</li>
+<li>list.push_front(elem);&#x2F;&#x2F;在容器开头插入一个元素</li>
+<li>list.pop_front();&#x2F;&#x2F;删除容器中第一个元素</li>
+</ul>
+<pre><code class="c++">#include &lt;iostream&gt;
+#include &lt;list&gt;
+
+using namespace std;
+
+int main()&#123;
+    list&lt;int&gt; lst;
+    list&lt;int&gt;::iterator it;
+    
+    lst.push_back(3);
+    lst.push_front(1);
+    
+    for(it = lst.begin();it!=lst.end();it++)&#123;
+        cout &lt;&lt; *it &lt;&lt; &#39; &#39;;
+    &#125;
+    
+    cout &lt;&lt; endl;
+    return 0;
+&#125;
+</code></pre>
+<h2 id="list的数据存取"><a href="#list的数据存取" class="headerlink" title="list的数据存取"></a>list的数据存取</h2><ul>
+<li>list.front();&#x2F;&#x2F;返回第一个元素。</li>
+<li>list.back();&#x2F;&#x2F;返回最后一个元素</li>
+</ul>
+<p>需要注意，我们不仅可以用他来返回一个值，也可以返回首和尾的对象。<br><strong>list.front() &#x3D; num1;</strong><br><strong>list.back() &#x3D; num2；</strong></p>
+<p>这个操作是可以改变容器中第一个和最后一个位置的值</p>
+<h2 id="list迭代器"><a href="#list迭代器" class="headerlink" title="list迭代器"></a>list迭代器</h2><p>list.begin();&#x2F;&#x2F;返回容器中第一个元素的迭代器。<br>list.end();&#x2F;&#x2F;返回容器中最后一个元素之后的迭代器。<br>list.rbegin();&#x2F;&#x2F;<strong>返回容器中倒数第一个元素的迭代器</strong>。<br>list.rend();&#x2F;&#x2F;<strong>返回容器中第一个元素之前的迭代器</strong>。</p>
+<pre><code class="c++">#include &lt;iostream&gt;
+#include &lt;list&gt;
+
+using namespace std;
+
+int main()&#123;
+    //list容器的反向迭代器 
+    list&lt;int&gt; lst;
+    list&lt;int&gt;::reverse_iterator it1;
+    
+    lst.push_back(3);
+    lst.push_back(4);
+    lst.push_back(5);
+    lst.push_back(6);
+    lst.push_back(7);
+    lst.push_back(8);
+    lst.push_front(9);
+    
+    for(it1 = lst.rbegin();it1!=lst.rend();it1++)&#123;
+        cout &lt;&lt; *it1 &lt;&lt; &#39; &#39;;
+    &#125;
+    
+    cout &lt;&lt; endl;
+    return 0;
+&#125;
+</code></pre>
+<p><strong>这种函数可以很轻松的解决数组倒置输出的问题</strong></p>
+<h2 id="list容器带参数的构造方法"><a href="#list容器带参数的构造方法" class="headerlink" title="list容器带参数的构造方法"></a>list容器带参数的构造方法</h2><ul>
+<li>list(n,elem);&#x2F;&#x2F;构造函数将n个elem拷贝给本身。</li>
+<li>list(beg,end);&#x2F;&#x2F;构造函数将[beg,end）区间中的元素拷贝给本身。<strong>左闭右开</strong></li>
+<li>list(const list &amp;lst);&#x2F;&#x2F;拷贝构造函数。</li>
+</ul>
+<p>list(n,elem)：给list容器里拷贝n个elem，我们也可以说是初始化。</p>
+<p>list(beg,end)：我们不能写成list(lst.begin()+1,lst.begin()+2);&#x2F;&#x2F;因为list容器<strong>不支持＋n的操作</strong></p>
+<p><strong>我们可以通过不断使用beg++或者end–来进行指针移动的操作</strong></p>
+<pre><code class="c++">#include &lt;iostream&gt;
+#include &lt;list&gt;
+using namespace std;
+
+int main()&#123;
+    //list容器的反向迭代器 
+    list&lt;int&gt; lst;
+    list&lt;int&gt;::iterator it,beg,end;
+    
+    lst.push_back(3);
+    lst.push_back(4);
+    lst.push_back(5);
+    lst.push_back(6);
+    lst.push_back(7);
+    lst.push_back(8);
+    lst.push_front(9);
+    
+    beg = lst.begin();
+    beg++;
+    end = lst.end();
+    end--;end--;end--;
+    
+    list&lt;int&gt; lst1(beg,end);
+    
+    for(it = lst1.begin();it!=lst1.end();it++)&#123;
+        cout &lt;&lt; *it &lt;&lt; &#39; &#39;;
+    &#125;
+    cout &lt;&lt; endl;
+    return 0;
+&#125;
+</code></pre>
+<h2 id="list的赋值"><a href="#list的赋值" class="headerlink" title="list的赋值"></a>list的赋值</h2><ul>
+<li>list.assign(beg,end);&#x2F;&#x2F;将[beg,end)区间中的数据拷贝赋值给本身。注意该区间是左闭右开的区间。</li>
+<li>list.assign(n,elem);&#x2F;&#x2F;将n个elem拷贝赋值给本身。（不展开）</li>
+<li>list&amp; operator &#x3D; (const list &amp;lst);&#x2F;&#x2F;重载等号操作符。</li>
+<li>list.swap(lst);&#x2F;&#x2F;将lst与本身的元素互换。</li>
+</ul>
+<p>list.assign(beg,end)的赋值方法</p>
+<pre><code class="c++">#include &lt;iostream&gt;
+#include &lt;list&gt;
+
+using namespace std;
+
+int main()&#123;
+    list&lt;int&gt; lst;
+    list&lt;int&gt; lst3,lst4;
+    list&lt;int&gt;::iterator it1,it2;
+    
+    lst.push_back(3);lst.push_back(4);lst.push_back(5);lst.push_back(6);lst.push_back(7);lst.push_back(8);
+    it2 = lst.end();it2--;it2--;
+    
+    lst3.assign(lst.begin(),it2);
+    
+    for(it1 = lst3.begin();it1!=lst3.end();it1++)&#123;
+        cout &lt;&lt; *it1 &lt;&lt; &#39; &#39;;
+    &#125;
+    cout &lt;&lt; endl;
+    return 0;
+&#125;
+</code></pre>
+<p>list.swap(lst)转换赋值的方法</p>
+<pre><code class="c++">#include &lt;iostream&gt;
+#include &lt;list&gt;
+
+using namespace std;
+
+int main()&#123;
+    list&lt;int&gt; lst;
+    list&lt;int&gt; lst3,lst4;
+    list&lt;int&gt;::iterator it1,it2;
+    
+    lst.push_back(3);lst.push_back(4);lst.push_back(5);lst.push_back(6);lst.push_back(7);lst.push_back(8);
+    it2 = lst.end();it2--;it2--;
+    lst3.assign(lst.begin(),it2);
+    lst4.assign(4,9);
+    
+    lst3.swap(lst4);
+    for(it1 = lst4.begin();it1!=lst4.end();it1++)&#123;
+        cout &lt;&lt; *it1 &lt;&lt; &#39; &#39;;
+    &#125;
+    cout &lt;&lt; endl;
+    return 0;
+&#125;
+</code></pre>
+<p><img src="https://typora200483.oss-cn-chengdu.aliyuncs.com/Snipaste_2024-01-17_14-44-00.png" alt="Snipaste_2024-01-17_14-44-00"></p>
+<p><strong>原来lst4里面是四个9，交换过后，里面就是3，4，5，6。</strong></p>
+<h2 id="list的大小"><a href="#list的大小" class="headerlink" title="list的大小"></a>list的大小</h2><ul>
+<li>list.size();&#x2F;&#x2F;返回容器中元素的个数</li>
+<li>list.empty();&#x2F;&#x2F;判断容器是否为空</li>
+<li>list.resize(num);&#x2F;&#x2F;重新指定容器长度为num，若容器边长，则以默认值填充新位置。如果容器变短，则末尾超出容器长度的元素被删除。<strong>这里的默认值为“0”</strong></li>
+<li>list.resize(num,elem);&#x2F;&#x2F;重新指定容器长度为num，若容器边长，则以elem值填充新位置。如果容器变短，则末尾超出容器长度的元素被删除。</li>
+</ul>
+<pre><code class="c++">#include &lt;iostream&gt;
+#include &lt;list&gt;
+
+using namespace std;
+
+int main()&#123;
+    list&lt;int&gt; lst;
+    list&lt;int&gt; lst3,lst4;
+    list&lt;int&gt;::iterator it1;
+    
+    lst.push_back(3);lst.push_back(4);lst.push_back(5);lst.push_back(6);lst.push_back(7);lst.push_back(8);
+    lst3.assign(lst.begin(),it2);
+    lst4.assign(4,9);
+    
+    lst3.resize(6);
+    cout &lt;&lt; &quot;lst3 size: &quot; &lt;&lt; lst3.size() &lt;&lt; endl;
+    for(it1 = lst3.begin();it1!=lst3.end();it1++)&#123;
+        cout &lt;&lt; *it1 &lt;&lt; &#39; &#39;;
+    &#125;
+    cout &lt;&lt; endl;
+    
+    lst4.resize(3);
+    for(it1 = lst4.begin();it1!=lst4.end();it1++)&#123;
+        cout &lt;&lt; *it1 &lt;&lt; &#39; &#39;;
+    &#125;
+    cout &lt;&lt; endl;
+    
+    lst4.resize(6,8);
+    for(it1 = lst4.begin();it1!=lst4.end();it1++)&#123;
+        cout &lt;&lt; *it1 &lt;&lt; &#39; &#39;;
+    &#125;
+    cout &lt;&lt; endl;
+    
+    cout &lt;&lt; &quot;empty?:&quot; &lt;&lt; lst3.empty() &lt;&lt;endl;
+    
+    
+    cout &lt;&lt; endl;
+    return 0;
+&#125;
+</code></pre>
+<h2 id="list的插入"><a href="#list的插入" class="headerlink" title="list的插入"></a>list的插入</h2><ul>
+<li>list.insert(pos,elem);&#x2F;&#x2F;在pos位置插入一个elem元素的拷贝，返回新数据的位置。</li>
+<li>list.insert(pos,n,elem);&#x2F;&#x2F;在pos位置插入n个elem数据，无返回值。</li>
+<li>list.insert(pos,beg,end);&#x2F;&#x2F;在pos位置插入[beg,end)区间的数据，无返回值。</li>
+</ul>
+<h2 id="list的删除"><a href="#list的删除" class="headerlink" title="list的删除"></a>list的删除</h2><ul>
+<li><p>list.clear();&#x2F;&#x2F;移除容器里的所有数据。</p>
+</li>
+<li><p>list.erase(beg,end);&#x2F;&#x2F;删除[beg,end）区间的数据，返回下一个数据的位置。</p>
+<ul>
+<li><strong>经测试我们可以总结出他是一个过程函数，也是一个结果函数。而他的返回值就是end所指向的位置的数据。</strong></li>
+</ul>
+</li>
+<li><p>list.erase(pos);&#x2F;&#x2F;删除pos位置的数据，返回下一个数据(<strong>也就是pos+1</strong>)的位置。</p>
+</li>
+</ul>
+<p><img src="https://typora200483.oss-cn-chengdu.aliyuncs.com/Snipaste_2024-01-19_11-27-54.png" alt="Snipaste_2024-01-19_11-27-54"></p>
+<ul>
+<li>lst.remove(elem);&#x2F;&#x2F;删除容器中所有与elem值匹配的元素。</li>
+</ul>
+<p><img src="https://typora200483.oss-cn-chengdu.aliyuncs.com/Snipaste_2024-01-19_11-32-22.png" alt="Snipaste_2024-01-19_11-32-22"></p>
+<h2 id="list的反序排列"><a href="#list的反序排列" class="headerlink" title="list的反序排列"></a>list的反序排列</h2><ul>
+<li>lst.reverse();&#x2F;&#x2F;反转链表，比如lst包含1，3，5元素，运行此方法后，lst就包含5，3，1元素。</li>
+</ul>
+<h1 id="stack容器"><a href="#stack容器" class="headerlink" title="stack容器"></a>stack容器</h1><h2 id="stack容器简介"><a href="#stack容器简介" class="headerlink" title="stack容器简介"></a>stack容器简介</h2><ul>
+<li>stack是堆栈容器，是一种“先进后出，后进先出”的容器。</li>
+<li>stack是一个特殊的容器，<strong>遍历不需要迭代器</strong>,只能通过出栈进行遍历。</li>
+<li>#include  &lt;stack&gt;</li>
+</ul>
+<p><img src="https://typora200483.oss-cn-chengdu.aliyuncs.com/Snipaste_2024-01-19_11-47-24.png" alt="Snipaste_2024-01-19_11-47-24"></p>
+<h2 id="stack如何输出"><a href="#stack如何输出" class="headerlink" title="stack如何输出"></a>stack如何输出</h2><p><strong>没有迭代器的情况下我们如何输出呢？</strong></p>
+<p><strong>通过判断是否为空来不断循环</strong></p>
+<pre><code class="c++">#include &lt;iostream&gt;
+#include &lt;stack&gt;
+
+using namespace std;
+
+int main()&#123;
+    stack&lt;int&gt; stk;
+    stk.push(1);
+    stk.push(2);
+    stk.push(3);
+    stk.push(4);
+    stk.push(9);
+    
+    while(!stk.empty())&#123;
+        cout &lt;&lt; stk.top() &lt;&lt; &#39; &#39;;
+        stk.pop();
+    &#125;
+    cout &lt;&lt; endl;
+    return 0;
+&#125;
+</code></pre>
+<p><img src="https://typora200483.oss-cn-chengdu.aliyuncs.com/Snipaste_2024-01-19_11-59-29.png" alt="Snipaste_2024-01-19_11-59-29"></p>
+<h2 id="stack对象的拷贝额构造与赋值"><a href="#stack对象的拷贝额构造与赋值" class="headerlink" title="stack对象的拷贝额构造与赋值"></a>stack对象的拷贝额构造与赋值</h2><ul>
+<li>stack(const stack &amp;stk);&#x2F;&#x2F;拷贝构造函数</li>
+<li>stack&amp; operator &#x3D; (const stack &amp;stk);&#x2F;&#x2F;重载等号操作符</li>
+</ul>
+<pre><code class="c++">#include &lt;iostream&gt;
+#include &lt;stack&gt;
+ 
+using namespace std;
+
+int main()&#123;
+    stack&lt;int&gt; stk;
+    stk.push(1);
+    stk.push(2);
+    stk.push(3);
+    stk.push(4);
+    stk.push(9);
+    
+    stack&lt;int&gt; stk1(stk);
+    //stk
+    while(!stk.empty())&#123;
+        cout &lt;&lt; stk.top() &lt;&lt; &#39; &#39;;
+        stk.pop();
+    &#125;
+    cout &lt;&lt; endl;
+    //stk1
+    while(!stk1.empty())&#123;
+        cout &lt;&lt; stk1.top() &lt;&lt; &#39; &#39;;
+        stk1.pop();
+    &#125;
+    cout &lt;&lt; endl;
+    return 0;
+&#125;
+</code></pre>
+<h2 id="stack的大小"><a href="#stack的大小" class="headerlink" title="stack的大小"></a>stack的大小</h2><ul>
+<li>stack.empty();&#x2F;&#x2F;判断堆栈是否为空</li>
+<li>stack.size();&#x2F;&#x2F;返回堆栈的大小</li>
+</ul>
+<pre><code class="c++">#include &lt;iostream&gt;
+#include &lt;stack&gt;
+
+using namespace std;
+
+int main()&#123;
+    stack&lt;int&gt; stk;
+    stk.push(1);
+    stk.push(2);
+    stk.push(3);
+    stk.push(4);
+    stk.push(9);
+    
+    stack&lt;int&gt; stk1 = stk;
+    //stk
+    while(!stk.empty())&#123;
+        cout &lt;&lt; stk.top() &lt;&lt; &#39; &#39;;
+        stk.pop();
+    &#125;
+    cout &lt;&lt; endl;
+    
+    cout &lt;&lt; &quot;stk1的容器大小为：&quot; &lt;&lt; stk1.size() &lt;&lt; endl; 
+    return 0;
+&#125;
+</code></pre>
+<h1 id="queue容器跳过不讲"><a href="#queue容器跳过不讲" class="headerlink" title="queue容器跳过不讲"></a>queue容器跳过不讲</h1><h1 id="set和-multiset容器"><a href="#set和-multiset容器" class="headerlink" title="set和 multiset容器"></a>set和 multiset容器</h1><h2 id="set-x2F-multiset容器简介"><a href="#set-x2F-multiset容器简介" class="headerlink" title="set&#x2F;multiset容器简介"></a>set&#x2F;multiset容器简介</h2><ul>
+<li>set是一个集合容器，其中所包含的元素是唯一的，<strong>集合中的元素按一定的顺序排列</strong>。元素插入的过程是按排列规则插入，<strong>所以不能跟指定插入位置</strong>。</li>
+<li>set是采用红黑树（也就是二叉树）变体的数据结构实现的。再插入和删除操作上比vector快。</li>
+<li>set不可直接存取元素。（不可以使用at.(pos) 与 []操作符。</li>
+<li><strong>set容器是默认升序排序</strong></li>
+</ul>
+<p><strong>大多数情况下set都是实现一个去重的功能。</strong></p>
+<h2 id="set容器插入与迭代器"><a href="#set容器插入与迭代器" class="headerlink" title="set容器插入与迭代器"></a>set容器插入与迭代器</h2><ul>
+<li>set.insert(elem);&#x2F;&#x2F;在容器中插入元素</li>
+<li>set.begin();&#x2F;&#x2F;返回容器中第一个数据的迭代器</li>
+<li>set.end();&#x2F;&#x2F;返回容器中最后一个数据的迭代器</li>
+<li>set.rbegin();&#x2F;&#x2F;返回容器中倒数第一个元素的迭代器</li>
+<li>set.rend();&#x2F;&#x2F;返回容器中倒数最后一个元素的后面的迭代器</li>
+</ul>
+<pre><code class="c++">#include &lt;iostream&gt;
+#include &lt;set&gt;
+
+using namespace std;
+
+int main()&#123;
+    set&lt;int&gt; s1;
+    set&lt;int&gt;::iterator it;
+    s1.insert(1);
+    s1.insert(5);
+    s1.insert(3);
+    s1.insert(7);
+    s1.insert(9);
+    s1.insert(2);
+    
+    for(it = s1.begin();it!=s1.end();it++)&#123;
+        cout &lt;&lt; *it &lt;&lt; &#39; &#39;;	
+    &#125;
+    cout &lt;&lt; endl;
+    
+    set&lt;int&gt;::reverse_iterator it1;
+    for(it1 = s1.rbegin();it1!=s1.rend();it1++)&#123;
+        cout &lt;&lt; *it1 &lt;&lt; &#39; &#39;;
+    &#125;
+    cout &lt;&lt; endl;
+    return 0;
+&#125;
+</code></pre>
+<p><img src="https://typora200483.oss-cn-chengdu.aliyuncs.com/Snipaste_2024-01-19_15-20-50.png" alt="Snipaste_2024-01-19_15-20-50"></p>
+<p>​	<strong>因此我们可以得出一个结论：set容器是默认升序排序</strong></p>
+
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        
+        
+    </div>
+    <a href="/2023/09/03/c++/" class="go-post">阅读全文</a>
 </div>
 
 <div class="post">
@@ -539,75 +1440,16 @@
         
         <span class="tag">
             
-            <a href="/tags/Markdown/" style="color: #03a9f4">Markdown</a>
+            <a href="/tags/Markdown/" style="color: #ffa2c4">Markdown</a>
         </span>
         
         <span class="tag">
             
-            <a href="/tags/WPS/" style="color: #ffa2c4">WPS</a>
+            <a href="/tags/WPS/" style="color: #03a9f4">WPS</a>
         </span>
         
     </div>
     <a href="/2023/08/05/Excel%E7%9A%84%E4%B8%93%E9%A2%98%E8%AE%B2%E8%A7%A3/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
-    <a href="/2023/08/05/c++/">
-        <h2 class="post-title">学好C++，你就是C位！</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="category">
-            <a href="/categories/%E6%8A%80%E6%9C%AF/">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                技术
-            </a>
-        </span>
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2023/8/5
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <p>余某人对c++极致的理解，以下内容均为思想和实操</p>
-
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        <span class="icon">
-            <i class="fa-solid fa-tags fa-fw"></i>
-        </span>
-        
-        
-        
-        <span class="tag">
-            
-            <a href="/tags/Typora/" style="color: #00a596">Typora</a>
-        </span>
-        
-        <span class="tag">
-            
-            <a href="/tags/Markdown/" style="color: #ff7d73">Markdown</a>
-        </span>
-        
-        <span class="tag">
-            
-            <a href="/tags/vscode/" style="color: #ffa2c4">vscode</a>
-        </span>
-        
-    </div>
-    <a href="/2023/08/05/c++/" class="go-post">阅读全文</a>
 </div>
 
 <div class="post">
@@ -652,17 +1494,17 @@
         
         <span class="tag">
             
-            <a href="/tags/Typora/" style="color: #00bcd4">Typora</a>
+            <a href="/tags/Typora/" style="color: #ffa2c4">Typora</a>
         </span>
         
         <span class="tag">
             
-            <a href="/tags/Markdown/" style="color: #ff7d73">Markdown</a>
+            <a href="/tags/Markdown/" style="color: #00bcd4">Markdown</a>
         </span>
         
         <span class="tag">
             
-            <a href="/tags/gitbash/" style="color: #00bcd4">gitbash</a>
+            <a href="/tags/gitbash/" style="color: #00a596">gitbash</a>
         </span>
         
     </div>
@@ -711,12 +1553,12 @@
         
         <span class="tag">
             
-            <a href="/tags/Typora/" style="color: #03a9f4">Typora</a>
+            <a href="/tags/Typora/" style="color: #00a596">Typora</a>
         </span>
         
         <span class="tag">
             
-            <a href="/tags/Markdown/" style="color: #00bcd4">Markdown</a>
+            <a href="/tags/Markdown/" style="color: #ff7d73">Markdown</a>
         </span>
         
         <span class="tag">
