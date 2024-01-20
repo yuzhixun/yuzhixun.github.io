@@ -254,12 +254,12 @@
         
         <span class="tag">
             
-            <a href="/tags/Typora/" style="color: #00bcd4">Typora</a>
+            <a href="/tags/Typora/" style="color: #ffa2c4">Typora</a>
         </span>
         
         <span class="tag">
             
-            <a href="/tags/Markdown/" style="color: #ff7d73">Markdown</a>
+            <a href="/tags/Markdown/" style="color: #03a9f4">Markdown</a>
         </span>
         
     </div>
@@ -308,7 +308,7 @@
         
         <span class="tag">
             
-            <a href="/tags/Typora/" style="color: #ff7d73">Typora</a>
+            <a href="/tags/Typora/" style="color: #00bcd4">Typora</a>
         </span>
         
         <span class="tag">
@@ -318,7 +318,7 @@
         
         <span class="tag">
             
-            <a href="/tags/pycharm/" style="color: #00bcd4">pycharm</a>
+            <a href="/tags/pycharm/" style="color: #ff7d73">pycharm</a>
         </span>
         
     </div>
@@ -367,7 +367,7 @@
         
         <span class="tag">
             
-            <a href="/tags/Typora/" style="color: #00bcd4">Typora</a>
+            <a href="/tags/Typora/" style="color: #ff7d73">Typora</a>
         </span>
         
         <span class="tag">
@@ -377,7 +377,7 @@
         
         <span class="tag">
             
-            <a href="/tags/pycharm/" style="color: #00bcd4">pycharm</a>
+            <a href="/tags/pycharm/" style="color: #ff7d73">pycharm</a>
         </span>
         
     </div>
@@ -426,12 +426,12 @@
         
         <span class="tag">
             
-            <a href="/tags/Typora/" style="color: #03a9f4">Typora</a>
+            <a href="/tags/Typora/" style="color: #00bcd4">Typora</a>
         </span>
         
         <span class="tag">
             
-            <a href="/tags/Markdown/" style="color: #00bcd4">Markdown</a>
+            <a href="/tags/Markdown/" style="color: #ffa2c4">Markdown</a>
         </span>
         
     </div>
@@ -480,12 +480,12 @@
         
         <span class="tag">
             
-            <a href="/tags/Typora/" style="color: #00bcd4">Typora</a>
+            <a href="/tags/Typora/" style="color: #ffa2c4">Typora</a>
         </span>
         
         <span class="tag">
             
-            <a href="/tags/Markdown/" style="color: #ffa2c4">Markdown</a>
+            <a href="/tags/Markdown/" style="color: #ff7d73">Markdown</a>
         </span>
         
     </div>
@@ -1561,7 +1561,241 @@ int main()&#123;
     return 0;
 &#125;
 </code></pre>
+<h2 id="map容器的插入"><a href="#map容器的插入" class="headerlink" title="map容器的插入"></a>map容器的插入</h2><ul>
+<li>map.insert(…);&#x2F;&#x2F;往容器插入元素，返回pair</li>
+<li>在map中插入元素的三种方式：<ul>
+<li>通过pair的方式插入对象：mapStu.insert(pair&lt;int,string&gt;(3,”小张”))；</li>
+<li>通过value_type的方式插入对象：mapStu.insert(map&lt;int,string&gt;::value_type(1,”小李”));</li>
+<li>通过数组的方式插入值：mapStu[3] &#x3D; “小刘”；</li>
+</ul>
+</li>
+</ul>
+<pre><code class="c++">#include &lt;iostream&gt;
+#include &lt;map&gt;
+using namespace std;
 
+class Student&#123;
+    public:
+        int id;
+        string name;
+        
+        Student()&#123;
+        &#125;
+        
+        Student(int id,string name)&#123;
+            this-&gt;id = id;
+            this-&gt;name = name;
+        &#125;
+&#125;;
+
+int main()&#123;
+    map&lt;int,Student&gt; stus;
+    
+    map&lt;int,string&gt; map1;
+    map1.insert(pair&lt;int,string&gt;(3,&quot;xiaozhang&quot;)); //3是键，“小张”是值 
+    map1.insert(pair&lt;int,string&gt;(4,&quot;xiaowang&quot;));
+    map1.insert(pair&lt;int,string&gt;(5,&quot;xiaoliu&quot;)); 
+    
+    map1.insert(map&lt;int,string&gt;::value_type(1,&quot;xiaoli&quot;));
+    map1[2] = &quot;xiaotao&quot;;
+    
+    Student s1(1,&quot;xiaoli&quot;);
+    stus.insert(pair&lt;int,Student&gt;(s1.id,s1));
+    Student s2(2,&quot;xiaozhou&quot;);
+    stus.insert(map&lt;int,Student)::value_type(s2.id,s2);
+    Student s3(3,&quot;xiozhao&quot;);
+    stus[s3.id] = s3;  
+    
+    return 0;
+&#125;
+</code></pre>
+<p><strong>上述采用了map插入的三种方式</strong></p>
+<h2 id="map容器的迭代"><a href="#map容器的迭代" class="headerlink" title="map容器的迭代"></a>map容器的迭代</h2><p>我们要搞清楚一个东西：存在map容器里的是整型和字符串成对的形式，所以无论是插入还是输出我们都要用pair。<strong>我们在输出的时候，为什么不直接使用“*it1.first”和“*it1.second”，因为*it是map的迭代器，没用first这个成员，所以我们在输出的时候一定要用pair类型的</strong></p>
+<pre><code class="c++">#include &lt;iostream&gt;
+#include &lt;map&gt;
+using namespace std;
+
+class Student&#123;
+    public:
+        int id;
+        string name;
+        
+        Student()&#123;
+        &#125;
+        
+        Student(int id,string name)&#123;
+            this-&gt;id = id;
+            this-&gt;name = name;
+        &#125;
+&#125;;
+
+int main()&#123;
+    map&lt;int,Student&gt; stus;
+    
+    map&lt;int,string&gt; map1;
+    map1.insert(pair&lt;int,string&gt;(3,&quot;余志勋&quot;)); //3是键，“小张”是值 
+    map1.insert(pair&lt;int,string&gt;(4,&quot;张宇豪&quot;));
+    map1.insert(pair&lt;int,string&gt;(5,&quot;季兆程&quot;)); 
+    
+    map1.insert(map&lt;int,string&gt;::value_type(1,&quot;孟慧雪&quot;));
+    map1[2] = &quot;罗明杰&quot;;
+    
+    Student s1(1,&quot;xiaoli&quot;);
+    stus.insert(pair&lt;int,Student&gt;(s1.id,s1));
+    Student s2(2,&quot;xiaozhou&quot;);
+    stus.insert(map&lt;int,Student&gt;::value_type(s2.id,s2));
+    Student s3(3,&quot;xiozhao&quot;);
+    stus[s3.id] = s3;
+    
+    map&lt;int,string&gt;::iterator it1;
+    for(it1 = map1.begin();it1!=map1.end();it1++)&#123;
+        pair&lt;int,string&gt; p = *it1;
+        int key = p.first;
+        string value = p.second;
+        
+        cout &lt;&lt; key &lt;&lt; &#39; &#39; &lt;&lt; value &lt;&lt; endl;
+    &#125;
+    
+    return 0;
+&#125;
+</code></pre>
+<p><img src="https://typora200483.oss-cn-chengdu.aliyuncs.com/Snipaste_2024-01-20_17-01-32.png" alt="Snipaste_2024-01-20_17-01-32"></p>
+<p><strong>如何将对象输出</strong><br>这是一个新知识，有心者可以去看看“重载运算符函数”</p>
+<pre><code class="c++">#include &lt;iostream&gt;
+#include &lt;map&gt;
+using namespace std;
+
+class Student&#123;
+    public:
+        int id;
+        string name;
+        
+        Student()&#123;
+        &#125;
+        
+        Student(int id,string name)&#123;
+            this-&gt;id = id;
+            this-&gt;name = name;
+        &#125;
+        
+        friend ostream &amp;operator &lt;&lt; (ostream &amp;out,Student &amp;t)&#123;
+            out &lt;&lt; t.name;
+            return out;
+        &#125;
+&#125;;
+
+int main()&#123;
+    map&lt;int,Student&gt; stus;
+    
+    map&lt;int,string&gt; map1;
+    map1.insert(pair&lt;int,string&gt;(3,&quot;余志勋&quot;)); //3是键，“小张”是值 
+    map1.insert(pair&lt;int,string&gt;(4,&quot;张宇豪&quot;));
+    map1.insert(pair&lt;int,string&gt;(5,&quot;季兆程&quot;)); 
+    
+    map1.insert(map&lt;int,string&gt;::value_type(1,&quot;孟慧雪&quot;));
+    map1[2] = &quot;罗明杰&quot;;
+    
+    Student s1(1,&quot;xiaoli&quot;);
+    stus.insert(pair&lt;int,Student&gt;(s1.id,s1));
+    Student s2(2,&quot;xiaozhou&quot;);
+    stus.insert(map&lt;int,Student&gt;::value_type(s2.id,s2));
+    Student s3(3,&quot;xiozhao&quot;);
+    stus[s3.id] = s3;
+    
+    map&lt;int,string&gt;::iterator it1;
+    for(it1 = map1.begin();it1!=map1.end();it1++)&#123;
+        pair&lt;int,string&gt; p = *it1;
+        int key = p.first;
+        string value = p.second;
+        cout &lt;&lt; key &lt;&lt; &#39; &#39; &lt;&lt; value &lt;&lt; endl;
+    &#125;
+    
+    map&lt;int,Student&gt;::iterator it2;
+    for(it2 = stus.begin();it2!=stus.end();it2++)&#123;
+        pair&lt;int,Student&gt; p1 = *it2;
+        int key1 = p1.first;
+        Student value = p1.second;
+        
+        cout &lt;&lt; key1 &lt;&lt; &#39; &#39; &lt;&lt; value &lt;&lt; endl;
+    &#125;
+    
+    return 0;
+&#125;
+</code></pre>
+<h2 id="数组形式的插入的弊端"><a href="#数组形式的插入的弊端" class="headerlink" title="数组形式的插入的弊端"></a>数组形式的插入的弊端</h2><ul>
+<li><strong>mapStu[3] &#x3D; “小刘”</strong></li>
+</ul>
+<p><strong>如果健存在则先修改，先删除后插入，如果不存在则插入。可能会误伤成员</strong></p>
+<p><strong>如果你在获取某个键值队所对应的值，这个键值对不存在，那么就会自动创建一个值为空的键值为10的键值对。</strong></p>
+<h2 id="map容器对象获取键值对应的值"><a href="#map容器对象获取键值对应的值" class="headerlink" title="map容器对象获取键值对应的值"></a>map容器对象获取键值对应的值</h2><ul>
+<li>使用[];</li>
+<li>使用find()函数：成功返回对应的迭代器，失败返回end()的返回值。<ul>
+<li>map&lt;int,string&gt;::iterator it &#x3D; mapS.find(3);</li>
+</ul>
+</li>
+<li>使用at()函数，如果键值队不存在会抛出“out_of_range 异常”</li>
+</ul>
+<p>第一种：</p>
+<pre><code class="c++">#include &lt;iostream&gt;
+#include &lt;map&gt;
+using namespace std;
+
+int main()&#123;	
+    map&lt;int,string&gt; map1;
+    map1.insert(pair&lt;int,string&gt;(3,&quot;余志勋&quot;)); //3是键，“小张”是值 
+    map1.insert(pair&lt;int,string&gt;(4,&quot;张宇豪&quot;));
+    map1.insert(pair&lt;int,string&gt;(5,&quot;季兆程&quot;)); 
+    
+    map1.insert(map&lt;int,string&gt;::value_type(1,&quot;孟慧雪&quot;));
+    map1[2] = &quot;罗明杰&quot;;
+    
+    map&lt;int,string&gt;::iterator it1;
+    cout &lt;&lt; map1[3] &lt;&lt;endl;
+    
+    return 0;
+&#125;
+</code></pre>
+<p>第二种：</p>
+<p><strong>如果输入的键值超过了最大键值，则会乱码</strong></p>
+<pre><code class="c++">#include &lt;iostream&gt;
+#include &lt;map&gt;
+using namespace std;
+
+int main()&#123;	
+    map&lt;int,string&gt; map1;
+    map1.insert(pair&lt;int,string&gt;(3,&quot;余志勋&quot;)); //3是键，“小张”是值 
+    map1.insert(pair&lt;int,string&gt;(4,&quot;张宇豪&quot;));
+    map1.insert(pair&lt;int,string&gt;(5,&quot;季兆程&quot;)); 
+    
+    map1.insert(map&lt;int,string&gt;::value_type(1,&quot;孟慧雪&quot;));
+    map1[2] = &quot;罗明杰&quot;;
+    
+    map&lt;int,string&gt;::iterator it1 = map1.find(1);
+    cout &lt;&lt; (*it1).second &lt;&lt;endl;
+    
+    return 0;
+&#125;
+</code></pre>
+<p>第三种：</p>
+<pre><code class="c++">#include &lt;iostream&gt;
+#include &lt;map&gt;
+using namespace std;
+
+int main()&#123;	
+    map&lt;int,string&gt; map1;
+    map1.insert(pair&lt;int,string&gt;(3,&quot;余志勋&quot;)); //3是键，“小张”是值 
+    map1.insert(pair&lt;int,string&gt;(4,&quot;张宇豪&quot;));
+    map1.insert(pair&lt;int,string&gt;(5,&quot;季兆程&quot;)); 
+    
+    map1.insert(map&lt;int,string&gt;::value_type(1,&quot;孟慧雪&quot;));
+    map1[2] = &quot;罗明杰&quot;;
+    
+    map&lt;int,string&gt;::iterator it1;
+    cout &lt;&lt; map1.at(2) &lt;&lt; endl;
+    return 0;
+&#125;
+</code></pre>
+<h1 id="容器学习就此结束，欢迎查阅小鱼丸的学习资料"><a href="#容器学习就此结束，欢迎查阅小鱼丸的学习资料" class="headerlink" title="容器学习就此结束，欢迎查阅小鱼丸的学习资料"></a>容器学习就此结束，欢迎查阅小鱼丸的学习资料</h1>
             
         </div>
     </div>
@@ -1620,7 +1854,7 @@ int main()&#123;
         
         <span class="tag">
             
-            <a href="/tags/Markdown/" style="color: #ff7d73">Markdown</a>
+            <a href="/tags/Markdown/" style="color: #00a596">Markdown</a>
         </span>
         
         <span class="tag">
@@ -1679,12 +1913,12 @@ int main()&#123;
         
         <span class="tag">
             
-            <a href="/tags/Markdown/" style="color: #03a9f4">Markdown</a>
+            <a href="/tags/Markdown/" style="color: #00bcd4">Markdown</a>
         </span>
         
         <span class="tag">
             
-            <a href="/tags/gitbash/" style="color: #00bcd4">gitbash</a>
+            <a href="/tags/gitbash/" style="color: #00a596">gitbash</a>
         </span>
         
     </div>
@@ -1733,17 +1967,17 @@ int main()&#123;
         
         <span class="tag">
             
-            <a href="/tags/Typora/" style="color: #03a9f4">Typora</a>
+            <a href="/tags/Typora/" style="color: #ff7d73">Typora</a>
         </span>
         
         <span class="tag">
             
-            <a href="/tags/Markdown/" style="color: #ffa2c4">Markdown</a>
+            <a href="/tags/Markdown/" style="color: #00a596">Markdown</a>
         </span>
         
         <span class="tag">
             
-            <a href="/tags/vscode/" style="color: #00a596">vscode</a>
+            <a href="/tags/vscode/" style="color: #00bcd4">vscode</a>
         </span>
         
     </div>
