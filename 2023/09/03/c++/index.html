@@ -1069,6 +1069,149 @@ int main()&#123;
 &#125;
 </code></pre>
 <p><img src="https://typora200483.oss-cn-chengdu.aliyuncs.com/Snipaste_2024-01-20_10-51-30.png" alt="Snipaste_2024-01-20_10-51-30"></p>
+<h2 id="set容器的大小"><a href="#set容器的大小" class="headerlink" title="set容器的大小"></a>set容器的大小</h2><ul>
+<li>set.size();&#x2F;&#x2F;返回容器中元素的数目</li>
+<li>set.empty();&#x2F;&#x2F;判断容器是否为空</li>
+</ul>
+<h2 id="set容器的删除"><a href="#set容器的删除" class="headerlink" title="set容器的删除"></a>set容器的删除</h2><ul>
+<li>set,clear();&#x2F;&#x2F;清除所有元素</li>
+<li>set.erase(pos);&#x2F;&#x2F;删除pos迭代器所指的元素，返回下一个元素的迭代器。</li>
+<li>set.erase(beg,end);&#x2F;&#x2F;删除区间[beg,end)的所有元素</li>
+<li>set.erase(elem);&#x2F;&#x2F;删除容器中值为elem的元素。</li>
+</ul>
+<p><strong>set容器不支持使用反向迭代器对元素进行删除</strong></p>
+<h2 id="set容器的元素排序"><a href="#set容器的元素排序" class="headerlink" title="set容器的元素排序"></a>set容器的元素排序</h2><ul>
+<li><p>set&lt;int,less&lt;int&gt;&gt; setIntA;&#x2F;&#x2F;该容器是按升序方式排列元素。</p>
+</li>
+<li><p>set&lt;int,greater&lt;int&gt;&gt; setIntB;&#x2F;&#x2F;该容器是按降序方式排列元素。</p>
+<ul>
+<li>set&lt;int&gt;相当于set&lt;int,less&lt;int&gt;&gt;。</li>
+</ul>
+</li>
+</ul>
+<h2 id="set容器的查找"><a href="#set容器的查找" class="headerlink" title="set容器的查找"></a>set容器的查找</h2><ul>
+<li>set.find(elem);&#x2F;&#x2F;查找elem元素，<strong>返回</strong>指向elem元素的迭代器。</li>
+<li>set.count(elem)；&#x2F;&#x2F;返回容器中值为elem的元素个数。对set来说，要么是0要么是1.对于multiset来说，值可能大于1。</li>
+<li>set.lower_bound(elem);&#x2F;&#x2F;返回第一个&gt;&#x3D;elem元素的迭代器。</li>
+<li>set.upper_bound(elem);&#x2F;&#x2F;返回第一个&gt;elem元素的迭代器。</li>
+</ul>
+<pre><code class="c++">#include &lt;iostream&gt;
+#include &lt;set&gt;
+
+using namespace std;
+
+int main()&#123;
+    set&lt;int&gt; s1;
+    set&lt;int&gt; s2;
+    set&lt;int&gt;::iterator it,it1,it2,it3,it4;
+    s1.insert(1);
+    s1.insert(5);
+    s1.insert(3);
+    s2.insert(7);
+    s2.insert(9);
+    s2.insert(2);
+
+    s2.swap(s1);
+    
+    for(it = s2.begin();it!=s2.end();it++)&#123;
+        cout &lt;&lt; *it &lt;&lt; &#39; &#39;;	
+    &#125;
+    cout &lt;&lt; endl;
+    
+    it2 = s2.find(5);
+    cout &lt;&lt; *it2 &lt;&lt; endl;
+    cout &lt;&lt; s2.count(7) &lt;&lt; endl;
+    cout &lt;&lt; s2.count(1) &lt;&lt; endl;
+     it3 = s2.lower_bound(2.9);
+     cout &lt;&lt; *it3 &lt;&lt; endl;
+     it4 = s2.upper_bound(3);
+     cout &lt;&lt; *it4 &lt;&lt; endl;
+    
+//	set&lt;int&gt;::reverse_iterator it1;
+    for(it1 = s1.begin();it1!=s1.end();it1++)&#123;
+        cout &lt;&lt; *it1 &lt;&lt; &#39; &#39;;
+    &#125;
+    cout &lt;&lt; endl;
+    return 0;
+&#125;
+</code></pre>
+<p><img src="https://typora200483.oss-cn-chengdu.aliyuncs.com/Snipaste_2024-01-20_11-55-43.png" alt="Snipaste_2024-01-20_11-55-43"></p>
+<h2 id="set容器set-equal-range-elem"><a href="#set容器set-equal-range-elem" class="headerlink" title="set容器set.equal_range(elem)"></a>set容器set.equal_range(elem)</h2><ul>
+<li>返回容器中与elem相等的上下限的两个迭代器。上限是闭区间，下限是开区间。</li>
+<li>函数返回两个迭代器，而这两个迭代器被封装在pair中。<ul>
+<li>pair&lt; set&lt;int&gt;::iterator,set&lt;int&gt;::iterator&gt; pairIt &#x3D; setInt.equal_range(5);&#x2F;&#x2F;pair是什么？</li>
+</ul>
+</li>
+<li>pair译为对组，可以将两个值视为一个单元。</li>
+<li>pair&lt;T1,T2&gt;存放的两个值的类型，可以不一样，如T1为int，T2为float。T1,T2也可以是自定义类型。</li>
+<li>pair.first是pair里面的第一个值是T1类型。</li>
+<li>pair.second是pair里面的第二个值，是T2类型。</li>
+</ul>
+<pre><code class="c++">#include &lt;iostream&gt;
+#include &lt;set&gt;
+
+using namespace std;
+
+int main()&#123;
+    set&lt;int&gt; s1;
+    set&lt;int&gt;::iterator it,it1;
+    s1.insert(1);
+    s1.insert(5);
+    s1.insert(3);
+    s1.insert(7);
+    s1.insert(9);
+    s1.insert(2);
+
+    pair&lt;set&lt;int&gt;::iterator,set&lt;int&gt;::iterator&gt; p1 = s1.equal_range(3);
+    
+    for(it1 = s1.begin();it1!=s1.end();it1++)&#123;
+        cout &lt;&lt; *it1 &lt;&lt; &#39; &#39;;
+    &#125;
+    cout &lt;&lt; endl;
+    
+    cout &lt;&lt; *p1.first &lt;&lt; endl;
+    cout &lt;&lt; *p1.second &lt;&lt; endl;
+    
+    return 0;
+&#125;
+</code></pre>
+<p><img src="https://typora200483.oss-cn-chengdu.aliyuncs.com/Snipaste_2024-01-20_12-13-48.png" alt="Snipaste_2024-01-20_12-13-48"></p>
+<h1 id="map容器"><a href="#map容器" class="headerlink" title="map容器"></a>map容器</h1><h2 id="map-x2F-multimap容器对象默认构造"><a href="#map-x2F-multimap容器对象默认构造" class="headerlink" title="map&#x2F;multimap容器对象默认构造"></a>map&#x2F;multimap容器对象默认构造</h2><ul>
+<li><p>map&#x2F;multimap采用模板类型实现，对象的默认构造形势</p>
+<ul>
+<li>map&lt;T1,T2&gt; mapTT;</li>
+<li>multimap&lt;T1,T2&gt; multimaoTT;</li>
+</ul>
+<p>  如：</p>
+<p>  map&lt;int,char&gt; mapA;<br>  map&lt;string,float&gt; mapB;</p>
+<p>  <strong>&#x2F;&#x2F;T1,T2还可以用各种类型的指针或自定义类型</strong></p>
+</li>
+</ul>
+<p>​    </p>
+<pre><code class="c++">#include &lt;iostream&gt;
+#include &lt;map&gt;
+using namespace std;
+
+class Student&#123;
+    public:
+        int id;
+        string name;
+        
+        Student()&#123;
+        &#125;
+        
+        Student(int id,string name)&#123;
+            this-&gt;id = id;
+            this-&gt;name = name;
+        &#125;
+&#125;;
+
+int main()&#123;
+    map&lt;int,Student&gt; stus;
+    
+    return 0;
+&#125;
+</code></pre>
 
     </div>
     
