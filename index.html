@@ -205,7 +205,7 @@
         
         <span class="tag">
             
-            <a href="/tags/Typora/" style="color: #ff7d73">Typora</a>
+            <a href="/tags/Typora/" style="color: #00bcd4">Typora</a>
         </span>
         
     </div>
@@ -254,12 +254,12 @@
         
         <span class="tag">
             
-            <a href="/tags/Typora/" style="color: #ff7d73">Typora</a>
+            <a href="/tags/Typora/" style="color: #ffa2c4">Typora</a>
         </span>
         
         <span class="tag">
             
-            <a href="/tags/Markdown/" style="color: #ffa2c4">Markdown</a>
+            <a href="/tags/Markdown/" style="color: #03a9f4">Markdown</a>
         </span>
         
     </div>
@@ -308,12 +308,12 @@
         
         <span class="tag">
             
-            <a href="/tags/Typora/" style="color: #00a596">Typora</a>
+            <a href="/tags/Typora/" style="color: #03a9f4">Typora</a>
         </span>
         
         <span class="tag">
             
-            <a href="/tags/Markdown/" style="color: #03a9f4">Markdown</a>
+            <a href="/tags/Markdown/" style="color: #ff7d73">Markdown</a>
         </span>
         
         <span class="tag">
@@ -367,17 +367,17 @@
         
         <span class="tag">
             
-            <a href="/tags/Typora/" style="color: #00a596">Typora</a>
+            <a href="/tags/Typora/" style="color: #00bcd4">Typora</a>
         </span>
         
         <span class="tag">
             
-            <a href="/tags/Markdown/" style="color: #00bcd4">Markdown</a>
+            <a href="/tags/Markdown/" style="color: #ffa2c4">Markdown</a>
         </span>
         
         <span class="tag">
             
-            <a href="/tags/pycharm/" style="color: #00a596">pycharm</a>
+            <a href="/tags/pycharm/" style="color: #03a9f4">pycharm</a>
         </span>
         
     </div>
@@ -426,12 +426,12 @@
         
         <span class="tag">
             
-            <a href="/tags/Typora/" style="color: #00bcd4">Typora</a>
+            <a href="/tags/Typora/" style="color: #ffa2c4">Typora</a>
         </span>
         
         <span class="tag">
             
-            <a href="/tags/Markdown/" style="color: #00a596">Markdown</a>
+            <a href="/tags/Markdown/" style="color: #ff7d73">Markdown</a>
         </span>
         
     </div>
@@ -480,12 +480,12 @@
         
         <span class="tag">
             
-            <a href="/tags/Typora/" style="color: #00a596">Typora</a>
+            <a href="/tags/Typora/" style="color: #ffa2c4">Typora</a>
         </span>
         
         <span class="tag">
             
-            <a href="/tags/Markdown/" style="color: #ff7d73">Markdown</a>
+            <a href="/tags/Markdown/" style="color: #03a9f4">Markdown</a>
         </span>
         
     </div>
@@ -1381,6 +1381,43 @@ int main()&#123;
 </code></pre>
 <p><img src="https://typora200483.oss-cn-chengdu.aliyuncs.com/Snipaste_2024-01-19_15-20-50.png" alt="Snipaste_2024-01-19_15-20-50"></p>
 <p>​	<strong>因此我们可以得出一个结论：set容器是默认升序排序</strong></p>
+<h2 id="set容器拷贝构造与赋值"><a href="#set容器拷贝构造与赋值" class="headerlink" title="set容器拷贝构造与赋值"></a>set容器拷贝构造与赋值</h2><ul>
+<li>set(const set &amp;st);&#x2F;&#x2F;拷贝构造函数</li>
+<li>set&amp; operator &#x3D; (const set &amp;st);</li>
+<li>set.swap(st);&#x2F;&#x2F;交换两个集合容器</li>
+</ul>
+<pre><code class="c++">#include &lt;iostream&gt;
+#include &lt;set&gt;
+
+using namespace std;
+
+int main()&#123;
+    set&lt;int&gt; s1;
+    set&lt;int&gt; s2;
+    set&lt;int&gt;::iterator it,it1;
+    s1.insert(1);
+    s1.insert(5);
+    s1.insert(3);
+    s2.insert(7);
+    s2.insert(9);
+    s2.insert(2);
+
+    s2.swap(s1);
+    
+    for(it = s2.begin();it!=s2.end();it++)&#123;
+        cout &lt;&lt; *it &lt;&lt; &#39; &#39;;	
+    &#125;
+    cout &lt;&lt; endl;
+    
+//	set&lt;int&gt;::reverse_iterator it1;
+    for(it1 = s1.begin();it1!=s1.end();it1++)&#123;
+        cout &lt;&lt; *it1 &lt;&lt; &#39; &#39;;
+    &#125;
+    cout &lt;&lt; endl;
+    return 0;
+&#125;
+</code></pre>
+<p><img src="https://typora200483.oss-cn-chengdu.aliyuncs.com/Snipaste_2024-01-20_10-51-30.png" alt="Snipaste_2024-01-20_10-51-30"></p>
 
             
         </div>
@@ -1435,12 +1472,12 @@ int main()&#123;
         
         <span class="tag">
             
-            <a href="/tags/Typora/" style="color: #00bcd4">Typora</a>
+            <a href="/tags/Typora/" style="color: #03a9f4">Typora</a>
         </span>
         
         <span class="tag">
             
-            <a href="/tags/Markdown/" style="color: #ff7d73">Markdown</a>
+            <a href="/tags/Markdown/" style="color: #ffa2c4">Markdown</a>
         </span>
         
         <span class="tag">
@@ -1494,17 +1531,17 @@ int main()&#123;
         
         <span class="tag">
             
-            <a href="/tags/Typora/" style="color: #ff7d73">Typora</a>
+            <a href="/tags/Typora/" style="color: #00bcd4">Typora</a>
         </span>
         
         <span class="tag">
             
-            <a href="/tags/Markdown/" style="color: #00bcd4">Markdown</a>
+            <a href="/tags/Markdown/" style="color: #03a9f4">Markdown</a>
         </span>
         
         <span class="tag">
             
-            <a href="/tags/gitbash/" style="color: #03a9f4">gitbash</a>
+            <a href="/tags/gitbash/" style="color: #ffa2c4">gitbash</a>
         </span>
         
     </div>
@@ -1512,8 +1549,8 @@ int main()&#123;
 </div>
 
 <div class="post">
-    <a href="/2023/08/05/%E5%B0%8F%E9%B1%BC%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
-        <h2 class="post-title">小鱼数据库</h2>
+    <a href="/2023/08/05/c%E8%AF%AD%E8%A8%80/">
+        <h2 class="post-title">学号C，你就是C位！</h2>
     </a>
     <div class="category-and-date">
         
@@ -1538,7 +1575,7 @@ int main()&#123;
     <div class="description">
         <div class="content" v-pre>
             
-            <p>观摩小鱼丸对数据结构极致的理解</p>
+            <p>余某人对c极致的理解，以下内容均为思想和实操</p>
 
             
         </div>
@@ -1567,7 +1604,7 @@ int main()&#123;
         </span>
         
     </div>
-    <a href="/2023/08/05/%E5%B0%8F%E9%B1%BC%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="go-post">阅读全文</a>
+    <a href="/2023/08/05/c%E8%AF%AD%E8%A8%80/" class="go-post">阅读全文</a>
 </div>
 
 

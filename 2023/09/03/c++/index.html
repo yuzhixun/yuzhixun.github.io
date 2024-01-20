@@ -1032,6 +1032,43 @@ int main()&#123;
 </code></pre>
 <p><img src="https://typora200483.oss-cn-chengdu.aliyuncs.com/Snipaste_2024-01-19_15-20-50.png" alt="Snipaste_2024-01-19_15-20-50"></p>
 <p>​	<strong>因此我们可以得出一个结论：set容器是默认升序排序</strong></p>
+<h2 id="set容器拷贝构造与赋值"><a href="#set容器拷贝构造与赋值" class="headerlink" title="set容器拷贝构造与赋值"></a>set容器拷贝构造与赋值</h2><ul>
+<li>set(const set &amp;st);&#x2F;&#x2F;拷贝构造函数</li>
+<li>set&amp; operator &#x3D; (const set &amp;st);</li>
+<li>set.swap(st);&#x2F;&#x2F;交换两个集合容器</li>
+</ul>
+<pre><code class="c++">#include &lt;iostream&gt;
+#include &lt;set&gt;
+
+using namespace std;
+
+int main()&#123;
+    set&lt;int&gt; s1;
+    set&lt;int&gt; s2;
+    set&lt;int&gt;::iterator it,it1;
+    s1.insert(1);
+    s1.insert(5);
+    s1.insert(3);
+    s2.insert(7);
+    s2.insert(9);
+    s2.insert(2);
+
+    s2.swap(s1);
+    
+    for(it = s2.begin();it!=s2.end();it++)&#123;
+        cout &lt;&lt; *it &lt;&lt; &#39; &#39;;	
+    &#125;
+    cout &lt;&lt; endl;
+    
+//	set&lt;int&gt;::reverse_iterator it1;
+    for(it1 = s1.begin();it1!=s1.end();it1++)&#123;
+        cout &lt;&lt; *it1 &lt;&lt; &#39; &#39;;
+    &#125;
+    cout &lt;&lt; endl;
+    return 0;
+&#125;
+</code></pre>
+<p><img src="https://typora200483.oss-cn-chengdu.aliyuncs.com/Snipaste_2024-01-20_10-51-30.png" alt="Snipaste_2024-01-20_10-51-30"></p>
 
     </div>
     
