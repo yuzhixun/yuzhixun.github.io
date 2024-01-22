@@ -185,7 +185,7 @@
             
             <span class="tag">
                 
-                <a href="/tags/vscode/" style="color: #00bcd4">vscode</a>
+                <a href="/tags/vscode/" style="color: #00a596">vscode</a>
             </span>
             
         </span>
@@ -1671,6 +1671,11 @@ int lcm(int a,int b)&#123;
     int min = (a*b)/t;
     
     return min;
+&#125;
+</code></pre>
+<p>上述gcd函数我们可以用递归的方法</p>
+<pre><code class="c++">int gcd(int a,int b)&#123;
+    return b==0 ? a:gcd(b,a%b);
 &#125;
 </code></pre>
 <h2 id="如何用自定义函数判断是否为素数"><a href="#如何用自定义函数判断是否为素数" class="headerlink" title="如何用自定义函数判断是否为素数"></a>如何用自定义函数判断是否为素数</h2><pre><code class="c">#include&lt;stdio.h&gt;
