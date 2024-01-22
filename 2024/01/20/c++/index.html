@@ -1473,6 +1473,53 @@ int main()&#123;
     return 0;
 &#125;
 </code></pre>
+<h1 id="哈希表"><a href="#哈希表" class="headerlink" title="哈希表"></a>哈希表</h1><pre><code class="c++">#include &lt;iostream&gt;
+#include &lt;string&gt;
+#include &lt;unordered_map&gt;
+
+using namespace std;
+
+int main()&#123;
+    string A, B;
+    getline(cin, A);
+    getline(cin, B);
+
+    unordered_map&lt;char, int&gt; mp;
+    for(char c : B)&#123;
+        mp[c]++;
+    &#125;
+
+    for(char c: A)&#123;
+        if(mp[c] == 0)&#123;
+            cout &lt;&lt; c;
+        &#125;
+    &#125;
+
+    return 0;
+&#125;
+</code></pre>
+<h1 id="cmath函数库"><a href="#cmath函数库" class="headerlink" title="cmath函数库"></a>cmath函数库</h1><h2 id="round-函数"><a href="#round-函数" class="headerlink" title="round()函数"></a>round()函数</h2><p>实现对数字进行四舍五入取整：</p>
+<pre><code class="c++">#include &lt;iostream&gt;
+#include &lt;cmath&gt;
+
+int main() &#123;
+    double num = 3.8;
+    int rounded = std::round(num);
+    
+    std::cout &lt;&lt; &quot;Original number: &quot; &lt;&lt; num &lt;&lt; std::endl;
+    std::cout &lt;&lt; &quot;Rounded number: &quot; &lt;&lt; rounded &lt;&lt; std::endl;
+    
+    return 0;
+&#125;
+</code></pre>
+<h1 id="iomanip函数库"><a href="#iomanip函数库" class="headerlink" title="iomanip函数库"></a>iomanip函数库</h1><h2 id="setprecision"><a href="#setprecision" class="headerlink" title="setprecision()"></a>setprecision()</h2><pre><code class="c++">#include &lt;iomanip&gt; // 包含头文件
+
+cout &lt;&lt; setprecision(2) &lt;&lt; 3.14159 &lt;&lt; endl; // 输出 3.14
+</code></pre>
+<h1 id="string函数库"><a href="#string函数库" class="headerlink" title="string函数库"></a>string函数库</h1><h2 id="to-string"><a href="#to-string" class="headerlink" title="to_string()"></a>to_string()</h2><p>用于将其他类型转换为字符类型：</p>
+<pre><code class="c++">string str_num = to_string(abs(num));
+</code></pre>
+<p><strong>str_num用与接收字符串</strong></p>
 <h1 id="容器学习就此结束，欢迎查阅小鱼丸的学习资料"><a href="#容器学习就此结束，欢迎查阅小鱼丸的学习资料" class="headerlink" title="容器学习就此结束，欢迎查阅小鱼丸的学习资料"></a>容器学习就此结束，欢迎查阅小鱼丸的学习资料</h1>
     </div>
     
