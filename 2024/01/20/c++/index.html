@@ -175,12 +175,12 @@
             
             <span class="tag">
                 
-                <a href="/tags/Typora/" style="color: #00a596">Typora</a>
+                <a href="/tags/Typora/" style="color: #ff7d73">Typora</a>
             </span>
             
             <span class="tag">
                 
-                <a href="/tags/Markdown/" style="color: #03a9f4">Markdown</a>
+                <a href="/tags/Markdown/" style="color: #00bcd4">Markdown</a>
             </span>
             
         </span>
@@ -1520,6 +1520,32 @@ cout &lt;&lt; setprecision(2) &lt;&lt; 3.14159 &lt;&lt; endl; // 输出 3.14
 <pre><code class="c++">string str_num = to_string(abs(num));
 </code></pre>
 <p><strong>str_num用与接收字符串</strong></p>
+<h1 id="algorithm函数库"><a href="#algorithm函数库" class="headerlink" title="algorithm函数库"></a>algorithm函数库</h1><h2 id="max-函数和max-element"><a href="#max-函数和max-element" class="headerlink" title="max()函数和max_element()"></a>max()函数和max_element()</h2><pre><code class="c++">#include &lt;iostream&gt;
+#include &lt;algorithm&gt;
+
+int main() &#123;
+    int a = 10;
+    int b = 20;
+
+    int maxVal = std::max(a, b);
+
+    std::cout &lt;&lt; &quot;最大值为：&quot; &lt;&lt; maxVal &lt;&lt; std::endl;
+
+    return 0;
+&#125;
+</code></pre>
+<pre><code class="c++">#include &lt;iostream&gt;
+#include &lt;algorithm&gt;
+
+int main() &#123;
+    int arr[] = &#123; 5, 3, 2, 8, 6 &#125;;
+    int* maxVal = std::max_element(arr, arr + 5);
+
+    std::cout &lt;&lt; &quot;最大值为：&quot; &lt;&lt; *maxVal &lt;&lt; std::endl;
+
+    return 0;
+&#125;
+</code></pre>
 <h1 id="容器学习就此结束，欢迎查阅小鱼丸的学习资料"><a href="#容器学习就此结束，欢迎查阅小鱼丸的学习资料" class="headerlink" title="容器学习就此结束，欢迎查阅小鱼丸的学习资料"></a>容器学习就此结束，欢迎查阅小鱼丸的学习资料</h1>
     </div>
     
