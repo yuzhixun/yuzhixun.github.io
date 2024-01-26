@@ -175,12 +175,12 @@
             
             <span class="tag">
                 
-                <a href="/tags/Typora/" style="color: #ff7d73">Typora</a>
+                <a href="/tags/Typora/" style="color: #00bcd4">Typora</a>
             </span>
             
             <span class="tag">
                 
-                <a href="/tags/Markdown/" style="color: #00bcd4">Markdown</a>
+                <a href="/tags/Markdown/" style="color: #ff7d73">Markdown</a>
             </span>
             
         </span>
@@ -1473,7 +1473,8 @@ int main()&#123;
     return 0;
 &#125;
 </code></pre>
-<h1 id="哈希表"><a href="#哈希表" class="headerlink" title="哈希表"></a>哈希表</h1><pre><code class="c++">#include &lt;iostream&gt;
+<h1 id="哈希表"><a href="#哈希表" class="headerlink" title="哈希表"></a>哈希表</h1><p>&lt;char,int&gt;</p>
+<pre><code class="c++">#include &lt;iostream&gt;
 #include &lt;string&gt;
 #include &lt;unordered_map&gt;
 
@@ -1494,6 +1495,35 @@ int main()&#123;
             cout &lt;&lt; c;
         &#125;
     &#125;
+
+    return 0;
+&#125;
+</code></pre>
+<p>&lt;int,int&gt;</p>
+<pre><code class="c++">#include &lt;iostream&gt;
+#include &lt;unordered_map&gt;
+#include &lt;set&gt;
+#include &lt;algorithm&gt;
+
+using namespace std;
+
+int main()&#123;
+    int N;
+    cin &gt;&gt; N;
+
+    unordered_map&lt;int, int&gt; mp;
+    for (int i = 0; i &lt; N;i++)&#123;
+        int n;
+        cin &gt;&gt; n;
+        mp[n]++;
+    &#125;
+
+    set&lt;int&gt; st;
+    for(const auto&amp; p:mp)&#123;
+        st.insert(p.first);
+    &#125;
+
+    cout &lt;&lt; *st.begin() &lt;&lt; &#39; &#39; &lt;&lt; mp[*st.begin()] &lt;&lt; endl &lt;&lt; *st.rbegin() &lt;&lt; &#39; &#39; &lt;&lt; mp[*st.rbegin()];
 
     return 0;
 &#125;
