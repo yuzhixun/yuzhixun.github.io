@@ -175,7 +175,7 @@
             
             <span class="tag">
                 
-                <a href="/tags/Typora/" style="color: #ffa2c4">Typora</a>
+                <a href="/tags/Typora/" style="color: #ff7d73">Typora</a>
             </span>
             
             <span class="tag">
@@ -308,7 +308,41 @@
 &lt;/body&gt;
 &lt;/html&gt;
 </code></pre>
-<h2 id="数据绑定"><a href="#数据绑定" class="headerlink" title="数据绑定"></a>数据绑定</h2>
+<h2 id="数据绑定"><a href="#数据绑定" class="headerlink" title="数据绑定"></a>数据绑定</h2><p>Vue中有两种数据绑定的方式：<br>            1.单向绑定(v-bind):数据只能从data流向页面。<br>            2.双向绑定(v-model):数据不仅能从data流向页面，还可以从页面流向data。<br>                备注：<br>                    1.双向绑定一般都应用在表单类元素上（如：input,select等）<br>                    2.v-model：value可以简写为v-model，因为v-model默认收集的就是value值</p>
+<pre><code class="html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+    &lt;script type=&quot;text/javascript&quot; src=&quot;/js/vue.js&quot;&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div id=&quot;root&quot;&gt;
+        &lt;!-- 单向数据绑定:&lt;input type=&quot;text&quot; v-bind:value=&quot;name&quot;&gt;&lt;br&gt;
+        双向数据绑定:&lt;input type=&quot;text&quot; v-model:value=&quot;name&quot;&gt;&lt;br&gt; --&gt;
+        
+        &lt;!-- 简写 --&gt;
+        单向数据绑定:&lt;input type=&quot;text&quot; :value=&quot;name&quot;&gt;&lt;br&gt;
+        双向数据绑定:&lt;input type=&quot;text&quot; v-model=&quot;name&quot;&gt;&lt;br&gt;
+
+        &lt;h2&gt;&lt;/h2&gt;
+    &lt;/div&gt;
+
+    &lt;script type=&quot;text/javascript&quot;&gt;
+        Vue.config.productionTip = false
+
+        new Vue(&#123;
+            el:&#39;#root&#39;,
+            data:&#123;
+                name:&#39;nasognnaonrgbaonbbabneg&#39;
+            &#125;
+        &#125;)
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
     </div>
     
     
