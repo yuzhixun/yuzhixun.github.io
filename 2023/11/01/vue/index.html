@@ -3,7 +3,7 @@
 <html lang="zh">
     <head>
         <meta charset="utf-8" />
-        <title>Vue我最C | Argvchs の小窝</title>
+        <title>Vue我最C！ | Argvchs の小窝</title>
         <meta name="author" content="Argvchs" />
         <meta name="description" content="" />
         <meta name="keywords" content="" />
@@ -147,7 +147,7 @@
             <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
                 <div class="article">
     <div>
-        <h1>Vue我最C</h1>
+        <h1>Vue我最C！</h1>
     </div>
     <div class="info">
         <span class="date">
@@ -158,11 +158,11 @@
         </span>
         
         <span class="category">
-            <a href="/categories/%E5%89%8D%E7%AB%AF/">
+            <a href="/categories/html/">
                 <span class="icon">
                     <i class="fa-solid fa-bookmark fa-fw"></i>
                 </span>
-                前端
+                html
             </a>
         </span>
         
@@ -175,12 +175,12 @@
             
             <span class="tag">
                 
-                <a href="/tags/Typora/" style="color: #ffa2c4">Typora</a>
+                <a href="/tags/Typora/" style="color: #00a596">Typora</a>
             </span>
             
             <span class="tag">
                 
-                <a href="/tags/Markdown/" style="color: #00bcd4">Markdown</a>
+                <a href="/tags/Markdown/" style="color: #ffa2c4">Markdown</a>
             </span>
             
         </span>
@@ -339,6 +339,291 @@
             &#125;
         &#125;)
     &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h2 id="el与data的两种写法"><a href="#el与data的两种写法" class="headerlink" title="el与data的两种写法"></a>el与data的两种写法</h2><pre><code class="html">const v = new Vue(&#123;
+         el:&#39;#root&#39;,
+             data:&#123;
+                 name:&#39;xiao yuwan&#39;
+             &#125;
+         &#125;)
+         console.log(v)
+         v.$mount(&#39;#root&#39;)
+</code></pre>
+<pre><code class="html">new Vue(&#123;
+            el:&#39;#root&#39;,
+            data()&#123;
+                return&#123;
+                    name:&#39;xiao yuwan&#39;
+                &#125;
+            &#125;
+        &#125;)
+</code></pre>
+<h2 id="MVVM模型"><a href="#MVVM模型" class="headerlink" title="MVVM模型"></a>MVVM模型</h2><pre><code class="html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;el与data的两种写法&lt;/title&gt;
+    &lt;script type=&quot;text/javascript&quot; src=&quot;/js/vue.js&quot;&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;!-- 页面展示view --&gt;
+    &lt;div id=&quot;root&quot;&gt;
+        &lt;h1&gt;学校名称：&#123;&#123;name&#125;&#125;&lt;/h1&gt;
+        &lt;h1&gt;学校地址：&#123;&#123;address&#125;&#125;&lt;/h1&gt;
+    &lt;/div&gt;
+
+    &lt;script type=&quot;text/javascript&quot;&gt;
+        Vue.config.productionTip = false
+        // 视图模型viewmodel
+        new Vue(&#123;
+            el:&#39;#root&#39;,
+            // model 数据
+            data:&#123;
+                name:&#39;新洲一中&#39;,
+                address:&#39;湖北武汉&#39;
+            &#125;
+        &#125;)
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p><strong>看第10，18，21行</strong></p>
+<h2 id="数据代理"><a href="#数据代理" class="headerlink" title="数据代理"></a>数据代理</h2><pre><code class="html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;script type=&quot;text/javascript&quot;&gt;
+        let person = &#123;
+            name:&#39;余志勋&#39;,
+            sex:&#39;男&#39;,
+            age:18,
+        &#125;
+    // 直接写和用object添加是有区别的
+        // Object.defineProperty(person,&#39;age&#39;,&#123;
+        //     value:18
+        // &#125;)
+
+        console.log(person)
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p><strong>直接写和用object添加是有区别的</strong></p>
+<ol>
+<li><p>首先结果显示的颜色会有不同。<br> <img src="https://typora200483.oss-cn-chengdu.aliyuncs.com/Snipaste_2024-01-30_18-20-00.png" alt="Snipaste_2024-01-30_18-20-00"></p>
+</li>
+<li><p>不参与遍历等</p>
+<pre><code class="html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;&lt;/title&gt;
+    &lt;script type=&quot;text/javascript&quot; src=&quot;/js/vue.js&quot;&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;script type=&quot;text/javascript&quot;&gt;
+        let person = &#123;
+            name:&#39;余志勋&#39;,
+            sex:&#39;男&#39;,
+            // age:18,
+        &#125;
+    // 直接写和用object添加是有区别的
+        Object.defineProperty(person,&#39;age&#39;,&#123;
+            value:18
+        &#125;)
+
+        for(let key in person)&#123;
+            console.log(&#39;@&#39;,person[key])
+        &#125;
+
+        console.log(person)
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+</li>
+</ol>
+<h2 id="Object-defineProperty的具体用法"><a href="#Object-defineProperty的具体用法" class="headerlink" title="Object.defineProperty的具体用法"></a>Object.defineProperty的具体用法</h2><p><strong><code>Object.defineProperty()</code> 是 JavaScript 中用于定义或修改对象属性的方法。它可以用来添加新的属性，修改已有属性的特性（如可写、可枚举等），或者修改访问器属性的 <code>getter</code> 和 <code>setter</code> 方法。</strong></p>
+<pre><code class="javascript">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;&lt;/title&gt;
+    &lt;script type=&quot;text/javascript&quot; src=&quot;/js/vue.js&quot;&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;script type=&quot;text/javascript&quot;&gt;
+        let number = 18
+        let person = &#123;
+            name:&#39;余志勋&#39;,
+            sex:&#39;男&#39;,
+            // age:,
+        &#125;
+    // 直接写和用object添加是有区别的
+        Object.defineProperty(person,&#39;age&#39;,&#123;
+            // value:18,
+            // enumerable:true,//控制属性是否为可枚举项
+            // writable:true,//控制属性是否可以修改
+            // configurable:true,//控制属性是否可以被删除
+            get()&#123;
+                console.log(&#39;有人读取了age属性了&#39;)
+                return number
+            &#125;,
+
+            set(value)&#123;
+                console.log(&#39;有人修改了age属性,且值是&#39;,value)
+                number = value
+            &#125;
+        &#125;)
+
+        // console.log(Object.key(person))
+        console.log(person)
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>我们没有添加set函数时，如果我们直接修改person.age，属性值是不会改变的，因为他的返回值是与number挂钩的。<br><strong>我们添加了set函数后，实质就是可以设置属性的值了，模板就是person.age &#x3D; ?</strong></p>
+<ul>
+<li><code>value</code>：属性的值（默认为 <code>undefined</code>）</li>
+<li><code>writable</code>：是否可写（默认为 <code>false</code>）</li>
+<li><code>enumerable</code>：是否可枚举（默认为 <code>false</code>）</li>
+<li><code>configurable</code>：是否可配置（默认为 <code>false</code>）</li>
+<li><code>get</code>：获取属性值的函数（默认为 <code>undefined</code>）</li>
+<li><code>set</code>：设置属性值的函数（默认为 <code>undefined</code>）</li>
+</ul>
+<h2 id="事件处理"><a href="#事件处理" class="headerlink" title="事件处理"></a>事件处理</h2><ol>
+<li>使用v-on:xxx 或 @xxx 绑定事件，其中xxx是事件名；</li>
+<li>事件中的回调需要配置在methods对象中，最终会在vm上；</li>
+<li>methonds中配置的函数，不需要用箭头函数!否则this就不是vm了；</li>
+<li>methonds中配置的函数，都是被Vue所管理的函数，this的指向是vm 或 组件实例对象；</li>
+<li>@click &#x3D; “demo” 和 @click &#x3D; “demo($event)”效果一致，但后者可以传参；</li>
+<li>methods中的配置函数不要放在data里面，data里的函数会多余了getter和setter函数，没有必要</li>
+</ol>
+<pre><code class="html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;事件处理&lt;/title&gt;
+    &lt;script type=&quot;text/javascript&quot; src=&quot;/js/vue.js&quot;&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div id=&quot;root&quot;&gt;
+        &lt;h2&gt;欢迎来到&#123;&#123;name&#125;&#125;的学习&lt;/h2&gt;
+        &lt;button @click = &quot;change1&quot;&gt;点我提示信息1(传参)&lt;/button&gt;
+        &lt;button @click = &quot;change2(66,$event)&quot;&gt;点我提示信息2(不传参)&lt;/button&gt;
+    &lt;/div&gt;
+
+    &lt;script type=&quot;text/javascript&quot;&gt;
+        Vue.config.productionTip = false 
+        
+        const vm = new Vue(&#123;
+            el:&#39;#root&#39;,
+            data:&#123;
+                name:&#39;小鱼丸&#39;,
+            &#125;, 
+            methods: &#123;
+                change1()&#123;
+                    alert(&#39;Good morning bad boy!&#39;)
+                &#125;,
+                change2(number,event)&#123;
+                    console.log(number+number,event)
+                &#125;
+            &#125;
+        &#125;)
+    
+    
+    &lt;/script&gt;
+    
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h2 id="时间修饰符"><a href="#时间修饰符" class="headerlink" title="时间修饰符"></a>时间修饰符</h2><p>Vue中的事件修饰符：</p>
+<ol>
+<li>prevent:阻止默认事件（常用）；</li>
+<li>stop:阻止事件冒泡（常用）；</li>
+<li>once:事件只触发一次；</li>
+</ol>
+<p>啥叫冒泡？</p>
+<p><strong>在一个盒子里有一个按钮，我们点击了这个按钮触发了某种事件，此时会带动这个盒子也触发事件，而stop可以阻止这种事情发生</strong></p>
+<pre><code class="html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;事件处理&lt;/title&gt;
+    &lt;script type=&quot;text/javascript&quot; src=&quot;/js/vue.js&quot;&gt;&lt;/script&gt;
+    &lt;style&gt;
+        *&#123;
+            margin-top: 20px;
+        &#125;
+        .demo&#123;
+            height: 50px;
+            background-color: skyblue;
+        &#125;
+
+        .box1&#123;
+            height: 100px;
+            background-color: orange;
+            padding: 20px;
+        &#125;
+        .box2&#123;
+            height: 50px;
+            background-color: skyblue;
+        &#125;
+    &lt;/style&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;div id=&quot;root&quot;&gt;
+        &lt;h2&gt;欢迎来到&#123;&#123;name&#125;&#125;的学习&lt;/h2&gt;
+        &lt;a href=&quot;https://www.hbpa.edu.cn/&quot; @click.prevent= &quot;change&quot;&gt;点我提示信息&lt;/a&gt;
+        &lt;div class=&quot;demo&quot; @click=&quot;change&quot;&gt;
+            &lt;button @click.stop=&quot;change&quot;&gt;点我提示信息&lt;/button&gt;
+        &lt;/div&gt;
+
+        &lt;button @click.once=&quot;change&quot;&gt;点我提示信息&lt;/button&gt;
+        
+        &lt;div class=&quot;box1&quot; @click= &quot;change1(1)&quot;&gt;
+            div1
+            &lt;div class=&quot;box2&quot; @click= &quot;change1(2)&quot;&gt;
+                div2
+            &lt;/div&gt;
+        &lt;/div&gt;
+        
+    &lt;/div&gt;
+
+    &lt;script type=&quot;text/javascript&quot;&gt;
+        Vue.config.productionTip = false 
+        
+        const vm = new Vue(&#123;
+            el:&#39;#root&#39;,
+            data:&#123;
+                name:&#39;小鱼丸&#39;,
+            &#125;,
+
+            methods:&#123;
+            change(e)&#123;
+                // e.stopPropagation();
+               alert(&#39;同学你好&#39;)
+            &#125;,
+            change1(msg)&#123;
+                // e.stopPropagation();
+                console.log(msg)
+            &#125;
+        &#125;
+        &#125;)
+    &lt;/script&gt;
+    
 &lt;/body&gt;
 &lt;/html&gt;
 </code></pre>
