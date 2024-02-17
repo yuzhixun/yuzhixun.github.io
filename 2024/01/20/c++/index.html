@@ -175,12 +175,12 @@
             
             <span class="tag">
                 
-                <a href="/tags/Typora/" style="color: #ffa2c4">Typora</a>
+                <a href="/tags/Typora/" style="color: #00a596">Typora</a>
             </span>
             
             <span class="tag">
                 
-                <a href="/tags/Markdown/" style="color: #ff7d73">Markdown</a>
+                <a href="/tags/Markdown/" style="color: #03a9f4">Markdown</a>
             </span>
             
         </span>
@@ -1550,6 +1550,43 @@ cout &lt;&lt; setprecision(2) &lt;&lt; 3.14159 &lt;&lt; endl; // 输出 3.14
 <pre><code class="c++">string str_num = to_string(abs(num));
 </code></pre>
 <p><strong>str_num用与接收字符串</strong></p>
+<h2 id="insert-和erase"><a href="#insert-和erase" class="headerlink" title="insert()和erase()"></a>insert()和erase()</h2><p><strong>insert()的用法：</strong></p>
+<ul>
+<li><strong>opsition.insert(pos,”XXX”);</strong><br>  意思是在opsition的下标为pos的位置<strong>前</strong>加上“XXX”</li>
+<li><strong>opsition.insert(opsition.begin(),‘c’);</strong></li>
+</ul>
+<pre><code class="c++">string name = &quot;yu zhi xun&quot;;
+name.insert(0,“haha”)；
+//意思就是在y的前面加上haha
+</code></pre>
+<p><img src="https://typora200483.oss-cn-chengdu.aliyuncs.com/Snipaste_2024-02-17_22-35-22.png" alt="Snipaste_2024-02-17_22-35-22"></p>
+<p><strong>erase()的用法：</strong></p>
+<ul>
+<li><p><strong>opsition.erase(pos,len);</strong><br>  意思是在opsition的下标为pos的位置开始<strong>删除长度为len</strong>的字符或者字符串<strong>（自身也包括）</strong></p>
+</li>
+<li><p><strong>opsition.erase(opsition.begin(),opsition.begin()+3);</strong></p>
+<p>  意思是从opsition容器的第一个元素开始删除，删除的长度为3；</p>
+</li>
+</ul>
+<h2 id="replace"><a href="#replace" class="headerlink" title="replace()"></a>replace()</h2><p>replace()为了替换指定范围内的字符或者字符串。</p>
+<ul>
+<li><p><strong>opsition.replace(pos,delete_len,add_len,’c’);</strong><br>  <strong>从opsition的下标为pos的位置开始（自身也算），删除长度为delete_len的字符串，添加长度为add_len的字符‘c’。</strong></p>
+</li>
+<li><p><strong>opsition.replace(begin(),end(),”c”);</strong><br>  <strong>从begin()到end()-1的所有字符串被替换为”c“；</strong></p>
+</li>
+</ul>
+<pre><code class="c++">#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+
+int main() &#123;
+    string name = &quot;yu zhi xun&quot;;
+    name.replace(name.begin()+3,name.begin()+6,&quot;b&quot;);
+    cout &lt;&lt; name &lt;&lt; endl;
+
+    return 0;
+&#125;
+</code></pre>
 <h1 id="algorithm函数库"><a href="#algorithm函数库" class="headerlink" title="algorithm函数库"></a>algorithm函数库</h1><h2 id="max-函数和max-element"><a href="#max-函数和max-element" class="headerlink" title="max()函数和max_element()"></a>max()函数和max_element()</h2><pre><code class="c++">#include &lt;iostream&gt;
 #include &lt;algorithm&gt;
 
@@ -1577,6 +1614,8 @@ int main() &#123;
 &#125;
 </code></pre>
 <h1 id="climitis函数库"><a href="#climitis函数库" class="headerlink" title="climitis函数库"></a>climitis函数库</h1><p>​	#include <climits>是一个头文件，它包含了C++中整型变量的极值常量。例如，<strong>INT_MAX</strong>表示int类型的最大值，<strong>INT_MIN</strong>表示int类型的最小值。其他常用的极值常量还包括LONG_MAX、LONG_MIN、SHRT_MAX、SHRT_MIN等等。这些常量在编程时经常用于判断边界或进行数据类型转换。</p>
+<h1 id="for-char-amp-c-opsition"><a href="#for-char-amp-c-opsition" class="headerlink" title="for(char&amp; c:opsition)"></a>for(char&amp; c:opsition)</h1><p><code>for(char&amp; c: opsition)</code> 是 C++11 引入的一种循环语法，用于遍历容器或数组中的元素</p>
+<p>opsition是容器或者数组：<br>        <strong>这种语法等同于使用传统的迭代器进行遍历，但更加简洁和直观。它会依次将 <code>opsition</code> 中的每一个元素赋值给 <code>c</code>，并且 <code>c</code> 是一个对应元素的引用，因此在循环体内对 <code>c</code> 的修改会反映到原始容器或数组中。</strong>对c的修改可以影响到容器或者数组的内部，究其原因是应为有了<strong>“&amp;”</strong></p>
 <h1 id="容器学习就此结束，欢迎查阅小鱼丸的学习资料"><a href="#容器学习就此结束，欢迎查阅小鱼丸的学习资料" class="headerlink" title="容器学习就此结束，欢迎查阅小鱼丸的学习资料"></a>容器学习就此结束，欢迎查阅小鱼丸的学习资料</h1>
     </div>
     
