@@ -175,7 +175,7 @@
             
             <span class="tag">
                 
-                <a href="/tags/Typora/" style="color: #00a596">Typora</a>
+                <a href="/tags/Typora/" style="color: #ffa2c4">Typora</a>
             </span>
             
             <span class="tag">
@@ -1550,6 +1550,11 @@ cout &lt;&lt; setprecision(2) &lt;&lt; 3.14159 &lt;&lt; endl; // 输出 3.14
 <pre><code class="c++">string str_num = to_string(abs(num));
 </code></pre>
 <p><strong>str_num用与接收字符串</strong></p>
+<h2 id="将字符变成字符串的用法"><a href="#将字符变成字符串的用法" class="headerlink" title="将字符变成字符串的用法"></a>将字符变成字符串的用法</h2><pre><code class="c++">string words;
+char a;
+result.push_back(string(1,a));
+</code></pre>
+<p>用法的含义是，将字符a变成长度为1的字符串，并储存到result容器当中 。</p>
 <h2 id="insert-和erase"><a href="#insert-和erase" class="headerlink" title="insert()和erase()"></a>insert()和erase()</h2><p><strong>insert()的用法：</strong></p>
 <ul>
 <li><strong>opsition.insert(pos,”XXX”);</strong><br>  意思是在opsition的下标为pos的位置<strong>前</strong>加上“XXX”</li>
@@ -1613,9 +1618,66 @@ int main() &#123;
     return 0;
 &#125;
 </code></pre>
-<h1 id="climitis函数库"><a href="#climitis函数库" class="headerlink" title="climitis函数库"></a>climitis函数库</h1><p>​	#include <climits>是一个头文件，它包含了C++中整型变量的极值常量。例如，<strong>INT_MAX</strong>表示int类型的最大值，<strong>INT_MIN</strong>表示int类型的最小值。其他常用的极值常量还包括LONG_MAX、LONG_MIN、SHRT_MAX、SHRT_MIN等等。这些常量在编程时经常用于判断边界或进行数据类型转换。</p>
+<h2 id="next-permutation函数"><a href="#next-permutation函数" class="headerlink" title="next_permutation函数"></a>next_permutation函数</h2><p>next_permutation函数的用法是<strong>next_permutation(vc.begin(),vc.end())</strong><br>它的意思是，返回这个数组或者序列的下一个字典序列</p>
+<pre><code class="c++">#include &lt;bits/stdc++.h&gt;
+
+using namespace std;
+int a[9] = &#123;1,2,3,4,5,6,7,8,9&#125;;
+int result = 0;
+
+int main()&#123;
+    do&#123;
+        int x = a[1]*(a[6] * 100 + a[7] * 10 + a[8]);
+        int y = a[2]*(a[3] * 100 + a[4] * 10 + a[5]);
+        int z = a[2]*(a[6] * 100 + a[7] * 10 + a[8]);
+        if((a[0] + ((x+y)/z)) == 10 &amp;&amp; (x+y)%z == 0) result++;
+    &#125;while(next_permutation(a,a+9));
+    
+    cout &lt;&lt; result;
+    return 0;
+&#125;
+</code></pre>
+<p>如果当下一个字典序列不存在，那么它会返回false，如果存在就会将这个序列变成下一个字典序列。</p>
+<h1 id="climits函数库"><a href="#climits函数库" class="headerlink" title="climits函数库"></a>climits函数库</h1><p>​	#include <climits>是一个头文件，它包含了C++中整型变量的极值常量。例如，<strong>INT_MAX</strong>表示int类型的最大值，<strong>INT_MIN</strong>表示int类型的最小值。其他常用的极值常量还包括LONG_MAX、LONG_MIN、SHRT_MAX、SHRT_MIN等等。这些常量在编程时经常用于判断边界或进行数据类型转换。</p>
 <h1 id="for-char-amp-c-opsition"><a href="#for-char-amp-c-opsition" class="headerlink" title="for(char&amp; c:opsition)"></a>for(char&amp; c:opsition)</h1><p><code>for(char&amp; c: opsition)</code> 是 C++11 引入的一种循环语法，用于遍历容器或数组中的元素</p>
 <p>opsition是容器或者数组：<br>        <strong>这种语法等同于使用传统的迭代器进行遍历，但更加简洁和直观。它会依次将 <code>opsition</code> 中的每一个元素赋值给 <code>c</code>，并且 <code>c</code> 是一个对应元素的引用，因此在循环体内对 <code>c</code> 的修改会反映到原始容器或数组中。</strong>对c的修改可以影响到容器或者数组的内部，究其原因是应为有了<strong>“&amp;”</strong></p>
+<h1 id="递归思想储存组合方案"><a href="#递归思想储存组合方案" class="headerlink" title="递归思想储存组合方案"></a>递归思想储存组合方案</h1><pre><code class="c++">class Solution &#123;
+public:
+    void back_find(string digits,int i,string str,vector&lt;string&gt; &amp;vc)&#123;
+        if(i == digits.size())&#123;
+            vc.push_back(str);
+            return;
+        &#125;
+        string temp = mp[digits[i++]];
+        for(auto c:temp)&#123;
+            back_find(digits,i,str+c,vc);
+        &#125;
+    &#125;
+    vector&lt;string&gt; letterCombinations(string digits) &#123;
+        vector&lt;string&gt; vc;
+        string str;
+        if(digits != &quot;&quot;)&#123;
+            back_find(digits,0,str,vc);
+        &#125;
+
+        return vc;
+    &#125;
+
+private:
+    std::unordered_map&lt;char, std::string&gt; mp = &#123;
+        &#123;&#39;0&#39;, &quot;&quot;&#125;,
+        &#123;&#39;1&#39;, &quot;&quot;&#125;,
+        &#123;&#39;2&#39;, &quot;abc&quot;&#125;,
+        &#123;&#39;3&#39;, &quot;def&quot;&#125;,
+        &#123;&#39;4&#39;, &quot;ghi&quot;&#125;,
+        &#123;&#39;5&#39;, &quot;jkl&quot;&#125;,
+        &#123;&#39;6&#39;, &quot;mno&quot;&#125;,
+        &#123;&#39;7&#39;, &quot;pqrs&quot;&#125;,
+        &#123;&#39;8&#39;, &quot;tuv&quot;&#125;,
+        &#123;&#39;9&#39;, &quot;wxyz&quot;&#125;
+    &#125;;
+&#125;;
+</code></pre>
 <h1 id="容器学习就此结束，欢迎查阅小鱼丸的学习资料"><a href="#容器学习就此结束，欢迎查阅小鱼丸的学习资料" class="headerlink" title="容器学习就此结束，欢迎查阅小鱼丸的学习资料"></a>容器学习就此结束，欢迎查阅小鱼丸的学习资料</h1>
     </div>
     
