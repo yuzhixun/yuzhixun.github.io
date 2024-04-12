@@ -175,12 +175,12 @@
             
             <span class="tag">
                 
-                <a href="/tags/Typora/" style="color: #ff7d73">Typora</a>
+                <a href="/tags/Typora/" style="color: #ffa2c4">Typora</a>
             </span>
             
             <span class="tag">
                 
-                <a href="/tags/Markdown/" style="color: #ffa2c4">Markdown</a>
+                <a href="/tags/Markdown/" style="color: #00a596">Markdown</a>
             </span>
             
             <span class="tag">
@@ -2919,6 +2919,33 @@ int main()&#123;
     &#125;
     printf(&quot;%d\n&quot;,f[1][m]);
     
+    return 0;
+&#125;
+</code></pre>
+<pre><code class="c++">#include &lt;bits/stdc++.h&gt;
+#define n 10010
+using namespace std;
+
+int N,V;
+int w[n],v[n];
+int dp[n][n] = &#123;0&#125;;
+
+int main()&#123;
+    cin &gt;&gt; N &gt;&gt; V;
+    dp[0][0] = 0;
+    for(int i = 1;i&lt;=N;i++)&#123;
+        cin &gt;&gt; v[i] &gt;&gt; w[i];
+    &#125;
+    for(int i = 1;i&lt;=N;i++)&#123;
+        for(int j = 1;j&lt;=V;j++)&#123;
+            if(j&lt;v[i])&#123;
+                dp[i][j] = dp[i-1][j]; 
+            &#125;else if(j &gt;= v[i])&#123;
+                dp[i][j] = max(dp[i-1][j],dp[i-1][j-v[i]]+w[i]);
+            &#125;
+        &#125;
+    &#125;
+    cout &lt;&lt; dp[N][V];
     return 0;
 &#125;
 </code></pre>

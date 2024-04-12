@@ -164,6 +164,215 @@
         
 
 <div class="post">
+    <a href="/2024/04/08/%E9%A1%B9%E7%9B%AE%E7%AE%80%E4%BB%8B/">
+        <h2 class="post-title"></h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2024/4/8
+        </span>
+        
+        
+    </div>
+    <div class="description">
+        <div class="content" v-pre>
+            
+            <h1 id="项目简介"><a href="#项目简介" class="headerlink" title="项目简介"></a>项目简介</h1><p>本项目旨在利用机器学习算法构建医疗辅助诊断系统，以提高诊断准确性和工作效率，辅助医生进行决策，并减少诊断误差。通过收集大量医学数据，并进行数据预处理、特征提取和模型训练，建立准确的疾病诊断模型。预期成果包括医疗应用软件和数据库模型库，创新点在于数据驱动的决策支持、智能化辅助诊断、多学科融合、实时监测预警和个性化诊断建议。已具备的研究条件包括数据收集和处理技术、专业技术支持、资金支持和明确的研究目的。研究计划包括文献综述、确定研究方向、数据收集和处理、模型训练、系统设计和实现、实验设计和数据分析、论文撰写和成果总结、专利申请和维护以及技术推广和应用。通过该项目，我们希望建立一个可靠的医疗辅助诊断系统，利用机器学习技术提供精准的疾病诊断和治疗建议，从而为医生提供更可靠的决策支持。我们将充分利用已有的医学数据和技术支持，确保系统的可靠性和有效性。此外，项目还将对系统进行广泛的测试和验证，以确保其在实际医疗环境中的可行性和可靠性。最终，我们期望该项目能够为医疗诊断领域带来革命性的改变，并为患者提供更好的医疗服务和治疗体验。</p>
+
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        
+        
+    </div>
+    <a href="/2024/04/08/%E9%A1%B9%E7%9B%AE%E7%AE%80%E4%BB%8B/" class="go-post">阅读全文</a>
+</div>
+
+<div class="post">
+    <a href="/2024/04/08/%E5%A4%87%E6%88%98%E8%93%9D%E6%A1%A5%E6%9D%AF/">
+        <h2 class="post-title"></h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2024/4/8
+        </span>
+        
+        
+    </div>
+    <div class="description">
+        <div class="content" v-pre>
+            
+            <h2 id="stoi的使用，字符转换成整型的函数"><a href="#stoi的使用，字符转换成整型的函数" class="headerlink" title="stoi的使用，字符转换成整型的函数"></a>stoi的使用，字符转换成整型的函数</h2><pre><code class="c++">#include &lt;bits/stdc++.h&gt;
+
+using namespace std;
+
+int main()&#123;
+    string word1 = &quot;123abc&quot;;
+    int num = stoi(&quot;123&quot;); //将字符串转换为整数
+    int num1 = stoi(word1.substr(0,3)); //用substr函数截取部分数字字符串来化整数 
+    int x = 5;
+    
+    cout &lt;&lt; num + num1;
+    return 0;
+&#125;
+</code></pre>
+<h2 id="用printf来输出前置零的答案"><a href="#用printf来输出前置零的答案" class="headerlink" title="用printf来输出前置零的答案"></a>用printf来输出前置零的答案</h2><pre><code class="c++">#include &lt;bits/stdc++.h&gt;
+
+using namespace std;
+
+int main()&#123;
+    int year,month,day;
+    cin &gt;&gt; year &gt;&gt; month &gt;&gt; day;
+    
+    printf(&quot;%04d:%02d:%02d&quot;,year,month,day); //这个的意思是整型是两位，不足两位的话用0填补 
+    return 0;
+&#125;
+</code></pre>
+<h2 id="升序排列和降序排列"><a href="#升序排列和降序排列" class="headerlink" title="升序排列和降序排列"></a>升序排列和降序排列</h2><pre><code class="c++">#include &lt;bits/stdc++.h&gt;
+
+using namespace std;
+
+int main()&#123;
+    int f[10] = &#123;0,9,2,8,3,4,8,-9,-2,1&#125;;
+    sort(f,f+10);//升序排列
+    for(int i = 0;i&lt;10;i++)&#123;
+        cout &lt;&lt; f[i] &lt;&lt; &#39; &#39;;
+    &#125; 
+    return 0;
+&#125;
+</code></pre>
+<pre><code class="c++">#include &lt;bits/stdc++.h&gt;
+
+using namespace std;
+
+int main()&#123;
+    int f[10] = &#123;0,9,2,8,3,4,8,-9,-2,1&#125;;
+    sort(f,f+10,greater&lt;int&gt;()); //降序排列
+    for(int i = 0;i&lt;10;i++)&#123;
+        cout &lt;&lt; f[i] &lt;&lt; &#39; &#39;;
+    &#125; 
+    return 0;
+&#125;
+</code></pre>
+<h2 id="逐渐递增字典序函数"><a href="#逐渐递增字典序函数" class="headerlink" title="逐渐递增字典序函数"></a>逐渐递增字典序函数</h2><pre><code class="c++">#include &lt;bits/stdc++.h&gt;
+
+using namespace std;
+int a[9] = &#123;1,2,3,4,5,6,7,8,9&#125;;
+int result = 0;
+
+int main()&#123;
+    do&#123;
+        int x = a[1]*(a[6] * 100 + a[7] * 10 + a[8]);
+        int y = a[2]*(a[3] * 100 + a[4] * 10 + a[5]);
+        int z = a[2]*(a[6] * 100 + a[7] * 10 + a[8]);
+        if((a[0] + ((x+y)/z)) == 10 &amp;&amp; (x+y)%z == 0) result++;
+    &#125;while(next_permutation(a,a+9));
+    
+    cout &lt;&lt; result;
+    return 0;
+&#125;
+</code></pre>
+<h2 id="减少内存使"><a href="#减少内存使" class="headerlink" title="减少内存使"></a>减少内存使</h2><pre><code class="c++">#include &lt;bits/stdc++.h&gt;
+using namespace std;
+int main()
+&#123;
+  ios::sync_with_stdio(0),cin.tie(0),cout.tie(0); //开局必写
+  return 0;
+&#125;
+</code></pre>
+<h2 id="优先队列"><a href="#优先队列" class="headerlink" title="优先队列"></a>优先队列</h2><pre><code class="c++">priority_queue&lt;int&gt; maxHeap; // 创建一个默认的最大堆
+priority_queue&lt;int, vector&lt;int&gt;, greater&lt;int&gt;&gt; minHeap; // 创建一个小顶堆
+</code></pre>
+<p><strong>priority_queue默认是大顶堆，小顶堆需要我们自己去重新构造</strong></p>
+<p><strong>三个参数，元素类型，储存元素的容器，以及排列的方式</strong></p>
+<pre><code class="c++">#include &lt;bits/stdc++.h&gt;
+using namespace std;
+
+int main()
+&#123;
+  ios::sync_with_stdio(0),cin.tie(0),cout.tie(0);
+  priority_queue&lt;int,vector&lt;int&gt;,greater&lt;int&gt;&gt;pq;
+  string p;
+  int n;int x;
+  cin&gt;&gt;n;
+  while(n--)&#123;
+    cin&gt;&gt;p;
+    if(p==&quot;push&quot;)&#123;
+      cin&gt;&gt;x;
+      pq.push(x);
+    &#125;else if(p==&quot;remove&quot;)&#123;
+      if(!pq.empty())&#123;
+        pq.pop();
+      &#125;else&#123;
+        cout&lt;&lt;&quot;empty&quot;&lt;&lt;endl;
+      &#125;
+
+    &#125;else if(p==&quot;min&quot;)&#123;
+      if(!pq.empty())&#123;
+        cout&lt;&lt;pq.top()&lt;&lt;endl;
+      &#125;else&#123;
+        cout&lt;&lt;&quot;empty&quot;&lt;&lt;endl;
+      &#125;
+
+    &#125;else if(p==&quot;print&quot;)&#123;
+      int k;
+      cin&gt;&gt;k;
+      while(k--)&#123;
+        cout&lt;&lt;pq.top()&lt;&lt;&quot; &quot;;
+        pq.pop();
+      &#125;
+      cout&lt;&lt;endl;
+    &#125;
+  &#125;
+ 
+  return 0;
+&#125;
+</code></pre>
+<h2 id="查找字符在字符串中出现的位置"><a href="#查找字符在字符串中出现的位置" class="headerlink" title="查找字符在字符串中出现的位置"></a>查找字符在字符串中出现的位置</h2><pre><code class="c++">#include &lt;iostream&gt;
+#include &lt;string&gt;
+
+using namespace std;
+
+int main() &#123;
+    string str = &quot;Hello, World!&quot;;
+    char ch = &#39;o&#39;;
+    // 查找字符 &#39;o&#39; 在字符串中的位置
+    size_t pos = str.find(ch);
+
+    if (pos != string::npos) &#123;
+        cout &lt;&lt; &quot;字符 &#39;&quot; &lt;&lt; ch &lt;&lt; &quot;&#39; 在字符串中的位置为：&quot; &lt;&lt; pos &lt;&lt; endl;
+    &#125; else &#123;
+        cout &lt;&lt; &quot;字符 &#39;&quot; &lt;&lt; ch &lt;&lt; &quot;&#39; 未找到！&quot; &lt;&lt; endl;
+    &#125;
+    
+    return 0;
+&#125;
+</code></pre>
+<p>size_t</p>
+<p><code>size_t</code> 常用于表示容器的大小、数组的索引等。$由于它是无符号整数类型，因此它不会出现负数$，适合用于表示大小或索引，也可以确保在进行位运算时不会出现意外的结果。</p>
+
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        
+        
+    </div>
+    <a href="/2024/04/08/%E5%A4%87%E6%88%98%E8%93%9D%E6%A1%A5%E6%9D%AF/" class="go-post">阅读全文</a>
+</div>
+
+<div class="post">
     <a href="/2024/02/27/%E9%A2%98%E5%BA%93/">
         <h2 class="post-title"></h2>
     </a>
@@ -258,7 +467,7 @@
         
         <span class="tag">
             
-            <a href="/tags/Typora/" style="color: #03a9f4">Typora</a>
+            <a href="/tags/Typora/" style="color: #ffa2c4">Typora</a>
         </span>
         
         <span class="tag">
@@ -312,12 +521,12 @@
         
         <span class="tag">
             
-            <a href="/tags/Typora/" style="color: #00bcd4">Typora</a>
+            <a href="/tags/Typora/" style="color: #ff7d73">Typora</a>
         </span>
         
         <span class="tag">
             
-            <a href="/tags/Markdown/" style="color: #ff7d73">Markdown</a>
+            <a href="/tags/Markdown/" style="color: #00a596">Markdown</a>
         </span>
         
     </div>
@@ -371,7 +580,7 @@
         
         <span class="tag">
             
-            <a href="/tags/Markdown/" style="color: #ff7d73">Markdown</a>
+            <a href="/tags/Markdown/" style="color: #03a9f4">Markdown</a>
         </span>
         
     </div>
@@ -420,7 +629,7 @@
         
         <span class="tag">
             
-            <a href="/tags/Typora/" style="color: #ff7d73">Typora</a>
+            <a href="/tags/Typora/" style="color: #00bcd4">Typora</a>
         </span>
         
     </div>
@@ -474,7 +683,7 @@
         
         <span class="tag">
             
-            <a href="/tags/Markdown/" style="color: #00a596">Markdown</a>
+            <a href="/tags/Markdown/" style="color: #03a9f4">Markdown</a>
         </span>
         
     </div>
@@ -523,12 +732,12 @@
         
         <span class="tag">
             
-            <a href="/tags/Typora/" style="color: #ffa2c4">Typora</a>
+            <a href="/tags/Typora/" style="color: #03a9f4">Typora</a>
         </span>
         
         <span class="tag">
             
-            <a href="/tags/Markdown/" style="color: #ff7d73">Markdown</a>
+            <a href="/tags/Markdown/" style="color: #ffa2c4">Markdown</a>
         </span>
         
     </div>
@@ -577,139 +786,21 @@
         
         <span class="tag">
             
-            <a href="/tags/Typora/" style="color: #00a596">Typora</a>
-        </span>
-        
-        <span class="tag">
-            
-            <a href="/tags/Markdown/" style="color: #03a9f4">Markdown</a>
-        </span>
-        
-        <span class="tag">
-            
-            <a href="/tags/gitbash/" style="color: #ff7d73">gitbash</a>
-        </span>
-        
-    </div>
-    <a href="/2023/08/05/git/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
-    <a href="/2023/08/05/%E5%B0%8F%E9%B1%BC%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
-        <h2 class="post-title">小鱼数据库</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="category">
-            <a href="/categories/%E6%8A%80%E6%9C%AF/">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                技术
-            </a>
-        </span>
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2023/8/5
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <p>观摩小鱼丸对数据结构极致的理解</p>
-
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        <span class="icon">
-            <i class="fa-solid fa-tags fa-fw"></i>
-        </span>
-        
-        
-        
-        <span class="tag">
-            
-            <a href="/tags/Typora/" style="color: #00a596">Typora</a>
-        </span>
-        
-        <span class="tag">
-            
-            <a href="/tags/Markdown/" style="color: #ff7d73">Markdown</a>
-        </span>
-        
-        <span class="tag">
-            
-            <a href="/tags/vscode/" style="color: #00a596">vscode</a>
-        </span>
-        
-    </div>
-    <a href="/2023/08/05/%E5%B0%8F%E9%B1%BC%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
-    <a href="/2023/08/05/c%E8%AF%AD%E8%A8%80/">
-        <h2 class="post-title">学号C，你就是C位！</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="category">
-            <a href="/categories/%E6%8A%80%E6%9C%AF/">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                技术
-            </a>
-        </span>
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2023/8/5
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <p>余某人对c极致的理解，以下内容均为思想和实操</p>
-
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        <span class="icon">
-            <i class="fa-solid fa-tags fa-fw"></i>
-        </span>
-        
-        
-        
-        <span class="tag">
-            
             <a href="/tags/Typora/" style="color: #03a9f4">Typora</a>
         </span>
         
         <span class="tag">
             
-            <a href="/tags/Markdown/" style="color: #ff7d73">Markdown</a>
+            <a href="/tags/Markdown/" style="color: #ffa2c4">Markdown</a>
         </span>
         
         <span class="tag">
             
-            <a href="/tags/vscode/" style="color: #03a9f4">vscode</a>
+            <a href="/tags/gitbash/" style="color: #03a9f4">gitbash</a>
         </span>
         
     </div>
-    <a href="/2023/08/05/c%E8%AF%AD%E8%A8%80/" class="go-post">阅读全文</a>
+    <a href="/2023/08/05/git/" class="go-post">阅读全文</a>
 </div>
 
 
