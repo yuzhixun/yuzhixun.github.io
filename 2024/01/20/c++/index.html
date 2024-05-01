@@ -175,12 +175,12 @@
             
             <span class="tag">
                 
-                <a href="/tags/Typora/" style="color: #00bcd4">Typora</a>
+                <a href="/tags/Typora/" style="color: #03a9f4">Typora</a>
             </span>
             
             <span class="tag">
                 
-                <a href="/tags/Markdown/" style="color: #03a9f4">Markdown</a>
+                <a href="/tags/Markdown/" style="color: #ffa2c4">Markdown</a>
             </span>
             
         </span>
@@ -582,6 +582,7 @@ int main()&#123;
     &#125;
     cout &lt;&lt; endl;
 </code></pre>
+<h2 id="vector容器组合操作"><a href="#vector容器组合操作" class="headerlink" title="vector容器组合操作"></a>vector容器组合操作</h2><p>vector容器可以用pair传一个组合上去</p>
 <h1 id="迭代器"><a href="#迭代器" class="headerlink" title="迭代器"></a>迭代器</h1><p><strong>什么是迭代器？</strong></p>
 <ul>
 <li>迭代器是一种检查容器内元素并且遍历容器内元素的数据类型</li>
@@ -1473,6 +1474,34 @@ int main()&#123;
     return 0;
 &#125;
 </code></pre>
+<h2 id="map容器中夹杂容器"><a href="#map容器中夹杂容器" class="headerlink" title="map容器中夹杂容器"></a>map容器中夹杂容器</h2><p>我们使用map&lt;int,vector&lt;pair&lt;string,int&gt;&gt;&gt; mp;<br>这样不仅增加了的值的数量，简化了代码的复杂度。<br><strong>需要注意的一点是我们使用在访问他的值的时候，需要使用一个变量来访问他的值，然后在输出他的first和second。</strong></p>
+<pre><code class="c++">#include &lt;bits/stdc++.h&gt;
+using namespace std;
+
+int n,m;
+string zhunkao;
+int shiji;
+int zuowei;
+int main()&#123;
+    cin &gt;&gt; n;
+    map&lt;int,vector&lt;pair&lt;string,int&gt;&gt;&gt; mp;
+
+    while(n--)&#123;
+        cin &gt;&gt; zhunkao &gt;&gt; shiji &gt;&gt; zuowei;
+        mp[shiji].push_back(&#123;zhunkao,zuowei&#125;);
+    &#125;
+    cin &gt;&gt; m;
+    int temp;
+    while(m--)&#123;
+        cin &gt;&gt; temp;
+        for(auto p:mp[temp])&#123;
+            cout &lt;&lt; p.first &lt;&lt; &#39; &#39; &lt;&lt; p.second &lt;&lt; endl; 
+        &#125;
+    &#125;
+    
+    return 0;
+&#125;
+</code></pre>
 <h1 id="哈希表"><a href="#哈希表" class="headerlink" title="哈希表"></a>哈希表</h1><p>&lt;char,int&gt;</p>
 <pre><code class="c++">#include &lt;iostream&gt;
 #include &lt;string&gt;
@@ -1641,6 +1670,73 @@ int main()&#123;
 <h1 id="climits函数库"><a href="#climits函数库" class="headerlink" title="climits函数库"></a>climits函数库</h1><p>​	#include <climits>是一个头文件，它包含了C++中整型变量的极值常量。例如，<strong>INT_MAX</strong>表示int类型的最大值，<strong>INT_MIN</strong>表示int类型的最小值。其他常用的极值常量还包括LONG_MAX、LONG_MIN、SHRT_MAX、SHRT_MIN等等。这些常量在编程时经常用于判断边界或进行数据类型转换。</p>
 <h1 id="for-char-amp-c-opsition"><a href="#for-char-amp-c-opsition" class="headerlink" title="for(char&amp; c:opsition)"></a>for(char&amp; c:opsition)</h1><p><code>for(char&amp; c: opsition)</code> 是 C++11 引入的一种循环语法，用于遍历容器或数组中的元素</p>
 <p>opsition是容器或者数组：<br>        <strong>这种语法等同于使用传统的迭代器进行遍历，但更加简洁和直观。它会依次将 <code>opsition</code> 中的每一个元素赋值给 <code>c</code>，并且 <code>c</code> 是一个对应元素的引用，因此在循环体内对 <code>c</code> 的修改会反映到原始容器或数组中。</strong>对c的修改可以影响到容器或者数组的内部，究其原因是应为有了<strong>“&amp;”</strong></p>
+<h1 id="lambda函数"><a href="#lambda函数" class="headerlink" title="lambda函数"></a>lambda函数</h1><h2 id="利用lambda函数来自定义一个排序向量"><a href="#利用lambda函数来自定义一个排序向量" class="headerlink" title="利用lambda函数来自定义一个排序向量"></a>利用lambda函数来自定义一个排序向量</h2><pre><code class="c++">#include &lt;bits/stdc++.h&gt;
+using namespace std;
+
+
+int main()&#123;
+    vector&lt;pair&lt;string,int&gt;&gt; vc = &#123;&#123;"1000",2&#125;,&#123;"2000",2&#125;,&#123;"2",2&#125;,&#123;"3265",5&#125;&#125;;
+    sort(vc.begin(),vc.end(),[](const pair&lt;string,int&gt; &amp;pair1,const pair&lt;string,int&gt; &amp;pair2)&#123;
+        if(pair1.second == pair2.second)&#123;
+            return pair1.first &gt; pair2.first;
+        &#125;else&#123;
+            return pair1.second &gt; pair2.second;
+        &#125;
+    &#125;);
+    
+    for(auto p:vc)&#123;
+        cout &lt;&lt; p.first &lt;&lt; &#39; &#39;;
+    &#125;
+    
+    return 0;
+&#125;
+</code></pre>
+<h2 id="2021天梯赛模拟赛"><a href="#2021天梯赛模拟赛" class="headerlink" title="2021天梯赛模拟赛"></a>2021天梯赛模拟赛</h2><p><strong>当题目要求我们出现值相同的情况时，字典序大的先输出时，自定义函数就显得尤为重要</strong></p>
+<pre><code class="c++">#include &lt;bits/stdc++.h&gt;
+using namespace std;
+
+int n;
+unordered_map&lt;string,int&gt; mp;
+
+int main()&#123;
+    cin &gt;&gt; n;
+    string target = &quot;chatgpt&quot;;
+    while(n--)&#123;
+        string id;
+        string words;
+        cin &gt;&gt; id;
+        getchar();
+        getline(cin,words);
+        transform(words.begin(),words.end(),words.begin(),::tolower);
+        
+        for(int i = 0;i+6&lt;words.size();i++)&#123;
+            if(words.substr(i,7) == target)&#123;
+                mp[id]++;	
+            &#125;
+        &#125; 	
+    &#125;
+    
+    vector&lt;pair&lt;string,int&gt;&gt; vc(mp.begin(),mp.end());
+    sort(vc.begin(),vc.end(),[](const pair&lt;string,int&gt;&amp; x,const pair&lt;string,int&gt;&amp; y)&#123;
+        if(x.second == y.second)&#123;
+            return x.first &lt; y.first;
+        &#125;else&#123;
+            return x.second &gt; y.second;
+        &#125;
+    &#125;);
+    
+    int result = 0;
+    for(auto pair:vc)&#123;
+        if(pair.second == 0 || result ==3)&#123;
+            break;
+        &#125;else&#123;
+            cout &lt;&lt; pair.first &lt;&lt; &#39; &#39; &lt;&lt; pair.second &lt;&lt; endl;
+            result++;
+        &#125;
+    &#125;
+    return 0;
+&#125;
+</code></pre>
 <h1 id="递归思想储存组合方案"><a href="#递归思想储存组合方案" class="headerlink" title="递归思想储存组合方案"></a>递归思想储存组合方案</h1><pre><code class="c++">class Solution &#123;
 public:
     void back_find(string digits,int i,string str,vector&lt;string&gt; &amp;vc)&#123;
