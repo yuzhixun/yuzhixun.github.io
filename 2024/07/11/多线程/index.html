@@ -3,7 +3,7 @@
 <html lang="zh">
     <head>
         <meta charset="utf-8" />
-        <title>Categories: Typora | Argvchs の小窝</title>
+        <title>多线程讲解 | Argvchs の小窝</title>
         <meta name="author" content="Argvchs" />
         <meta name="description" content="" />
         <meta name="keywords" content="" />
@@ -28,6 +28,10 @@
 
 
 <script src="/js/lib/preview.js"></script>
+
+
+
+
 
 
 
@@ -141,14 +145,20 @@
 </transition>
 
             <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
-                <div id="archives">
-    
-    <div class="categories-tags">
+                <div class="article">
+    <div>
+        <h1>多线程讲解</h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2024/7/11
+        </span>
         
-        
-        
-        <span>
-            <a href="/categories/%E6%8A%80%E6%9C%AF/" style="background: #00a596">
+        <span class="category">
+            <a href="/categories/%E6%8A%80%E6%9C%AF/">
                 <span class="icon">
                     <i class="fa-solid fa-bookmark fa-fw"></i>
                 </span>
@@ -157,175 +167,79 @@
         </span>
         
         
-        
-        <span>
-            <a href="/categories/%E6%8A%80%E6%9C%AF/%E5%AE%89%E5%85%A8/" style="background: #ffa2c4">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                安全
-            </a>
+        <span class="tags">
+            <span class="icon">
+                <i class="fa-solid fa-tags fa-fw"></i>
+            </span>
+            
+            
+            <span class="tag">
+                
+                <a href="/tags/Typora/" style="color: #03a9f4">Typora</a>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/Markdown/" style="color: #ff7d73">Markdown</a>
+            </span>
+            
         </span>
-        
-        
-        
-        <span>
-            <a href="/categories/%E6%8A%80%E6%9C%AF/excel/" style="background: #00a596">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                excel
-            </a>
-        </span>
-        
-        
-        
-        <span>
-            <a href="/categories/html/" style="background: #00bcd4">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                html
-            </a>
-        </span>
-        
-        
-        
-        <span>
-            <a href="/categories/%E6%8A%80%E6%9C%AF/%E7%BA%BF%E7%A8%8B/" style="background: #03a9f4">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                线程
-            </a>
-        </span>
-        
-        
-        
-        <span>
-            <a href="/categories/%E6%97%85%E6%B8%B8/" style="background: #00a596">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                旅游
-            </a>
-        </span>
-        
-        
-        
-        <span>
-            <a href="/categories/%E6%8A%80%E6%9C%AF/Typora/" style="background: linear-gradient(120deg, #9abbf7 0%, #ffbbf4 100%)">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                Typora
-            </a>
-        </span>
-        
-        
-        
-        
-        
-        <span>
-            <a href="/categories/%E6%8A%80%E6%9C%AF/%E4%BA%8C%E7%BA%A7/" style="background: #00bcd4">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                二级
-            </a>
-        </span>
-        
-        
-        
-        <span>
-            <a href="/categories/html/css/" style="background: #00a596">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                css
-            </a>
-        </span>
-        
-        
-        
-        <span>
-            <a href="/categories/%E6%8A%80%E6%9C%AF/%E7%AD%94%E8%BE%A9/" style="background: #03a9f4">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                答辩
-            </a>
-        </span>
-        
-        
-        
-        <span>
-            <a href="/categories/%E6%8A%80%E6%9C%AF/Typora/Markdown/" style="background: #ff7d73">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                Markdown
-            </a>
-        </span>
-        
-        
-        
-        <span>
-            <a href="/categories/html/css/javaScript/" style="background: #00a596">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                javaScript
-            </a>
-        </span>
-        
-        
-        
-        <span>
-            <a href="/categories/%E6%8A%80%E6%9C%AF/%E7%AD%94%E8%BE%A9/%E6%BC%94%E8%AE%B2/" style="background: #00bcd4">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                演讲
-            </a>
-        </span>
-        
-        
-        
-        <span>
-            <a href="/categories/%E6%8A%80%E6%9C%AF/Typora/Markdown/vscode/" style="background: #00a596">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                vscode
-            </a>
-        </span>
-        
         
     </div>
     
-    <div class="timeline">
-        <div class="timeline-tail"></div>
-        <div class="timeline-content">
-            <div class="item-time">2023/4/4</div>
-            <a href="/2023/04/04/web/">
-                <h3>征服前端</h3>
-            </a>
-            <div class="info">
-                
-                <span class="category">
-                    <a href="/categories/%E6%8A%80%E6%9C%AF/">
-                        <span class="icon">
-                            <i class="fa-solid fa-bookmark fa-fw"></i>
-                        </span>
-                        技术
-                    </a>
-                </span>
-                
-                
-            </div>
-        </div>
+    <div class="content" v-pre>
+        <h1 id="线程（Thread）简介"><a href="#线程（Thread）简介" class="headerlink" title="线程（Thread）简介"></a>线程（Thread）简介</h1><p><strong>在java中我们的主线程是main函数</strong></p>
+<p> 在操作系统中运行的程序就是进程，一个进程可以有多个线程，如视频中同时听声音，看图像，看弹幕，等等</p>
+<h2 id="线程的创建"><a href="#线程的创建" class="headerlink" title="线程的创建"></a>线程的创建</h2><p><img src="https://typora200483.oss-cn-chengdu.aliyuncs.com/Snipaste_2024-07-11_17-06-28.png"></p>
+<p><img src="https://typora200483.oss-cn-chengdu.aliyuncs.com/Snipaste_2024-07-11_19-07-42.png" alt="Snipaste_2024-07-11_19-07-42"></p>
+<h3 id="普通方法调用"><a href="#普通方法调用" class="headerlink" title="普通方法调用"></a>普通方法调用</h3><p>我们单纯调用run()方法，你会发先它是单线程执行,意思就是只执行主线程中的，run()是一个调用</p>
+<pre><code class="java">package com.yuzhixun.demo6;
+
+public class TestThread1 extends Thread&#123;
+    public void run()&#123;
+        for (int i = 0; i &lt; 2000; i++) &#123;
+            System.out.println(&quot;我在学习English--&quot;+i);
+        &#125;
+    &#125;
+    public static void main(String[] args) &#123;
+        TestThread1 t1 = new TestThread1();
+        t1.run();
+
+        for (int i = 0; i &lt; 2000; i++) &#123;
+            System.out.println(&quot;我在学习数学--&quot;+i);
+        &#125;
+    &#125;
+&#125;
+</code></pre>
+<p><img src="https://typora200483.oss-cn-chengdu.aliyuncs.com/Snipaste_2024-07-11_19-10-13.png" alt="Snipaste_2024-07-11_19-10-13"></p>
+<h3 id="多线程调用"><a href="#多线程调用" class="headerlink" title="多线程调用"></a>多线程调用</h3><p>当我们程序执行到.start()的时候，程序开启多线程模式，意思就是，主线程和分支线程同时执行，得到的答案就会交替出现</p>
+<pre><code class="java">package com.yuzhixun.demo6;
+
+public class TestThread1 extends Thread&#123;
+    public void run()&#123;
+        for (int i = 0; i &lt; 2000; i++) &#123;
+            System.out.println(&quot;我在学习English--&quot;+i);
+        &#125;
+    &#125;
+    public static void main(String[] args) &#123;
+        TestThread1 t1 = new TestThread1();
+        t1.start();
+
+        for (int i = 0; i &lt; 2000; i++) &#123;
+            System.out.println(&quot;我在学习数学--&quot;+i);
+        &#125;
+    &#125;
+&#125;
+</code></pre>
+<p><img src="https://typora200483.oss-cn-chengdu.aliyuncs.com/Snipaste_2024-07-11_19-12-45.png" alt="Snipaste_2024-07-11_19-12-45"></p>
+
     </div>
+    
+    
+    
+    
+    
+    
     
 </div>
 
@@ -369,6 +283,12 @@
         <script src="/js/cursor.min.js"></script>
 
         <script src="/js/main.js"></script>
+        
+        
+
+
+
+
         
 
         <script src="https://giscus.app/client.js"

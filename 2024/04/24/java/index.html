@@ -175,7 +175,7 @@
             
             <span class="tag">
                 
-                <a href="/tags/Typora/" style="color: #ff7d73">Typora</a>
+                <a href="/tags/Typora/" style="color: #03a9f4">Typora</a>
             </span>
             
             <span class="tag">
@@ -185,7 +185,7 @@
             
             <span class="tag">
                 
-                <a href="/tags/vscode/" style="color: #ff7d73">vscode</a>
+                <a href="/tags/vscode/" style="color: #00a596">vscode</a>
             </span>
             
         </span>
@@ -258,6 +258,416 @@
     &#125;
 &#125;
 </code></pre>
+<h2 id="类型变量的优先"><a href="#类型变量的优先" class="headerlink" title="类型变量的优先"></a>类型变量的优先</h2><pre><code class="java">public class demo2 &#123;
+    public static void main(String[] args) &#123;
+        long a = 123456789987L;
+        int b = 123;
+        short c = 25;
+        byte d = 25;
+
+        System.out.println(a+b+c+d); //long
+        System.out.println(b+c+d); //int
+        System.out.println(c+d); //int
+    &#125;
+
+&#125;
+</code></pre>
+<p><strong>当很多数相加时，里面有long类型，则结果为long类型，如果没有long类型，则默认为int类型</strong></p>
+<h2 id="Scanner对象"><a href="#Scanner对象" class="headerlink" title="Scanner对象"></a>Scanner对象</h2><p>next()一旦碰到<strong>空格和空格</strong>就会结束输入<br>nextline()只碰到<strong>回车</strong>才会结束输入</p>
+<pre><code class="java">package com.yuzhixun.base;
+import java.util.Scanner;
+
+public class demo1 &#123;
+    public static void main(String[] args) &#123;
+        Scanner scanner = new Scanner(System.in);
+        System.out.println(&quot;使用next方式接收&quot;);
+        String str = scanner.next();
+        System.out.println(&quot;输出的内容为：&quot; + str);
+        scanner.close();
+    &#125;
+&#125;
+
+/*
+package com.yuzhixun.base;
+import java.util.Scanner;
+
+public class demo1 &#123;
+    public static void main(String[] args) &#123;
+        Scanner scanner = new Scanner(System.in);
+        System.out.println(&quot;使用nextline方式接收&quot;);
+        String str = scanner.nextLine();
+        System.out.println(&quot;输出的内容为：&quot; + str);
+        scanner.close();
+    &#125;
+&#125;
+*/
+</code></pre>
+<p><strong>持续输入多个数，求他们的总和和平均值</strong></p>
+<pre><code class="java">package com.yuzhixun.base;
+
+import java.util.Scanner;
+
+public class demo2 &#123;
+    public static void main(String[] args) &#123;
+        Scanner sc = new Scanner(System.in);
+        int num = 0;
+        double sum = 0;
+
+        while(sc.hasNextDouble())&#123;
+            double temp = sc.nextInt();
+            num++;
+            sum += temp;
+        &#125;
+
+        System.out.println(num + &quot;个数相加的结果为：&quot; + sum);
+        System.out.println(num + &quot;个数相加的平均值为：&quot; + sum/num);
+        sc.close();
+    &#125;
+&#125;
+</code></pre>
+<p><strong>九九乘法表</strong></p>
+<pre><code class="java">package com.yuzhixun.base;
+public class demo2 &#123;
+    public static void main(String[] args) &#123;
+        for(int i = 1; i &lt;= 9; i++) &#123;
+            for(int j = 1; j &lt;= i; j++) &#123;
+                if(i == j)&#123;
+                    System.out.println(j + &quot;*&quot; + i + &quot;=&quot; + (i*j));
+                &#125;else &#123;
+                    System.out.print(j + &quot;*&quot; + i + &quot;=&quot; + (i*j) + &quot; &quot;);
+                &#125;
+            &#125;
+        &#125;
+    &#125;
+&#125;
+</code></pre>
+<h1 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h1><h2 id="何为方法"><a href="#何为方法" class="headerlink" title="何为方法"></a>何为方法</h2><p>System(类).out(对象).println(方法);</p>
+<h2 id="重载函数"><a href="#重载函数" class="headerlink" title="重载函数"></a>重载函数</h2><p>改变函数类型的形参接受，就可以实现函数名相同，但是实现形式不一样。</p>
+<ul>
+<li>方法名必须相同</li>
+<li>参数列表必须不同（个数不同，或类型不同，参数排列顺序不同）。</li>
+<li>方法的返回类型可以相同亦可以不相同。</li>
+<li>仅仅返回类型不同不足以成为方法的重载。</li>
+</ul>
+<pre><code class="java">public static int max(int a,int b)&#123;
+    
+&#125;
+public static double max(double a,double b)&#123;
+    
+&#125;
+public static int max(int a,int b,int c)&#123;
+    
+&#125;
+</code></pre>
+<h2 id="可变参数"><a href="#可变参数" class="headerlink" title="可变参数"></a>可变参数</h2><pre><code class="java">package com.yuzhixun.base;
+
+public class demo3 &#123;
+    public static void main(String[] args) &#123;
+        printMax(34,3,3,2,56);
+    &#125;
+
+    public static void printMax(int... numbers)&#123;
+        if(numbers.length == 0)&#123;
+            System.out.println(&quot;Nothing&quot;);
+            return;
+        &#125;
+        for(int i = 0;i &lt; numbers.length-1;i++)&#123;
+            for(int j = i+1;j &lt; numbers.length;j++)&#123;
+                if(numbers[i] &gt; numbers[j])&#123;
+                    int temp = numbers[i];
+                    numbers[i] = numbers[j];
+                    numbers[j] = temp;
+                &#125;
+            &#125;
+        &#125;
+
+        for(int a:numbers)&#123;
+            System.out.println(a);
+        &#125;
+    &#125;
+&#125;
+</code></pre>
+<p>我们的方法名是printMax,我们接受的参数是并不是直接传递的数组，而是可变的数组，这里的形参<code>int… numbers</code>,就是接受可变的数组</p>
+<p>强调一下，函数库就是类，函数就是方法。<br>在java中，我们是**类.函数.**来调用</p>
+<pre><code class="java">package com.yuzhixun.base;
+
+import java.util.Arrays;
+
+public class demo4 &#123;
+    public static void main(String[] args) &#123;
+        int[] nums = &#123;1,9,8,33,65,2,7,55,69,41,25,325,987,654&#125;;
+        Arrays.sort(nums);
+        System.out.println(Arrays.toString(nums));
+    &#125;
+&#125;
+</code></pre>
+<h2 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h2><pre><code class="java">package com.yuzhixun.base;
+
+import java.util.Arrays;
+
+public class demo4 &#123;
+    public static void main(String[] args) &#123;
+        int[] nums = &#123;1, 9, 8, 33, 65, 2, 7, 55, 69, 41, 25, 325, 987, 654&#125;;
+        int[] temp = maopao(nums);
+        System.out.println(Arrays.toString(temp));
+    &#125;
+
+    public static int[] maopao(int[] arrar) &#123;
+        for (int i = 0; i &lt; arrar.length; i++) &#123;
+            for (int j = 0; j &lt; arrar.length - 1 - i; j++) &#123;
+                if (arrar[j + 1] &lt; arrar[j]) &#123;
+                    int temp = arrar[j];
+                    arrar[j] = arrar[j + 1];
+                    arrar[j + 1] = temp;
+                &#125;
+            &#125;
+        &#125;
+        return arrar;
+    &#125;
+&#125;
+</code></pre>
+<h2 id="面向对象"><a href="#面向对象" class="headerlink" title="面向对象"></a>面向对象</h2><p>面向对象编程的本质是：一类的方式组织代码，以对象的组织数据<br>三大特性：</p>
+<ul>
+<li>封装</li>
+<li>继承</li>
+<li>多态</li>
+</ul>
+<h2 id="方法的定义"><a href="#方法的定义" class="headerlink" title="方法的定义"></a>方法的定义</h2><p><strong>静态方法和非静态的区别</strong></p>
+<pre><code class="java">package com.yuzhixun.base;
+
+public class demo5 &#123;
+    public static void main(String[] args) &#123;
+        demo6.hejiu();
+    &#125;
+&#125;
+</code></pre>
+<pre><code class="java">package com.yuzhixun.base;
+
+public class demo6 &#123;
+    public static void hejiu()&#123;
+        System.out.println(&quot;你又喝酒了！&quot;);
+    &#125;
+&#125;
+</code></pre>
+<p><strong>静态方法可以像这样就可以直接调用。</strong></p>
+<p><strong>对于非静态的方法</strong>:<br>我们需要new一个对象，这个对象必须是包含你目标方法所在的对象</p>
+<pre><code class="java">package com.yuzhixun.base;
+
+public class demo5 &#123;
+    public static void main(String[] args) &#123;
+        demo6 father = new demo6();
+        father.hejiu();
+    &#125;
+&#125;
+</code></pre>
+<pre><code class="java">package com.yuzhixun.base;
+
+public class demo6 &#123;
+    public void hejiu()&#123;
+        System.out.println(&quot;你又喝酒了！&quot;);
+    &#125;
+&#125;
+</code></pre>
+<p>有static的方法属于静态的，没有static的方法属于实例的, 非静态可以调用静态，静态不能调用非静态的</p>
+<pre><code class="java">package com.yuzhixun.base;
+
+public class demo6 &#123;
+    public static void main(String[] args) &#123;
+        Person person = new Person();
+        System.out.println(person.name);
+        demo6.change(person);
+        System.out.println(person.name);
+    &#125;
+
+    public static void change(Person person) &#123;
+        person.name = &quot;xiaoyuwan&quot;;
+    &#125;
+&#125;
+
+class Person&#123;
+    String name;
+&#125;
+</code></pre>
+<h2 id="用new关键字创建对象"><a href="#用new关键字创建对象" class="headerlink" title="用new关键字创建对象"></a>用new关键字创建对象</h2><pre><code class="java">package com.yuzhixun.demo1;
+
+public class Application &#123;
+    public static void main(String[] args) &#123;
+        Student xiaoming = new Student();
+        Student xiaohong = new Student();
+
+        xiaoming.name = &quot;小明&quot;;
+        xiaoming.age = 18;
+        xiaohong.name = &quot;小红&quot;;
+        xiaohong.age = 19;
+
+        System.out.println(xiaoming.name);
+        System.out.println(xiaoming.age);
+        System.out.println(xiaohong.name);
+        System.out.println(xiaohong.age);
+    &#125;
+&#125;
+</code></pre>
+<pre><code class="java">package com.yuzhixun.demo1;
+public class Student &#123;
+    String name;
+    int age;
+
+    public void study()&#123;
+        System.out.println(&quot;在学习&quot;);
+    &#125;
+
+&#125;
+</code></pre>
+<h2 id="构造函数"><a href="#构造函数" class="headerlink" title="构造函数"></a>构造函数</h2><p><strong>快捷键Alt+insert可以快速构造器</strong></p>
+<pre><code class="java">package com.yuzhixun.demo1;
+
+public class Person &#123;
+    String name;
+    int age;
+    //无参构造
+    public Person() &#123;
+        //this.name = &quot;xiaoyuwan&quot;;
+    &#125;
+
+    public Person(String name, int age) &#123;
+        this.name = name;
+        this.age = age;
+    &#125;
+&#125;
+</code></pre>
+<pre><code class="java">package com.yuzhixun.demo1;
+
+public class Application &#123;
+    public static void main(String[] args) &#123;
+        Person person = new Person(&quot;wo shi ni die!&quot;,20);
+        System.out.println(person.name);
+        System.out.println(person.age);
+    &#125;
+&#125;
+</code></pre>
+<h2 id="私有属性"><a href="#私有属性" class="headerlink" title="私有属性"></a>私有属性</h2><pre><code class="java">package com.yuzhixun.demo2;
+
+public class Student &#123;
+    public int id;
+    private String name;
+    private char sex;
+&#125;
+</code></pre>
+<pre><code class="java">package com.yuzhixun.demo2;
+
+public class application &#123;
+    public static void main(String[] args) &#123;
+        Student xiaoming = new Student();
+        xiaoming.id = 20;
+        xiaoming.name = &quot;ajgag&quot;;
+    &#125;
+&#125;
+</code></pre>
+<p>上面代码中，id是可以运行的，但是name是不能运行的，因为被private了。</p>
+<h2 id="get-和set-的作用"><a href="#get-和set-的作用" class="headerlink" title="get()和set()的作用"></a>get()和set()的作用</h2><p>当我们的属性被私密了之后，我们可以用他们来获取属性</p>
+<pre><code class="java">package com.yuzhixun.demo2;
+
+public class Student &#123;
+    public int id;
+    private String name;
+    private char sex;
+
+    public String getName()&#123;
+        return this.name;
+    &#125;
+
+    public void setName(String name)&#123;
+        this.name = name;
+    &#125;
+&#125;
+</code></pre>
+<pre><code class="java">package com.yuzhixun.demo2;
+
+public class application &#123;
+    public static void main(String[] args) &#123;
+        Student xiaoming = new Student();
+        xiaoming.id = 20;
+
+        xiaoming.setName(&quot;xiaoyuwan&quot;);
+        System.out.println(xiaoming.id);
+        System.out.println(xiaoming.getName());
+    &#125;
+&#125;
+</code></pre>
+<h2 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h2><p>一个父亲可以有多个孩子，但是一个孩子只能有一个父亲。</p>
+<p>父亲类里如果我么private，那么孩子类是无法使用的，但是我们加了get和set，那么孩子也是可以间接使用的</p>
+<pre><code class="java">package com.yuzhixun.demo4;
+
+public class Person &#123;
+    private String name;
+    private int age;
+    public int id;
+
+    public String getName() &#123;
+        return name;
+    &#125;
+
+    public void setName(String name) &#123;
+        this.name = name;
+    &#125;
+&#125;
+</code></pre>
+<pre><code class="java">package com.yuzhixun.demo4;
+
+public class Application &#123;
+   public static void main(String[] args) &#123;
+       Student student = new Student();
+       student.setName(&quot;脆脆鲨&quot;);
+       System.out.println(student.id);
+       System.out.println(student.getName());
+   &#125;
+&#125;
+</code></pre>
+<p><strong>私有的不能被继承</strong></p>
+<h2 id="重写"><a href="#重写" class="headerlink" title="重写"></a>重写</h2><ol>
+<li>方法名必须相同</li>
+<li>参数列表必须相同</li>
+<li>修饰符：范围可以扩大但不能缩小</li>
+</ol>
+<p><strong>&#x3D;&#x3D;父类引用指向子类对象&#x3D;&#x3D;</strong></p>
+<p><strong>静态</strong></p>
+<pre><code class="java">package com.yuzhixun.demo5;
+
+public class father &#123;
+    public static void test()&#123;
+        System.out.println(&quot;father=&gt;meal&quot;);
+    &#125;
+&#125;
+</code></pre>
+<pre><code class="java">package com.yuzhixun.demo5;
+
+public class son extends father&#123;
+    public static void test() &#123;
+        System.out.println(&quot;son=&gt;meal&quot;);
+    &#125;
+&#125;
+</code></pre>
+<pre><code class="java">package com.yuzhixun.demo5;
+
+import com.yuzhixun.demo5.father;
+import com.yuzhixun.demo5.son;
+public class application &#123;
+    public static void main(String[] args) &#123;
+        son a = new son();
+        a.test();
+
+        father b = new son();
+        b.test();
+    &#125;
+&#125;
+</code></pre>
+<p>静态时，我们调用自己的方法</p>
+<p><strong>非静态</strong></p>
+<p><strong>没有static时，我们调用孩子的方法</strong><br><strong>当子类重写了父亲的方法，父亲则调用子类的放法</strong><br>意思就是，我们子类还没有重写时，父类还是调用自己的方法</p>
+<h2 id="类类型的转换"><a href="#类类型的转换" class="headerlink" title="类类型的转换"></a>类类型的转换</h2><p>当子类有的方法，父类没有时，我们怎么让父类可以调用呢。</p>
+<pre><code class="java">((son)f1).eat();
+</code></pre>
+<p><strong>类也是一种数据类型</strong></p>
 
     </div>
     

@@ -3,7 +3,7 @@
 <html lang="zh">
     <head>
         <meta charset="utf-8" />
-        <title> | Argvchs の小窝</title>
+        <title>欢迎来到小鱼丸的excel | Argvchs の小窝</title>
         <meta name="author" content="Argvchs" />
         <meta name="description" content="" />
         <meta name="keywords" content="" />
@@ -147,7 +147,7 @@
             <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
                 <div class="article">
     <div>
-        <h1></h1>
+        <h1>欢迎来到小鱼丸的excel</h1>
     </div>
     <div class="info">
         <span class="date">
@@ -157,11 +157,63 @@
             2024/5/1
         </span>
         
+        <span class="category">
+            <a href="/categories/%E6%8A%80%E6%9C%AF/">
+                <span class="icon">
+                    <i class="fa-solid fa-bookmark fa-fw"></i>
+                </span>
+                技术
+            </a>
+        </span>
+        
+        
+        <span class="tags">
+            <span class="icon">
+                <i class="fa-solid fa-tags fa-fw"></i>
+            </span>
+            
+            
+            <span class="tag">
+                
+                <a href="/tags/Typora/" style="color: #03a9f4">Typora</a>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/Markdown/" style="color: #00bcd4">Markdown</a>
+            </span>
+            
+        </span>
         
     </div>
     
     <div class="content" v-pre>
-        
+        <h1 id="快速填充"><a href="#快速填充" class="headerlink" title="快速填充"></a>快速填充</h1><h2 id="提取括号内容"><a href="#提取括号内容" class="headerlink" title="提取括号内容"></a>提取括号内容</h2><p><code>ctrl+E</code>快速填充的快捷键</p>
+<p><img src="https://typora200483.oss-cn-chengdu.aliyuncs.com/Snipaste_2024-05-03_11-26-15.png" alt="Snipaste_2024-05-03_11-26-15"></p>
+<p><img src="https://typora200483.oss-cn-chengdu.aliyuncs.com/Snipaste_2024-05-03_11-31-33.png" alt="Snipaste_2024-05-03_11-31-33"></p>
+<h2 id="拆分重组"><a href="#拆分重组" class="headerlink" title="拆分重组"></a>拆分重组</h2><p><strong>再用excel填充数据的时候，一定要保证周围是有数据的，不能出现空行和空列的情况</strong></p>
+<p>你要让excel知道你的规律</p>
+<p><img src="https://typora200483.oss-cn-chengdu.aliyuncs.com/Snipaste_2024-05-03_11-39-09.png" alt="Snipaste_2024-05-03_11-39-09"></p>
+<h1 id="数据分析"><a href="#数据分析" class="headerlink" title="数据分析"></a>数据分析</h1><p><code>ctrl+Q</code>数据分析按钮</p>
+<p>在处理图表的时候是非常有用的。处理和制作表</p>
+<h1 id="录入数据"><a href="#录入数据" class="headerlink" title="录入数据"></a>录入数据</h1><h2 id="手动输出"><a href="#手动输出" class="headerlink" title="手动输出"></a>手动输出</h2><p><strong>tab键移动到下一个单元格</strong><br><strong>enter键跳转到下一行</strong><br><strong>shirt+tab移动到上一个单元格</strong><br><strong>shirt+enter移动到上一行</strong></p>
+<p>ctrl+;可以显示当前的日期<br>ctrl+shift+;可以显示当前的时间<br>也可以直接使用函数“&#x3D;now()”</p>
+<p>英文下的引号+数字，可以直接将数字变成字符串的形式，也就是文本形式</p>
+<h1 id="单元格式化"><a href="#单元格式化" class="headerlink" title="单元格式化"></a>单元格式化</h1><p>文本输入向左对齐<br>数字输入向右对齐<br>逻辑输入中间对其</p>
+<p><code>ctrl+1</code>对单元格中的类型进行操作<br>双击操作可以将单元格变为合适的长度，将不能显示的数据显示出来</p>
+<h1 id="常用的数字格式化代码"><a href="#常用的数字格式化代码" class="headerlink" title="常用的数字格式化代码"></a>常用的数字格式化代码</h1><h2 id="数字占位符"><a href="#数字占位符" class="headerlink" title="数字占位符"></a>数字占位符</h2><p><strong>0，#，？</strong></p>
+<p>0：进行补位，按照缺乏的位置进行补充<br>#：在进行补位完成之后，删除一下数位，保留有意义的数值<br>？：进行补位，但是是以空格的形式代替</p>
+<h2 id="对每个单元格独立定义"><a href="#对每个单元格独立定义" class="headerlink" title="对每个单元格独立定义"></a>对每个单元格独立定义</h2><pre><code>0;-0;0;@
+</code></pre>
+<p><strong>正;负;零;文本</strong></p>
+<p>消除对应的形式，那么单元格内的值就会被隐藏，但不会删除</p>
+<p><strong>自定义正负数的显示形式</strong></p>
+<pre><code>[颜色]0;[颜色]-0;[颜色]0;[颜色]@
+↑0;↓-0;-0;@
+[红色][&gt;=60]0;[绿色][&lt;60]0;0
+</code></pre>
+<p><img src="https://typora200483.oss-cn-chengdu.aliyuncs.com/Snipaste_2024-05-03_16-49-48.png" alt="Snipaste_2024-05-03_16-49-48"></p>
+
     </div>
     
     
