@@ -175,12 +175,12 @@
             
             <span class="tag">
                 
-                <a href="/tags/Typora/" style="color: #03a9f4">Typora</a>
+                <a href="/tags/Typora/" style="color: #ffa2c4">Typora</a>
             </span>
             
             <span class="tag">
                 
-                <a href="/tags/Markdown/" style="color: #ff7d73">Markdown</a>
+                <a href="/tags/Markdown/" style="color: #00a596">Markdown</a>
             </span>
             
         </span>
@@ -232,6 +232,88 @@ public class TestThread1 extends Thread&#123;
 &#125;
 </code></pre>
 <p><img src="https://typora200483.oss-cn-chengdu.aliyuncs.com/Snipaste_2024-07-11_19-12-45.png" alt="Snipaste_2024-07-11_19-12-45"></p>
+<h2 id="同时下载多个图片案例"><a href="#同时下载多个图片案例" class="headerlink" title="同时下载多个图片案例"></a>同时下载多个图片案例</h2><p>前戏步骤：</p>
+<ul>
+<li>首先下载io的jar包，里面有我们所需要的方法</li>
+</ul>
+<p>我们从网络上下载图片，我们可以称其为一种方法，这个方法我们可以直接调用别人已经写好了的方法(35 – 44)</p>
+<pre><code class="java">package com.yuzhixun.demo6;
+
+import org.apache.commons.io.FileUtils;
+import java.io.File;
+import java.net.URL;
+import java.io.IOException;
+
+//练习THread，实现多线程下载图片
+public class TestThread2 extends Thread &#123;
+    private String url;
+    private String name;
+    
+    //这一步实际上就是给变量赋值
+    public TestThread2(String url,String name)&#123;
+        this.url = url;
+        this.name = name;
+    &#125;
+
+    public void run()&#123;
+        WebDownloader web1 = new WebDownloader();
+        web1.downloader(url,name);
+        System.out.println(&quot;下载了文件名为&quot;+name);
+    &#125;
+
+    public static void main(String[] args) &#123;
+        TestThread2 t1 = new TestThread2(&quot;https://typora200483.oss-cn-chengdu.aliyuncs.com/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-05-28%20164032.png&quot;, &quot;1.png&quot;);
+        TestThread2 t2 = new TestThread2(&quot;https://typora200483.oss-cn-chengdu.aliyuncs.com/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-07%20224415.png&quot;, &quot;2.png&quot;);
+        TestThread2 t3 = new TestThread2(&quot;https://typora200483.oss-cn-chengdu.aliyuncs.com/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-07%20224537.png&quot;, &quot;3.png&quot;);
+
+        t1.start();
+        t2.start();
+        t3.start();
+    &#125;
+&#125;
+
+class WebDownloader&#123;
+    public void downloader(String url,String name)&#123;
+        try&#123;
+            FileUtils.copyURLToFile(new URL(url),new File(name));
+        &#125;catch (IOException e) &#123;
+            e.printStackTrace();
+            System.out.println(&quot;IO异常，downloader方法出现问题&quot;);
+        &#125;
+    &#125;
+&#125;
+//try-catch好似于if-else，如果try语句出现异常，我们就执行catch语句
+</code></pre>
+<p><strong>意思即是：我们执行t1的时候，主线还在继续，所以t2,t3也在进行。</strong></p>
+<h2 id="创建声明runnable接口的线程"><a href="#创建声明runnable接口的线程" class="headerlink" title="创建声明runnable接口的线程"></a>创建声明runnable接口的线程</h2><ul>
+<li>定义MYyRunnable类实现Runnable接口</li>
+<li>实现run()方法，编写线程执行体</li>
+<li>创建线程对象，调用start()方法启动线程</li>
+</ul>
+<p>接口调用相对于继承的优点：</p>
+<ul>
+<li><strong>多重继承</strong>：Student类继承自Person，并且可以同时实现多个接口（Learner, Athlete, Runnable）。</li>
+<li><strong>灵活性高</strong>：一个类可以实现多个接口，具有更高的灵活性。</li>
+</ul>
+<pre><code class="java">package com.yuzhixun.demo6;
+
+public class TestThread1 implements Runnable&#123;
+    public void run()&#123;
+        for (int i = 0; i &lt; 2000; i++) &#123;
+            System.out.println(&quot;我在学习English--&quot;+i);
+        &#125;
+    &#125;
+
+    public static void main(String[] args) &#123;
+        TestThread1 t1 = new TestThread1();
+        new Thread(t1).start();
+
+        for (int i = 0; i &lt; 2000; i++) &#123;
+            System.out.println(&quot;我在学习数学--&quot;+i);
+        &#125;
+    &#125;
+&#125;
+</code></pre>
 
     </div>
     
